@@ -1,0 +1,5 @@
+# Ignore netbeans folder
+nbproject/*
+
+# MAC
+.DS_Store
