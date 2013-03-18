@@ -21,7 +21,7 @@
 
 "use strict";
 /*jslint plusplus: true, browser: true*/
-/*global $, jQuery, alert, console, THREE*/
+/*global $, jQuery, alert, console, THREE, requestAnimationFrame*/
 
 
 $(document).ready(function () {
@@ -91,7 +91,7 @@ $(document).ready(function () {
 	//cube2.radius = 300;
 	cube2.counter = 100;
 	cube2.transitioning = false;
-	cube2.speed = .5;
+	cube2.speed = 0.5;
 	cubes.push(cube2);
 
 	// create sphere 1
@@ -111,7 +111,7 @@ $(document).ready(function () {
 	// create light source
 	pointLight = new THREE.PointLight(0xFFFFFF);
 	pointLight.position.set(10, 200, 130);
-	
+
 	// add all objects to scene
 	for (i = 0; i < cubes.length; i++) {
 		cubes[i].position.set(
@@ -126,16 +126,62 @@ $(document).ready(function () {
 
 	camera.position.z = 400;
 	//camera.position.z = 1000;
-	
+
 	projector = new THREE.Projector();
 
-	// switch cubes on click
+	// debug lines in center of scene
+	var geometry = new THREE.CylinderGeometry(2, 2, 20);
+	geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 10, 0));
+	var xAxis = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+		color: 0xff0000
+	}));
+	xAxis.rotation.z = -Math.PI/2;
+	scene.add(xAxis);
+
+	var yAxis = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+		color: 0x00ff00
+	}));
+	scene.add(yAxis);
+
+	var zAxis = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({
+		color: 0x0000ff
+	}));
+	zAxis.rotation.x = Math.PI/2;
+	scene.add(zAxis);
+
+
+	// click handlers for dragging
+	var xClick, yClick;
+	renderer.domElement.addEventListener('mousedown', function(e) {
+		xClick = e.pageX;
+		yClick = e.pageY;
+		renderer.domElement.addEventListener('mousemove', handleDrag);
+	});
+	renderer.domElement.addEventListener('mouseup', function(e) {
+		xClick = e.pageX;
+		yClick = e.pageY;
+		renderer.domElement.removeEventListener('mousemove', handleDrag);
+	});
+	function handleDrag(e) {
+		// compute deltas and reset last clicked location
+		var dX = (e.pageX-xClick);
+		var dY = (e.pageY-yClick);
+		xClick = e.pageX;
+		yClick = e.pageY;
+
+		// rotate the camera
+		scene.rotation.x += dY/100;
+		scene.rotation.y += dX/100;
+		scene.updateMatrix();
+	}
+
+	// click handlers for cube switching
 	$('canvas').click( function (event) {
 		event.preventDefault();
 		// create vector
 		vector = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1,
 			- ( event.clientY / window.innerHeight ) * 2 + 1, 0.5 );
-		// unproject 2D point into 3D vector
+		// unproject 2D click point into 3D vector
 		projector.unprojectVector(vector, camera);
 		// make ray from vector
 		raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
@@ -150,7 +196,7 @@ $(document).ready(function () {
 
 	function render() {
 		requestAnimationFrame(render);
-		
+
 		// for each cube, update location info
 		for (i = 0; i < cubes.length; i++) {
 			cubes[i].angle += cubes[i].speed;
