@@ -1,0 +1,7 @@
+body {
+    margin: 0px;
+    -webkit-user-select: none;
+}
+canvas {
+    background-color: black;
+}
