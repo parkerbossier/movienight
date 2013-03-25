@@ -2,7 +2,7 @@ var imageBase, moviesJSON, actorsJSON, directorsJSON;
 var endpoint = 'http://api.themoviedb.org/3/';
 var apiKey = '742fa948b5cbc1a2c82dbd37f14e2f7e';
 var actors, movies, directors;
-var movieNames = ["How the Grinch Stole Christmas","Cast Away","Mission: Impossible II","Gladiator","What Women Want","The Perfect Storm","Harry Potter and the Sorcerer's Stone","The Lord of the Rings: The Fellowship of the Ring","Rush Hour 2","The Mummy Returns","Pearl Harbor","Ocean's Eleven","Jurassic Park III","Planet of the Apes","Spider-Man","The Lord of the Rings: The Two Towers","Star Wars: Episode II - Attack of the Clones","Harry Potter and the Chamber of Secrets","My Big Fat Greek Wedding","Signs","Austin Powers in Goldmember","Men in Black II","The Lord of the Rings: The Return of the King","Pirates of the Caribbean: The Curse of the Black Pearl","The Matrix Reloaded","Bruce Almighty","X2","Elf","Spider-Man 2","The Passion of the Christ","Meet the Fockers","Harry Potter and the Prisoner of Azkaban","The Day After Tomorrow","The Bourne Supremacy","National Treasure","Star Wars: Episode III - Revenge of the Sith","The Chronicles of Narnia: The Lion","the Witch and the Wardrobe","Harry Potter and the Goblet of Fire","War of the Worlds","King Kong","Wedding Crashers","Charlie and the Chocolate Factory","Batman Begins","Mr. & Mrs. Smith","Hitch","Pirates of the Caribbean: Dead Man's Chest","Night at the Museum","X-Men: The Last Stand","The Da Vinci Code","300","Superman Returns","Spider-Man 3","Transformers","Pirates of the Caribbean: At World's End","Harry Potter and the Order of the Phoenix","I Am Legend","The Bourne Ultimatum","National Treasure: Book of Secrets","The Dark Knight","Iron Man","Indiana Jones and the Kingdom of the Crystal Skull","Hancock","Twilight","Avatar","Transformers: Revenge of the Fallen","Harry Potter and the Half-Blood Prince","The Twilight Saga: New Moon","The Hangover","Star Trek","The Blind Side","Sherlock Holmes","X-Men Origins: Wolverine","Night at the Museum: Battle of the Smithsonian","Alice in Wonderland","Iron Man 2","The Twilight Saga: Eclipse","Harry Potter and the Deathly Hallows: Part 1","Inception","The Karate Kid","Harry Potter and the Deathly Hallows: Part 2","Transformers: Dark of the Moon","The Twilight Saga: Breaking Dawn - Part 1","The Hangover Part II","Pirates of the Caribbean: On Stranger Tides","Fast Five","Mission: Impossible - Ghost Protocol","Sherlock Holmes: A Game of Shadows","Thor","Rise of the Planet of the Apes","Captain America: The First Avenger","The Avengers","The Dark Knight Rises","The Hunger Games","Skyfall","The Hobbit: An Unexpected Journey","The Twilight Saga: Breaking Dawn - Part 2","The Amazing Spider-Man","Ted","Lincoln","Men in Black 3"];
+var movieNames = ["How the Grinch Stole Christmas","Cast Away","Mission: Impossible II","Gladiator","What Women Want","The Perfect Storm","Harry Potter and the Sorcerer's Stone","The Lord of the Rings: The Fellowship of the Ring","Rush Hour 2","The Mummy Returns","Pearl Harbor","Ocean's Eleven","Jurassic Park III","Planet of the Apes","Spider-Man","The Lord of the Rings: The Two Towers","Star Wars: Episode II - Attack of the Clones","Harry Potter and the Chamber of Secrets","My Big Fat Greek Wedding","Signs","Austin Powers in Goldmember","Men in Black II","The Lord of the Rings: The Return of the King","Pirates of the Caribbean: The Curse of the Black Pearl","The Matrix Reloaded","Bruce Almighty","X2","Elf","Spider-Man 2","The Passion of the Christ","Meet the Fockers","Harry Potter and the Prisoner of Azkaban","The Day After Tomorrow","The Bourne Supremacy","National Treasure","Star Wars: Episode III - Revenge of the Sith","The Chronicles of Narnia: The Lion, the Witch and the Wardrobe","Harry Potter and the Goblet of Fire","War of the Worlds","King Kong","Wedding Crashers","Charlie and the Chocolate Factory","Batman Begins","Mr. & Mrs. Smith","Hitch","Pirates of the Caribbean: Dead Man's Chest","Night at the Museum","X-Men: The Last Stand","The Da Vinci Code","300","Superman Returns","Spider-Man 3","Transformers","Pirates of the Caribbean: At World's End","Harry Potter and the Order of the Phoenix","I Am Legend","The Bourne Ultimatum","National Treasure: Book of Secrets","The Dark Knight","Iron Man","Indiana Jones and the Kingdom of the Crystal Skull","Hancock","Twilight","Avatar","Transformers: Revenge of the Fallen","Harry Potter and the Half-Blood Prince","The Twilight Saga: New Moon","The Hangover","Star Trek","The Blind Side","Sherlock Holmes","X-Men Origins: Wolverine","Night at the Museum: Battle of the Smithsonian","Alice in Wonderland","Iron Man 2","The Twilight Saga: Eclipse","Harry Potter and the Deathly Hallows: Part 1","Inception","The Karate Kid","Harry Potter and the Deathly Hallows: Part 2","Transformers: Dark of the Moon","The Twilight Saga: Breaking Dawn - Part 1","The Hangover Part II","Pirates of the Caribbean: On Stranger Tides","Fast Five","Mission: Impossible - Ghost Protocol","Sherlock Holmes: A Game of Shadows","Thor","Rise of the Planet of the Apes","Captain America: The First Avenger","The Avengers","The Dark Knight Rises","The Hunger Games","Skyfall","The Hobbit: An Unexpected Journey","The Twilight Saga: Breaking Dawn - Part 2","The Amazing Spider-Man","Ted","Lincoln","Men in Black 3"];
 
 var stage, actorLayer, movieLayer, tailLayer;
 $(function () {
@@ -28,7 +28,9 @@ $(function () {
 
     // create all the movies
     movies = {};
-    $.each(moviesJSON, function(i, elem) {
+    $.each({
+        22: moviesJSON[22]
+    }, function(i, elem) {
         var opts = elem;
         opts.x = window.innerWidth/3*2;
         opts.y = window.innerHeight/2;
@@ -186,13 +188,20 @@ function Actor(opts) {
     this.movieIds = opts.movieIds;
     this.name = opts.name;
 
+    // image circle
+    this.imageCircle = new Kinetic.Circle({
+        radius: 70,
+        fillPatternOffset: [250, 320],
+        fillPatternScale: .2,
+        fillPatternRepeat: false
+    });
+    //this.imageCircle.hide();
+
     // start getting the image
     var imageObj = new Image();
     var self = this;
     imageObj.onload = function() {
-        self.image = new Kinetic.Image({
-            image: imageObj
-        });
+        self.imageCircle.setFillPatternImage(imageObj);
     }
     imageObj.src = opts.profile;
 
@@ -213,13 +222,6 @@ function Actor(opts) {
         fillRadialGradientColorStops: [0, 'black', 1, 'white']
     });
 
-    // image circle
-    this.imageCircle = new Kinetic.Circle({
-        radius: 70,
-        fillPatternImage: this.image
-    });
-    this.imageCircle.hide();
-
     // star
     this.star = new Kinetic.Star({
         numPoints: 5,
@@ -235,19 +237,26 @@ function Actor(opts) {
 
     // combine
     this.group.add(this.gradientCircle);
-    this.group.add(this.imageCircle);
     this.group.add(this.star);
+    this.group.add(this.imageCircle);
 }
+
+// show the actor's image instead of the star
 Actor.prototype.showImage = function() {
     this.star.hide();
     this.gradientCircle.hide()
     this.imageCircle.show();
+    stage.draw();
 }
+
+// show the minimal actor view (star instead of image)
 Actor.prototype.showStar = function() {
     this.imageCircle.hide();
     this.star.show();
     this.gradientCircle.show()
 }
+
+// start dropping a tail
 Actor.prototype.startTail = function() {
     var maxTails = 20;
     var self = this;
@@ -278,7 +287,10 @@ Actor.prototype.startTail = function() {
         }
     }, 50);
 }
+
+// stop and clear the tail
 Actor.prototype.stopTail = function() {
+    this.tail.children = [];
     clearInterval(this.tailPlaceInterval);
     clearInterval(this.tailDegradeInterval);
 }
@@ -293,11 +305,22 @@ function foo() {
             y: window.innerHeight/2 + Math.sin(theta)*200
         });
 
-        theta += Math.PI*2/360*2;
+        theta += Math.PI*2/360;
         stage.draw();
 
     }, 50);
     actors[3].startTail()
+}
+
+function bar() {
+    var genres = [];
+    $.each(moviesJSON, function(i, elem) {
+        $.each(elem.genres, function(i, elem) {
+            if (genres.indexOf(elem) == -1)
+                genres.push(elem);
+        });
+    });
+    console.log(genres);
 }
 
 // movie object
