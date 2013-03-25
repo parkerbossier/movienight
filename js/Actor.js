@@ -16,27 +16,6 @@ function Actor(opts) {
     this.time = 0;
     this.angle = 0;
 
-    // image circle
-    this.imageCircle = new Kinetic.Circle({
-        radius: 70,
-        fillPatternOffset: [250, 320],
-        fillPatternScale: .2,
-        fillPatternRepeat: false,
-        opacity: 0
-    });
-    this.imageCircle.hide();
-
-    // label
-    this.label = new Kinetic.Text({
-        fontSize: 30,
-        fill: 'white',
-        text: this.name,
-        y: 80,
-        opacity: 0
-    });
-    this.label.setX(-this.label.textWidth/2)
-    this.label.hide();
-
     // start getting the image
     var imageObj = new Image();
     var self = this;
@@ -45,14 +24,11 @@ function Actor(opts) {
     }
     imageObj.src = opts.profile;
 
-    // group
-    this.group = new Kinetic.Group({
-        x: opts.x,
-        y: opts.y
-    });
+    // star group
+    this.starGroup = new Kinetic.Group();
 
-    // gradient circle
-    this.gradientCircle = new Kinetic.Circle({
+    // gradient background
+    this.starGroup.add(new Kinetic.Circle({
         radius: 70,
         opacity: 0.6,
         fillRadialGradientStartPoint: 0,
@@ -60,15 +36,66 @@ function Actor(opts) {
         fillRadialGradientEndPoint: 0,
         fillRadialGradientEndRadius: 70,
         fillRadialGradientColorStops: [0, 'black', 1, 'white']
-    });
+    }));
 
     // star
-    this.star = new Kinetic.Star({
+    this.starGroup.add(new Kinetic.Star({
         numPoints: 5,
         innerRadius: 35,
         outerRadius: 55,
         fill: 'white',
         stroke: null
+    }));
+
+    // image group
+    this.imageGroup = new Kinetic.Group({
+        opacity: 0
+    });
+    this.imageGroup.hide();
+
+    // background circle
+    this.imageGroup.add(new Kinetic.Circle({
+        radius: 70,
+        fill: 'white',
+        opacity: .9
+    }));
+
+    // image circle
+    this.imageCircle = new Kinetic.Circle({
+        radius: 60,
+        fillPatternOffset: [250, 320],
+        fillPatternScale: .2,
+        fillPatternRepeat: false
+    });
+    this.imageGroup.add(this.imageCircle);
+
+    // label (don't add yet)
+    var label = new Kinetic.Text({
+        fontSize: 20,
+        fill: 'black',
+        text: this.name,
+        y: 45
+    });
+    label.setX(-label.textWidth/2);
+
+    // label background
+    this.imageGroup.add(new Kinetic.Rect({
+        width: label.textWidth + 20,
+        height: label.textHeight + 10,
+        x: -(label.textWidth + 20)/2,
+        y: 40,
+        fill: 'white',
+        stroke: null,
+        cornerRadius: 5
+    }));
+
+    // now we can add the label text
+    this.imageGroup.add(label);
+
+    // group
+    this.group = new Kinetic.Group({
+        x: opts.x,
+        y: opts.y
     });
 
     // trail
@@ -76,17 +103,14 @@ function Actor(opts) {
     tailLayer.add(this.tail);
 
     // combine
-    this.group.add(this.gradientCircle);
-    this.group.add(this.star);
-    this.group.add(this.imageCircle);
-    this.group.add(this.label);
+    this.group.add(this.starGroup);
+    this.group.add(this.imageGroup);
 }
 
 // show the actor's image instead of the star
 Actor.prototype.showImage = function() {
-    // show the image and label
-    this.imageCircle.show();
-    this.label.show();
+    // show the image group
+    this.imageGroup.show();
 
     // stop existing animation
     if (this.imageAnim)
@@ -95,18 +119,15 @@ Actor.prototype.showImage = function() {
     // start the animation
     var self = this;
     this.imageAnim = new Kinetic.Animation(function() {
-        var newOpacity = self.imageCircle.getOpacity() + .05;
+        var newOpacity = self.imageGroup.getOpacity() + .05;
         if (newOpacity >= 1) {
-            self.imageCircle.setOpacity(1);
-            self.label.setOpacity(1);
+            self.imageGroup.setOpacity(1);
             self.imageAnim.stop();
 
-            // hide the hidden stuff for speed
-            self.star.hide();
-            self.gradientCircle.hide();
+            // hide the star group for speed
+            self.starGroup.hide();
         }
-        self.imageCircle.setOpacity(newOpacity);
-        self.label.setOpacity(newOpacity);
+        self.imageGroup.setOpacity(newOpacity);
         stage.draw();
     });
     this.imageAnim.start();
@@ -114,9 +135,8 @@ Actor.prototype.showImage = function() {
 
 // show the minimal actor view (star instead of image)
 Actor.prototype.showStar = function() {
-    // show the star parts
-    this.gradientCircle.show();
-    this.star.show();
+    // show the star group
+    this.starGroup.show();
 
     // stop existing animation
     if (this.imageAnim)
@@ -125,18 +145,15 @@ Actor.prototype.showStar = function() {
     // start the animation
     var self = this;
     this.imageAnim = new Kinetic.Animation(function() {
-        var newOpacity = self.imageCircle.getOpacity() - .05;
+        var newOpacity = self.imageGroup.getOpacity() - .05;
         if (newOpacity <= 0) {
-            self.imageCircle.setOpacity(0);
-            self.label.setOpacity(0);
+            self.imageGroup.setOpacity(0);
             self.imageAnim.stop();
 
-            // hide the hidden stuff for speed
-            self.imageCircle.hide();
-            self.label.hide();
+            // hide the image group for speed
+            self.imageGroup.hide();
         }
-        self.imageCircle.setOpacity(newOpacity);
-        self.label.setOpacity(newOpacity);
+        self.imageGroup.setOpacity(newOpacity);
         stage.draw();
     });
     this.imageAnim.start();

@@ -24,8 +24,6 @@ $(function () {
         opts.x = window.innerWidth/3;
         opts.y = window.innerHeight/2;
         actors[i] = new Actor(opts);
-        //if (i < 100000)
-        actorLayer.add(actors[i].group);
     });
 
     // create all the movies
@@ -35,12 +33,13 @@ $(function () {
         opts.x = window.innerWidth/3*2;
         opts.y = window.innerHeight/2;
         movies[i] = new Movie(opts);
-        //if (i < 100000) 
-            movieLayer.add(movies[i].group);
     });
 
-    console.log(actors);
-    console.log(movies);
+    actorLayer.add(actors[85].group);
+    movieLayer.add(movies[27205].group);
+
+    //console.log(actors);
+    //console.log(movies);
     // actorLayer.add(actors[31].group);
     // console.log(actors[31]);
     // console.log(movies[591]);
@@ -59,6 +58,7 @@ $(function () {
     stage.add(tailLayer);
     stage.add(actorLayer);
     stage.add(movieLayer);
+    return;
 
     var anim = new Kinetic.Animation( function (frame) {
         //frame.time;
@@ -85,7 +85,7 @@ $(function () {
         for (i in actors) {
             if (counter < 20) {
             counter++;
-            console.log(counter);
+            //console.log(counter);
             orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
             orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
             radius = actors[i].rad;

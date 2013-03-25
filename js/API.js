@@ -32,8 +32,13 @@ function getTheJSON() {
             query: elem
         }, function(data) {
 
+            // twilight fix
+            var index = 0;
+            if (elem == 'The Twilight Saga: Breaking Dawn - Part 1')
+                index = 1;
+
             // lookup the movie by ID
-            $.get(endpoint + 'movie/' + data.results[0].id, {
+            $.get(endpoint + 'movie/' + data.results[index].id, {
                 api_key: apiKey,
                 append_to_response: 'images,casts'
             }, function(data) {
@@ -113,7 +118,8 @@ function getTheJSON() {
                             $.extend(actorsJSON[elem.id], {
                                 name: data.name,
                                 dob: data.birthday,
-                                profile: null
+                                profile: null,
+                                popularity: data.popularity
                             });
 
                             if (data.images.profiles.length)
@@ -129,4 +135,32 @@ function getTheJSON() {
             });
         });
     });
+}
+
+function orderByPopularity() {
+    $.each(moviesJSON, function(i, elem) {
+        // sort the actors by popularity
+        elem.actorIds.sort(function(a, b) {
+            return actorsJSON[b].popularity - actorsJSON[a].popularity;
+        });
+    });
+}
+
+function forJohnAndMichelle() {
+    var out = {};
+    $.each(moviesJSON, function(i, elem) {
+        console.log(elem)
+        var entry = {
+            title: elem.title,
+            actors: []
+        };
+
+        $.each(elem.actorIds, function(i, elem) {
+            entry.actors.push(actorsJSON[elem].name + ' - ' + actorsJSON[elem].popularity);
+        });
+
+        out[i] = entry;
+    });
+
+    console.log(JSON.stringify(out));
 }
