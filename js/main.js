@@ -24,6 +24,8 @@ $(function () {
         opts.x = window.innerWidth/3;
         opts.y = window.innerHeight/2;
         actors[i] = new Actor(opts);
+        //if (i < 100000)
+        actorLayer.add(actors[i].group);
     });
 
     // create all the movies
@@ -33,25 +35,27 @@ $(function () {
         opts.x = window.innerWidth/3*2;
         opts.y = window.innerHeight/2;
         movies[i] = new Movie(opts);
+        //if (i < 100000) 
+            movieLayer.add(movies[i].group);
     });
 
-    //console.log(actors);
-    //console.log(movies);
-    actorLayer.add(actors[31].group);
-    console.log(actors[31]);
-    console.log(movies[591]);
-    console.log(movies[8358]);
-    // actorLayer.add(actors[6].group);
-    // actorLayer.add(actors[22].group);
+    console.log(actors);
+    console.log(movies);
     // actorLayer.add(actors[31].group);
-    // actorLayer.add(actors[35].group);   // 3
-    // movieLayer.add(movies[22].group);   // 22
-    // movieLayer.add(movies[58].group);
-    // movieLayer.add(movies[74].group);
-    // movieLayer.add(movies[98].group);
-    movieLayer.add(movies[591].group);
-    movies[8358].group.attrs.x = window.innerWidth/3;
-    movieLayer.add(movies[8358].group);
+    // console.log(actors[31]);
+    // console.log(movies[591]);
+    // console.log(movies[8358]);
+    // // actorLayer.add(actors[6].group);
+    // // actorLayer.add(actors[22].group);
+    // // actorLayer.add(actors[31].group);
+    // // actorLayer.add(actors[35].group);   // 3
+    // // movieLayer.add(movies[22].group);   // 22
+    // // movieLayer.add(movies[58].group);
+    // // movieLayer.add(movies[74].group);
+    // // movieLayer.add(movies[98].group);
+    // movieLayer.add(movies[591].group);
+    // movies[8358].group.attrs.x = window.innerWidth/3;
+    // movieLayer.add(movies[8358].group);
     stage.add(tailLayer);
     stage.add(actorLayer);
     stage.add(movieLayer);
@@ -75,10 +79,13 @@ $(function () {
             yDiff,
             xDelt,
             yDelt,
-            i;
+            i,
+            counter = 0;
 
         for (i in actors) {
-            if (i == 31) {
+            if (counter < 20) {
+            counter++;
+            console.log(counter);
             orbitX = movies[actors[i].path[actors[i].current]].group.attrs.x;
             orbitY = movies[actors[i].path[actors[i].current]].group.attrs.y;
             radius = actors[i].rad;
