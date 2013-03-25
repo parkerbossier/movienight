@@ -72,7 +72,7 @@ $(function () {
             period,
             time,
             angle,
-            current,
+            currentMovie,
             next,
             distance,
             xDiff,
@@ -86,8 +86,8 @@ $(function () {
             if (counter < 20) {
             counter++;
             console.log(counter);
-            orbitX = movies[actors[i].path[actors[i].current]].group.attrs.x;
-            orbitY = movies[actors[i].path[actors[i].current]].group.attrs.y;
+            orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
+            orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
             radius = actors[i].rad;
             period = actors[i].period;
             time = actors[i].time + frame.timeDiff;
@@ -109,17 +109,17 @@ $(function () {
                     //actors[i].attrs.fill = "green";
 
                     // calculate target angle to begin transition
-                    current = movies[actors[i].path[actors[i].current]];
-                    next = (actors[i].current+1 >= actors[i].path.length) ?
-                        movies[actors[i].path[0]] : movies[actors[i].path[actors[i].current + 1]];
+                    currentMovie = movies[actors[i].path[actors[i].currentMovie]];
+                    next = (actors[i].currentMovie+1 >= actors[i].path.length) ?
+                        movies[actors[i].path[0]] : movies[actors[i].path[actors[i].currentMovie + 1]];
 
-                    if (current === next) {
+                    if (currentMovie === next) {
                         actors[i].state = "orbit";
                     }
 
                     // calculate angle and adjust to guarantee range between 0 and 2pi
-                    actors[i].angle = Math.atan(-1 * (next.group.attrs.y - current.group.attrs.y)/(next.group.attrs.x - current.group.attrs.x));
-                    if (next.group.attrs.x < current.group.attrs.x) {
+                    actors[i].angle = Math.atan(-1 * (next.group.attrs.y - currentMovie.group.attrs.y)/(next.group.attrs.x - currentMovie.group.attrs.x));
+                    if (next.group.attrs.x < currentMovie.group.attrs.x) {
                         actors[i].angle += Math.PI;
                     }
                     if (actors[i].angle < 0) { actors[i].angle = (2 * Math.PI) + (actors[i].angle); }
@@ -134,7 +134,7 @@ $(function () {
                     // target angle reached, begin transition to new orbit
                     actors[i].state = "transitioning";
                     //actors[i].attrs.fill = "yellow";
-                    actors[i].current = (actors[i].current+1 >= actors[i].path.length) ? 0 : actors[i].current + 1;
+                    actors[i].currentMovie = (actors[i].currentMovie+1 >= actors[i].path.length) ? 0 : actors[i].currentMovie + 1;
                     actors[i].time += 0.5 * period;
                     actors[i].angle += Math.PI;
                 }
@@ -193,17 +193,17 @@ $(function () {
                     actors[i].time = 0;
 
                     // calculate target angle to begin transition
-                    current = movies[actors[i].path[actors[i].current]];
-                    next = (actors[i].current+1 >= actors[i].path.length) ?
-                        movies[actors[i].path[0]] : movies[actors[i].path[actors[i].current + 1]];
+                    currentMovie = movies[actors[i].path[actors[i].currentMovie]];
+                    next = (actors[i].currentMovie+1 >= actors[i].path.length) ?
+                        movies[actors[i].path[0]] : movies[actors[i].path[actors[i].currentMovie + 1]];
 
-                    if (current === next) {
+                    if (currentMovie === next) {
                         actors[i].state = "orbit";
                     }
 
                     // calculate angle and adjust to guarantee range between 0 and 2pi
-                    actors[i].angle = Math.atan(-1 * (next.group.attrs.y - current.group.attrs.y)/(next.group.attrs.x - current.group.attrs.x));
-                    if (next.group.attrs.x < current.group.attrs.x) {
+                    actors[i].angle = Math.atan(-1 * (next.group.attrs.y - currentMovie.group.attrs.y)/(next.group.attrs.x - currentMovie.group.attrs.x));
+                    if (next.group.attrs.x < currentMovie.group.attrs.x) {
                         actors[i].angle += Math.PI;
                     }
                     if (actors[i].angle >= 0) {
@@ -224,7 +224,7 @@ $(function () {
                     // target angle reached, begin transition
                     actors[i].state = "trans2";
                     //actors[i].attrs.fill = "white";
-                    actors[i].current = (actors[i].current+1 >= actors[i].path.length) ? 0 : actors[i].current + 1;
+                    actors[i].currentMovie = (actors[i].currentMovie+1 >= actors[i].path.length) ? 0 : actors[i].currentMovie + 1;
                     actors[i].time += 0.5 * period;
                     actors[i].angle += Math.PI;
                 }
@@ -265,262 +265,16 @@ $(function () {
                         actors[i].angle = (5 * Math.PI / 2) - actors[i].angle;
                     }
                     actors[i].time = period * (actors[i].angle / (2 * Math.PI));
+
+                        }
+                        break;
                 }
-                break;
             }
-        }}
+        }
     }, actorLayer);
 
     anim.start();
-
 });
-
-// API initialization
-function apiInit() {
-    $.ajaxSetup({
-        async: false
-    });
-
-    // get image base
-    $.ajax(endpoint + 'configuration', {
-        async: false,
-        data: {
-            api_key: apiKey
-        },
-        success: function(data) {
-            imageBase = data.images.base_url + 'w500';
-        }
-    });
-}
-
-// fetch all the the JSON!
-function getTheJSON() {
-    // var inits
-    moviesJSON = {};
-    actorsJSON = {};
-    directorsJSON = {};
-
-    // loop through each movie name
-    $.each(movieNames, function(i, elem) {
-
-        // find the movie ID
-        $.get(endpoint + 'search/movie', {
-            api_key: apiKey,
-            query: elem
-        }, function(data) {
-
-            // lookup the movie by ID
-            $.get(endpoint + 'movie/' + data.results[0].id, {
-                api_key: apiKey,
-                append_to_response: 'images,casts'
-            }, function(data) {
-
-                // build the movie JSON
-                var movie = {
-                    genres: [],
-                    actorIds: [],
-                    title: data.title,
-                    revenue: data.revenue,
-                    poster: imageBase + data.images.posters[0].file_path,
-                    releaseDate: data.release_date
-                };
-                moviesJSON[data.id] = movie;
-
-                // extract genres
-                $.each(data.genres, function(i, elem) {
-                    movie.genres.push(elem.name)
-                });
-
-                // find the director in the response
-                $.each(data.casts.crew, function(i, elem) {
-                    if (elem.job == 'Director') {
-                        // add the director ID to the movie
-                        movie.directorId = elem.id;
-
-                        // new director
-                        if (!directorsJSON[elem.id]) {
-
-                            // add to directors list and initialize his movie list
-                            directorsJSON[elem.id] = {
-                                movieIds: [data.id]
-                            };
-
-                            // get info from API
-                            $.get(endpoint + 'person/' + elem.id, {
-                                api_key: apiKey,
-                                append_to_response: 'images'
-                            }, function(data) {
-                                $.extend(directorsJSON[elem.id], {
-                                    name: data.name,
-                                    dob: data.birthday,
-                                    profile: null
-                                });
-
-                                if (data.images.profiles.length)
-                                    directorsJSON[elem.id].profile = imageBase + data.images.profiles[0].file_path;
-                            });
-                        }
-
-                        // existing director. update his movie list
-                        else {
-                            directorsJSON[elem.id].movieIds.push(data.id);
-                        }
-                    }
-                });
-
-                // capture the actors
-                $.each(data.casts.cast, function(i, elem) {
-
-                    // add the actor ID to the movie
-                    movie.actorIds.push(elem.id);
-
-                    // new actor
-                    if (!actorsJSON[elem.id]) {
-
-                        // add to actors list and initialize his movie list
-                        actorsJSON[elem.id] = {
-                            movieIds: [data.id]
-                        };
-
-                        // get info from API
-                        $.get(endpoint + 'person/' + elem.id, {
-                            api_key: apiKey,
-                            append_to_response: 'images'
-                        }, function(data) {
-                            $.extend(actorsJSON[elem.id], {
-                                name: data.name,
-                                dob: data.birthday,
-                                profile: null
-                            });
-
-                            if (data.images.profiles.length)
-                                actorsJSON[elem.id].profile = imageBase + data.images.profiles[0].file_path;
-                        });
-                    }
-
-                    // existing actor. update his movie list
-                    else {
-                        actorsJSON[elem.id].movieIds.push(data.id);
-                    }
-                });
-            });
-        });
-    });
-}
-
-// actor object
-function Actor(opts) {
-    // local vars
-    this.tailPlaceInterval;
-    this.tailDegradeInterval;
-
-    // capture options
-    this.dob = opts.dob;
-    this.name = opts.name;
-    this.path = opts.movieIds;
-    this.current = 0;
-    this.rad = 250;
-    this.period = 5000;
-    this.state = "orbit";
-    this.time = 0;
-    this.angle = 0;
-
-    // start getting the image
-    var imageObj = new Image();
-    var self = this;
-    imageObj.onload = function() {
-        self.image = new Kinetic.Image({
-            image: imageObj
-        });
-    }
-    imageObj.src = opts.profile;
-
-    // group
-    this.group = new Kinetic.Group({
-        x: opts.x,
-        y: opts.y
-    });
-
-    // gradient circle
-    this.gradientCircle = new Kinetic.Circle({
-        radius: 70,
-        opacity: 0.6,
-        fillRadialGradientStartPoint: 0,
-        fillRadialGradientStartRadius: 10,
-        fillRadialGradientEndPoint: 0,
-        fillRadialGradientEndRadius: 70,
-        fillRadialGradientColorStops: [0, 'black', 1, 'white']
-    });
-
-    // image circle
-    this.imageCircle = new Kinetic.Circle({
-        radius: 70,
-        fillPatternImage: this.image
-    });
-    this.imageCircle.hide();
-
-    // star
-    this.star = new Kinetic.Star({
-        numPoints: 5,
-        innerRadius: 35,
-        outerRadius: 55,
-        fill: 'white',
-        stroke: null
-    });
-
-    // trail
-    this.tail = new Kinetic.Group();
-    tailLayer.add(this.tail);
-
-    // combine
-    this.group.add(this.gradientCircle);
-    this.group.add(this.imageCircle);
-    this.group.add(this.star);
-}
-Actor.prototype.showImage = function() {
-    this.star.hide();
-    this.gradientCircle.hide()
-    this.imageCircle.show();
-}
-Actor.prototype.showStar = function() {
-    this.imageCircle.hide();
-    this.star.show();
-    this.gradientCircle.show()
-}
-Actor.prototype.startTail = function() {
-    var maxTails = 20;
-    var self = this;
-
-    // palce tails
-    this.tailPlaceInterval = setInterval(function() {
-        // truncate the trail
-        if (self.tail.children.length > maxTails-1)
-            self.tail.children = self.tail.children.splice(1, maxTails-1);
-
-        // create a new trail marker
-        var tailMarker = new Kinetic.Circle({
-            x: self.group.getX(),
-            y: self.group.getY(),
-            radius: 8,
-            fill: 'white',
-            stroke: null
-        });
-        self.tail.add(tailMarker);
-    }, 500);
-
-    // degrade tails
-    this.tailDegradeInterval = setInterval(function() {
-        var opacity;
-        for (var i = 0; i < self.tail.children.length; ++i) {
-            opacity = self.tail.children[i].getOpacity();
-            self.tail.children[i].setOpacity(opacity*.99);
-        }
-    }, 50);
-}
-Actor.prototype.stopTail = function() {
-    clearInterval(this.tailPlaceInterval);
-    clearInterval(this.tailDegradeInterval);
-}
 
 function foo() {
     var theta = 0;
@@ -532,66 +286,9 @@ function foo() {
             y: window.innerHeight/2 + Math.sin(theta)*200
         });
 
-        theta += Math.PI*2/360*2;
+        theta += Math.PI*2/360*3/2;
         stage.draw();
 
     }, 50);
     actors[3].startTail()
-}
-
-// movie object
-function Movie(opts) {
-    // capture options
-    this.actorIds = opts.actorIds;
-    this.directorId = opts.directorId;
-    this.genres = opts.genres;
-    this.poster = opts.poster;
-    this.revenue = opts.revenue;
-    this.releaseDate = opts.releaseDate;
-    this.title = opts.title;
-
-    // start getting the image
-    var imageObj = new Image();
-    var self = this;
-    imageObj.onload = function() {
-        self.image = new Kinetic.Image({
-            image: imageObj
-        });
-    }
-    imageObj.src = opts.poster;
-
-    // group
-    this.group = new Kinetic.Group({
-        x: opts.x,
-        y: opts.y
-    });
-
-    // gradient circle
-    this.gradientCircle = new Kinetic.Circle({
-        radius: 70,
-        fillRadialGradientStartPoint: 0,
-        fillRadialGradientStartRadius: 10,
-        fillRadialGradientEndPoint: 0,
-        fillRadialGradientEndRadius: 70,
-        fillRadialGradientColorStops: [0, 'yellow', .9, 'yellow', 1, '#ffec91']
-    });
-
-    // image circle
-    this.imageCircle = new Kinetic.Circle({
-        radius: 70,
-        fillPatternImage: this.image
-    });
-    this.imageCircle.hide();
-
-    // combine
-    this.group.add(this.gradientCircle);
-    this.group.add(this.imageCircle);
-}
-Movie.prototype.showImage = function() {
-    this.gradientCircle.hide()
-    this.imageCircle.show();
-}
-Movie.prototype.showStar = function() {
-    this.imageCircle.hide();
-    this.gradientCircle.show();
 }
