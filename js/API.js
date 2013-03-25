@@ -37,6 +37,10 @@ function getTheJSON() {
             if (elem == 'The Twilight Saga: Breaking Dawn - Part 1')
                 index = 1;
 
+            // planet of the apes fix
+            if (elem == 'Planet of the Apes')
+                index = 1;
+
             // lookup the movie by ID
             $.get(endpoint + 'movie/' + data.results[index].id, {
                 api_key: apiKey,

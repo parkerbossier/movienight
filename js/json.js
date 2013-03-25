@@ -3,25 +3,21 @@ var imageBase = 'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500';
 var moviesJSON = {
     "22":{
         "genres":["Action","Adventure","Comedy","Fantasy"],
-        "actorIds":[8691,85,116,114,378,1709,1715,118,1714,1717,1713,1712,1711,2449,82636,1716,1710,82143],
+        "actorIds":[8691,85,116,378,114,1715,118,1709,1713,1717,1714,1712,1711,2449,82636,1716,1710,82143],
         "title":"Pirates of the Caribbean: The Curse of the Black Pearl",
         "revenue":655011224,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tkt9xR1kNX5R9rCebASKck44si2.jpg",
         "releaseDate":"2003-07-09",
-        "directorId":1704,
-        "x":560,
-        "y":256
+        "directorId":1704
     },
     "58":{
         "genres":["Action","Adventure","Comedy","Fantasy","Science Fiction"],
-        "actorIds":[85,116,2440,378,114,1709,2441,1715,118,1640,2452,2450,2449,1711,2038,82636,2451,1710],
+        "actorIds":[85,116,2440,378,114,2441,1715,118,1640,1709,2452,2451,2038,2450,1711,2449,82636,1710],
         "title":"Pirates of the Caribbean: Dead Man's Chest",
         "revenue":1065659812,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qCoHWE8tipW1fWW4dBUXZ9Nikw.jpg",
         "releaseDate":"2006-07-07",
-        "directorId":1704,
-        "x":560,
-        "y":256
+        "directorId":1704
     },
     "74":{
         "genres":["Action","Adventure","Drama","Science Fiction","Thriller"],
@@ -30,427 +26,331 @@ var moviesJSON = {
         "revenue":591739379,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bWKSVhlSjZT6OMaRYBiBUjzhD11.jpg",
         "releaseDate":"2005-06-29",
-        "directorId":488,
-        "x":560,
-        "y":256
-    },
-    "98":{
-        "genres":["Action","Adventure","Drama"],
-        "actorIds":[4012,937,73421,20761,935,934,15196,938,194,2478,936,942,1052482,940,941,939],
-        "title":"Gladiator",
-        "revenue":457640427,
-        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg",
-        "releaseDate":"2000-05-01",
-        "directorId":578,
-        "x":560,
-        "y":256
+        "directorId":488
     },
     "118":{
         "genres":["Adventure","Comedy","Fantasy","Science Fiction","Family"],
-        "actorIds":[85,1283,113,1281,1284,1292,1294,1290,1286,1285,1295,1291,1293,1282,184997],
+        "actorIds":[1283,85,1284,113,1281,1292,1294,1286,1285,1290,1295,1282,184997,1293,1291],
         "title":"Charlie and the Chocolate Factory",
         "revenue":474968763,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fdXNl6bSEn3H4ulfrA07v4nSNmt.jpg",
         "releaseDate":"2005-07-10",
-        "directorId":510,
-        "x":560,
-        "y":256
+        "directorId":510
     },
     "120":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[1333,109,1327,110,112,882,1331,655,113,114,48,1328,65,1329,1366,1330,1367,965278,1332,1365],
+        "actorIds":[1331,1327,1333,112,65,655,113,110,48,882,114,1328,109,1329,1366,1330,1367,965278,1332,1365],
         "title":"The Lord of the Rings: The Fellowship of the Ring",
         "revenue":871368364,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9HG6pINW1KoFTAKY3LdybkoOKAm.jpg",
         "releaseDate":"2001-12-19",
-        "directorId":108,
-        "x":560,
-        "y":256
+        "directorId":108
     },
     "121":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[1333,109,1327,110,112,882,1331,655,1372,113,1369,114,48,1328,1371,1329,941439,502,1330,1332,1370],
+        "actorIds":[1331,1327,1333,112,655,113,1372,110,48,882,114,1328,109,1329,941439,1371,502,1330,1332,1370,1369],
         "title":"The Lord of the Rings: The Two Towers",
         "revenue":926287400,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9mBjBuUmBBgnGjV1JZ2uCIYbaph.jpg",
         "releaseDate":"2002-12-18",
-        "directorId":108,
-        "x":560,
-        "y":256
+        "directorId":108
     },
     "122":{
         "genres":["Action","Adventure","Drama","Fantasy","Science Fiction"],
-        "actorIds":[1333,109,1327,110,112,882,1331,655,1372,1369,114,48,1328,1371,1383,65,1329,502,1330,108,965278,1365,1382,1381],
+        "actorIds":[1331,1327,1333,112,65,655,1372,110,48,882,114,1328,109,1383,1329,1371,502,1330,108,965278,1365,1369,1382,1381],
         "title":"The Lord of the Rings: The Return of the King",
         "revenue":1118888979,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/j6NCjU6Zh7SkfIeN5zDaoTmBn4m.jpg",
         "releaseDate":"2003-12-17",
-        "directorId":108,
-        "x":560,
-        "y":256
+        "directorId":108
     },
     "155":{
         "genres":["Action","Crime","Drama"],
-        "actorIds":[3894,192,3895,64,6383,2037,1579,1810,21315,77083,64856,101015,21316,87957,53651,20372,57597,13939,1904,128386],
+        "actorIds":[3894,192,3895,64,6383,2037,1579,1810,21315,77083,21316,101015,1904,87957,53651,20372,57597,64856,13939,128386],
         "title":"The Dark Knight",
         "revenue":1001921825,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
         "releaseDate":"2008-07-18",
-        "directorId":525,
-        "x":560,
-        "y":256
+        "directorId":525
     },
     "161":{
         "genres":["Action","Comedy","Crime","Thriller"],
-        "actorIds":[287,1897,1892,1896,1894,1893,1461,1271,1204,1898,240770,1895,1900,827,1906],
+        "actorIds":[287,1892,1897,1894,1204,1893,1898,1461,1271,1896,240770,1900,827,1906,1895],
         "title":"Ocean's Eleven",
         "revenue":450717150,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/o0h76DVXvk5OKjmNez5YY0GODC2.jpg",
         "releaseDate":"2001-12-06",
-        "directorId":1884,
-        "x":560,
-        "y":256
+        "directorId":1884
     },
     "217":{
         "genres":["Action","Adventure"],
-        "actorIds":[3,10959,5538,112,52761,5049,388,58210,36218,650,52762,52760],
+        "actorIds":[3,10959,112,52761,5049,5538,388,36218,58210,650,52762,52760],
         "title":"Indiana Jones and the Kingdom of the Crystal Skull",
         "revenue":786636033,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6Lv49E0aEusW9vKEMgQgLdetlmO.jpg",
         "releaseDate":"2008-05-22",
-        "directorId":488,
-        "x":560,
-        "y":256
+        "directorId":488
     },
     "254":{
         "genres":["Action","Adventure","Drama","Horror","Thriller","Foreign"],
-        "actorIds":[1333,3489,70851,3497,3490,3495,3491,478,3498,3492,3494,3541,3496,3493],
+        "actorIds":[1333,70851,3489,3497,3490,3495,3491,478,3498,3492,3494,3541,3496,3493],
         "title":"King Kong",
         "revenue":550000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mcf9YOsc0uyIFx9qvZUn8t6Cap8.jpg",
         "releaseDate":"2005-12-14",
-        "directorId":108,
-        "x":560,
-        "y":256
+        "directorId":108
     },
     "272":{
         "genres":["Action","Adventure","Crime","Drama","Fantasy"],
-        "actorIds":[3894,3896,192,585,3895,64,207,3900,534,2037,3897,3901,489467,34248,3899,3903,3902,105159],
+        "actorIds":[3894,3896,192,585,3895,534,64,207,3900,2037,3897,3901,489467,34248,3903,3899,3902,105159],
         "title":"Batman Begins",
         "revenue":371853783,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1ZPuyD8wIrjipmoPya3DWtAs1xg.jpg",
         "releaseDate":"2005-06-14",
-        "directorId":525,
-        "x":560,
-        "y":256
+        "directorId":525
     },
     "285":{
         "genres":["Action","Adventure","Comedy","Fantasy","Science Fiction"],
-        "actorIds":[85,116,2440,378,114,1709,2441,1619,118,1640,4030,4031,2449,1711,1430,2038,1710],
+        "actorIds":[85,116,2440,1619,378,114,2441,118,1640,1709,4030,2038,1430,4031,1711,2449,1710],
         "title":"Pirates of the Caribbean: At World's End",
         "revenue":961000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jWxHVpomgHY5M70PRbExDG3XQkL.jpg",
         "releaseDate":"2007-05-19",
-        "directorId":1704,
-        "x":560,
-        "y":256
+        "directorId":1704
     },
     "310":{
         "genres":["Comedy","Fantasy"],
-        "actorIds":[192,4495,4491,206,4496,4494,1898,4493,4492,4498],
+        "actorIds":[192,4495,4491,4496,1898,206,4494,4492,4493,4498],
         "title":"Bruce Almighty",
         "revenue":484572835,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oHA5eAeJh7ChPsHnSsppNx4ta6L.jpg",
         "releaseDate":"2003-05-22",
-        "directorId":4499,
-        "x":560,
-        "y":256
+        "directorId":4499
     },
     "331":{
         "genres":["Action","Adventure","Horror","Science Fiction","Thriller"],
-        "actorIds":[4783,4784,2169,4940,4941,4943,3905,4939,4942,4944,88949,17413,1076559,181677,105646],
+        "actorIds":[4783,4784,2169,3905,4940,4941,4939,4943,4942,4944,88949,17413,1076559,181677,105646],
         "title":"Jurassic Park III",
         "revenue":368780809,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2Cntu42uyBVJsadHnIUfGlxJaYL.jpg",
         "releaseDate":"2001-07-15",
-        "directorId":4945,
-        "x":560,
-        "y":256
+        "directorId":4945
     },
     "411":{
         "genres":["Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[3896,147,5538,5530,4757,3063,5526,5529,2467,5539,388,5533,5527,5528,5535,5534,5536,5537,2050,5532,5540,5541,5542,5531],
+        "actorIds":[3896,147,5530,4757,5538,5526,5529,2467,5539,388,5533,3063,5528,5536,5534,5535,5537,5531,2050,5527,5532,5540,5541,5542],
         "title":"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
         "revenue":748806957,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l1NNAvgIj5QVpbJNp8GN7KCyl3f.jpg",
         "releaseDate":"2005-12-09",
-        "directorId":5524,
-        "x":560,
-        "y":256
+        "directorId":5524
     },
     "435":{
         "genres":["Action","Disaster","Science Fiction","Thriller"],
-        "actorIds":[6065,4730,6074,65,6070,131,6066,3134,6073,6075,6069,6068,6071,6067,6072],
+        "actorIds":[6065,65,4730,6070,131,6068,6066,6071,3134,6073,6075,6069,6067,6072,6074],
         "title":"The Day After Tomorrow",
         "revenue":542772771,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pRmpaFjtegy8PnUvSBDyT9dm7c.jpg",
         "releaseDate":"2004-05-24",
-        "directorId":6046,
-        "x":560,
-        "y":256
+        "directorId":6046
     },
     "557":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[17051,205,5293,9281,5502,11769,6944,18998,2219,20582,20583,19153,6945,11357,55648,18999,19468,21130,125024,19326,89023,20584,154644,125055,15253,20581,20580],
+        "actorIds":[17051,205,9281,5293,2219,11769,18998,6944,20582,5502,20583,11357,55648,18999,19468,19326,125024,19153,20584,154644,125055,15253,89023,20580,21130,6945,20581],
         "title":"Spider-Man",
         "revenue":806000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uZLl4hhrAXtydamH6H04pj9SmbM.jpg",
         "releaseDate":"2002-05-02",
-        "directorId":7623,
-        "x":560,
-        "y":256
+        "directorId":7623
     },
     "558":{
         "genres":["Action","Adventure","Crime","Drama","Fantasy","Science Fiction"],
-        "actorIds":[17051,205,5293,9281,5502,11769,18998,2219,658,19152,19153,2517,11357,25933,18999,2368,20491,20644,20645,17179,19154,74949],
+        "actorIds":[17051,205,658,9281,5293,2219,2368,11769,18998,2517,5502,11357,25933,18999,19153,19152,20644,20491,20645,17179,19154,74949],
         "title":"Spider-Man 2",
         "revenue":783766341,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/s20Bib8hkJ7CRna93iiCMyykBRp.jpg",
         "releaseDate":"2004-06-29",
-        "directorId":7623,
-        "x":560,
-        "y":256
+        "directorId":7623
     },
     "559":{
         "genres":["Action","Drama","Fantasy","Science Fiction","Thriller"],
-        "actorIds":[17051,205,5293,59206,9281,18997,5502,2505,11769,7624,18998,2219,20582,116627,19153,17052,6585,19152,19153,11357,19159,9207,18999,19326,2368,20645,113608,19154,78311,20580],
+        "actorIds":[17051,205,9281,18997,5293,59206,2505,2219,2368,11769,7624,19159,17052,18998,20582,5502,6585,11357,9207,18999,19326,116627,19153,19152,19153,20645,113608,19154,78311,20580],
         "title":"Spider-Man 3",
         "revenue":806742000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uAB4yoWsYApbKZ6qBO4grsk6j7k.jpg",
         "releaseDate":"2007-05-03",
-        "directorId":7623,
-        "x":560,
-        "y":256
+        "directorId":7623
     },
     "591":{
         "genres":["Mystery","Thriller"],
-        "actorIds":[1327,31,1003,20795,2405,6162,658,38887,34259,150792,28186,38885,920,38886,38888,129014],
+        "actorIds":[1327,31,2405,658,1003,6162,34259,20795,920,38885,28186,38886,38887,38888,129014,150792],
         "title":"The Da Vinci Code",
         "revenue":755724413,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e5Tlc0mNhb9TvgCZknmnd3XaaKU.jpg",
         "releaseDate":"2006-05-19",
-        "directorId":6159,
-        "x":560,
-        "y":256
+        "directorId":6159
     },
     "604":{
         "genres":["Action","Adventure","Science Fiction","Thriller"],
-        "actorIds":[2975,1331,530,6384,9575,2192,9452,9448,18286,52908,9462,28782,537506,9464,9466,9443,9459,9450,9457,9364],
+        "actorIds":[1331,530,6384,2975,9575,2192,9452,9448,18286,52908,9462,28782,537506,9464,9466,9443,9459,9450,9457,9364],
         "title":"The Matrix Reloaded",
         "revenue":738599701,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ezIurBz2fdUc68d98Fp9dRf5ihv.jpg",
         "releaseDate":"2003-05-06",
-        "directorId":9340,
-        "x":560,
-        "y":256
+        "directorId":9340
     },
     "608":{
         "genres":["Action","Adventure","Comedy","Science Fiction"],
-        "actorIds":[2888,5916,2176,120724,4252,9656,212,9659,9657,6684,9626,1240,9658],
+        "actorIds":[2888,2176,5916,120724,4252,9626,9656,9659,9657,212,6684,1240,9658],
         "title":"Men in Black II",
         "revenue":441818803,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gnUTg5odGkvmKogtrqjcFs89kRa.jpg",
         "releaseDate":"2002-07-02",
-        "directorId":5174,
-        "x":560,
-        "y":256
+        "directorId":5174
     },
     "615":{
         "genres":["Drama","History"],
-        "actorIds":[8767,8776,8774,8772,28782,8768,44650,8770,8777,8775,8769,8778],
+        "actorIds":[8767,8774,8772,28782,8768,44650,8770,8777,8769,8775,8776,8778],
         "title":"The Passion of the Christ",
         "revenue":611899420,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6KyvP5bDmwTYdLLnhEn10NFPDIZ.jpg",
         "releaseDate":"2004-02-25",
-        "directorId":2461,
-        "x":560,
-        "y":256
+        "directorId":2461
     },
     "671":{
         "genres":["Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[10980,477,10990,10978,4566,10993,5049,1923,10983,10989,14469,10982,10981,10988,194,10991,20240,10992,10986,10985,10979,96841,10987,10984,10655],
+        "actorIds":[10980,477,10990,4566,10978,10993,5049,10981,1923,10655,10989,14469,20240,10982,96841,10983,194,10988,10984,10991,10985,10979,10986,10992,10987],
         "title":"Harry Potter and the Sorcerer's Stone",
         "revenue":976475550,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uLGaJ9FgPWf7EUgwjp9RTmHemw8.jpg",
         "releaseDate":"2001-07-15",
-        "directorId":10965,
-        "x":560,
-        "y":256
+        "directorId":10965
     },
     "672":{
         "genres":["Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[10980,477,11355,10990,10978,4566,10993,1923,8930,10983,10989,11184,194,11181,14950,11178,11179,11180,96841,11177,11182,11183,10655,11186,11185,8444],
+        "actorIds":[10980,477,11355,10990,4566,10978,10993,8930,1923,10655,10989,11184,96841,10983,194,11181,11178,11179,11177,11180,14950,11182,11183,11186,11185,8444],
         "title":"Harry Potter and the Chamber of Secrets",
         "revenue":876688482,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lryNn7sNkvQIg45KwgeKnMxSSRX.jpg",
         "releaseDate":"2002-11-03",
-        "directorId":10965,
-        "x":560,
-        "y":256
+        "directorId":10965
     },
     "673":{
         "genres":["Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[10980,477,64,10990,10978,4566,10993,7056,1923,10983,5658,10989,11207,10988,10991,11212,96841,11213,96851],
+        "actorIds":[10980,477,64,10990,4566,10978,10993,7056,1923,5658,10989,11207,96841,10983,10988,10991,11212,11213,96851],
         "title":"Harry Potter and the Prisoner of Azkaban",
         "revenue":789804554,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7VTALkqjG40vby3uVIsp03d7yXy.jpg",
         "releaseDate":"2004-05-31",
-        "directorId":11218,
-        "x":560,
-        "y":256
+        "directorId":11218
     },
     "674":{
         "genres":["Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[5469,10980,11288,11355,64,10990,8436,10978,4566,10993,2039,140368,1923,11291,5658,10989,1090785,1090776,117654,11184,20999,1834,10988,23076,568374,234922,10991,47468,213222,11212,107170,20049,1090783,9191,1090781,1090782,513677,11180,96841,1090770,956224,234926,575867,96851,20002,234925,1090780,12044,20053,234923,193409,75065,1643,72313,174713,81022,234933,74333,74335,1090784,81024,1090786,11290,203935,1090771],
+        "actorIds":[5469,10980,11288,11355,64,10990,4566,8436,10978,10993,2039,140368,1923,11291,5658,10989,1834,213222,1090785,1090776,117654,11184,20999,96841,23076,10988,10991,568374,234922,47468,9191,20049,107170,11212,1090783,1090781,1090782,513677,11180,1090770,956224,234926,203935,96851,20002,234925,1090780,12044,20053,234923,193409,75065,1643,72313,174713,81022,234933,74333,74335,1090784,81024,1090786,11290,575867,1090771],
         "title":"Harry Potter and the Goblet of Fire",
         "revenue":895921036,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6sASqcdrEHXxUhA3nFpjrRecPD2.jpg",
         "releaseDate":"2005-11-05",
-        "directorId":10723,
-        "x":560,
-        "y":256
+        "directorId":10723
     },
     "675":{
         "genres":["Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[5469,10980,1283,477,11355,64,10990,10978,4566,10993,11356,2039,140368,7056,1923,10983,5658,234921,10989,11207,186070,140367,16792,10981,10982,11184,20999,47730,23076,10988,3300,234922,10991,568374,1093975,10992,11212,559759,189689,2247,11180,96841,1093976,221857,1093973,3548,1093977,192865,1093974,234926,956224,133031,234933,17069,234925,209458,144867,234923,96851,1643,72309,1093972,79856],
+        "actorIds":[5469,10980,1283,477,11355,64,10990,4566,10978,10993,11356,2039,140368,7056,10981,1923,5658,234921,10989,11207,186070,140367,10982,16792,11184,20999,96841,47730,10983,23076,10988,3300,568374,10991,234922,1093975,10992,144867,11212,559759,189689,2247,1093972,11180,1093976,221857,1093977,1093973,3548,956224,1093974,192865,234926,234923,234925,234933,17069,209458,133031,96851,1643,72309,79856],
         "title":"Harry Potter and the Order of the Phoenix",
         "revenue":938212738,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lmYmoXVzVrTadfXHZ3v1ySqA1fn.jpg",
         "releaseDate":"2007-07-03",
-        "directorId":11343,
-        "x":560,
-        "y":256
+        "directorId":11343
     },
     "676":{
         "genres":["Action","Drama","History","Romance","War"],
-        "actorIds":[3967,707,880,335,7447,10132,10135,2299,3197,10127,9278,5915,10131,10130,10137,9777,6110,10133,10134,1125,10128,10129,10136,886,10138],
+        "actorIds":[3967,880,335,7447,10132,10135,2299,3197,10127,9278,5915,10131,6110,10138,9777,707,10133,10130,10137,10134,1125,10129,10136,886,10128],
         "title":"Pearl Harbor",
         "revenue":449220945,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hH8SQp9seW0jlL95m0xZz17iNMd.jpg",
         "releaseDate":"2001-05-21",
-        "directorId":865,
-        "x":560,
-        "y":256
+        "directorId":865
     },
     "693":{
         "genres":["Comedy","Romance"],
-        "actorIds":[7399,380,29795,887,10399,1462,10401,1003454,10400,10402,10403,52957,4483,963693,155393,149665,172201,1003453],
+        "actorIds":[4483,380,7399,29795,887,10399,1462,10401,1003454,10402,10403,963693,52957,10400,149665,155393,172201,1003453],
         "title":"Meet the Fockers",
         "revenue":516533043,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xHAqB06iL5D6HyOS6QpgyKkRQHD.jpg",
         "releaseDate":"2004-12-15",
-        "directorId":6737,
-        "x":560,
-        "y":256
+        "directorId":6737
     },
     "767":{
         "genres":["Action","Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[10980,1283,477,10990,10978,4566,10993,140368,1923,5658,15737,10989,11207,60348,9138,388,140367,234924,11184,20999,1114487,10988,3300,234929,234927,234922,234928,10991,174398,11212,9191,11180,96841,89387,234926,956224,964834,234925,234934,234933,234923,96851],
+        "actorIds":[10980,1283,477,10990,4566,10978,10993,140368,1923,5658,15737,10989,11207,60348,9138,388,140367,234924,11184,20999,96841,1114487,10988,3300,234922,234927,234928,10991,174398,9191,11212,234929,11180,956224,89387,234926,234934,964834,234925,234933,234923,96851],
         "title":"Harry Potter and the Half-Blood Prince",
         "revenue":933959197,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bFXys2nhALwDvpkF3dP3Vvdfn8b.jpg",
         "releaseDate":"2009-07-07",
-        "directorId":11343,
-        "x":560,
-        "y":256
-    },
-    "787":{
-        "genres":["Action","Comedy","Drama","Thriller"],
-        "actorIds":[287,11701,4937,65827,11703,11705,3288,11702,11704],
-        "title":"Mr. & Mrs. Smith",
-        "revenue":478207520,
-        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dqs5BmwSULtB28Kls3IB6khTQwp.jpg",
-        "releaseDate":"2005-06-09",
-        "directorId":11694,
-        "x":560,
-        "y":256
+        "directorId":11343
     },
     "818":{
         "genres":["Comedy","Crime","Science Fiction"],
-        "actorIds":[3895,13922,12073,9208,59090,7425,43373,62816,10987,14386,14391,13924,162829,2223,14390,180084,8396,13919],
+        "actorIds":[3895,13922,12073,9208,59090,8396,7425,43373,10987,14386,14391,13924,162829,2223,62816,180084,14390,13919],
         "title":"Austin Powers in Goldmember",
         "revenue":296633907,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wdH7LaF3RQ2NFjKrrzndntBdNC7.jpg",
         "releaseDate":"2002-07-22",
-        "directorId":6737,
-        "x":560,
-        "y":256
+        "directorId":6737
     },
-    "871":{
-        "genres":["Science Fiction"],
-        "actorIds":[10017,7505,13260,10539,13259,13263,13264,12023,13261,13262],
+    "869":{
+        "genres":["Action","Adventure","Science Fiction"],
+        "actorIds":[1283,3129,13240,10017,61981,13241,13260,13243,10823,11398,13242,44824],
         "title":"Planet of the Apes",
-        "revenue":33395426,
-        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ktS3v2OfBouSiDDA3tQsrjidt5i.jpg",
-        "releaseDate":"1968-02-07",
-        "directorId":13265,
-        "x":560,
-        "y":256
+        "revenue":362211740,
+        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gYQKMOwLolMRyofpRzXPAawiLPC.jpg",
+        "releaseDate":"2001-07-26",
+        "directorId":510
     },
     "955":{
         "genres":["Action","Adventure","Thriller"],
-        "actorIds":[1118,500,10182,15336,2039,4173,10862,9030,15338,15342,12206,15337,15339,15340,15341,15343],
+        "actorIds":[1118,500,10182,15336,2039,4173,10862,15338,15342,9030,12206,15337,15339,15340,15341,15343],
         "title":"Mission: Impossible II",
         "revenue":565400000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3XcpeZeSHlDjdPFTWyCvDM1bL6z.jpg",
         "releaseDate":"2000-05-23",
-        "directorId":11401,
-        "x":560,
-        "y":256
+        "directorId":11401
     },
     "1271":{
         "genres":["Action","Drama","Fantasy","History"],
-        "actorIds":[17276,105496,17288,17287,17286,230,1371,17290,17293,963118,17289,1089928,47934,9831,218899,115596,207881,125686,181248,1089921,1089920,1089930,1089927,1089919,29463,17294,68278,96594,17291,306574,1089929,17292],
+        "actorIds":[17276,105496,17288,17287,17286,230,17290,17293,963118,1371,17289,1089928,47934,218899,207881,115596,125686,181248,1089921,1089920,1089930,1089927,1089919,9831,306574,17292,96594,17291,17294,29463,1089929,68278],
         "title":"300",
         "revenue":422610419,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4AmPMxTs1zSdCK0eCacj0kBgOMV.jpg",
         "releaseDate":"2006-12-08",
-        "directorId":15217,
-        "x":560,
-        "y":256
+        "directorId":15217
     },
     "1452":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[3084,1979,53493,8924,11006,7517,2639,17271,7489,13101,53492,53494,41318],
+        "actorIds":[3084,1979,53493,8924,11006,7517,53492,2639,17271,7489,13101,53494,41318],
         "title":"Superman Returns",
         "revenue":391081192,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7fIHiDhCDSJA3qTEKhfX7g6YKTw.jpg",
         "releaseDate":"2006-06-21",
-        "directorId":9032,
-        "x":560,
-        "y":256
+        "directorId":9032
     },
     "1593":{
         "genres":["Action","Adventure","Comedy","Family"],
-        "actorIds":[7399,2157,1937,17832,17834,17839,4581,61303,17835,17837,8854,17841,17840,17838,17836],
+        "actorIds":[7399,2157,1937,17832,17834,17839,4581,17841,17835,61303,17837,8854,17838,17840,17836],
         "title":"Night at the Museum",
         "revenue":549736156,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/NUbCSwy2EQ9Z6psUjPqr3WdVI2.jpg",
         "releaseDate":"2006-12-21",
-        "directorId":17825,
-        "x":560,
-        "y":256
+        "directorId":17825
     },
     "1726":{
         "genres":["Action","Adventure","Science Fiction","Thriller"],
-        "actorIds":[12052,2231,1229,9048,57451,3223,6162,15277,18288,40275,57452,173810,12708,1029808,17857],
+        "actorIds":[12052,2231,1229,9048,57451,3223,6162,15277,18288,57452,40275,173810,12708,1029808,17857],
         "title":"Iron Man",
         "revenue":585174222,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg",
         "releaseDate":"2008-05-01",
-        "directorId":15277,
-        "x":560,
-        "y":256
+        "directorId":15277
     },
     "1734":{
         "genres":["Action","Adventure","Drama","Fantasy","Horror","Thriller"],
@@ -459,185 +359,151 @@ var moviesJSON = {
         "revenue":433013274,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hioiYUZVIuYIhagDGhIAjyNEUu0.jpg",
         "releaseDate":"2001-04-28",
-        "directorId":7775,
-        "x":560,
-        "y":256
+        "directorId":7775
     },
     "1771":{
         "genres":["Action","Adventure","Science Fiction","Thriller"],
-        "actorIds":[30315,2231,16828,1331,55470,2176,2283,58502,30710,2203,15543,60898,13014,74289,39459,41561,1133458,1080542,62892],
+        "actorIds":[2231,1331,30315,55470,2176,2283,16828,30710,2203,15543,60898,13014,74289,39459,41561,1133458,1080542,58502,62892],
         "title":"Captain America: The First Avenger",
         "revenue":365762652,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fF7vPzCF6kIsLuWEHCGPGl2xTw1.jpg",
         "releaseDate":"2011-07-22",
-        "directorId":4945,
-        "x":560,
-        "y":256
+        "directorId":4945
     },
     "1858":{
         "genres":["Action","Adventure","Science Fiction","Thriller"],
-        "actorIds":[19537,10959,1331,1897,19536,19540,14721,24305,1241,65827,17341,10127,8169,19541,19538,21710,18471],
+        "actorIds":[1331,10959,19537,1897,65827,19540,1241,19536,17341,10127,8169,14721,19538,19541,21710,18471,24305],
         "title":"Transformers",
         "revenue":708226810,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bgSHbGEA1OM6qDs3Qba4VlSZsNG.jpg",
         "releaseDate":"2007-07-02",
-        "directorId":865,
-        "x":560,
-        "y":256
+        "directorId":865
     },
     "1865":{
         "genres":["Action","Adventure","Comedy"],
-        "actorIds":[85,6972,11279,469759,10983,118,237455,1115,55901,955,1430,2449,59129],
+        "actorIds":[85,955,6972,11279,118,237455,1115,55901,10983,1430,469759,2449,59129],
         "title":"Pirates of the Caribbean: On Stranger Tides",
         "revenue":1021683000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jUkGuSC9Kt29rW3x6UiB9zyZr1M.jpg",
         "releaseDate":"2011-05-11",
-        "directorId":17633,
-        "x":560,
-        "y":256
+        "directorId":17633
     },
     "1894":{
         "genres":["Action","Adventure","Fantasy","Science Fiction","Family"],
-        "actorIds":[3061,33192,2231,524,113,130,33187,131634,9827,33188,33186,33181,17244,20806,20806,33190,33198,27762,6,7242,31923,33189,33191,12536,33182,9374,7908],
+        "actorIds":[2231,3061,33192,113,130,33187,131634,524,9827,33186,33181,33188,17244,33190,20806,6,20806,27762,31923,33189,33198,33182,33191,7242,9374,7908,12536],
         "title":"Star Wars: Episode II - Attack of the Clones",
         "revenue":649398328,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2vcNFtrZXNwIcBgH5e2xXCmVR8t.jpg",
         "releaseDate":"2002-05-16",
-        "directorId":1,
-        "x":560,
-        "y":256
+        "directorId":1
     },
     "1895":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[3061,2231,524,113,130,33181,17244,20806,6,7242,27762,33183,33182,33184,33185,7908],
+        "actorIds":[2231,3061,113,130,524,33181,17244,6,20806,27762,33183,33182,33184,33185,7908,7242],
         "title":"Star Wars: Episode III - Revenge of the Sith",
         "revenue":850000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tgr5Pdy7ehZYBqBkN2K7Q02xgOb.jpg",
         "releaseDate":"2005-05-19",
-        "directorId":1,
-        "x":560,
-        "y":256
+        "directorId":1
     },
     "1930":{
         "genres":["Action","Adventure","Thriller"],
-        "actorIds":[54693,76793,5724,37625,35,8349,7026,2878,55152,6368,231547],
+        "actorIds":[54693,5724,37625,35,8349,7026,76793,2878,55152,6368,231547],
         "title":"The Amazing Spider-Man",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/AtFhFTNbNo49qn7fkbo9lDtRkeR.jpg",
         "releaseDate":"2012-07-04",
-        "directorId":87742,
-        "x":560,
-        "y":256
+        "directorId":87742
     },
     "2059":{
         "genres":["Action","Adventure","Crime","Drama","Mystery","Thriller","Family"],
-        "actorIds":[2963,1037,48,9824,290,10127,54594,19497,21182,1236,21180,60461,77351,176558,24291,154759],
+        "actorIds":[2963,1037,48,9824,290,10127,19497,21182,1236,54594,21180,176558,24291,77351,60461,154759],
         "title":"National Treasure",
         "revenue":347451894,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/luMoc56LLMWUt60vUNNpwxrbTNt.jpg",
         "releaseDate":"2004-11-08",
-        "directorId":12962,
-        "x":560,
-        "y":256
+        "directorId":12962
     },
     "2080":{
         "genres":["Action","Adventure","Fantasy","Science Fiction","Thriller"],
-        "actorIds":[6968,60900,23626,6413,10859,79072,82093,1330,78110,21044,82092,82094],
+        "actorIds":[6968,10859,23626,6413,79072,82093,1330,78110,60900,82092,82094,21044],
         "title":"X-Men Origins: Wolverine",
         "revenue":341131793,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vbaV7DalSF6Uy4qLyVK7uNdtmFy.jpg",
         "releaseDate":"2009-04-30",
-        "directorId":13079,
-        "x":560,
-        "y":256
+        "directorId":13079
     },
     "2133":{
         "genres":["Action","Adventure","Disaster","Drama"],
-        "actorIds":[4764,4443,11086,2882,13240,1461,16861,1956,1161,32486,6066,156927,104191,4029,650,26994,105000,31532,35546,106460,886,170805,37624,58620,102823,177621,34407],
+        "actorIds":[4764,4029,11086,13240,2882,1461,16861,1956,1161,4443,32486,6066,156927,104191,650,26994,105000,31532,35546,106460,886,170805,37624,58620,102823,177621,34407],
         "title":"The Perfect Storm",
         "revenue":325756637,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uARMPDyjiENKyUz7JRmQmLCH8L5.jpg",
         "releaseDate":"2000-06-26",
-        "directorId":5231,
-        "x":560,
-        "y":256
+        "directorId":5231
     },
     "2502":{
         "genres":["Action","Drama","Thriller"],
-        "actorIds":[1372,1892,1248,679,11148,20982,11705,166654,27030,77667,12041,10841,941],
+        "actorIds":[1892,1248,1372,679,11148,20982,11705,166654,27030,12041,77667,10841,941],
         "title":"The Bourne Supremacy",
         "revenue":176000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jXwZgmqOtsqsXuB9oGhocOAegCM.jpg",
         "releaseDate":"2004-07-23",
-        "directorId":25598,
-        "x":560,
-        "y":256
+        "directorId":25598
     },
     "2503":{
         "genres":["Action","Drama","Mystery","Thriller"],
-        "actorIds":[11064,1892,349,11148,29406,3926,17199,25616,14887,27030,3872,12041,23608],
+        "actorIds":[1892,11064,349,11148,25616,29406,3926,17199,14887,27030,12041,3872,23608],
         "title":"The Bourne Ultimatum",
         "revenue":227471070,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fHho6JYYY0nRcETWSoeI19iZsNF.jpg",
         "releaseDate":"2007-08-03",
-        "directorId":25598,
-        "x":560,
-        "y":256
+        "directorId":25598
     },
     "2675":{
         "genres":["Drama","Mystery","Science Fiction","Thriller"],
-        "actorIds":[17140,73421,1956,11614,28042,2461,28044,28043,28046,22215,23627,28047,28048,28049,3204],
+        "actorIds":[17140,73421,1956,11614,28042,2461,28044,28043,28046,22215,3204,23627,28047,28048,28049],
         "title":"Signs",
         "revenue":408247917,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uyZXsW00i9e4PtRF0z5LFUqk4W8.jpg",
         "releaseDate":"2002-08-02",
-        "directorId":11614,
-        "x":560,
-        "y":256
+        "directorId":11614
     },
     "3981":{
         "genres":["Comedy","Romance"],
-        "actorIds":[73931,20750,9994,34485,3141,2461,34488,34489,34490,21278,33235,34487,34486,11365],
+        "actorIds":[73931,20750,9994,34485,3141,34488,34490,2461,33235,34489,21278,34487,34486,11365],
         "title":"What Women Want",
         "revenue":374111707,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xiL4PMdL2b5RRdsfEkGmaol2ScW.jpg",
         "releaseDate":"2000-12-15",
-        "directorId":17698,
-        "x":560,
-        "y":256
+        "directorId":17698
     },
     "5175":{
         "genres":["Action","Adventure","Comedy","Crime","Thriller"],
-        "actorIds":[12799,1896,18897,1339,41901,66,58210,10885,11389,1166,73590,21045,101012,167160,154544,7169],
+        "actorIds":[21045,18897,10885,11389,1896,41901,1339,12799,58210,1166,66,73590,101012,167160,154544,7169],
         "title":"Rush Hour 2",
         "revenue":347325802,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xG43wsvHpOp2QIj2JGQEvmK8dgC.jpg",
         "releaseDate":"2001-08-03",
-        "directorId":11091,
-        "x":560,
-        "y":256
+        "directorId":11091
     },
     "6479":{
         "genres":["Action","Drama","Horror","Science Fiction","Thriller"],
-        "actorIds":[2888,49918,8602,49921,49920,10691,6066,49922,164094,1075145,53918,964035,281638],
+        "actorIds":[2888,8602,281638,49921,49920,10691,6066,49922,964035,1075145,164094,53918,49918],
         "title":"I Am Legend",
         "revenue":583184161,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/j7tbOFiVF5F9pfaGaMJx1YjJ4KF.jpg",
         "releaseDate":"2007-12-13",
-        "directorId":10943,
-        "x":560,
-        "y":256
+        "directorId":10943
     },
     "6637":{
         "genres":["Action","Adventure","Mystery","Thriller"],
-        "actorIds":[2963,15735,21089,1037,9824,228,10127,15232,8354,25376,21180],
+        "actorIds":[2963,21089,1037,9824,15735,228,10127,15232,8354,25376,21180],
         "title":"National Treasure 2: Book of Secrets",
         "revenue":457363168,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4jTdPL5h1TxiJPNIig14E5L64DE.jpg",
         "releaseDate":"2007-12-13",
-        "directorId":12962,
-        "x":560,
-        "y":256
+        "directorId":12962
     },
     "8346":{
         "genres":["Comedy","Drama","Romance","Indie"],
@@ -646,42 +512,34 @@ var moviesJSON = {
         "revenue":368744044,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vqGs8K6MdMHVPMTgMhzKHBVgu0t.jpg",
         "releaseDate":"2002-02-22",
-        "directorId":54644,
-        "x":560,
-        "y":256
+        "directorId":54644
     },
     "8358":{
         "genres":["Adventure","Drama"],
-        "actorIds":[31,9994,38026,55438,55433,12538,55435,55436,55437,11892,55434],
+        "actorIds":[31,9994,55438,38026,55435,12538,11892,55436,55437,55433,55434],
         "title":"Cast Away",
         "revenue":429632142,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w515BrZvczKIxbHurG6HIiYYrba.jpg",
         "releaseDate":"2000-12-07",
-        "directorId":24,
-        "x":560,
-        "y":256
+        "directorId":24
     },
     "8373":{
         "genres":["Action","Adventure","Science Fiction"],
-        "actorIds":[19537,10959,103554,1331,19536,14721,12797,24305,1241,8169,72985,11678],
+        "actorIds":[1331,10959,103554,19537,12797,1241,19536,8169,14721,11678,72985,24305],
         "title":"Transformers: Revenge of the Fallen",
         "revenue":836297228,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kVISXAXDYhjQCfu50QZeCCzzbPv.jpg",
         "releaseDate":"2009-06-23",
-        "directorId":865,
-        "x":560,
-        "y":256
+        "directorId":865
     },
     "8488":{
         "genres":["Comedy","Drama","Romance"],
-        "actorIds":[2888,32895,8170,55256,55257,55258,38425,52886,5377,237885,4688],
+        "actorIds":[2888,8170,32895,38425,55258,52886,5377,55256,55257,237885,4688],
         "title":"Hitch",
         "revenue":368100420,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wY1AsrhhymgxVruhkPtfBoLnUA3.jpg",
         "releaseDate":"2005-02-10",
-        "directorId":17167,
-        "x":560,
-        "y":256
+        "directorId":17167
     },
     "8871":{
         "genres":["Comedy","Fantasy","Holiday","Family"],
@@ -690,196 +548,178 @@ var moviesJSON = {
         "revenue":345141403,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uOWOw8ZTkGQqx6qkNPhG9AovFJW.jpg",
         "releaseDate":"2000-11-08",
-        "directorId":6159,
-        "x":560,
-        "y":256
+        "directorId":6159
     },
     "8960":{
         "genres":["Action","Adventure","Comedy","Fantasy","Thriller"],
-        "actorIds":[2888,23532,1665,6885,16478,55205,49921,66659,66657,4030,18300,66660,66661,66636,66646,66683,66678,21317,66630,61835,66640,66684,66666,66669,66643,66663,66635,66667,66649,66647,66650,66651,66652,66664,66653,66655,66668,66648,66671,66634,66679,66680,66681,66682,66658,66623,66637,66685,66686,66687,66656],
+        "actorIds":[2888,6885,16478,55205,1665,49921,66657,18300,4030,66659,23532,21317,66646,66630,66678,66636,66640,66683,61835,66660,66661,66684,66666,66669,66643,66663,66635,66667,66649,66634,66637,66650,66651,66664,66652,66653,66668,66655,66671,66656,66679,66680,66681,66682,66647,66623,66648,66685,66686,66687,66658],
         "title":"Hancock",
         "revenue":624029371,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dsCxSr4w3g2ylhlZg3v5CB5Pid7.jpg",
         "releaseDate":"2008-07-02",
-        "directorId":36602,
-        "x":560,
-        "y":256
+        "directorId":36602
     },
     "8966":{
         "genres":["Adventure","Drama","Fantasy","Science Fiction","Romance","Family"],
-        "actorIds":[37917,11288,84223,45827,554683,21029,84214,25836,53755,59252,23897,56857,58168],
+        "actorIds":[37917,11288,84223,45827,554683,21029,25836,53755,59252,84214,23897,56857,58168],
         "title":"Twilight",
         "revenue":408773703,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nlvPMLCdum7bkHKmDSMnNLGztmW.jpg",
         "releaseDate":"2008-11-20",
-        "directorId":19850,
-        "x":560,
-        "y":256
+        "directorId":19850
     },
     "9522":{
         "genres":["Comedy","Romance"],
-        "actorIds":[52848,53714,51329,887,4690,23659,59263,4937,20309,10223,19439,106935,43479,85170,28412,39213,180327,85171],
+        "actorIds":[52848,51329,53714,887,4690,23659,10223,4937,20309,59263,85171,106935,43479,85170,28412,39213,180327,19439],
         "title":"Wedding Crashers",
         "revenue":285176741,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vlnDz1Y3IcBhPyQAqAVtNghx4Eq.jpg",
         "releaseDate":"2005-07-15",
-        "directorId":42994,
-        "x":560,
-        "y":256
+        "directorId":42994
     },
     "10138":{
         "genres":["Action","Adventure","Science Fiction","Thriller"],
-        "actorIds":[1245,12052,2231,9048,6807,1896,57451,3223,15277,51072,113676,21134,2295,81364,52865],
+        "actorIds":[1245,12052,2231,9048,57451,3223,6807,15277,51072,1896,113676,21134,2295,81364,52865],
         "title":"Iron Man 2",
         "revenue":621752099,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zJ2eK7fehqFSQ2w5JlQIF0OJP9q.jpg",
         "releaseDate":"2010-05-07",
-        "directorId":15277,
-        "x":560,
-        "y":256
+        "directorId":15277
     },
     "10195":{
         "genres":["Action","Adventure","Fantasy","Science Fiction","Thriller"],
-        "actorIds":[17604,2231,14343,524,9048,52852,13275,74568,56614,10132,4173,17605,1640,59817,79079,1018947,91606,456700,33045],
+        "actorIds":[2231,17604,14343,9048,52852,13275,74568,10132,4173,17605,1640,524,59817,79079,1018947,56614,91606,33045,456700],
         "title":"Thor",
         "revenue":444115007,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bIuOWTtyFPjsFDevqvF3QrD1aun.jpg",
         "releaseDate":"2011-05-06",
-        "directorId":11181,
-        "x":560,
-        "y":256
+        "directorId":11181
     },
     "10528":{
         "genres":["Action","Adventure","Comedy","Crime","Drama","Mystery","Thriller"],
-        "actorIds":[2983,53714,9642,1665,3223,1292,17521,112692,84865,11855,10207,67992,222999],
+        "actorIds":[2983,9642,53714,3223,17521,1665,1292,84865,11855,10207,67992,112692,222999],
         "title":"Sherlock Holmes",
         "revenue":524028679,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/22ngurXbLqab7Sko6aTSdwOCe5W.jpg",
         "releaseDate":"2009-12-25",
-        "directorId":956,
-        "x":560,
-        "y":256
+        "directorId":956
     },
     "10719":{
         "genres":["Comedy","Fantasy","Holiday","Family"],
-        "actorIds":[11664,23659,64930,12110,62066,28637,22970,68812,3085,20788,27974,12708,2453,4250,1051916,22297],
+        "actorIds":[11664,23659,2453,12110,62066,22970,28637,68812,12708,20788,27974,3085,64930,4250,1051916,22297],
         "title":"Elf",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2BCvh9w8YXP30Jst8PkMngEo619.jpg",
         "releaseDate":"2003-10-09",
-        "directorId":15277,
-        "x":560,
-        "y":256
+        "directorId":15277
     },
     "12155":{
         "genres":["Adventure","Animation","Fantasy","Family"],
-        "actorIds":[85,1283,1813,3968,11275,4566,113,11356,20982,11276,30083,76070,47468,9191,40942,3796,1064,26209,34900],
+        "actorIds":[1813,1283,85,4566,11275,113,3968,11356,20982,11276,76070,47468,9191,40942,3796,1064,30083,26209,34900],
         "title":"Alice in Wonderland",
         "revenue":1024299904,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pvEE5EN5N1yjmHmldfL4aJWm56l.jpg",
         "releaseDate":"2010-03-05",
-        "directorId":510,
-        "x":560,
-        "y":256
+        "directorId":510
     },
     "12444":{
         "genres":["Adventure","Drama","Fantasy","Family"],
-        "actorIds":[5469,10980,1283,83356,477,11355,10990,8436,4566,2440,2482,10993,5049,11356,2039,7026,140368,143892,1923,10983,11291,5658,15737,10989,11207,8785,140367,10981,10982,11184,20999,3300,10991,47468,32990,9191,96841,234933,96851],
+        "actorIds":[5469,10980,1283,83356,477,11355,10990,4566,8436,2440,2482,10993,5049,11356,2039,7026,140368,143892,10981,1923,11291,5658,15737,10989,11207,8785,140367,10982,11184,20999,96841,10983,32990,3300,10991,47468,9191,234933,96851],
         "title":"Harry Potter and the Deathly Hallows: Part 1",
         "revenue":954305868,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/maP4MTfPCeVD2FZbKTLUgriOW4R.jpg",
         "releaseDate":"2010-11-19",
-        "directorId":11343,
-        "x":560,
-        "y":256
+        "directorId":11343
     },
     "12445":{
         "genres":["Adventure","Drama","Fantasy","Science Fiction","Family"],
-        "actorIds":[5469,10980,1283,83356,477,11355,64,10990,10978,4566,10993,93210,5049,140368,7056,142747,1923,11291,5658,234921,15737,10989,40638,11207,6199,60348,8785,3064,9138,388,9015,568385,561247,975,140367,234924,568371,11184,20999,10988,3300,234929,10991,214019,234928,234927,568374,234922,174398,11212,234918,568398,182439,9191,180730,568376,69476,209884,11179,568388,10992,24273,2247,27822,96841,11180,568379,234926,202032,234934,568378,166242,568380,568382,96851,568383,568384,234923,568386,568387,10655,568390,568391,568392,568393,568394,1643,568395,234925,568396,568370,568397,234932,568399,252527,568402,208467,568403,561028,234933,234919,234930],
+        "actorIds":[5469,10980,1283,83356,477,11355,64,10990,4566,10978,10993,93210,5049,140368,7056,142747,1923,11291,5658,10655,234921,15737,10989,40638,11207,6199,60348,8785,3064,9138,388,9015,975,568385,561247,140367,234924,568371,11184,20999,96841,10988,3300,568374,234928,214019,234927,174398,10991,234922,568376,11179,234918,182439,9191,11212,10992,180730,209884,568398,568388,69476,24273,2247,234929,27822,11180,568379,202032,234934,234926,234919,568380,568382,234932,568383,568384,1643,568386,568387,234933,568390,568391,568392,568393,568394,568370,568395,96851,568396,252527,568397,208467,568399,561028,568402,234923,568403,166242,234925,568378,234930],
         "title":"Harry Potter and the Deathly Hallows: Part 2",
         "revenue":1327817822,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/aMKUvXjgCrUGVDVo48v2YFxARNy.jpg",
         "releaseDate":"2011-07-07",
-        "directorId":11343,
-        "x":560,
-        "y":256
+        "directorId":11343
     },
     "13475":{
         "genres":["Science Fiction"],
-        "actorIds":[8691,21089,50347,11108,62064,1372,74568,68842,1920,29068,17306,59263,5365,128628,21028,26069,6860,57452,17305,3033,4031,1749,92774,80602,8783,451,46801,13024,41421],
+        "actorIds":[8691,21089,11108,74568,1372,1920,29068,17306,62064,5365,128628,59263,21028,6860,26069,50347,57452,68842,17305,3033,4031,1749,92774,80602,8783,451,46801,13024,41421],
         "title":"Star Trek",
         "revenue":385680446,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lkQgAaI9s2j2Lhlkie8I9RcWYEX.jpg",
         "releaseDate":"2009-05-07",
-        "directorId":15344,
-        "x":560,
-        "y":256
+        "directorId":15344
+    },
+    "16219":{
+        "genres":["Action","Adventure","Drama"],
+        "actorIds":[1162,6197,9777,6717,20047],
+        "title":"Gladiator",
+        "revenue":9,
+        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uMXZfNyWKaY3qPb48sHCY5Dg9uD.jpg",
+        "releaseDate":"1992-03-06",
+        "directorId":63943
     },
     "18239":{
         "genres":["Adventure","Drama","Fantasy","Science Fiction","Romance","Family"],
-        "actorIds":[501,37917,11288,83356,84223,34502,3968,45827,65225,84225,21029,84214,84222,53755,84224,59252,84215,39391,56857,6804,84219,54203,84221,56676,58168,84228,84216,84227,84217,52414,84218,84226,32887],
+        "actorIds":[501,37917,11288,83356,84223,34502,3968,45827,65225,84225,21029,53755,84224,59252,84214,39391,56857,6804,84219,84221,54203,84222,56676,58168,84228,84216,84217,84227,52414,84218,84226,84215,32887],
         "title":"The Twilight Saga: New Moon",
         "revenue":709710948,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6Q5Eob5giTtwzKfkYDzJXW3cFKf.jpg",
         "releaseDate":"2009-11-20",
-        "directorId":3288,
-        "x":560,
-        "y":256
+        "directorId":3288
     },
     "18360":{
         "genres":["Action","Adventure","Comedy","Fantasy","Family"],
-        "actorIds":[7399,19278,887,2157,9273,5587,4581,17835,13524,19498,1030313,17841,17838],
+        "actorIds":[7399,19278,887,2157,9273,5587,4581,17841,17835,13524,19498,1030313,17838],
         "title":"Night at the Museum: Battle of the Smithsonian",
         "revenue":177243721,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qbU6AxmO69bBwu6Tw8HtcRoltAA.jpg",
         "releaseDate":"2009-05-21",
-        "directorId":17825,
-        "x":560,
-        "y":256
+        "directorId":17825
     },
     "19995":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[17647,8691,10205,1771,32747,65731,15853,10964,30485,59231,95697,98215,98216],
+        "actorIds":[17647,8691,1771,32747,10205,65731,15853,30485,59231,10964,95697,98215,98216],
         "title":"Avatar",
         "revenue":2781505847,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8Ic8rRVoVrDJJlXzVzGxAesufUV.jpg",
         "releaseDate":"2009-12-15",
-        "directorId":2710,
-        "x":560,
-        "y":256
+        "directorId":2710
     },
     "22881":{
         "genres":["Drama","Sport"],
-        "actorIds":[112561,18277,142374,21083,8534,74428,1039342,112560,1127790,21165,59844,112562,94854,53260,1472,968305,1040864,66658,226537],
+        "actorIds":[112561,18277,21083,74428,8534,1039342,112560,1127790,21165,59844,94854,1472,53260,226537,66658,968305,1040864,142374,112562],
         "title":"The Blind Side",
         "revenue":460638228,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wEGFSgPebLk6g1ngKsJ6a46PYLV.jpg",
         "releaseDate":"2009-11-20",
-        "directorId":54040,
-        "x":560,
-        "y":256
+        "directorId":54040
     },
     "24021":{
         "genres":["Adventure","Drama","Fantasy","Thriller","Romance","Foreign"],
-        "actorIds":[37917,11288,84223,34502,18997,45827,65225,84225,21029,84214,25836,53755,60715,84224,59252,84215,56857,56676,109438,102744,58402],
+        "actorIds":[37917,11288,84223,34502,18997,45827,65225,84225,21029,25836,53755,60715,84224,59252,84214,56857,56676,109438,102744,84215,58402],
         "title":"The Twilight Saga: Eclipse",
         "revenue":300476779,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fBXJGA6WNran1RL4CPKisaPI6UY.jpg",
         "releaseDate":"2010-06-23",
-        "directorId":27571,
-        "x":560,
-        "y":256
+        "directorId":27571
+    },
+    "24197":{
+        "genres":["Comedy","Romance"],
+        "actorIds":[2502,2672,95967,2491,13556,83260,19406,83236,34268,14033,105007,140181,117419,140180],
+        "title":"Mr. & Mrs. Smith",
+        "revenue":0,
+        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lY3Jd8O8Oz6aMpasPFBzHASzLQd.jpg",
+        "releaseDate":"1941-01-31",
+        "directorId":2636
     },
     "24428":{
         "genres":["Action","Thriller"],
-        "actorIds":[1245,12052,17604,2231,16828,5048,103,9048,74568,71189,14464,149557,3223,7624,6162,43553,1640,79079,6280,1018947,91606,51303,1126697,1126693,1126694,1033652,210828,150194,81959,34486,168246,188758,101522],
+        "actorIds":[1245,12052,2231,17604,14464,9048,74568,16828,149557,3223,103,5048,7624,43553,6162,1640,1126693,79079,6280,71189,1018947,1126694,91606,1033652,210828,1126697,51303,188758,150194,34486,81959,168246,101522],
         "title":"The Avengers",
         "revenue":1511757910,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
         "releaseDate":"2012-04-11",
-        "directorId":12891,
-        "x":560,
-        "y":256
+        "directorId":12891
     },
     "27205":{
         "genres":["Action","Science Fiction","Thriller"],
@@ -888,53 +728,43 @@ var moviesJSON = {
         "revenue":825532764,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tAXARVreJnWfoANIHASmgYk4SB0.jpg",
         "releaseDate":"2010-07-16",
-        "directorId":525,
-        "x":560,
-        "y":256
+        "directorId":525
     },
     "36658":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[6968,4587,2387,1327,10696,11023,1248,11006,11024,10697,11008,11022,10690,52374,115858,33053,64470,115857],
+        "actorIds":[6968,1327,4587,10696,2387,11023,1248,11008,11006,11024,10697,11022,10690,33053,52374,115858,64470,115857],
         "title":"X2: X-Men United",
         "revenue":214948780,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fdmZ0uHWDQzb6atNTaOQdfdQd9X.jpg",
         "releaseDate":"2003-04-27",
-        "directorId":9032,
-        "x":560,
-        "y":256
+        "directorId":9032
     },
     "36668":{
         "genres":["Action","Adventure","Fantasy","Science Fiction"],
-        "actorIds":[6968,4587,2387,1327,10696,27578,11023,7090,980,11107,11006,14792,84222,37046,11008,11022,10690,4776,21041,1103,58115],
+        "actorIds":[6968,1327,4587,10696,27578,2387,11023,7090,980,11107,11008,11006,14792,37046,1103,84222,11022,10690,21041,4776,58115],
         "title":"X-Men: The Last Stand",
         "revenue":234360014,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5QpaN7ZBAR6D3FotvEIMX0qZxHg.jpg",
         "releaseDate":"2006-05-26",
-        "directorId":11091,
-        "x":560,
-        "y":256
+        "directorId":11091
     },
     "37724":{
         "genres":["Action","Adventure","Thriller"],
-        "actorIds":[5469,8784,3810,5309,15737,3926,17064,139549,11045,1024234,2038,1030261],
+        "actorIds":[5469,3810,8784,15737,5309,3926,17064,2038,139549,11045,1024234,1030261],
         "title":"Skyfall",
         "revenue":1094960116,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/47UC1BvAKJbpvGXu78bnwlvhFis.jpg",
         "releaseDate":"2012-10-25",
-        "directorId":39,
-        "x":560,
-        "y":256
+        "directorId":39
     },
     "38356":{
         "genres":["Action","Adventure","Science Fiction"],
-        "actorIds":[10959,1331,15831,31531,3910,19536,1736,21088,19540,14721,12797,6949,24305,1241,8169,81178,14102,2962,1749,78798,117187,83586,60602,18352,236048,84495,87957,206334],
+        "actorIds":[1331,10959,6949,3910,1736,21088,19540,15831,12797,1241,19536,8169,14721,31531,14102,2962,81178,1749,117187,24305,83586,60602,84495,78798,18352,206334,236048,87957],
         "title":"Transformers: Dark of the Moon",
         "revenue":1123746996,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/x3srPojlinkAYxnPXAjZunsPCIL.jpg",
         "releaseDate":"2011-06-28",
-        "directorId":865,
-        "x":560,
-        "y":256
+        "directorId":865
     },
     "38575":{
         "genres":["Action","Adventure","Drama","Family"],
@@ -943,141 +773,115 @@ var moviesJSON = {
         "revenue":357852395,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l13emtM0cz0HyJeWSxb6ml5RvzT.jpg",
         "releaseDate":"2010-06-10",
-        "directorId":21981,
-        "x":560,
-        "y":256
+        "directorId":21981
     },
     "41154":{
         "genres":["Action","Comedy","Science Fiction"],
-        "actorIds":[2888,33533,19278,59860,55936,2176,7056,450,16851,151246,1068400,72873,87070,91387],
+        "actorIds":[2888,19278,55936,2176,7056,450,16851,59860,151246,1068400,72873,33533,87070,91387],
         "title":"Men in Black 3",
         "revenue":624000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vQ1E2A5qt0PbRG2SIsIfXWcUHrw.jpg",
         "releaseDate":"2012-05-25",
-        "directorId":5174,
-        "x":560,
-        "y":256
+        "directorId":5174
     },
     "45243":{
         "genres":["Comedy"],
-        "actorIds":[78324,51329,58225,27105,4175,83585,116421,21180,11151,13242,83586,61182,142373,67206,543140,543139,153621,78320,543138,1716,80757],
+        "actorIds":[78324,51329,58225,27105,4175,80757,21180,13242,11151,116421,83586,61182,142373,67206,543140,543139,153621,78320,543138,1716,83585],
         "title":"The Hangover Part II",
         "revenue":254455986,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hFUsdnUoQDQ02EVlKTyhDTdehEr.jpg",
         "releaseDate":"2011-05-25",
-        "directorId":57130,
-        "x":560,
-        "y":256
+        "directorId":57130
     },
     "49026":{
         "genres":["Action","Crime","Drama","Thriller"],
-        "actorIds":[3894,3896,192,2524,1813,3895,64,8654,36594,2037,24045,8293,928532,125025,71010,211521,16607,21316,102516],
+        "actorIds":[3894,3896,192,2524,3895,1813,64,8654,36594,2037,24045,8293,21316,928532,125025,71010,211521,16607,102516],
         "title":"The Dark Knight Rises",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/48JGI8RNHnPBjKmv0TOI5uSNGKI.jpg",
         "releaseDate":"2012-07-20",
-        "directorId":525,
-        "x":560,
-        "y":256
+        "directorId":525
     },
     "49051":{
         "genres":["Action","Adventure","Fantasy"],
-        "actorIds":[7060,30315,1333,109,1327,112,1331,113,34715,65,80112,152566,126667,95047,71580,72095,22,114019,127453,25136,81877,207558,67123,105584,534336,218563],
+        "actorIds":[7060,1331,1327,30315,1333,112,65,113,109,80112,152566,126667,127453,34715,95047,71580,72095,22,114019,25136,81877,207558,534336,67123,218563,105584],
         "title":"The Hobbit: An Unexpected Journey",
         "revenue":702001325,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2ofYFSn6P7XmlVP7p4TLAncp7gz.jpg",
         "releaseDate":"2012-11-27",
-        "directorId":108,
-        "x":560,
-        "y":256
+        "directorId":108
     },
     "50619":{
         "genres":["Adventure","Drama","Fantasy","Science Fiction","Romance","Family"],
-        "actorIds":[37917,11288,34502,45827,84214,851784,53755,59252,84215,56857],
+        "actorIds":[37917,11288,34502,45827,851784,53755,59252,84214,56857,84215],
         "title":"The Twilight Saga: Breaking Dawn - Part 1",
         "revenue":701315261,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eZQfeokiFBdvKHNrtQoM3tt2FWL.jpg",
         "releaseDate":"2011-11-17",
-        "directorId":15557,
-        "x":560,
-        "y":256
+        "directorId":15557
     },
     "50620":{
         "genres":["Adventure","Drama","Fantasy","Romance","Family"],
-        "actorIds":[501,37917,11288,83356,11825,34502,3968,45827,84214,851784,53755,59252,84215,56857],
+        "actorIds":[501,37917,11288,83356,11825,34502,3968,45827,851784,53755,59252,84214,56857,84215],
         "title":"The Twilight Saga: Breaking Dawn - Part 2",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kJQPygYB8aNEevZZHRifyYrAdU9.jpg",
         "releaseDate":"2012-11-16",
-        "directorId":15557,
-        "x":560,
-        "y":256
+        "directorId":15557
     },
     "51497":{
         "genres":["Action","Thriller"],
-        "actorIds":[12835,18918,73269,21051,22123,8167,8169,90633,31841,61697,1093706,79086,80242,8171,1093708,147207,22462,1093710,90634,124304,86204,165284,1093709,216782,1077794,170653,1093707,60653,156131,979307,37149,986813,96321,1014572],
+        "actorIds":[12835,18918,22123,8167,8169,90633,31841,61697,73269,1093706,124304,79086,80242,8171,22462,147207,21051,90634,1093710,1093708,86204,165284,1093709,216782,1077794,170653,1093707,60653,156131,979307,37149,986813,96321,1014572],
         "title":"Fast Five",
         "revenue":601948170,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dHwHenvdFTgpRqIAozieJQOwRP5.jpg",
         "releaseDate":"2011-04-28",
-        "directorId":58189,
-        "x":560,
-        "y":256
+        "directorId":58189
     },
     "56292":{
         "genres":["Action","Adventure","Thriller"],
-        "actorIds":[17604,11108,500,10182,142636,52851,121529,508582,6283,72118,6079,92428],
+        "actorIds":[17604,500,11108,10182,142636,121529,52851,6283,72118,508582,6079,92428],
         "title":"Mission: Impossible - Ghost Protocol",
         "revenue":694713380,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/96k0SkL6bXqKyOj50hYu3fRRbmV.jpg",
         "releaseDate":"2011-12-21",
-        "directorId":7087,
-        "x":560,
-        "y":256
+        "directorId":7087
     },
     "58574":{
         "genres":["Action","Adventure","Comedy","Crime","Mystery","Thriller"],
-        "actorIds":[53714,9642,11275,1665,1665,87722,15440,3223,71584,105510,659,17521,84865,11855,1086530,1097456,54807,1053673,1097457,1075103,220448,1097455],
+        "actorIds":[9642,53714,11275,87722,15440,3223,17521,1665,1665,71584,659,84865,11855,1086530,1097456,54807,1053673,1097457,105510,1075103,220448,1097455],
         "title":"Sherlock Holmes: A Game of Shadows",
         "revenue":334615000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7OFqsVuS6DlVM10GUD72vCGpQm9.jpg",
         "releaseDate":"2011-12-16",
-        "directorId":956,
-        "x":560,
-        "y":256
+        "directorId":956
     },
     "61791":{
         "genres":["Action","Drama","Science Fiction"],
-        "actorIds":[17051,1333,12074,10993,1248,111195,51383,35013,58395,5892,70175,103285,76792],
+        "actorIds":[17051,1333,12074,1248,10993,111195,35013,51383,58395,5892,76792,70175,103285],
         "title":"Rise of the Planet of the Apes",
         "revenue":100775919,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ddWSWgAjAhksNhMeeBTSqY6otIA.jpg",
         "releaseDate":"2011-08-04",
-        "directorId":77357,
-        "x":560,
-        "y":256
+        "directorId":77357
     },
     "70160":{
         "genres":["Adventure","Science Fiction","Thriller","Family"],
-        "actorIds":[72129,27972,57755,9281,2283,55636,96066,142374,13014,77517,8210,561869,23498,47533,207401,427,155862,51456,530025,1030508,1030513,179829,197350,1030512,570548,77069,1090027],
+        "actorIds":[72129,27972,57755,9281,2283,55636,13014,207401,77517,8210,96066,23498,47533,561869,427,155862,51456,1030508,530025,1030513,179829,77069,197350,1030512,570548,142374,1090027],
         "title":"The Hunger Games",
         "revenue":658010692,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/rwUrxznyaRa06sPhdwnpOyZudWR.jpg",
         "releaseDate":"2012-03-23",
-        "directorId":23964,
-        "x":560,
-        "y":256
+        "directorId":23964
     },
     "72105":{
         "genres":["Comedy","Fantasy"],
-        "actorIds":[18973,2387,52139,1771,13240,17200,55463,15762,24357,9657,103836,20472,43286,74949,207150,1063947],
+        "actorIds":[18973,1771,2387,13240,103836,52139,55463,15762,24357,1063947,9657,207150,17200,43286,20472,74949],
         "title":"Ted",
         "revenue":119849740,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/carghLovNNSEphT9UZXTJ74I7lE.jpg",
         "releaseDate":"2012-06-28",
-        "directorId":52139,
-        "x":560,
-        "y":256
+        "directorId":52139
     },
     "72976":{
         "genres":["Documentary","Drama","War"],
@@ -1086,9 +890,7 @@ var moviesJSON = {
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gkkiDu9srCCbCMxGKwNwKCxK7KF.jpg",
         "releaseDate":"2012-11-09",
-        "directorId":488,
-        "x":560,
-        "y":256
+        "directorId":488
     },
     "177862":{
         "genres":[],
@@ -1097,9 +899,7 @@ var moviesJSON = {
         "revenue":467483912,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/m3Ci65C4yJBUsj5S25SmkBv3ytg.jpg",
         "releaseDate":"2009-06-01",
-        "directorId":57130,
-        "x":560,
-        "y":256
+        "directorId":57130
     }
 };
 
@@ -1123,21 +923,21 @@ var actorsJSON = {
         "name":"Barry Humphries",
         "dob":"1934-02-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ccJHmzU8wzOe4sAmeVeScu5mygl.jpg",
-        "popularity":1.5681399999999999
+        "popularity":1.8704419999999997
     },
     "31":{
         "movieIds":[8358,591],
         "name":"Tom Hanks",
         "dob":"1956-07-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1TGabQuX8wlHFNTxFijX2hweNNR.jpg",
-        "popularity":6.193249999999999
+        "popularity":7.457974999999999
     },
     "35":{
         "movieIds":[1930,72976],
         "name":"Sally Field",
         "dob":"1946-11-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/u8MJBLnuwL5dUaiambBX8NPDC5b.jpg",
-        "popularity":4.48595
+        "popularity":4.8999999999999995
     },
     "48":{
         "movieIds":[120,121,122,2059],
@@ -1158,28 +958,28 @@ var actorsJSON = {
         "name":"Ian Holm",
         "dob":"1931-09-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yD3bGWErMQPaAe1ZKdzvWi7hLsY.jpg",
-        "popularity":2.7299999999999995
+        "popularity":5.018999999999999
     },
     "66":{
         "movieIds":[5175],
         "name":"Chris Tucker",
         "dob":"1972-08-31",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9RQvgEi1GnPK4QzqOGHL3jP3VZr.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.4
     },
     "85":{
         "movieIds":[22,118,58,285,12155,1865],
         "name":"Johnny Depp",
         "dob":"1963-06-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cqSPVCB46cTV9jHthKk2d0Fz3md.jpg",
-        "popularity":7.475019999999999
+        "popularity":5.9227517999999995
     },
     "103":{
         "movieIds":[24428],
         "name":"Mark Ruffalo",
         "dob":"1967-11-22",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7nidJKw9EG21X2CnEyy9AhfRdGW.jpg",
-        "popularity":4.8999999999999995
+        "popularity":3.1009999999999995
     },
     "108":{
         "movieIds":[122],
@@ -1193,14 +993,14 @@ var actorsJSON = {
         "name":"Elijah Wood",
         "dob":"1981-01-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6dvNdfUJof0DxXDAL8fYojO5UrG.jpg",
-        "popularity":6.7657099999999994
+        "popularity":2.8489139
     },
     "110":{
         "movieIds":[120,121,122],
         "name":"Viggo Mortensen",
         "dob":"1958-10-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8rEsQnrUAzzbJ2hkdhB8bF1wGeu.jpg",
-        "popularity":6.443499999999999
+        "popularity":3.729914999999999
     },
     "112":{
         "movieIds":[120,121,122,217,49051],
@@ -1221,7 +1021,7 @@ var actorsJSON = {
         "name":"Orlando Bloom",
         "dob":"1977-01-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jLF5zDGkxhSkea49CeOrpyMFipN.jpg",
-        "popularity":3.6399999999999997
+        "popularity":3.1919999999999993
     },
     "116":{
         "movieIds":[22,58,285],
@@ -1256,17 +1056,17 @@ var actorsJSON = {
         "name":"Michael Madsen",
         "dob":"1957-09-25",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9S4h0wYtwIkslp4vJM4F4ML0kK4.jpg",
-        "popularity":7.9668399999999995
+        "popularity":6.590051999999999
     },
     "192":{
         "movieIds":[310,74,272,155,49026],
         "name":"Morgan Freeman",
         "dob":"1937-06-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9HP1htgVBeUxwgcVBS00WFHrId8.jpg",
-        "popularity":10.083289999999998
+        "popularity":10.024987
     },
     "194":{
-        "movieIds":[98,671,672],
+        "movieIds":[671,672],
         "name":"Richard Harris",
         "dob":"1930-10-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9QT7SNTDVlZMK8daEhGFYuDTZlr.jpg",
@@ -1298,7 +1098,7 @@ var actorsJSON = {
         "name":"David Cross",
         "dob":"1964-04-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mZB4DDiQD7T8OpcWJnLWI57AzpY.jpg",
-        "popularity":2.1475999999999997
+        "popularity":1.7332839999999998
     },
     "228":{
         "movieIds":[6637],
@@ -1315,7 +1115,7 @@ var actorsJSON = {
         "popularity":2.9399999999999995
     },
     "287":{
-        "movieIds":[161,787],
+        "movieIds":[161],
         "name":"Brad Pitt",
         "dob":"1963-12-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w8zJQuN7tzlm6FY9mfGKihxp3Cb.jpg",
@@ -1382,7 +1182,7 @@ var actorsJSON = {
         "name":"Lucia Rijker",
         "dob":"1967-12-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dNKQK7uLrdG1g8ETKF9SxbXHGNQ.jpg",
-        "popularity":0.9099999999999999
+        "popularity":0.9729999999999999
     },
     "477":{
         "movieIds":[671,672,673,675,767,12444,12445],
@@ -1424,7 +1224,7 @@ var actorsJSON = {
         "name":"Justin Chatwin",
         "dob":"1982-10-31",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lKCvxUU9IGoN05KTOPqRYkkWZzB.jpg",
-        "popularity":0.7
+        "popularity":1.4
     },
     "504":{
         "movieIds":[74],
@@ -1452,7 +1252,7 @@ var actorsJSON = {
         "name":"Natalie Portman",
         "dob":"1981-06-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/d30Z0EKHJcDMYaJfLr2X6rVoUrI.jpg",
-        "popularity":5.1945271
+        "popularity":2.25835813
     },
     "526":{
         "movieIds":[27205],
@@ -1473,7 +1273,7 @@ var actorsJSON = {
         "name":"Mark Boone Junior",
         "dob":"1955-03-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7XYsSSbLKUNp6GMUOWXvjtoIBKD.jpg",
-        "popularity":4.1944
+        "popularity":7.237495999999999
     },
     "585":{
         "movieIds":[272],
@@ -1501,7 +1301,7 @@ var actorsJSON = {
         "name":"Alfred Molina",
         "dob":"1953-05-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/d8T9oMxg1OyXAE8cDKQ05v9Hf5o.jpg",
-        "popularity":2.4548999999999994
+        "popularity":5.960940999999999
     },
     "659":{
         "movieIds":[58574],
@@ -1522,7 +1322,7 @@ var actorsJSON = {
         "name":"Dan Aykroyd",
         "dob":"1952-07-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/h2PT9yZYv5ml5hL9jvCpWBTWgU.jpg",
-        "popularity":7.2387
+        "popularity":1.4
     },
     "827":{
         "movieIds":[161],
@@ -1543,7 +1343,7 @@ var actorsJSON = {
         "name":"Liv Tyler",
         "dob":"1977-07-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2Th3xH1udjMz6JV8CZm4pbx1X1a.jpg",
-        "popularity":5.749799999999999
+        "popularity":3.2474819999999993
     },
     "886":{
         "movieIds":[2133,676],
@@ -1566,75 +1366,19 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6DJCIOuDuotqeDxhSKqUKFGD9IQ.jpg",
         "popularity":1.4
     },
-    "934":{
-        "movieIds":[98],
-        "name":"Russell Crowe",
-        "dob":"1964-04-07",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dXgOgTeRXmjiL9sV8cZ9zXETl6P.jpg",
-        "popularity":2.9935499999999995
-    },
-    "935":{
-        "movieIds":[98],
-        "name":"Connie Nielsen",
-        "dob":"1965-07-03",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xVWCON7CPEf3P7VcUmgg7Wa7EsI.jpg",
-        "popularity":3.4299999999999997
-    },
-    "936":{
-        "movieIds":[98],
-        "name":"Oliver Reed",
-        "dob":"1937-02-13",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/we10IusqRV1NHRtA68ftyck2N33.jpg",
-        "popularity":1.3299999999999998
-    },
-    "937":{
-        "movieIds":[98],
-        "name":"Derek Jacobi",
-        "dob":"1938-10-22",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6wJPzrqq4GPO7jBLVEM293LUWU1.jpg",
-        "popularity":3.5216999999999996
-    },
-    "938":{
-        "movieIds":[98],
-        "name":"Djimon Hounsou",
-        "dob":"1964-04-24",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sOv6xpkSPtE77MnO5ft3FUADP0N.jpg",
-        "popularity":2.45
-    },
-    "939":{
-        "movieIds":[98],
-        "name":"David Schofield",
-        "dob":null,
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6FdYsGTI85M5s5QDbFCogmQWsOR.jpg",
-        "popularity":0.7
-    },
-    "940":{
-        "movieIds":[98],
-        "name":"John Shrapnel",
-        "dob":"1942-04-27",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nDIK01IoVNx7cfYOrKqGugItqO9.jpg",
-        "popularity":1.036
-    },
     "941":{
-        "movieIds":[98,2502],
+        "movieIds":[2502],
         "name":"Tomas Arana",
         "dob":"1955-04-03",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/adZSdPoWYPOL8fsVznRvXDWS1rb.jpg",
         "popularity":0.7
-    },
-    "942":{
-        "movieIds":[98],
-        "name":"Ralf Moeller",
-        "dob":"1959-01-12",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5FHZB4H20IeaZed8yvizSlg9Fio.jpg",
-        "popularity":1.3299999999999998
     },
     "955":{
         "movieIds":[1865],
         "name":"Penélope Cruz",
         "dob":"1974-04-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yuaSpE3upUX4219lGI2glBbfLkP.jpg",
-        "popularity":1.4
+        "popularity":4.885999999999999
     },
     "975":{
         "movieIds":[12445],
@@ -1655,7 +1399,7 @@ var actorsJSON = {
         "name":"Jean Reno",
         "dob":"1948-07-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/AoQzEC2uHRfZLM54eUyPfhMvydy.jpg",
-        "popularity":6.08384
+        "popularity":5.3775455999999995
     },
     "1037":{
         "movieIds":[2059,6637],
@@ -1676,7 +1420,7 @@ var actorsJSON = {
         "name":"Bill Duke",
         "dob":"1943-02-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2BBdmPqxYO5FkgRcMnciUnuQsB8.jpg",
-        "popularity":1.1199999999999999
+        "popularity":1.6099999999999999
     },
     "1115":{
         "movieIds":[1865],
@@ -1706,6 +1450,13 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/g0qb8ziTfeIuaz2lDFKxEyDu3RI.jpg",
         "popularity":2.3269819999999997
     },
+    "1162":{
+        "movieIds":[16219],
+        "name":"Robert Loggia",
+        "dob":"1930-01-03",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zohf2pn24OHYYlJnw6r9dFF8Asm.jpg",
+        "popularity":2.45
+    },
     "1166":{
         "movieIds":[5175],
         "name":"Harris Yulin",
@@ -1718,7 +1469,7 @@ var actorsJSON = {
         "name":"Julia Roberts",
         "dob":"1967-10-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oVRLNAwHEfRD72UZSPKgbKO7Mjz.jpg",
-        "popularity":2.03
+        "popularity":3.409
     },
     "1229":{
         "movieIds":[1726],
@@ -1760,7 +1511,7 @@ var actorsJSON = {
         "name":"Brian Cox",
         "dob":"1946-06-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xhSqRl3HYqmPrTfeTCZPmGoiUwy.jpg",
-        "popularity":4.0873
+        "popularity":4.4278569999999995
     },
     "1271":{
         "movieIds":[161],
@@ -1781,10 +1532,10 @@ var actorsJSON = {
         "name":"David Kelly",
         "dob":"1929-07-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jxPBAzbia65yJAsNxoyGQri5Bah.jpg",
-        "popularity":0.7
+        "popularity":0.9099999999999999
     },
     "1283":{
-        "movieIds":[118,675,767,12155,12444,12445],
+        "movieIds":[869,118,675,767,12155,12444,12445],
         "name":"Helena Bonham Carter",
         "dob":"1966-05-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hfNU0kibycG6sAkSALfZJnZxGqL.jpg",
@@ -1795,7 +1546,7 @@ var actorsJSON = {
         "name":"Noah Taylor",
         "dob":"1969-09-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xUI8200GjUcgWiAk9wSS018OC5B.jpg",
-        "popularity":2.8078399999999997
+        "popularity":4.5927056
     },
     "1285":{
         "movieIds":[118],
@@ -1816,7 +1567,7 @@ var actorsJSON = {
         "name":"Jordan Fry",
         "dob":"1993-06-07",
         "profile":null,
-        "popularity":2.0999999999999996
+        "popularity":1.3299999999999998
     },
     "1291":{
         "movieIds":[118],
@@ -1858,7 +1609,7 @@ var actorsJSON = {
         "name":"Ian McKellen",
         "dob":"1939-05-25",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/91yYKJspfvOF9xqoyiNVwrBWaXD.jpg",
-        "popularity":6.6243099999999995
+        "popularity":7.666187899999999
     },
     "1328":{
         "movieIds":[120,121,122],
@@ -1886,7 +1637,7 @@ var actorsJSON = {
         "name":"Hugo Weaving",
         "dob":"1960-04-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gkdJSAHzJDEVssFlpcSAxoYLph9.jpg",
-        "popularity":5.6273
+        "popularity":7.856457
     },
     "1332":{
         "movieIds":[120,121],
@@ -1907,7 +1658,7 @@ var actorsJSON = {
         "name":"Zhang Ziyi",
         "dob":"1979-02-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lfG6JSZU06t5bq2HcCa0IZPSGKn.jpg",
-        "popularity":2.8
+        "popularity":2.2399999999999998
     },
     "1365":{
         "movieIds":[120,122],
@@ -1935,7 +1686,7 @@ var actorsJSON = {
         "name":"Bernard Hill",
         "dob":"1944-12-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/meAkjuYbqLTPEIiXCOD7cZGovhT.jpg",
-        "popularity":4.1335
+        "popularity":0.7
     },
     "1370":{
         "movieIds":[121],
@@ -1949,14 +1700,14 @@ var actorsJSON = {
         "name":"David Wenham",
         "dob":"1965-09-21",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hOG5mAd5pzT30V6adkwkpe87HY7.jpg",
-        "popularity":2.9126999999999996
+        "popularity":2.292143
     },
     "1372":{
         "movieIds":[121,122,2502,13475],
         "name":"Karl Urban",
         "dob":"1972-06-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6a2Y3qNodCOPtbM699Z52WqAtU4.jpg",
-        "popularity":4.64051
+        "popularity":4.2676459
     },
     "1381":{
         "movieIds":[122],
@@ -1984,7 +1735,7 @@ var actorsJSON = {
         "name":"Keith Richards",
         "dob":"1943-12-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uGF4AHKqaTI8K98n1lzqtRfv4N2.jpg",
-        "popularity":1.3299999999999998
+        "popularity":1.7359999999999998
     },
     "1461":{
         "movieIds":[2133,161],
@@ -2019,7 +1770,7 @@ var actorsJSON = {
         "name":"Chow Yun-Fat",
         "dob":"1955-05-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/acHkRLdJOI8ayU2Ja5MPXCRS1E6.jpg",
-        "popularity":2.9881739999999994
+        "popularity":3.6964521999999995
     },
     "1640":{
         "movieIds":[58,285,10195,24428],
@@ -2040,14 +1791,14 @@ var actorsJSON = {
         "name":"Eddie Marsan",
         "dob":"1968-06-23",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mkwOlI3aLsWmgC9XtrfRHvKQNDc.jpg",
-        "popularity":4.3267
+        "popularity":2.69801
     },
     "1709":{
         "movieIds":[22,58,285],
         "name":"Jack Davenport",
         "dob":"1973-03-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qxM6XdLmZ6pKkQV7uVwgu7MLcfV.jpg",
-        "popularity":3.5
+        "popularity":2.6249999999999996
     },
     "1710":{
         "movieIds":[22,58,285],
@@ -2082,7 +1833,7 @@ var actorsJSON = {
         "name":"Angus Barnett",
         "dob":null,
         "profile":null,
-        "popularity":2.8
+        "popularity":2.072
     },
     "1715":{
         "movieIds":[22,58],
@@ -2138,21 +1889,21 @@ var actorsJSON = {
         "name":"Anne Hathaway",
         "dob":"1982-11-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9CV28IhY92YpBpfe68cpuFKF9XQ.jpg",
-        "popularity":6.6899
+        "popularity":8.582091
     },
     "1834":{
         "movieIds":[674],
         "name":"Shirley Henderson",
         "dob":"1965-11-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/djpMaLBfgoQW4bDFTsd6j9LWo1a.jpg",
-        "popularity":1.8199999999999998
+        "popularity":2.3099999999999996
     },
     "1892":{
         "movieIds":[161,2502,2503],
         "name":"Matt Damon",
         "dob":"1970-10-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ho1olruZGFwACsL8sY3rNeCjoVd.jpg",
-        "popularity":4.296389999999999
+        "popularity":6.616675099999999
     },
     "1893":{
         "movieIds":[161],
@@ -2173,14 +1924,14 @@ var actorsJSON = {
         "name":"Carl Reiner",
         "dob":"1922-03-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jTnr8s0tH22ghuZzpwYt5sl27Wm.jpg",
-        "popularity":1.6099999999999999
+        "popularity":0.7
     },
     "1896":{
         "movieIds":[10138,5175,161],
         "name":"Don Cheadle",
         "dob":"1964-11-29",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jv30d7SG7fpDe8ILVgFPHQCYYbl.jpg",
-        "popularity":4.13
+        "popularity":2.639
     },
     "1897":{
         "movieIds":[161,1858],
@@ -2194,7 +1945,7 @@ var actorsJSON = {
         "name":"Eddie Jemison",
         "dob":null,
         "profile":null,
-        "popularity":1.8199999999999998
+        "popularity":3.01
     },
     "1900":{
         "movieIds":[161],
@@ -2229,7 +1980,7 @@ var actorsJSON = {
         "name":"Robbie Coltrane",
         "dob":"1950-03-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/u07QKPs7wvXxzjXi1UUBSGjjmQm.jpg",
-        "popularity":3.4070399999999994
+        "popularity":3.3166336
     },
     "1937":{
         "movieIds":[1593],
@@ -2264,7 +2015,7 @@ var actorsJSON = {
         "name":"Naomie Harris",
         "dob":"1976-09-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/XxxZYyELpiwnWmZHqRj0mcd4jp.jpg",
-        "popularity":1.0926999999999998
+        "popularity":2.058343
     },
     "2039":{
         "movieIds":[955,674,675,12444],
@@ -2320,7 +2071,7 @@ var actorsJSON = {
         "name":"Tobey Maguire",
         "dob":"1975-06-27",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lRXCeE7CzCLKFBrBsAoNExrfGNj.jpg",
-        "popularity":2.8
+        "popularity":3.5
     },
     "2223":{
         "movieIds":[818],
@@ -2334,7 +2085,7 @@ var actorsJSON = {
         "name":"Samuel L. Jackson",
         "dob":"1948-12-21",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nbYPSDKhsLQOY0bxJlLvlkIDo1D.jpg",
-        "popularity":6.789999999999999
+        "popularity":8.1711
     },
     "2247":{
         "movieIds":[675,12445],
@@ -2369,21 +2120,21 @@ var actorsJSON = {
         "name":"Elya Baskin",
         "dob":"1950-08-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jiC4qF5VUebbcEK64FZBDOo7Ny2.jpg",
-        "popularity":1.4
+        "popularity":3.2199999999999998
     },
     "2387":{
         "movieIds":[36658,36668,72105],
         "name":"Patrick Stewart",
         "dob":"1940-07-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/evAVT1eSuZqmKtOtus9RAyuwDtD.jpg",
-        "popularity":6.751849999999999
+        "popularity":4.667666499999999
     },
     "2405":{
         "movieIds":[591],
         "name":"Audrey Tautou",
         "dob":"1978-08-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xNeSqKa00b6BSUGwRVdLTHADRoF.jpg",
-        "popularity":2.8
+        "popularity":6.9719999999999995
     },
     "2440":{
         "movieIds":[58,285,12444],
@@ -2404,7 +2155,7 @@ var actorsJSON = {
         "name":"Kevin McNally",
         "dob":"1956-04-27",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9EuxiogkiqQfdjB5fsqUTOIjvVZ.jpg",
-        "popularity":1.3299999999999998
+        "popularity":1.099
     },
     "2450":{
         "movieIds":[58],
@@ -2418,7 +2169,7 @@ var actorsJSON = {
         "name":"Alex Norton",
         "dob":"1950-01-27",
         "profile":null,
-        "popularity":0.7
+        "popularity":2.3099999999999996
     },
     "2452":{
         "movieIds":[58],
@@ -2432,14 +2183,14 @@ var actorsJSON = {
         "name":"Mary Steenburgen",
         "dob":"1953-02-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pMJVW2tLGVdOJr5Vzffyug5ciWK.jpg",
-        "popularity":0.7
+        "popularity":2.513
     },
     "2461":{
         "movieIds":[3981,2675],
         "name":"Mel Gibson",
         "dob":"1956-01-03",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8s48F6yFPOOcUfGKH1dNvztiHZz.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.5189999999999997
     },
     "2467":{
         "movieIds":[411,411],
@@ -2448,19 +2199,26 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nqsZ5RzYgvHOrPZvgc1l3089yHt.jpg",
         "popularity":2.7299999999999995
     },
-    "2478":{
-        "movieIds":[98],
-        "name":"Tommy Flanagan",
-        "dob":"1965-07-03",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/skLt2evRbQXahJnU7KHn8afWs7C.jpg",
-        "popularity":1.4
-    },
     "2482":{
         "movieIds":[12444],
         "name":"David O'Hara",
         "dob":"1965-07-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sJ35AHaSTzSrvd80xrlC1CD30iF.jpg",
         "popularity":4.34
+    },
+    "2491":{
+        "movieIds":[24197],
+        "name":"Carole Lombard",
+        "dob":"1908-10-06",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uUjn5WRFxetiG8JLxbzSb1zAnbe.jpg",
+        "popularity":1.4
+    },
+    "2502":{
+        "movieIds":[24197],
+        "name":"Charles Halton",
+        "dob":"1876-03-16",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fQqMqIJRMSqQCM6HET2O34hD2Ar.jpg",
+        "popularity":2.0999999999999996
     },
     "2505":{
         "movieIds":[559],
@@ -2474,7 +2232,7 @@ var actorsJSON = {
         "name":"Donna Murphy",
         "dob":"1959-03-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/f5YsiDnUSBYhdzDXKW2w0iGK3i2.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.219
     },
     "2524":{
         "movieIds":[27205,49026],
@@ -2496,6 +2254,13 @@ var actorsJSON = {
         "dob":"1924-07-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9DpClOXbxSAsZiwsCnwIPA212pQ.jpg",
         "popularity":1.6099999999999999
+    },
+    "2672":{
+        "movieIds":[24197],
+        "name":"Jack Carson",
+        "dob":"1910-10-27",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7Ys9ZSd9vspOkmWrFJkVDnknRCi.jpg",
+        "popularity":2.0999999999999996
     },
     "2878":{
         "movieIds":[1930],
@@ -2537,7 +2302,7 @@ var actorsJSON = {
         "name":"Laurence Fishburne",
         "dob":"1961-07-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lOVI2CD6b0PZh7xrgtaHZ9yrhX4.jpg",
-        "popularity":7.13083
+        "popularity":2.3917747
     },
     "2983":{
         "movieIds":[10528],
@@ -2565,7 +2330,7 @@ var actorsJSON = {
         "name":"Tilda Swinton",
         "dob":"1960-11-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yodhl99bxeSylyW9EDnMbj73J1h.jpg",
-        "popularity":3.5
+        "popularity":2.0999999999999996
     },
     "3064":{
         "movieIds":[12445],
@@ -2586,7 +2351,14 @@ var actorsJSON = {
         "name":"James Caan",
         "dob":"1940-03-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wgmhFValosUgdEQi8S3x9cx4sZi.jpg",
-        "popularity":1.4
+        "popularity":0.7
+    },
+    "3129":{
+        "movieIds":[869],
+        "name":"Tim Roth",
+        "dob":"1961-05-14",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/r4jtlboNqWPz2dOHafrPJE4Yd94.jpg",
+        "popularity":5.697188
     },
     "3134":{
         "movieIds":[435],
@@ -2607,14 +2379,14 @@ var actorsJSON = {
         "name":"Tom Sizemore",
         "dob":"1961-11-29",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gttIY8exNe1EynSOFS950rFKiz4.jpg",
-        "popularity":2.7845999999999993
+        "popularity":2.9353799999999994
     },
     "3204":{
         "movieIds":[2675],
         "name":"Lanny Flaherty",
         "dob":"1942-07-27",
         "profile":null,
-        "popularity":0.7
+        "popularity":0.9099999999999999
     },
     "3223":{
         "movieIds":[10138,1726,10528,58574,24428],
@@ -2623,19 +2395,12 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/o6ffyv7CYsEVpdd4jkmYT7y41Xn.jpg",
         "popularity":3.1887589999999997
     },
-    "3288":{
-        "movieIds":[787],
-        "name":"Chris Weitz",
-        "dob":"1969-11-30",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gankahRpXzCdziX2WsnosAqmUqP.jpg",
-        "popularity":2.0999999999999996
-    },
     "3293":{
         "movieIds":[1734],
         "name":"Rachel Weisz",
         "dob":"1970-03-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1LRo4dE0pWFkD0lHBXebXaebeUi.jpg",
-        "popularity":8.8882101
+        "popularity":8.499938908999999
     },
     "3300":{
         "movieIds":[675,767,12444,12445],
@@ -2649,7 +2414,7 @@ var actorsJSON = {
         "name":"Naomi Watts",
         "dob":"1968-09-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xHqtk7SbS0ua8rqiDVEe8qvEGa5.jpg",
-        "popularity":4.39721625
+        "popularity":3.4191648749999994
     },
     "3490":{
         "movieIds":[254],
@@ -2754,14 +2519,14 @@ var actorsJSON = {
         "name":"Christian Bale",
         "dob":"1974-01-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vecCvACI2QhSE5fOoANeWDjxGKM.jpg",
-        "popularity":13.626024999999998
+        "popularity":11.7878075
     },
     "3895":{
         "movieIds":[818,272,155,27205,49026],
         "name":"Michael Caine",
         "dob":"1933-03-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e1PBvrqsbDRpSf0N7KwYAuB0Qwv.jpg",
-        "popularity":5.6
+        "popularity":9.043999999999999
     },
     "3896":{
         "movieIds":[411,411,272,49026],
@@ -2817,7 +2582,7 @@ var actorsJSON = {
         "name":"William H. Macy",
         "dob":"1950-03-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fiUFxLXU7rD8AxkRYX4ot3jgOsC.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.219
     },
     "3910":{
         "movieIds":[38356],
@@ -2845,21 +2610,14 @@ var actorsJSON = {
         "name":"Michael Sheen",
         "dob":"1969-02-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nG8DT7BfKofR9SDW6nHi21nS5v3.jpg",
-        "popularity":4.9756
-    },
-    "4012":{
-        "movieIds":[98],
-        "name":"Spencer Treat Clark",
-        "dob":"1987-09-24",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/y8SNxG3WuPDLZlZXCkuvdrNFvao.jpg",
-        "popularity":4.829999999999999
+        "popularity":4.1578040000000005
     },
     "4029":{
         "movieIds":[2133],
         "name":"Bob Gunton",
         "dob":"1945-11-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6eSx44aBzr6U2KM91eTMOKzsvbJ.jpg",
-        "popularity":1.162
+        "popularity":5.42458
     },
     "4030":{
         "movieIds":[285,8960],
@@ -2908,14 +2666,14 @@ var actorsJSON = {
         "name":"Christopher McDonald",
         "dob":"1955-02-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8kzIhRn71BcVAoU5ddA9l3STZs1.jpg",
-        "popularity":4.8999999999999995
+        "popularity":2.2609999999999997
     },
     "4483":{
         "movieIds":[693],
         "name":"Dustin Hoffman",
         "dob":"1937-08-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e7B9noS9WSBeClSpWVnrKOMrSak.jpg",
-        "popularity":1.4
+        "popularity":6.72
     },
     "4491":{
         "movieIds":[310],
@@ -2929,7 +2687,7 @@ var actorsJSON = {
         "name":"Philip Baker Hall",
         "dob":"1931-09-10",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eH7GrivSuLEvhJL85qPkhNvg3E7.jpg",
-        "popularity":0.7
+        "popularity":1.4
     },
     "4493":{
         "movieIds":[310],
@@ -2950,14 +2708,14 @@ var actorsJSON = {
         "name":"Steve Carell",
         "dob":"1962-08-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kmzDRFjcMdrSK143oM68Szlc9Uy.jpg",
-        "popularity":4.06
+        "popularity":4.718
     },
     "4496":{
         "movieIds":[310],
         "name":"Nora Dunn",
         "dob":"1952-04-29",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/MOkX8tcOBljXqpTA88KCv09QgI.jpg",
-        "popularity":2.0999999999999996
+        "popularity":3.5
     },
     "4498":{
         "movieIds":[310],
@@ -2971,7 +2729,7 @@ var actorsJSON = {
         "name":"Alan Rickman",
         "dob":"1946-02-21",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/64OvdDGHoiLgaEHNPhngg8zxCeo.jpg",
-        "popularity":4.547619999999999
+        "popularity":5.449285799999999
     },
     "4568":{
         "movieIds":[8346],
@@ -2992,7 +2750,7 @@ var actorsJSON = {
         "name":"Halle Berry",
         "dob":"1966-08-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wH3k7QooxiVHeVxrdi48zyFAinR.jpg",
-        "popularity":7.372567999999999
+        "popularity":7.111770399999999
     },
     "4688":{
         "movieIds":[8488],
@@ -3013,7 +2771,7 @@ var actorsJSON = {
         "name":"Emmy Rossum",
         "dob":"1986-09-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/i7gVLZJs8hw2wD4s9z7UObeqtsx.jpg",
-        "popularity":4.5485999999999995
+        "popularity":4.679373999999999
     },
     "4757":{
         "movieIds":[411,411],
@@ -3041,7 +2799,7 @@ var actorsJSON = {
         "name":"Sam Neill",
         "dob":"1947-09-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mrbhjPg0SNCJu6Auj4WMheMg5EC.jpg",
-        "popularity":4.8999999999999995
+        "popularity":3.6609999999999996
     },
     "4784":{
         "movieIds":[331],
@@ -3058,11 +2816,11 @@ var actorsJSON = {
         "popularity":3.6945999999999994
     },
     "4937":{
-        "movieIds":[787,9522],
+        "movieIds":[9522],
         "name":"Vince Vaughn",
         "dob":"1970-03-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vTIHDiSvIm3HU93JDGCstFwNGxI.jpg",
-        "popularity":2.8
+        "popularity":2.9819999999999993
     },
     "4939":{
         "movieIds":[331],
@@ -3097,7 +2855,7 @@ var actorsJSON = {
         "name":"Bruce A. Young",
         "dob":"1956-04-22",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ty2NwUAAwnn356eTAu7RuSsQlhT.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.3299999999999998
     },
     "4944":{
         "movieIds":[331],
@@ -3111,7 +2869,7 @@ var actorsJSON = {
         "name":"Harry Dean Stanton",
         "dob":"1926-07-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1zU2VweXqjR6TRYHGJhKeokbjLD.jpg",
-        "popularity":5.111399999999999
+        "popularity":2.9800259999999996
     },
     "5049":{
         "movieIds":[671,217,12444,12445],
@@ -3132,7 +2890,7 @@ var actorsJSON = {
         "name":"Judi Dench",
         "dob":"1934-12-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/t5wh7Ovy5w0rOjnGCprkEyIOyPx.jpg",
-        "popularity":6.214599999999999
+        "popularity":2.589314
     },
     "5365":{
         "movieIds":[13475],
@@ -3160,7 +2918,7 @@ var actorsJSON = {
         "name":"Bill Nunn",
         "dob":"1953-10-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cT4sK7SCranK3yeelYTHMlTaq3a.jpg",
-        "popularity":3.8268999999999993
+        "popularity":2.164421
     },
     "5526":{
         "movieIds":[411,411],
@@ -3174,7 +2932,7 @@ var actorsJSON = {
         "name":"Skandar Keynes",
         "dob":"1991-09-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uOuPQmqOIWGSwaUGUXZUWiwJIEw.jpg",
-        "popularity":1.9459999999999997
+        "popularity":0.7
     },
     "5528":{
         "movieIds":[411,411],
@@ -3251,7 +3009,7 @@ var actorsJSON = {
         "name":"Ray Winstone",
         "dob":"1957-02-19",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fCn43QHHE3WXa23bxcmXdUZ3l4Y.jpg",
-        "popularity":6.3217
+        "popularity":3.2965099999999996
     },
     "5539":{
         "movieIds":[411,411],
@@ -3321,7 +3079,7 @@ var actorsJSON = {
         "name":"Rosario Dawson",
         "dob":"1979-05-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l7wGwevS4C0eYRLdUhWMz5v9E7I.jpg",
-        "popularity":8.0260222
+        "popularity":3.942341998
     },
     "5945":{
         "movieIds":[8346],
@@ -3335,7 +3093,7 @@ var actorsJSON = {
         "name":"Dennis Quaid",
         "dob":"1954-04-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3eJB9E6KJLRfGlg4eryA5U5tL8p.jpg",
-        "popularity":6.2216
+        "popularity":6.579943999999999
     },
     "6066":{
         "movieIds":[2133,435,6479],
@@ -3356,7 +3114,7 @@ var actorsJSON = {
         "name":"Sela Ward",
         "dob":"1956-07-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1LbmuiJdpmigWogykkbTdR2kfuZ.jpg",
-        "popularity":0.7
+        "popularity":2.0999999999999996
     },
     "6069":{
         "movieIds":[435],
@@ -3377,7 +3135,7 @@ var actorsJSON = {
         "name":"Sasha Roiz",
         "dob":"1973-10-21",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ucPQA6XFAWNHy2AxfClCItkutn5.jpg",
-        "popularity":0.7
+        "popularity":1.6099999999999999
     },
     "6072":{
         "movieIds":[435],
@@ -3398,7 +3156,7 @@ var actorsJSON = {
         "name":"Kenneth Welsh",
         "dob":"1942-03-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pz6WwQwuU8q27xMITswGFmZnYXi.jpg",
-        "popularity":3.5035
+        "popularity":0.7
     },
     "6075":{
         "movieIds":[435],
@@ -3419,7 +3177,7 @@ var actorsJSON = {
         "name":"Graham Beckel",
         "dob":"1949-12-22",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/r0ZYc9AUVqAXoLmZMCw2Dbv4nEr.jpg",
-        "popularity":1.4
+        "popularity":1.7359999999999998
     },
     "6162":{
         "movieIds":[591,1726,24428],
@@ -3435,6 +3193,13 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mNRMgj7K5ztvkSqrcdwEYNZIS1M.jpg",
         "popularity":4.25754
     },
+    "6197":{
+        "movieIds":[16219],
+        "name":"Brian Dennehy",
+        "dob":"1938-07-09",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bFNmm4pmHF92dEd0XSlI9FIPdBY.jpg",
+        "popularity":2.1805
+    },
     "6199":{
         "movieIds":[12445],
         "name":"Miriam Margolyes",
@@ -3447,7 +3212,7 @@ var actorsJSON = {
         "name":"Powers Boothe",
         "dob":"1948-06-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3nNL6AvMAYq0BmHKM79RnRZVq3i.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.03
     },
     "6283":{
         "movieIds":[56292],
@@ -3475,7 +3240,7 @@ var actorsJSON = {
         "name":"Keanu Reeves",
         "dob":"1964-09-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/glCFGnKkX3QWxeLRYUMU1XTESHf.jpg",
-        "popularity":3.2199999999999998
+        "popularity":4.466
     },
     "6413":{
         "movieIds":[2080],
@@ -3498,6 +3263,13 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qJju0OsiXq0tPZdPtdQtnpILXxg.jpg",
         "popularity":1.54
     },
+    "6717":{
+        "movieIds":[16219],
+        "name":"James Marshall",
+        "dob":"1967-01-02",
+        "profile":null,
+        "popularity":0.9099999999999999
+    },
     "6804":{
         "movieIds":[18239],
         "name":"Graham Greene",
@@ -3510,7 +3282,7 @@ var actorsJSON = {
         "name":"Sam Rockwell",
         "dob":"1968-11-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yiyrJt5ODTBMy0YCR7c9t6igiN6.jpg",
-        "popularity":4.2448
+        "popularity":3.1120319999999992
     },
     "6860":{
         "movieIds":[13475],
@@ -3538,21 +3310,21 @@ var actorsJSON = {
         "name":"K.K. Dodds",
         "dob":null,
         "profile":null,
-        "popularity":2.0999999999999996
+        "popularity":0.7
     },
     "6949":{
         "movieIds":[38356],
         "name":"John Malkovich",
         "dob":"1953-12-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1YUSSeaQIoNocwVkD8wMjFSyZoX.jpg",
-        "popularity":2.9297099999999996
+        "popularity":4.378913
     },
     "6968":{
         "movieIds":[36658,36668,2080],
         "name":"Hugh Jackman",
         "dob":"1968-10-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8Elq0s9OShNbQpOJz3w3XcSlXpS.jpg",
-        "popularity":10.440097499999998
+        "popularity":7.939608774999999
     },
     "6972":{
         "movieIds":[1865],
@@ -3601,14 +3373,14 @@ var actorsJSON = {
         "name":"Temuera Morrison",
         "dob":"1960-12-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6OYIlNgQkmwi09cElhnoFvUCppz.jpg",
-        "popularity":1.4
+        "popularity":0.7
     },
     "7399":{
         "movieIds":[693,1593,18360],
         "name":"Ben Stiller",
         "dob":"1965-11-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nEpJLRfdjZO4rSnVWys9hiPNiy8.jpg",
-        "popularity":7.5725999999999996
+        "popularity":6.071534
     },
     "7425":{
         "movieIds":[818],
@@ -3631,19 +3403,12 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7kgXNbTDwE5fxCG6KY5pacOK9aj.jpg",
         "popularity":1.4
     },
-    "7505":{
-        "movieIds":[871],
-        "name":"Roddy McDowall",
-        "dob":"1928-09-17",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e0OZn5SUXHghdmAgJbF3uLHD5gf.jpg",
-        "popularity":2.7605024999999994
-    },
     "7517":{
         "movieIds":[1452],
         "name":"Kate Bosworth",
         "dob":"1983-01-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/iFkMpa5OsaIkDBym7i4BuBw0wAM.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.219
     },
     "7624":{
         "movieIds":[559,24428],
@@ -3678,7 +3443,7 @@ var actorsJSON = {
         "name":"Eva Mendes",
         "dob":"1974-03-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wMbwTz4MgQMjSkX4EiEtQMK3xfK.jpg",
-        "popularity":2.8034999999999997
+        "popularity":4.8723149999999995
     },
     "8171":{
         "movieIds":[51497],
@@ -3727,7 +3492,7 @@ var actorsJSON = {
         "name":"Tommy 'Tiny' Lister",
         "dob":"1958-06-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/UY4xouwBs8p9QmcXbnP8iy2uYp.jpg",
-        "popularity":0.7
+        "popularity":1.8829999999999998
     },
     "8436":{
         "movieIds":[674,12444],
@@ -3748,7 +3513,7 @@ var actorsJSON = {
         "name":"Kathy Bates",
         "dob":"1948-06-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/rObeeZKxkecaawOe8514o1tNbhw.jpg",
-        "popularity":2.5235
+        "popularity":1.8371149999999998
     },
     "8602":{
         "movieIds":[6479],
@@ -3769,7 +3534,7 @@ var actorsJSON = {
         "name":"Zoe Saldana",
         "dob":"1978-06-19",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/u55jzDFriTD1td55aX4mba5UK3o.jpg",
-        "popularity":9.96009
+        "popularity":7.4764081
     },
     "8767":{
         "movieIds":[615],
@@ -3825,7 +3590,7 @@ var actorsJSON = {
         "name":"Claudia Gerini",
         "dob":"1971-12-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hL8losHkv8YneyLbn57dHD2OPrq.jpg",
-        "popularity":2.8699999999999997
+        "popularity":0.7
     },
     "8777":{
         "movieIds":[615],
@@ -3853,7 +3618,7 @@ var actorsJSON = {
         "name":"Daniel Craig",
         "dob":"1968-03-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lxdrcaBp2UvnbrkJBeTxKbCUil5.jpg",
-        "popularity":10.19956
+        "popularity":6.307960399999999
     },
     "8785":{
         "movieIds":[12444,12445],
@@ -3881,7 +3646,7 @@ var actorsJSON = {
         "name":"John Cleese",
         "dob":"1939-10-27",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yrY3aJWBAqxN5rBaq7PVfWf38O7.jpg",
-        "popularity":3.3956999999999997
+        "popularity":3.945613
     },
     "9015":{
         "movieIds":[12445],
@@ -3895,7 +3660,7 @@ var actorsJSON = {
         "name":"Thandie Newton",
         "dob":"1972-11-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e74HZwGisiwUhiaIHFOoOtoGiyW.jpg",
-        "popularity":2.5978399999999997
+        "popularity":1.479352
     },
     "9048":{
         "movieIds":[10138,1726,10195,24428],
@@ -3951,7 +3716,7 @@ var actorsJSON = {
         "name":"Elizabeth Banks",
         "dob":"1974-02-10",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hnhnc8KJqVBpJ8d26aUkPpxaa2p.jpg",
-        "popularity":4.199999999999999
+        "popularity":5.417999999999999
     },
     "9364":{
         "movieIds":[604],
@@ -4042,21 +3807,21 @@ var actorsJSON = {
         "name":"Rip Torn",
         "dob":"1931-02-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/rzGaoGikjMuLDruABKdLcQLtkZk.jpg",
-        "popularity":1.4
+        "popularity":2.8559999999999994
     },
     "9642":{
         "movieIds":[10528,58574],
         "name":"Jude Law",
         "dob":"1972-12-29",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4077Cyuo1mw53u1gNjLyQkqeZN0.jpg",
-        "popularity":6.737499999999999
+        "popularity":7.886374999999999
     },
     "9656":{
         "movieIds":[608],
         "name":"Johnny Knoxville",
         "dob":"1971-03-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hHzXuR2idxeAsf2UX03fk0bWw5K.jpg",
-        "popularity":2.8
+        "popularity":2.2819999999999996
     },
     "9657":{
         "movieIds":[608,72105],
@@ -4080,7 +3845,7 @@ var actorsJSON = {
         "popularity":2.0999999999999996
     },
     "9777":{
-        "movieIds":[676],
+        "movieIds":[16219,676],
         "name":"Cuba Gooding Jr.",
         "dob":"1968-01-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1VMd7ubhFQmR8sH28MiwcZOQ7My.jpg",
@@ -4105,7 +3870,7 @@ var actorsJSON = {
         "name":"Vincent Regan",
         "dob":"1965-05-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tiyjPHwmX8dMMfx0F8HUpXyLHeY.jpg",
-        "popularity":1.6099999999999999
+        "popularity":0.7
     },
     "9994":{
         "movieIds":[8358,3981],
@@ -4115,7 +3880,7 @@ var actorsJSON = {
         "popularity":3.5
     },
     "10017":{
-        "movieIds":[871],
+        "movieIds":[869],
         "name":"Charlton Heston",
         "dob":"1923-10-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pXwJV9JlOCKOHSfEJdt2q61SZVq.jpg",
@@ -4203,7 +3968,7 @@ var actorsJSON = {
         "name":"Brian Haley",
         "dob":"1963-02-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/r27e4ylQVrJ3CmSfSv91sZjCUs9.jpg",
-        "popularity":0.7
+        "popularity":1.6099999999999999
     },
     "10182":{
         "movieIds":[955,56292],
@@ -4217,7 +3982,7 @@ var actorsJSON = {
         "name":"Sigourney Weaver",
         "dob":"1949-10-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uXUxgbWWdHnUDLYFNg4jviTjTnq.jpg",
-        "popularity":5.959449999999999
+        "popularity":4.199999999999999
     },
     "10207":{
         "movieIds":[10528],
@@ -4231,7 +3996,7 @@ var actorsJSON = {
         "name":"Jane Seymour",
         "dob":"1951-02-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nOZK8Bv5db6idAKYRTdgKwvyAEE.jpg",
-        "popularity":2.5199999999999996
+        "popularity":3.283
     },
     "10399":{
         "movieIds":[693],
@@ -4245,7 +4010,7 @@ var actorsJSON = {
         "name":"Barbra Streisand",
         "dob":"1942-04-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tjk74vlh5hpjpm9XtgQiyhWcnRn.jpg",
-        "popularity":1.4
+        "popularity":1.036
     },
     "10401":{
         "movieIds":[693],
@@ -4268,19 +4033,12 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zwQiYMOhrjBiJmzZ59ERdwrPhUG.jpg",
         "popularity":1.4
     },
-    "10539":{
-        "movieIds":[871],
-        "name":"Kim Hunter",
-        "dob":"1922-11-12",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nB44EysedphcIWftSqyyG2qBYk8.jpg",
-        "popularity":1.8199999999999998
-    },
     "10655":{
         "movieIds":[671,672,12445],
         "name":"Leslie Phillips",
         "dob":"1924-04-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/A1vO83wMO5eG0AxRvBwwQwu5NCg.jpg",
-        "popularity":0.7
+        "popularity":3.01
     },
     "10690":{
         "movieIds":[36658,36668],
@@ -4294,7 +4052,7 @@ var actorsJSON = {
         "name":"April Grace",
         "dob":"1962-05-12",
         "profile":null,
-        "popularity":2.0999999999999996
+        "popularity":2.219
     },
     "10696":{
         "movieIds":[36658,36668],
@@ -4317,19 +4075,26 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lN5gjkLxuO4mRUoF0xdi9e5GQb5.jpg",
         "popularity":4.986239999999999
     },
+    "10823":{
+        "movieIds":[869],
+        "name":"Kris Kristofferson",
+        "dob":"1936-06-22",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jIa13txbkUgqLxQHIefx7HfTy7y.jpg",
+        "popularity":2.03
+    },
     "10841":{
         "movieIds":[2502],
         "name":"Karel Roden",
         "dob":"1962-05-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fD8B0QSQReOiJ6nojiulNUZXKCT.jpg",
-        "popularity":1.4
+        "popularity":1.2207999999999999
     },
     "10859":{
         "movieIds":[2080],
         "name":"Ryan Reynolds",
         "dob":"1976-10-23",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3J19JiWqs4M75FFVqOdwn0DBU5q.jpg",
-        "popularity":3.5
+        "popularity":5.074999999999999
     },
     "10862":{
         "movieIds":[955],
@@ -4343,28 +4108,28 @@ var actorsJSON = {
         "name":"Kenneth Tsang Kong",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6oYTIjKlp8vsyxod7nPJ1R9V8Hf.jpg",
-        "popularity":1.57381
+        "popularity":3.272143
     },
     "10959":{
         "movieIds":[1858,217,8373,38356],
         "name":"Shia LaBeouf",
         "dob":"1986-06-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fc6q2rJqKW1r6CC7x7SoZbBHu7c.jpg",
-        "popularity":7.188327299999999
+        "popularity":6.736949457
     },
     "10964":{
         "movieIds":[19995],
         "name":"Laz Alonso",
         "dob":"1974-03-25",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6zqlURffzAErl4g4d8kiUWYWmoz.jpg",
-        "popularity":2.8
+        "popularity":2.072
     },
     "10978":{
         "movieIds":[671,672,673,674,675,767,12445],
         "name":"Maggie Smith",
         "dob":"1934-12-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mAJz4h4iOtieYxqD9HbU9DpgsEa.jpg",
-        "popularity":4.942699999999999
+        "popularity":4.364843
     },
     "10979":{
         "movieIds":[671],
@@ -4385,7 +4150,7 @@ var actorsJSON = {
         "name":"Fiona Shaw",
         "dob":"1958-07-10",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/74b0OuN3xKs0dTMYBnbhDLwv8Oq.jpg",
-        "popularity":2.03
+        "popularity":3.409
     },
     "10982":{
         "movieIds":[671,675,12444],
@@ -4399,14 +4164,14 @@ var actorsJSON = {
         "name":"Richard Griffiths",
         "dob":"1947-07-31",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2EwUMhf0Ns5M1wRMxFWnqFiEr1z.jpg",
-        "popularity":3.2507999999999995
+        "popularity":1.8325719999999999
     },
     "10984":{
         "movieIds":[671],
         "name":"Derek Deadman",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xHyCqVvZUhgRgm4b70ZLLxWAqdR.jpg",
-        "popularity":0.7
+        "popularity":1.6099999999999999
     },
     "10985":{
         "movieIds":[671],
@@ -4483,7 +4248,7 @@ var actorsJSON = {
         "name":"Rebecca Romijn",
         "dob":"1972-11-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/c3Sb3fEwxqNax3IVve5mAzaB1xL.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.9189999999999996
     },
     "11022":{
         "movieIds":[36658,36668],
@@ -4546,7 +4311,7 @@ var actorsJSON = {
         "name":"Simon Pegg",
         "dob":"1970-02-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sxfrOKHpm0WV72rFqGmLkzavkJS.jpg",
-        "popularity":4.8566
+        "popularity":4.357094
     },
     "11148":{
         "movieIds":[2502,2503],
@@ -4651,7 +4416,7 @@ var actorsJSON = {
         "name":"Pam Ferris",
         "dob":"1948-05-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/i9ou0K069ce8rL1OeWEZRukCBCk.jpg",
-        "popularity":0.7
+        "popularity":1.1829999999999998
     },
     "11275":{
         "movieIds":[12155,58574],
@@ -4665,14 +4430,14 @@ var actorsJSON = {
         "name":"Tim Pigott-Smith",
         "dob":"1946-05-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yVMK1iMCDsH8jKsL6XCJdDcONOS.jpg",
-        "popularity":2.8
+        "popularity":2.2399999999999998
     },
     "11279":{
         "movieIds":[1865],
         "name":"Roger Allam",
         "dob":"1953-10-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oKGnRX5VLB5i5LhfQMR71EjGWih.jpg",
-        "popularity":3.6098999999999997
+        "popularity":3.182969999999999
     },
     "11288":{
         "movieIds":[50619,674,8966,18239,24021,50620],
@@ -4728,7 +4493,14 @@ var actorsJSON = {
         "name":"John Lone",
         "dob":"1952-10-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qlzum4vK8Snzp65jiUVpZGYPzFE.jpg",
-        "popularity":1.54
+        "popularity":2.8
+    },
+    "11398":{
+        "movieIds":[869],
+        "name":"Cary-Hiroyuki Tagawa",
+        "dob":"1950-09-27",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/spmx3FIoK6f4xZORt2pqAgEAGtd.jpg",
+        "popularity":1.4
     },
     "11614":{
         "movieIds":[2675],
@@ -4742,45 +4514,17 @@ var actorsJSON = {
         "name":"Zooey Deschanel",
         "dob":"1980-01-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/iRjzulsatUKXtctVpkW3wyQlYEM.jpg",
-        "popularity":3.71
+        "popularity":3.913
     },
     "11678":{
         "movieIds":[8373],
         "name":"Rainn Wilson",
         "dob":"1966-01-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jaIVkyaIEZv0qYiPUAIrkJltbsk.jpg",
-        "popularity":1.3299999999999998
-    },
-    "11701":{
-        "movieIds":[787],
-        "name":"Angelina Jolie",
-        "dob":"1975-06-04",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/f3SSl8esru3Q3dDxDzeQCWqVSKQ.jpg",
-        "popularity":2.8
-    },
-    "11702":{
-        "movieIds":[787],
-        "name":"Adam Brody",
-        "dob":"1979-12-15",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/AvUsfTBgu1zUG3LY9PUlQAJzzpO.jpg",
-        "popularity":1.6099999999999999
-    },
-    "11703":{
-        "movieIds":[787],
-        "name":"Kerry Washington",
-        "dob":"1977-01-31",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/i3x6xkvk47ZPd133v0LMGoXp13s.jpg",
-        "popularity":2.35382
-    },
-    "11704":{
-        "movieIds":[787],
-        "name":"Rachael Huntley",
-        "dob":null,
-        "profile":null,
-        "popularity":1.4
+        "popularity":2.093
     },
     "11705":{
-        "movieIds":[2502,787],
+        "movieIds":[2502],
         "name":"Michelle Monaghan",
         "dob":"1976-03-23",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/d9QH5GJ9vxJZPur6yMv9GHPqi4O.jpg",
@@ -4828,19 +4572,12 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jKUbLQHM8FTDmLqK7OlIJxqoenc.jpg",
         "popularity":0.7
     },
-    "12023":{
-        "movieIds":[871],
-        "name":"Maurice Evans",
-        "dob":"1901-06-03",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/90MKQcjYqEV1LkRXKdQn7nROZo1.jpg",
-        "popularity":0.9099999999999999
-    },
     "12041":{
         "movieIds":[2502,2503],
         "name":"Julia Stiles",
         "dob":"1981-03-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sbmpFflDoFy4JPCiabasRAKFbQ4.jpg",
-        "popularity":1.4
+        "popularity":1.8199999999999998
     },
     "12044":{
         "movieIds":[674],
@@ -4889,7 +4626,7 @@ var actorsJSON = {
         "name":"Jack Thompson",
         "dob":"1940-08-31",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l2NNfs9bd6qxqzIOahcz2hErrq8.jpg",
-        "popularity":0.9099999999999999
+        "popularity":0.7
     },
     "12538":{
         "movieIds":[8358],
@@ -4917,14 +4654,14 @@ var actorsJSON = {
         "name":"Jeremy Piven",
         "dob":"1965-07-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ztyvg8K57t9LtH1gYIQLGS9X9KW.jpg",
-        "popularity":4.5038
+        "popularity":2.225342
     },
     "12835":{
         "movieIds":[51497],
         "name":"Vin Diesel",
         "dob":"1967-07-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qwyfzMKIhxJ7ols66FgEf7eGdcI.jpg",
-        "popularity":6.129463199999999
+        "popularity":5.3116516879999995
     },
     "13014":{
         "movieIds":[1771,70160],
@@ -4955,60 +4692,39 @@ var actorsJSON = {
         "popularity":1.4
     },
     "13240":{
-        "movieIds":[2133,72105],
+        "movieIds":[2133,869,72105],
         "name":"Mark Wahlberg",
         "dob":"1971-06-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tTTNnQiSI4SYwwdErDJxKESvuke.jpg",
-        "popularity":3.5918399999999995
+        "popularity":4.3832656
+    },
+    "13241":{
+        "movieIds":[869],
+        "name":"Estella Warren",
+        "dob":"1978-12-23",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e8MrTmaLExQdHoOUwUq9Nt9tT4d.jpg",
+        "popularity":2.8
     },
     "13242":{
-        "movieIds":[45243],
+        "movieIds":[869,45243],
         "name":"Paul Giamatti",
         "dob":"1967-06-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/827gAibReGKUrjDPEVBnQ3NKibp.jpg",
         "popularity":1.4
     },
-    "13259":{
-        "movieIds":[871],
-        "name":"James Daly",
-        "dob":"1918-10-23",
-        "profile":null,
-        "popularity":1.6099999999999999
+    "13243":{
+        "movieIds":[869],
+        "name":"Glenn Shadix",
+        "dob":"1952-04-15",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/n8jN66HVN4vjXKvZsOMkbTrJXH6.jpg",
+        "popularity":2.0999999999999996
     },
     "13260":{
-        "movieIds":[871],
+        "movieIds":[869],
         "name":"Linda Harrison",
         "dob":"1945-07-24",
         "profile":null,
         "popularity":2.4221399999999997
-    },
-    "13261":{
-        "movieIds":[871],
-        "name":"Robert Gunner",
-        "dob":null,
-        "profile":null,
-        "popularity":0.7
-    },
-    "13262":{
-        "movieIds":[871],
-        "name":"Lou Wagner",
-        "dob":"1948-08-14",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w5ONY2iwmYvcPp8aa08UKEg7UeV.jpg",
-        "popularity":0.7
-    },
-    "13263":{
-        "movieIds":[871],
-        "name":"Woodrow Parfrey",
-        "dob":"1922-10-05",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eKbfFahTG0h0b47QXwKTGY1eZaS.jpg",
-        "popularity":1.6099999999999999
-    },
-    "13264":{
-        "movieIds":[871],
-        "name":"Jeff Burton",
-        "dob":null,
-        "profile":null,
-        "popularity":1.4
     },
     "13275":{
         "movieIds":[10195],
@@ -5022,7 +4738,7 @@ var actorsJSON = {
         "name":"Christopher Guest",
         "dob":"1948-02-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fhEQq0q2aR2sh4HU824xunoyAce.jpg",
-        "popularity":1.3299999999999998
+        "popularity":0.7
     },
     "13548":{
         "movieIds":[72976],
@@ -5030,6 +4746,13 @@ var actorsJSON = {
         "dob":"1960-02-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1T8QO8FaDjGJkSoi2Xj3TBOYrPz.jpg",
         "popularity":3.0978499999999998
+    },
+    "13556":{
+        "movieIds":[24197],
+        "name":"Betty Compson",
+        "dob":"1897-03-19",
+        "profile":null,
+        "popularity":1.4
     },
     "13919":{
         "movieIds":[818],
@@ -5043,7 +4766,7 @@ var actorsJSON = {
         "name":"Seth Green",
         "dob":"1974-02-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/guMb3YfFy9YNQIJfMZmjUJcJ6Fs.jpg",
-        "popularity":4.1335
+        "popularity":2.8920149999999993
     },
     "13924":{
         "movieIds":[8871,818],
@@ -5057,6 +4780,13 @@ var actorsJSON = {
         "name":"Ritchie Coster",
         "dob":"1967-07-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tKFkEFho069GFVAkT9ntvR3SONp.jpg",
+        "popularity":0.7
+    },
+    "14033":{
+        "movieIds":[24197],
+        "name":"Emma Dunn",
+        "dob":"1874-02-26",
+        "profile":null,
         "popularity":0.7
     },
     "14102":{
@@ -5106,7 +4836,7 @@ var actorsJSON = {
         "name":"Jenny Agutter",
         "dob":"1952-12-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2AwYEHV0cXXo3vtjiuwHMEkqh6R.jpg",
-        "popularity":3.7954
+        "popularity":5.871585999999999
     },
     "14469":{
         "movieIds":[671],
@@ -5120,7 +4850,7 @@ var actorsJSON = {
         "name":"Kevin Dunn",
         "dob":"1956-02-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ifUtnaUC6lHxqpQgymNITqPUsNe.jpg",
-        "popularity":3.01
+        "popularity":2.303
     },
     "14792":{
         "movieIds":[36668],
@@ -5141,7 +4871,7 @@ var actorsJSON = {
         "name":"Paddy Considine",
         "dob":"1974-09-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4PEEgoMvJXepxejuFa6TrrLUosf.jpg",
-        "popularity":2.1917
+        "popularity":2.0999999999999996
     },
     "14888":{
         "movieIds":[72976],
@@ -5155,7 +4885,7 @@ var actorsJSON = {
         "name":"Jim Norton",
         "dob":"1938-01-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lndFtmSwtCzoeWkgjqJBqVRKGk2.jpg",
-        "popularity":1.4
+        "popularity":0.9099999999999999
     },
     "15034":{
         "movieIds":[8871],
@@ -5163,13 +4893,6 @@ var actorsJSON = {
         "dob":"1981-06-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4GyPGjrvqs3zes8I1SWrQWukrA9.jpg",
         "popularity":0.7
-    },
-    "15196":{
-        "movieIds":[98],
-        "name":"David Hemmings",
-        "dob":"1941-11-18",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uzJRMPZq9Hv8APMqYsOTSZqcBg6.jpg",
-        "popularity":2.8
     },
     "15232":{
         "movieIds":[6637],
@@ -5274,7 +4997,7 @@ var actorsJSON = {
         "name":"Helen Mirren",
         "dob":"1945-07-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dRYchPNm8WCXxWHcGtUwq9VLra1.jpg",
-        "popularity":6.601839999999999
+        "popularity":3.2541655999999994
     },
     "15737":{
         "movieIds":[767,12444,12445,37724],
@@ -5295,7 +5018,7 @@ var actorsJSON = {
         "name":"Frank Welker",
         "dob":"1946-03-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pV0YgZFJFpIZ6W0I2S8LBi6cZ2Q.jpg",
-        "popularity":5.294939999999999
+        "popularity":3.206544599999999
     },
     "15853":{
         "movieIds":[19995],
@@ -5337,14 +5060,14 @@ var actorsJSON = {
         "name":"Chris Evans",
         "dob":"1981-06-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/y1OTC2CbAesg8mkuBbyIOc2jSKG.jpg",
-        "popularity":6.04352
+        "popularity":4.1139168
     },
     "16851":{
         "movieIds":[41154],
         "name":"Josh Brolin",
         "dob":"1968-02-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/c138i4DCRgPpIoZR1rZUJDECjld.jpg",
-        "popularity":2.8
+        "popularity":3.2619999999999996
     },
     "16861":{
         "movieIds":[2133],
@@ -5365,7 +5088,7 @@ var actorsJSON = {
         "name":"Topher Grace",
         "dob":"1978-07-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mdZ15XJJjbrVdSUVI5K3YxVTdZt.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.8
     },
     "17064":{
         "movieIds":[37724],
@@ -5386,7 +5109,7 @@ var actorsJSON = {
         "name":"Abigail Breslin",
         "dob":"1996-04-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w7PxErHPaa05QomzJCg7U5Wp0s4.jpg",
-        "popularity":5.595449999999999
+        "popularity":4.1435905
     },
     "17179":{
         "movieIds":[558],
@@ -5414,7 +5137,7 @@ var actorsJSON = {
         "name":"Bill Smitrovich",
         "dob":"1947-05-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/izJ9c6AfUZEoEWXa7F3brsDGLNV.jpg",
-        "popularity":2.8
+        "popularity":1.54
     },
     "17244":{
         "movieIds":[1894,1895],
@@ -5512,7 +5235,7 @@ var actorsJSON = {
         "name":"Zachary Quinto",
         "dob":"1977-06-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6JBIfEaNVSHeSxMLxAVvAR78KV3.jpg",
-        "popularity":3.3767999999999994
+        "popularity":3.1130399999999994
     },
     "17341":{
         "movieIds":[1858],
@@ -5533,7 +5256,7 @@ var actorsJSON = {
         "name":"Kelly Reilly",
         "dob":"1977-07-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tGOT6XkJSVD6LzF8tAPjWf4ZMzm.jpg",
-        "popularity":2.2945999999999995
+        "popularity":2.7265139999999994
     },
     "17604":{
         "movieIds":[56292,10195,24428],
@@ -5617,7 +5340,7 @@ var actorsJSON = {
         "name":"Mizuo Peck",
         "dob":"1977-08-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qFSOGtQgw7ALG4WI8irH9PlD68Z.jpg",
-        "popularity":0.7
+        "popularity":1.54
     },
     "17857":{
         "movieIds":[1726],
@@ -5708,7 +5431,7 @@ var actorsJSON = {
         "name":"Patricia Velasquez",
         "dob":"1971-01-31",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dRD0tYxrtxPZ11mJCN0O3nLd1Mx.jpg",
-        "popularity":0.9099999999999999
+        "popularity":0.9729999999999999
     },
     "18973":{
         "movieIds":[72105],
@@ -5722,7 +5445,7 @@ var actorsJSON = {
         "name":"Bryce Dallas Howard",
         "dob":"1981-03-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/d2ENV2X0CbYE9W8UgrHYvCWaOtv.jpg",
-        "popularity":3.9234999999999998
+        "popularity":5.183114999999999
     },
     "18998":{
         "movieIds":[557,558,559],
@@ -5743,14 +5466,14 @@ var actorsJSON = {
         "name":"Dylan Baker",
         "dob":"1959-10-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l6SX5uyw0wQvD4Md1tMZMfEgBlF.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.4
     },
     "19153":{
         "movieIds":[557,558,559,559],
         "name":"Cliff Robertson",
         "dob":"1923-09-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/brkuCYbMRJqPAucyIf3szNhA5h5.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.4
     },
     "19154":{
         "movieIds":[558,559],
@@ -5764,7 +5487,7 @@ var actorsJSON = {
         "name":"Thomas Haden Church",
         "dob":"1960-06-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/A3bV1eIKed7yrswZQW86oswrB9P.jpg",
-        "popularity":1.8297999999999999
+        "popularity":2.8
     },
     "19278":{
         "movieIds":[18360,41154],
@@ -5780,12 +5503,19 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bizhhVVs4y8CfHzPfqPYNEvs2eZ.jpg",
         "popularity":1.4
     },
+    "19406":{
+        "movieIds":[24197],
+        "name":"Robert Montgomery",
+        "dob":"1904-05-21",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/g1onNiRYaWx37zSsnzL4GPR1atC.jpg",
+        "popularity":0.9099999999999999
+    },
     "19439":{
         "movieIds":[9522],
         "name":"Henry Gibson",
         "dob":"1935-09-21",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5dmU4muna3kpU2aFM4eU2Ij12Xn.jpg",
-        "popularity":2.0999999999999996
+        "popularity":0.7
     },
     "19468":{
         "movieIds":[557],
@@ -5813,21 +5543,21 @@ var actorsJSON = {
         "name":"Josh Duhamel",
         "dob":"1972-12-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/edz1G5DUs2aoDY7stFoeu9VQpX.jpg",
-        "popularity":4.13
+        "popularity":2.639
     },
     "19537":{
         "movieIds":[1858,8373],
         "name":"Megan Fox",
         "dob":"1986-05-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3ZEIdE5qURf6FMHO2KaBwqyuxSq.jpg",
-        "popularity":7.670224099999999
+        "popularity":4.750320168999999
     },
     "19538":{
         "movieIds":[1858],
         "name":"Rachael Taylor",
         "dob":"1984-07-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xFJjyXnA2RKMJfTckR6TFKgbhRx.jpg",
-        "popularity":1.6407999999999998
+        "popularity":1.9676719999999999
     },
     "19540":{
         "movieIds":[1858,38356],
@@ -5850,6 +5580,13 @@ var actorsJSON = {
         "profile":null,
         "popularity":0.7
     },
+    "20047":{
+        "movieIds":[16219],
+        "name":"Cara Buono",
+        "dob":"1971-03-01",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5Q82uAgmgpCjjUbibpu68xa0NDZ.jpg",
+        "popularity":0.7
+    },
     "20049":{
         "movieIds":[674],
         "name":"David Tennant",
@@ -5869,7 +5606,7 @@ var actorsJSON = {
         "name":"Zoë Wanamaker",
         "dob":"1949-05-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hVCSPrnsMApKf5azw7Avq44UCXn.jpg",
-        "popularity":1.6099999999999999
+        "popularity":2.0999999999999996
     },
     "20309":{
         "movieIds":[9522],
@@ -5904,7 +5641,7 @@ var actorsJSON = {
         "name":"Vanessa Ferlito",
         "dob":"1980-12-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cnc3nF2pyRvMIr9PjGYNR8Npqk3.jpg",
-        "popularity":1.4
+        "popularity":1.246
     },
     "20580":{
         "movieIds":[557,559],
@@ -5962,13 +5699,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oIsayxGQJtcn6WTrS0h8bhkkbyu.jpg",
         "popularity":3.6932909999999994
     },
-    "20761":{
-        "movieIds":[98],
-        "name":"Sven-Ole Thorsen",
-        "dob":"1944-09-24",
-        "profile":null,
-        "popularity":3.5
-    },
     "20788":{
         "movieIds":[10719],
         "name":"Artie Lange",
@@ -5981,14 +5711,14 @@ var actorsJSON = {
         "name":"Jean-Pierre Marielle",
         "dob":"1932-04-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tyix2fq3plrW99oH6jOu0szSL65.jpg",
-        "popularity":3.01
+        "popularity":1.4
     },
     "20806":{
         "movieIds":[1894,1894,1895],
         "name":"Silas Carson",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cT7Qyu8Zl8IDsgYzduzuCm1zxpt.jpg",
-        "popularity":1.8199999999999998
+        "popularity":1.4
     },
     "20982":{
         "movieIds":[2502,12155],
@@ -6009,7 +5739,7 @@ var actorsJSON = {
         "name":"Anton Yelchin",
         "dob":"1989-03-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/rTpvIORxcshOtP0g84p1JX7KBp.jpg",
-        "popularity":2.5486999999999997
+        "popularity":2.2593829999999997
     },
     "21029":{
         "movieIds":[8966,18239,24021],
@@ -6030,21 +5760,21 @@ var actorsJSON = {
         "name":"Lynn Collins",
         "dob":"1977-05-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4vjt3TWRbIpNfEeL5pjvDIob599.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.099
     },
     "21045":{
         "movieIds":[5175],
         "name":"Maggie Q",
         "dob":"1979-05-22",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mxRKup452yKxunh3PUdgaBgUfPX.jpg",
-        "popularity":0.7
+        "popularity":3.983
     },
     "21051":{
         "movieIds":[51497],
         "name":"Yorgo Constantine",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2Gt05rHfZjLAxPrHiO4gF6n5GxL.jpg",
-        "popularity":3.5
+        "popularity":1.4
     },
     "21083":{
         "movieIds":[22881],
@@ -6072,7 +5802,7 @@ var actorsJSON = {
         "name":"Jayce Bartok",
         "dob":"1974-02-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/G1p8VhJlfYf5nGDXMSXp9ZJ1Vt.jpg",
-        "popularity":1.4
+        "popularity":0.7
     },
     "21134":{
         "movieIds":[10138],
@@ -6114,14 +5844,14 @@ var actorsJSON = {
         "name":"Eric Roberts",
         "dob":"1956-04-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7R8U3TobSmE3fpVuPHyN8iAQBxv.jpg",
-        "popularity":3.5349999999999997
+        "popularity":2.8
     },
     "21316":{
         "movieIds":[155,49026],
         "name":"Nestor Carbonell",
         "dob":"1967-12-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/yALf2koeUAc2UNoT5o0hQO6Akzn.jpg",
-        "popularity":1.4
+        "popularity":2.4359999999999995
     },
     "21317":{
         "movieIds":[8960],
@@ -6163,7 +5893,7 @@ var actorsJSON = {
         "name":"Joaquim de Almeida",
         "dob":"1957-03-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tlNwZu2Cy3e4zU3c2Gs9whvumv4.jpg",
-        "popularity":1.4
+        "popularity":1.456
     },
     "22970":{
         "movieIds":[10719],
@@ -6191,7 +5921,7 @@ var actorsJSON = {
         "name":"Jason Bateman",
         "dob":"1969-01-14",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uADLYlmxU9ObcVBVmJs4DkKnFZF.jpg",
-        "popularity":4.74733
+        "popularity":1.9672596999999998
     },
     "23608":{
         "movieIds":[2503],
@@ -6219,7 +5949,7 @@ var actorsJSON = {
         "name":"Will Ferrell",
         "dob":"1967-07-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hwhGohRzuXITYPxRCbuhGiRM0Zk.jpg",
-        "popularity":3.6043
+        "popularity":3.4743869999999997
     },
     "23897":{
         "movieIds":[8966],
@@ -6254,7 +5984,7 @@ var actorsJSON = {
         "name":"Julie White",
         "dob":"1961-06-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kYPArQ1PUwcoPtbx6UGXKmxBVRa.jpg",
-        "popularity":2.8
+        "popularity":1.162
     },
     "24357":{
         "movieIds":[72105],
@@ -6282,7 +6012,7 @@ var actorsJSON = {
         "name":"Édgar Ramírez",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/iLS6yMAFNrzyDMNKhbb0bG7o7gb.jpg",
-        "popularity":2.2945999999999995
+        "popularity":2.8
     },
     "25675":{
         "movieIds":[1734],
@@ -6345,7 +6075,7 @@ var actorsJSON = {
         "name":"Ed Helms",
         "dob":"1974-01-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8Y6IuZgDSA6KEjvMYyi1QsJFCtj.jpg",
-        "popularity":3.5
+        "popularity":3.8499999999999996
     },
     "27578":{
         "movieIds":[36668,27205],
@@ -6366,7 +6096,7 @@ var actorsJSON = {
         "name":"Ian McDiarmid",
         "dob":"1944-08-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sa6FTcK7xCHCFFR10jyOOOffd7f.jpg",
-        "popularity":1.4
+        "popularity":1.246
     },
     "27822":{
         "movieIds":[12445],
@@ -6506,7 +6236,7 @@ var actorsJSON = {
         "name":"Lindsay Duncan",
         "dob":"1950-11-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5jgOOQpB5m8o3gYU0RhiATMZkgn.jpg",
-        "popularity":2.8
+        "popularity":1.1199999999999999
     },
     "30315":{
         "movieIds":[1771,49051],
@@ -6548,7 +6278,7 @@ var actorsJSON = {
         "name":"John Di Maggio",
         "dob":"1968-09-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fDuqKpam6e8Q3qZjtHntWtkpUT4.jpg",
-        "popularity":4.930799999999999
+        "popularity":2.2637719999999995
     },
     "31532":{
         "movieIds":[2133],
@@ -6597,28 +6327,28 @@ var actorsJSON = {
         "name":"Kevin James",
         "dob":"1965-04-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vu65eme91L347v898TZKviqB2X6.jpg",
-        "popularity":6.3496999999999995
+        "popularity":1.9014729999999995
     },
     "32990":{
         "movieIds":[12444],
         "name":"Sophie Thompson",
         "dob":"1962-01-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/39q6651Z7Ux8xrmRDhbXyOXGRom.jpg",
-        "popularity":1.4
+        "popularity":1.8199999999999998
     },
     "33045":{
         "movieIds":[10195],
         "name":"J. Michael Straczynski",
         "dob":"1954-07-17",
         "profile":null,
-        "popularity":0.7
+        "popularity":1.1829999999999998
     },
     "33053":{
         "movieIds":[36658],
         "name":"Chiara Zanni",
         "dob":"1978-07-19",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vN7xP1ICUctUflNdYv4QskbuALn.jpg",
-        "popularity":1.4
+        "popularity":1.456
     },
     "33181":{
         "movieIds":[1894,1895],
@@ -6709,7 +6439,7 @@ var actorsJSON = {
         "name":"Andrew Secombe",
         "dob":null,
         "profile":null,
-        "popularity":1.4
+        "popularity":1.036
     },
     "33235":{
         "movieIds":[3981],
@@ -6723,7 +6453,7 @@ var actorsJSON = {
         "name":"David Rasche",
         "dob":"1944-08-07",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nke1fKzhp5Ds5PjfbqtXQ1JVhN8.jpg",
-        "popularity":4.8999999999999995
+        "popularity":1.351
     },
     "34248":{
         "movieIds":[272],
@@ -6737,7 +6467,14 @@ var actorsJSON = {
         "name":"Jean-Yves Berteloot",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xvdDDkbUKSlRgUDIAjHHf6jClGn.jpg",
-        "popularity":1.8199999999999998
+        "popularity":1.4
+    },
+    "34268":{
+        "movieIds":[24197],
+        "name":"Esther Dale",
+        "dob":"1885-11-10",
+        "profile":null,
+        "popularity":0.7
     },
     "34407":{
         "movieIds":[2133],
@@ -6779,7 +6516,7 @@ var actorsJSON = {
         "name":"Eric Balfour",
         "dob":"1977-04-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mGgHEYCaiHNbMJfwG3dvagTcHFI.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.4
     },
     "34490":{
         "movieIds":[3981],
@@ -6800,7 +6537,7 @@ var actorsJSON = {
         "name":"James Nesbitt",
         "dob":"1965-01-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/A7cZ9L2omRJMVMEQWF4aEY31hrK.jpg",
-        "popularity":3.1499999999999995
+        "popularity":2.3449999999999998
     },
     "34900":{
         "movieIds":[12155],
@@ -6814,7 +6551,7 @@ var actorsJSON = {
         "name":"David Oyelowo",
         "dob":"1976-04-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pWGIywWFt9aUNx6afN2RmGxPQdF.jpg",
-        "popularity":2.8
+        "popularity":3.4719999999999995
     },
     "35546":{
         "movieIds":[2133],
@@ -6877,7 +6614,7 @@ var actorsJSON = {
         "name":"Chris Noth",
         "dob":"1954-11-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1d7G7EcwKRn9BNMqbi3xy5ZZcwm.jpg",
-        "popularity":3.2199999999999998
+        "popularity":1.6099999999999999
     },
     "38405":{
         "movieIds":[8346],
@@ -6891,7 +6628,7 @@ var actorsJSON = {
         "name":"Amber Valletta",
         "dob":"1974-02-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/339jYuXYKYQnz2NlsADDNY5tRn1.jpg",
-        "popularity":1.4
+        "popularity":1.7359999999999998
     },
     "38885":{
         "movieIds":[591],
@@ -6912,7 +6649,7 @@ var actorsJSON = {
         "name":"Peter Pedrero",
         "dob":null,
         "profile":null,
-        "popularity":2.0999999999999996
+        "popularity":0.7
     },
     "38888":{
         "movieIds":[591],
@@ -6954,7 +6691,7 @@ var actorsJSON = {
         "name":"Tim Guinee",
         "dob":"1962-11-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3JthPabh8d7DB5OwfMzf64Ro2pD.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.009
     },
     "40638":{
         "movieIds":[12445],
@@ -7033,6 +6770,13 @@ var actorsJSON = {
         "profile":null,
         "popularity":1.1829999999999998
     },
+    "44824":{
+        "movieIds":[869],
+        "name":"Chad Bannon",
+        "dob":null,
+        "profile":null,
+        "popularity":0.7
+    },
     "45827":{
         "movieIds":[50619,8966,18239,24021,50620],
         "name":"Ashley Greene",
@@ -7080,14 +6824,14 @@ var actorsJSON = {
         "name":"Charlie Tahan",
         "dob":"1997-12-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/exToxa0i0xPCmxpHxt1qJsRe5zD.jpg",
-        "popularity":3.5
+        "popularity":0.7
     },
     "49920":{
         "movieIds":[6479],
         "name":"Willow Smith",
         "dob":"2000-10-31",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/beZgG8NVEpAiYd8Oarwl4nZAoSv.jpg",
-        "popularity":2.1597099999999996
+        "popularity":2.2243739
     },
     "49921":{
         "movieIds":[6479,8960],
@@ -7108,7 +6852,7 @@ var actorsJSON = {
         "name":"Rachel Nichols",
         "dob":"1980-01-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/80d14kDiIzkrB40mSuINBQbdls6.jpg",
-        "popularity":4.8999999999999995
+        "popularity":2.0999999999999996
     },
     "51072":{
         "movieIds":[10138],
@@ -7150,7 +6894,7 @@ var actorsJSON = {
         "name":"Seth MacFarlane",
         "dob":"1973-10-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cXNhAJHGkqvfYTdC7vROerQq7Bq.jpg",
-        "popularity":6.093324999999999
+        "popularity":2.8583992499999997
     },
     "52374":{
         "movieIds":[36658],
@@ -7199,7 +6943,7 @@ var actorsJSON = {
         "name":"Paula Patton",
         "dob":"1975-12-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4FBfB0CvPEN6hBzbBVrhciI6Kwu.jpg",
-        "popularity":2.7299999999999995
+        "popularity":1.9956999999999998
     },
     "52852":{
         "movieIds":[10195],
@@ -7234,7 +6978,7 @@ var actorsJSON = {
         "name":"Ray Santiago",
         "dob":"1984-06-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uqOaejdbrJDTnH1KfOWljs5YO7q.jpg",
-        "popularity":1.4
+        "popularity":1.1199999999999999
     },
     "53260":{
         "movieIds":[22881],
@@ -7248,7 +6992,7 @@ var actorsJSON = {
         "name":"Sam Huntington",
         "dob":"1982-04-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nq7pwic6Xe6XTRzOfXjMCuUqbjt.jpg",
-        "popularity":1.00324
+        "popularity":1.7002916
     },
     "53493":{
         "movieIds":[1452],
@@ -7283,7 +7027,7 @@ var actorsJSON = {
         "name":"Rachel McAdams",
         "dob":"1978-11-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vvbr4wKIRbfiH4u7aXorobKLai5.jpg",
-        "popularity":7.110879999999999
+        "popularity":4.933263999999999
     },
     "53755":{
         "movieIds":[50619,8966,18239,24021,50620],
@@ -7297,7 +7041,7 @@ var actorsJSON = {
         "name":"Salli Richardson-Whitfield",
         "dob":"1967-11-23",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/j3AKHUAcnfyOCYhqbiAWcAU6xbZ.jpg",
-        "popularity":1.3929999999999998
+        "popularity":1.1179
     },
     "54203":{
         "movieIds":[18239],
@@ -7311,7 +7055,7 @@ var actorsJSON = {
         "name":"Jason Earles",
         "dob":"1977-04-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lwHIA7z8LAyKx7B4eV9bWUBT7tk.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.4
     },
     "54645":{
         "movieIds":[8346],
@@ -7402,14 +7146,14 @@ var actorsJSON = {
         "name":"Julie Ann Emery",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qoYHsNAcTlepMg3WufNFRA6MNIz.jpg",
-        "popularity":1.6099999999999999
+        "popularity":0.9099999999999999
     },
     "55257":{
         "movieIds":[8488],
         "name":"Adam Arkin",
         "dob":"1956-08-19",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zCLaZZMQxBMZ4DtXOecy84xnO2g.jpg",
-        "popularity":1.4
+        "popularity":0.7
     },
     "55258":{
         "movieIds":[8488],
@@ -7437,7 +7181,7 @@ var actorsJSON = {
         "name":"David Allen Brooks",
         "dob":"1974-01-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/406xWYihza21XRKOZV3PYyWTXxg.jpg",
-        "popularity":0.7
+        "popularity":1.4
     },
     "55436":{
         "movieIds":[8358],
@@ -7514,7 +7258,7 @@ var actorsJSON = {
         "name":"Ray Stevenson",
         "dob":"1964-05-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wgOg5Xk87nHaw6BbdepaLJfkmtn.jpg",
-        "popularity":4.0251399999999995
+        "popularity":1.9075419999999998
     },
     "56676":{
         "movieIds":[18239,24021],
@@ -7577,7 +7321,7 @@ var actorsJSON = {
         "name":"Ernie Reyes Jr.",
         "dob":"1972-01-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3LQP5PtJOCiGesjvrlBDB3gkNvF.jpg",
-        "popularity":2.0999999999999996
+        "popularity":1.4
     },
     "58225":{
         "movieIds":[177862,45243],
@@ -7605,7 +7349,7 @@ var actorsJSON = {
         "name":"Natalie Dormer",
         "dob":"1982-02-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/axD9iWZLDht6l4ce1FFSbwR4f6I.jpg",
-        "popularity":3.71
+        "popularity":1.813
     },
     "58549":{
         "movieIds":[8871],
@@ -7661,7 +7405,7 @@ var actorsJSON = {
         "name":"Diora Baird",
         "dob":"1983-04-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eDBiUWTDjgdvlAw2qYLvqINqta0.jpg",
-        "popularity":3.0386999999999995
+        "popularity":2.31161
     },
     "59817":{
         "movieIds":[10195],
@@ -7682,7 +7426,7 @@ var actorsJSON = {
         "name":"Alice Eve",
         "dob":"1982-02-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/iXTNJLoOTa7DQTG1fNtLe7ug6g.jpg",
-        "popularity":4.311999999999999
+        "popularity":2.6936
     },
     "60348":{
         "movieIds":[767,12445],
@@ -7731,7 +7475,7 @@ var actorsJSON = {
         "name":"Taylor Kitsch",
         "dob":"1981-04-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/klTMhWw2BpvQUcriuVmAwV9Z1gk.jpg",
-        "popularity":6.7676
+        "popularity":2.0999999999999996
     },
     "61182":{
         "movieIds":[45243],
@@ -7761,12 +7505,19 @@ var actorsJSON = {
         "profile":null,
         "popularity":1.4
     },
+    "61981":{
+        "movieIds":[869],
+        "name":"Michael Clarke Duncan",
+        "dob":"1957-12-10",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/88nraA4L6yolz6fRRvbGx9O4TEL.jpg",
+        "popularity":3.1061099999999993
+    },
     "62064":{
         "movieIds":[13475],
         "name":"Chris Pine",
         "dob":"1980-08-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/A1c86U2LEhkfxXmrNFebD9SEY8r.jpg",
-        "popularity":4.6676
+        "popularity":3.080084
     },
     "62066":{
         "movieIds":[10719],
@@ -7780,7 +7531,7 @@ var actorsJSON = {
         "name":"Josh Zuckerman",
         "dob":"1985-04-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/s5u8YMksFUJiwqQN2uilMvxvGRy.jpg",
-        "popularity":1.4
+        "popularity":0.7
     },
     "62892":{
         "movieIds":[1771],
@@ -7801,14 +7552,14 @@ var actorsJSON = {
         "name":"Michael Jai White",
         "dob":"1967-11-10",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/k3kvN9A7JMQjr6P0Z6WLq3ZHOsa.jpg",
-        "popularity":2.0999999999999996
+        "popularity":0.7
     },
     "64930":{
         "movieIds":[10719],
         "name":"Bob Newhart",
         "dob":"1929-09-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xSctPlIIYgIIOxAEvW0ZjY9jsyy.jpg",
-        "popularity":2.5199999999999996
+        "popularity":0.7
     },
     "65225":{
         "movieIds":[18239,24021],
@@ -7822,14 +7573,14 @@ var actorsJSON = {
         "name":"Sam Worthington",
         "dob":"1976-08-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2wlUwIoMPPhE6tQqHrWf9KUtI9W.jpg",
-        "popularity":3.9589829999999995
+        "popularity":3.9876948999999997
     },
     "65827":{
-        "movieIds":[787,1858],
+        "movieIds":[1858],
         "name":"Keith David",
         "dob":"1956-06-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wI6y7A8zLe8FXn32e0uv5xAW9VF.jpg",
-        "popularity":2.6494999999999997
+        "popularity":3.458455
     },
     "66623":{
         "movieIds":[8960],
@@ -8151,7 +7902,7 @@ var actorsJSON = {
         "name":"John Cho",
         "dob":"1972-06-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zbDkKfgJB1smLKEKrVPgJtnQ1k8.jpg",
-        "popularity":4.23815
+        "popularity":1.5014334999999999
     },
     "69476":{
         "movieIds":[12445],
@@ -8186,7 +7937,7 @@ var actorsJSON = {
         "name":"Cobie Smulders",
         "dob":"1982-04-03",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/i01zr4Pz8cIX06q3vRYAZdhBjLd.jpg",
-        "popularity":3.9421899999999996
+        "popularity":1.9647970999999997
     },
     "71580":{
         "movieIds":[49051],
@@ -8249,17 +8000,17 @@ var actorsJSON = {
         "name":"Ramon Rodriguez",
         "dob":"1979-12-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uEZ8VNVVkvPgNJyb0GxC2UO28qy.jpg",
-        "popularity":1.4
+        "popularity":1.9459999999999997
     },
     "73269":{
         "movieIds":[51497],
         "name":"Elsa Pataky",
         "dob":"1976-07-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5vrFIW2xxwehJGjxnZ9R1fKoigr.jpg",
-        "popularity":3.5
+        "popularity":2.135
     },
     "73421":{
-        "movieIds":[98,2675],
+        "movieIds":[2675],
         "name":"Joaquin Phoenix",
         "dob":"1974-10-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wruHkyFxaUxFvK25CS3lEjaumpP.jpg",
@@ -8340,14 +8091,14 @@ var actorsJSON = {
         "name":"Freida Pinto",
         "dob":"1984-10-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nDZFKQ0EohU4Y6AA1qys7xnYKgh.jpg",
-        "popularity":0.7
+        "popularity":1.6099999999999999
     },
     "76793":{
         "movieIds":[1930],
         "name":"Irrfan Khan",
         "dob":"1962-11-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/m9aWaeaAwH0g1yQv4v4CMb3NWSi.jpg",
-        "popularity":7.8435
+        "popularity":3.715915
     },
     "77069":{
         "movieIds":[70160],
@@ -8417,7 +8168,7 @@ var actorsJSON = {
         "name":"Tom Kenny",
         "dob":"1962-07-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wvyV9SxvOFsltk2AdZqWIlUCef9.jpg",
-        "popularity":1.4
+        "popularity":0.7
     },
     "79072":{
         "movieIds":[2080],
@@ -8473,7 +8224,7 @@ var actorsJSON = {
         "name":"Mike Tyson",
         "dob":"1966-06-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/aus9J05tMVcWk919KMMFVMlylqb.jpg",
-        "popularity":0.7
+        "popularity":1.4
     },
     "81022":{
         "movieIds":[674],
@@ -8494,7 +8245,7 @@ var actorsJSON = {
         "name":"Charles Adler",
         "dob":"1956-10-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eSZtf1oCn8PY3VEBclD7VkCEWS.jpg",
-        "popularity":2.4359999999999995
+        "popularity":1.4
     },
     "81364":{
         "movieIds":[10138],
@@ -8552,6 +8303,20 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lsJ51EAV14lf0F39nGnlHz7CdM8.jpg",
         "popularity":0.9099999999999999
     },
+    "83236":{
+        "movieIds":[24197],
+        "name":"William Tracy",
+        "dob":"1917-12-01",
+        "profile":null,
+        "popularity":0.7
+    },
+    "83260":{
+        "movieIds":[24197],
+        "name":"Lucile Watson",
+        "dob":"1879-05-27",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/93K9dxHGMcThXyV2nP16GcYaZIE.jpg",
+        "popularity":1.4
+    },
     "83356":{
         "movieIds":[18239,12444,12445,50620],
         "name":"Jamie Campbell Bower",
@@ -8564,7 +8329,7 @@ var actorsJSON = {
         "name":"Sasha Barrese",
         "dob":"1981-04-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bpgGjOTKQcwKz5HlUnH1uSnzrxB.jpg",
-        "popularity":1.8199999999999998
+        "popularity":0.7
     },
     "83586":{
         "movieIds":[38356,45243],
@@ -8578,14 +8343,14 @@ var actorsJSON = {
         "name":"Taylor Lautner",
         "dob":"1992-02-11",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/b6WXxtPyX4aZwwxFCfxQsD3An3T.jpg",
-        "popularity":2.5549999999999997
+        "popularity":2.1664999999999996
     },
     "84215":{
         "movieIds":[50619,18239,24021,50620],
         "name":"Jackson Rathbone",
         "dob":"1984-12-21",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vbJdMsfDwT5FB5dYPmP1KwpYm1v.jpg",
-        "popularity":2.2106
+        "popularity":0.7
     },
     "84216":{
         "movieIds":[18239],
@@ -8627,7 +8392,7 @@ var actorsJSON = {
         "name":"Daniel Cudmore",
         "dob":null,
         "profile":null,
-        "popularity":2.45
+        "popularity":1.5504999999999998
     },
     "84223":{
         "movieIds":[8966,18239,24021],
@@ -8697,7 +8462,7 @@ var actorsJSON = {
         "name":"Ellen Albertini Dow",
         "dob":"1913-11-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w68cE340DJ6ftbJyQdUA3dBpZlz.jpg",
-        "popularity":0.7
+        "popularity":2.3099999999999996
     },
     "86204":{
         "movieIds":[51497],
@@ -8739,7 +8504,7 @@ var actorsJSON = {
         "name":"Randy Savage",
         "dob":"1952-11-15",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hH4RFOLRjHk8rGlS7ah3MxdYDz2.jpg",
-        "popularity":1.3299999999999998
+        "popularity":0.7
     },
     "89387":{
         "movieIds":[767],
@@ -8818,12 +8583,19 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lsnmeKueImKeToe4oNo4YWie4aM.jpg",
         "popularity":1.4
     },
+    "95967":{
+        "movieIds":[24197],
+        "name":"William Edmunds",
+        "dob":"1886-01-01",
+        "profile":null,
+        "popularity":1.6099999999999999
+    },
     "96066":{
         "movieIds":[70160],
         "name":"Liam Hemsworth",
         "dob":"1990-01-13",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kyteGkd24oy56dBAohR7VOvVZzV.jpg",
-        "popularity":2.9350964999999993
+        "popularity":2.2941586849999998
     },
     "96321":{
         "movieIds":[51497],
@@ -8844,7 +8616,7 @@ var actorsJSON = {
         "name":"Matthew Lewis",
         "dob":"1989-06-27",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xRWTqOENNOEJrOoSWyGxEnSgT1a.jpg",
-        "popularity":1.1199999999999999
+        "popularity":1.9207999999999998
     },
     "96851":{
         "movieIds":[673,674,675,767,12444,12445],
@@ -8865,7 +8637,7 @@ var actorsJSON = {
         "name":"Dean Knowsley",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uLBD2u1xuAUo9Fbxe6Jla9jEIEx.jpg",
-        "popularity":1.1199999999999999
+        "popularity":0.7
     },
     "101012":{
         "movieIds":[5175],
@@ -8928,7 +8700,7 @@ var actorsJSON = {
         "name":"Matt Walsh",
         "dob":null,
         "profile":null,
-        "popularity":1.4
+        "popularity":3.2199999999999998
     },
     "104191":{
         "movieIds":[2133],
@@ -8941,6 +8713,13 @@ var actorsJSON = {
         "movieIds":[2133],
         "name":"Merle Kennedy",
         "dob":null,
+        "profile":null,
+        "popularity":0.7
+    },
+    "105007":{
+        "movieIds":[24197],
+        "name":"Philip Merivale",
+        "dob":"1886-11-02",
         "profile":null,
         "popularity":0.7
     },
@@ -8963,7 +8742,7 @@ var actorsJSON = {
         "name":"George Taylor",
         "dob":null,
         "profile":null,
-        "popularity":2.3099999999999996
+        "popularity":1.3279
     },
     "105584":{
         "movieIds":[49051],
@@ -9040,7 +8819,7 @@ var actorsJSON = {
         "name":"Robert Maillet",
         "dob":"1969-10-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hdUFHt28C7rEow2yENOLIrgGccY.jpg",
-        "popularity":1.86214
+        "popularity":1.4
     },
     "113608":{
         "movieIds":[559],
@@ -9096,7 +8875,7 @@ var actorsJSON = {
         "name":"Hal Fishman",
         "dob":"1931-08-25",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3JbyHCRnWWJmkyo2bGPf9oA9x1D.jpg",
-        "popularity":2.3099999999999996
+        "popularity":1.4
     },
     "117187":{
         "movieIds":[38356],
@@ -9104,6 +8883,13 @@ var actorsJSON = {
         "dob":"1969-01-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/f7UTciMj6F3KdAga4CeDs0lKRb5.jpg",
         "popularity":1.3299999999999998
+    },
+    "117419":{
+        "movieIds":[24197],
+        "name":"Gene Raymond",
+        "dob":"1908-08-13",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vSf2bZJpmSWay0byG6MMfPfHmFK.jpg",
+        "popularity":0.7
     },
     "117654":{
         "movieIds":[674],
@@ -9159,7 +8945,7 @@ var actorsJSON = {
         "name":"Michael Irby",
         "dob":"1972-11-16",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6LET9IafZO6BHT0iO1wifdmYb8w.jpg",
-        "popularity":1.4
+        "popularity":1.7359999999999998
     },
     "125024":{
         "movieIds":[557],
@@ -9194,14 +8980,14 @@ var actorsJSON = {
         "name":"John Bell",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8mU0TgK5z15yXGDatbU9O51Ir5g.jpg",
-        "popularity":2.2756999999999996
+        "popularity":2.444813
     },
     "127453":{
         "movieIds":[49051],
         "name":"Conan Stevens",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xsRPZsLqFfQENGyxKVqAlw2cYai.jpg",
-        "popularity":1.2837999999999998
+        "popularity":2.355542
     },
     "128386":{
         "movieIds":[155],
@@ -9245,6 +9031,20 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wfBmg2FVEDQCCFnjiTC3lhg1THP.jpg",
         "popularity":1.3845999999999998
     },
+    "140180":{
+        "movieIds":[24197],
+        "name":"Pamela Blake",
+        "dob":"1915-08-06",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5qR0UOILIv99rlhO8nDHVBj0Qqz.jpg",
+        "popularity":0.7
+    },
+    "140181":{
+        "movieIds":[24197],
+        "name":"Patricia Farr",
+        "dob":null,
+        "profile":null,
+        "popularity":0.7
+    },
     "140367":{
         "movieIds":[675,767,12444,12445],
         "name":"Evanna Lynch",
@@ -9271,7 +9071,7 @@ var actorsJSON = {
         "name":"Sharon Morris",
         "dob":"1971-06-29",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fC9nUwBut9uLnGwMxHWHhSZcJ4t.jpg",
-        "popularity":2.8
+        "popularity":0.7
     },
     "142636":{
         "movieIds":[56292],
@@ -9297,9 +9097,9 @@ var actorsJSON = {
     "144867":{
         "movieIds":[675],
         "name":"Jim McManus",
-        "dob":null,
+        "dob":"",
         "profile":null,
-        "popularity":0.7
+        "popularity":1.4
     },
     "147207":{
         "movieIds":[51497],
@@ -9320,21 +9120,21 @@ var actorsJSON = {
         "name":"Kali Rocha",
         "dob":"1971-12-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uhigi00Mz43MpzXFYk06N5vApqj.jpg",
-        "popularity":0.7
+        "popularity":0.9099999999999999
     },
     "150194":{
         "movieIds":[24428],
         "name":"Damion Poitier",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/b6BwkIWlSztIfFzpkmTKFd9Hy5w.jpg",
-        "popularity":0.7
+        "popularity":0.9729999999999999
     },
     "150792":{
         "movieIds":[591],
         "name":"Etienne Chicot",
         "dob":"1949-05-05",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pYbudifKWa0sYY5QkQc5YKLHfMf.jpg",
-        "popularity":1.8199999999999998
+        "popularity":0.7
     },
     "151246":{
         "movieIds":[41154],
@@ -9432,7 +9232,7 @@ var actorsJSON = {
         "name":"Marin Ireland",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bagoPjUO6ccBc669bs9lnV7neE2.jpg",
-        "popularity":1.8199999999999998
+        "popularity":1.4
     },
     "165284":{
         "movieIds":[51497],
@@ -9600,7 +9400,7 @@ var actorsJSON = {
         "name":"Oscar James",
         "dob":"1942-07-25",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eHxVJu08olDzW8eYok6U5ETNlBk.jpg",
-        "popularity":0.7
+        "popularity":0.9099999999999999
     },
     "186070":{
         "movieIds":[675],
@@ -9614,7 +9414,7 @@ var actorsJSON = {
         "name":"Arthur Darbinyan",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/efj5VJqc2tlZ15aesmMXit3oner.jpg",
-        "popularity":0.7
+        "popularity":1.4
     },
     "189689":{
         "movieIds":[675],
@@ -9656,7 +9456,7 @@ var actorsJSON = {
         "name":"Alan Watt",
         "dob":null,
         "profile":null,
-        "popularity":0.7
+        "popularity":0.9099999999999999
     },
     "206334":{
         "movieIds":[38356],
@@ -9670,14 +9470,14 @@ var actorsJSON = {
         "name":"Jessica Barth",
         "dob":null,
         "profile":null,
-        "popularity":0.7
+        "popularity":1.6099999999999999
     },
     "207401":{
         "movieIds":[70160],
         "name":"Leven Rambin",
         "dob":"1990-05-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/f6wvdVJ4b2SrCQyF7OCJqBccHfk.jpg",
-        "popularity":2.0999999999999996
+        "popularity":2.4989999999999997
     },
     "207558":{
         "movieIds":[49051],
@@ -9740,7 +9540,7 @@ var actorsJSON = {
         "name":"Margery Mason",
         "dob":null,
         "profile":null,
-        "popularity":1.4
+        "popularity":2.3099999999999996
     },
     "214019":{
         "movieIds":[12445],
@@ -9880,7 +9680,7 @@ var actorsJSON = {
         "name":"Anna Shaffer",
         "dob":null,
         "profile":null,
-        "popularity":1.6729999999999998
+        "popularity":1.2705699999999998
     },
     "234930":{
         "movieIds":[12445],
@@ -9908,7 +9708,7 @@ var actorsJSON = {
         "name":"Freddie Stroma",
         "dob":"1987-01-08",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2SBU090Myhk4b6cSkoBZ7DqbMWU.jpg",
-        "popularity":0.7
+        "popularity":0.9099999999999999
     },
     "236048":{
         "movieIds":[38356],
@@ -9957,7 +9757,7 @@ var actorsJSON = {
         "name":"James McCauley",
         "dob":"1966-06-22",
         "profile":null,
-        "popularity":0.7
+        "popularity":2.3099999999999996
     },
     "306574":{
         "movieIds":[1271],
@@ -9978,7 +9778,7 @@ var actorsJSON = {
         "name":"Astrid Bergès-Frisbey",
         "dob":"1986-05-26",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qAYHJS9RrHMnJHCmvp26z7WImpM.jpg",
-        "popularity":3.5478099999999997
+        "popularity":1.4
     },
     "489467":{
         "movieIds":[272],
@@ -9992,7 +9792,7 @@ var actorsJSON = {
         "name":"Miraj Grbic",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pdbaK0gzkSS4B1EEa2FE9VsdjGq.jpg",
-        "popularity":1.6099999999999999
+        "popularity":0.7
     },
     "513677":{
         "movieIds":[674],
@@ -10328,7 +10128,7 @@ var actorsJSON = {
         "name":"Samuel Glen",
         "dob":null,
         "profile":null,
-        "popularity":0.7
+        "popularity":1.6099999999999999
     },
     "964834":{
         "movieIds":[767],
@@ -10405,7 +10205,7 @@ var actorsJSON = {
         "name":"Adam Driver",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/z4PesZneYB5hLL5q4lhrMwAa03R.jpg",
-        "popularity":0.7
+        "popularity":1.6729999999999998
     },
     "1024234":{
         "movieIds":[37724],
@@ -10484,13 +10284,6 @@ var actorsJSON = {
         "profile":null,
         "popularity":0.7
     },
-    "1052482":{
-        "movieIds":[98],
-        "name":"Alun Raglan",
-        "dob":null,
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7HOO5qPFBRAKCEgsqXZltaEyB4Z.jpg",
-        "popularity":1.246
-    },
     "1053673":{
         "movieIds":[58574],
         "name":"Jack Laskey",
@@ -10503,7 +10296,7 @@ var actorsJSON = {
         "name":"Bretton Manley",
         "dob":null,
         "profile":null,
-        "popularity":0.7
+        "popularity":2.3099999999999996
     },
     "1068400":{
         "movieIds":[41154],
@@ -10727,7 +10520,7 @@ var actorsJSON = {
         "name":"Jason Boyd",
         "dob":null,
         "profile":null,
-        "popularity":0.7
+        "popularity":1.1829999999999998
     },
     "1093973":{
         "movieIds":[675],
@@ -10797,14 +10590,14 @@ var actorsJSON = {
         "name":"Andrea Vecchio",
         "dob":null,
         "profile":null,
-        "popularity":1.4
+        "popularity":2.4359999999999995
     },
     "1126694":{
         "movieIds":[24428],
         "name":"Fernanda Toker",
         "dob":null,
         "profile":null,
-        "popularity":1.4
+        "popularity":1.7359999999999998
     },
     "1126697":{
         "movieIds":[24428],
@@ -10861,7 +10654,7 @@ var directorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jRWARxzljSY8SbOKTludOSECdk7.jpg"
     },
     "510":{
-        "movieIds":[118,12155],
+        "movieIds":[869,118,12155],
         "name":"Tim Burton",
         "dob":"1958-08-25",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oKucd7g8BpfWGw8bDRLkwxa7bT1.jpg"
@@ -10871,12 +10664,6 @@ var directorsJSON = {
         "name":"Christopher Nolan",
         "dob":"1970-07-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9DWztOvcz7FraWOZb9dcQLmwCqP.jpg"
-    },
-    "578":{
-        "movieIds":[98],
-        "name":"Ridley Scott",
-        "dob":"1937-11-30",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/46XCMVEYedwsqagc3kjrPmvAKmP.jpg"
     },
     "865":{
         "movieIds":[676,1858,8373,38356],
@@ -10907,6 +10694,12 @@ var directorsJSON = {
         "name":"Mel Gibson",
         "dob":"1956-01-03",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8s48F6yFPOOcUfGKH1dNvztiHZz.jpg"
+    },
+    "2636":{
+        "movieIds":[24197],
+        "name":"Alfred Hitchcock",
+        "dob":"1899-08-13",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nR0f94VwdGVVGPEbSbaGCMqICrP.jpg"
     },
     "2710":{
         "movieIds":[19995],
@@ -11058,12 +10851,6 @@ var directorsJSON = {
         "dob":"1970-08-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1svjYDUtS8300HhHMZXiUfMR00i.jpg"
     },
-    "11694":{
-        "movieIds":[787],
-        "name":"Doug Liman",
-        "dob":"1965-07-24",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cWpE3dSbskWOea4kAGzQpNIkfxM.jpg"
-    },
     "12891":{
         "movieIds":[24428],
         "name":"Joss Whedon",
@@ -11080,12 +10867,6 @@ var directorsJSON = {
         "movieIds":[2080],
         "name":"Gavin Hood",
         "dob":"1963-05-12",
-        "profile":null
-    },
-    "13265":{
-        "movieIds":[871],
-        "name":"Franklin J. Schaffner",
-        "dob":"1920-05-30",
         "profile":null
     },
     "15217":{
@@ -11207,6 +10988,12 @@ var directorsJSON = {
         "name":"Justin Lin",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cN8R58FD7MWf7gI71uaT9CdSu8P.jpg"
+    },
+    "63943":{
+        "movieIds":[16219],
+        "name":"Rowdy Herrington",
+        "dob":null,
+        "profile":null
     },
     "77357":{
         "movieIds":[61791],
