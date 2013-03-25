@@ -1,0 +1,10 @@
+body {
+    margin: 0px;
+    -webkit-user-select: none;
+}
+.kineticjs-content {
+    background-color: black;
+}
+canvas {
+    background-color: transparent;
+}
