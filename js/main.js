@@ -182,6 +182,7 @@ function Actor(opts) {
     // local vars
     this.tailPlaceInterval;
     this.tailDegradeInterval;
+    this.imageAnim;
 
     // capture options
     this.dob = opts.dob;
@@ -193,9 +194,21 @@ function Actor(opts) {
         radius: 70,
         fillPatternOffset: [250, 320],
         fillPatternScale: .2,
-        fillPatternRepeat: false
+        fillPatternRepeat: false,
+        opacity: 0
     });
-    //this.imageCircle.hide();
+    this.imageCircle.hide();
+
+    // label
+    this.label = new Kinetic.Text({
+        fontSize: 30,
+        fill: 'white',
+        text: this.name,
+        y: 80,
+        opacity: 0
+    });
+    this.label.setX(-this.label.textWidth/2)
+    this.label.hide();
 
     // start getting the image
     var imageObj = new Image();
@@ -239,21 +252,67 @@ function Actor(opts) {
     this.group.add(this.gradientCircle);
     this.group.add(this.star);
     this.group.add(this.imageCircle);
+    this.group.add(this.label);
 }
 
 // show the actor's image instead of the star
 Actor.prototype.showImage = function() {
-    this.star.hide();
-    this.gradientCircle.hide()
+    // show the image and label
     this.imageCircle.show();
-    stage.draw();
+    this.label.show();
+
+    // stop existing animation
+    if (this.imageAnim)
+        this.imageAnim.stop();
+
+    // start the animation
+    var self = this;
+    this.imageAnim = new Kinetic.Animation(function() {
+        var newOpacity = self.imageCircle.getOpacity() + .05;
+        if (newOpacity >= 1) {
+            self.imageCircle.setOpacity(1);
+            self.label.setOpacity(1);
+            self.imageAnim.stop();
+
+            // hide the hidden stuff for speed
+            self.star.hide();
+            self.gradientCircle.hide();
+        }
+        self.imageCircle.setOpacity(newOpacity);
+        self.label.setOpacity(newOpacity);
+        stage.draw();
+    });
+    this.imageAnim.start();
 }
 
 // show the minimal actor view (star instead of image)
 Actor.prototype.showStar = function() {
-    this.imageCircle.hide();
+    // show the star parts
+    this.gradientCircle.show();
     this.star.show();
-    this.gradientCircle.show()
+
+    // stop existing animation
+    if (this.imageAnim)
+        this.imageAnim.stop();
+
+    // start the animation
+    var self = this;
+    this.imageAnim = new Kinetic.Animation(function() {
+        var newOpacity = self.imageCircle.getOpacity() - .05;
+        if (newOpacity <= 0) {
+            self.imageCircle.setOpacity(0);
+            self.label.setOpacity(0);
+            self.imageAnim.stop();
+
+            // hide the hidden stuff for speed
+            self.imageCircle.hide();
+            self.label.hide();
+        }
+        self.imageCircle.setOpacity(newOpacity);
+        self.label.setOpacity(newOpacity);
+        stage.draw();
+    });
+    this.imageAnim.start();
 }
 
 // start dropping a tail
@@ -305,26 +364,18 @@ function foo() {
             y: window.innerHeight/2 + Math.sin(theta)*200
         });
 
-        theta += Math.PI*2/360;
+        theta += Math.PI*2/360*3/2;
         stage.draw();
 
     }, 50);
     actors[3].startTail()
 }
 
-function bar() {
-    var genres = [];
-    $.each(moviesJSON, function(i, elem) {
-        $.each(elem.genres, function(i, elem) {
-            if (genres.indexOf(elem) == -1)
-                genres.push(elem);
-        });
-    });
-    console.log(genres);
-}
-
 // movie object
 function Movie(opts) {
+    // local vars
+    this.imageAnim;
+
     // capture options
     this.actorIds = opts.actorIds;
     this.directorId = opts.directorId;
@@ -334,13 +385,32 @@ function Movie(opts) {
     this.releaseDate = opts.releaseDate;
     this.title = opts.title;
 
+    // image circle
+    this.imageCircle = new Kinetic.Circle({
+        radius: 70,
+        fillPatternOffset: [250, 320],
+        fillPatternScale: .2,
+        fillPatternRepeat: false,
+        opacity: 0
+    });
+    this.imageCircle.hide();
+
+    // label
+    this.label = new Kinetic.Text({
+        fontSize: 30,
+        fill: 'white',
+        text: this.title,
+        y: 80,
+        opacity: 0
+    });
+    this.label.setX(-this.label.textWidth/2)
+    this.label.hide();
+
     // start getting the image
     var imageObj = new Image();
     var self = this;
     imageObj.onload = function() {
-        self.image = new Kinetic.Image({
-            image: imageObj
-        });
+        self.imageCircle.setFillPatternImage(imageObj);
     }
     imageObj.src = opts.poster;
 
@@ -375,7 +445,32 @@ Movie.prototype.showImage = function() {
     this.gradientCircle.hide()
     this.imageCircle.show();
 }
-Movie.prototype.showStar = function() {
-    this.imageCircle.hide();
+
+// show the minimal movie view (sun instead of image)
+Movie.prototype.showSun = function() {
+    // show the sun
     this.gradientCircle.show();
+
+    // stop existing animation
+    if (this.imageAnim)
+        this.imageAnim.stop();
+
+    // start the animation
+    var self = this;
+    this.imageAnim = new Kinetic.Animation(function() {
+        var newOpacity = self.imageCircle.getOpacity() - .05;
+        if (newOpacity <= 0) {
+            self.imageCircle.setOpacity(0);
+            self.label.setOpacity(0);
+            self.imageStarAnim.stop();
+
+            // hide the hidden stuff for speed
+            self.imageCircle.hide();
+            self.label.hide();
+        }
+        self.imageCircle.setOpacity(newOpacity);
+        self.label.setOpacity(newOpacity);
+        stage.draw();
+    });
+    this.imageStarAnim.start();
 }
