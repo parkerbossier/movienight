@@ -19,11 +19,16 @@ $(function () {
 
     // create all the actors
     actors = {};
+    var counter = 0;
     $.each(actorsJSON, function(i, elem) {
         var opts = elem;
         opts.x = window.innerWidth/3;
         opts.y = window.innerHeight/2;
         actors[i] = new Actor(opts);
+        if (counter < 500) {
+        actorLayer.add(actors[i].group);
+        counter++;
+        }
     });
 
     // create all the movies
@@ -33,39 +38,35 @@ $(function () {
         opts.x = window.innerWidth/3*2;
         opts.y = window.innerHeight/2;
         movies[i] = new Movie(opts);
+        movieLayer.add(movies[i].group);
     });
 
-    actorLayer.add(actors[85].group);
-    movieLayer.add(movies[27205].group);
+    console.log(movies);
+    console.log(actors);
 
-    //console.log(actors);
-    //console.log(movies);
-    // actorLayer.add(actors[31].group);
-    // console.log(actors[31]);
-    // console.log(movies[591]);
-    // console.log(movies[8358]);
-    // // actorLayer.add(actors[6].group);
-    // // actorLayer.add(actors[22].group);
-    // // actorLayer.add(actors[31].group);
-    // // actorLayer.add(actors[35].group);   // 3
-    // // movieLayer.add(movies[22].group);   // 22
-    // // movieLayer.add(movies[58].group);
-    // // movieLayer.add(movies[74].group);
-    // // movieLayer.add(movies[98].group);
-    // movieLayer.add(movies[591].group);
-    // movies[8358].group.attrs.x = window.innerWidth/3;
-    // movieLayer.add(movies[8358].group);
+    stage.add(movieLayer);
     stage.add(tailLayer);
     stage.add(actorLayer);
-    stage.add(movieLayer);
-    return;
+    //return;
+
+    var counter = 0,
+        scale = 5 + (1/7),
+        offset = 0;
+
+    for (var i in actors) {
+        if (actors[i].path.length > 1) {
+            actors[i].time += Math.floor(Math.random() * 5000);
+        }
+    }
+
+    for (var i in movies) {
+        movies[i].group.setX((movieLocs[i].x * scale) + offset);
+        movies[i].group.setY(window.innerHeight - (movieLocs[i].y * scale));
+        movies[i].group.attrs.scale.x = movies[i].group.attrs.scale.y = movieLocs[i].scale / 3;
+    }
+    movieLayer.draw();
 
     var anim = new Kinetic.Animation( function (frame) {
-        //frame.time;
-        //frame.timeDiff;
-        //frame.frameRate;
-        //console.log("running");
-
         var orbitX,
         orbitY,
         radius,
@@ -83,23 +84,25 @@ $(function () {
         counter = 0;
 
         for (i in actors) {
-            if (counter < 20) {
+            if (counter < 500) {
                 counter++;
                 //console.log(counter);
                 orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
                 orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
-                radius = actors[i].rad;
+                radius = 25;   //actors[i].rad;
                 period = actors[i].period;
                 time = actors[i].time + frame.timeDiff;
                 actors[i].time += frame.timeDiff;
                 angle = actors[i].angle;
 
+
+                actors[i].group.attrs.scale.x = actors[i].group.attrs.scale.y = 0.2 / 3;
+
                 switch (actors[i].state)
                 {
                     case "orbit":
                         // if home/initial position not reached, orbit
-                        //if (actors[i].time % period < (period - 20)) {
-                        if (time < period) {
+                        if (actors[i].time % period < (period - 20)) {
                             actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
                             actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
                         } else {
