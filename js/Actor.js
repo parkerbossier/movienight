@@ -29,20 +29,20 @@ function Actor(opts) {
 
     // gradient background
     this.starGroup.add(new Kinetic.Circle({
-        radius: 70,
+        radius: 50,
         opacity: 0.6,
         fillRadialGradientStartPoint: 0,
-        fillRadialGradientStartRadius: 10,
+        fillRadialGradientStartRadius: 5,
         fillRadialGradientEndPoint: 0,
-        fillRadialGradientEndRadius: 70,
+        fillRadialGradientEndRadius: 50,
         fillRadialGradientColorStops: [0, 'black', 1, 'white']
     }));
 
     // star
     this.starGroup.add(new Kinetic.Star({
         numPoints: 5,
-        innerRadius: 35,
-        outerRadius: 55,
+        innerRadius: 25,
+        outerRadius: 40,
         fill: 'white',
         stroke: null
     }));
@@ -55,14 +55,14 @@ function Actor(opts) {
 
     // background circle
     this.imageGroup.add(new Kinetic.Circle({
-        radius: 70,
+        radius: 50,
         fill: 'white',
         opacity: .9
     }));
 
     // image circle
     this.imageCircle = new Kinetic.Circle({
-        radius: 60,
+        radius: 50,
         fillPatternOffset: [250, 320],
         fillPatternScale: .2,
         fillPatternRepeat: false
@@ -74,7 +74,7 @@ function Actor(opts) {
         fontSize: 20,
         fill: 'black',
         text: this.name,
-        y: 45
+        y: 40
     });
     label.setX(-label.textWidth/2);
 
