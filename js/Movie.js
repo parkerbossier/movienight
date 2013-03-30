@@ -14,25 +14,28 @@ function Movie(opts) {
     this.revenue = opts.revenue;
     this.releaseDate = opts.releaseDate;
     this.title = opts.title;
-
-    // start getting the image
-    var imageObj = new Image();
-    var self = this;
-    imageObj.onload = function() {
-        self.imageCircle.setFillPatternImage(imageObj);
-    }
-    imageObj.src = opts.poster;
+    this.x = opts.x;
+    this.y = opts.y;
+    this.scale = opts.scale/8;
 
     /*
-     * sun group
+     * minimal group
      */
-    this.sunGroup = new Kinetic.Group();
+    this.minimalGroup = new Kinetic.Group();
 
-    // gradient circle
-    this.sunGroup.add(new Kinetic.Circle({
-        radius: 150,
-        fill: 'yellow'
-    }));
+    // add the sun image
+    var self = this;
+    $('#movie-front').one('load', function() {
+        // get the image from the DOM
+        var image = new Kinetic.Image({
+            image: this
+        });
+
+        // add the image to the group and center the group (offset)
+        self.minimalGroup.add(image);
+        self.minimalGroup.setOffset([image.getWidth()/2, image.getHeight()/2]);
+        self.minimalGroup.draw();
+    });
 
     /*
      * image group
@@ -42,40 +45,51 @@ function Movie(opts) {
     });
     this.imageGroup.hide();
 
-    // image circle
+    // image clipping circle
     this.imageCircle = new Kinetic.Circle({
-        radius: 135,
+        radius: 155,
         fillPatternOffset: [250, 320],
         fillPatternScale: .6,
         fillPatternRepeat: false
     });
     this.imageGroup.add(this.imageCircle);
 
+    // start getting the poster image
+    var imageObj = new Image();
+    imageObj.onload = function() {
+        self.imageCircle.setFillPatternImage(imageObj);
+    }
+    imageObj.src = opts.poster;
+
     // label group
     var labelGroup = new Kinetic.Group();
+    var labelWidth = 280;
+    var labelHeight = 90;
 
     // label text
     var label = new Kinetic.Text({
         fontSize: 20,
         fill: 'black',
-        text: this.title
+        text: this.title,
+        align: 'center',
+        width: labelWidth,
+        offset: [labelWidth/2, 0],
+        padding: 22
     });
-    label.setX(-label.textWidth/2);
-    label.setY((70-label.textHeight)/2);
 
     // label background
     var labelBackground = new Kinetic.Rect({
-        width: 230,
-        height: 70,
-        fill: 'yellow',
+        width: labelWidth,
+        height: labelHeight,
+        offset: [labelWidth/2, 0],
+        fill: '#fede3d',
         stroke: null,
         cornerRadius: 5
     });
-    labelBackground.setX(-labelBackground.getWidth()/2);
 
     labelGroup.add(labelBackground);
     labelGroup.add(label);
-    labelGroup.setY(85);
+    labelGroup.setY(90);
     this.imageGroup.add(labelGroup);
 
     /*
@@ -89,30 +103,84 @@ function Movie(opts) {
     this.infoGroup.hide();
 
     // background
-    this.infoGroup.add(this.sunGroup.clone());
+    this.infoGroup.add(this.minimalGroup.clone());
 
-    // label
-    this.infoGroup.add(labelGroup.clone());
+    // info label image
+    $('#movie-info-labels').one('load', function() {
+        // get the image from the DOM
+        var image = new Kinetic.Image({
+            image: this
+        });
 
-    this.infoGroup.add(new Kinetic.Circle({
+        // add the info label image to the group and center the group (offset)
+        self.infoGroup.add(image);
+        image.setOffset([image.getWidth()/2, image.getHeight()/2 + 35]);
+        self.infoGroup.draw();
+    });
+
+    // director text
+    this.infoGroup.add(new Kinetic.Text({
+        offset: [115, 0],
+        y: -115,
+        width: 230,
+        text: directorsJSON[self.directorId].name,
+        fontSize: 25,
         fill: 'black',
-        radius: 10
+        align: 'center'
     }));
 
+    // release date text
+    var date = new Date(this.releaseDate)
+    this.infoGroup.add(new Kinetic.Text({
+        offset: [148, 0],
+        y: -36,
+        width: 162,
+        text: this.releaseDate,
+        fontSize: 25,
+        fill: 'black',
+        align: 'center'
+    }));
 
+    // revenue
+    this.infoGroup.add(new Kinetic.Text({
+        offset: [-9, 0],
+        y: -36,
+        width: 162,
+        text: Math.round(this.revenue*100/1000000)/100,
+        fontSize: 25,
+        fill: 'black',
+        align: 'center'
+    }));
+
+//    // genre 1
+//    this.infoGroup.add(new Kinetic.Text({
+//        x: -89,
+//        y: 54,
+//        text: this.genres[0],
+//        fontSize: 15,
+//        fill: 'black'
+//    }));
+
+    // title label
+    this.infoGroup.add(labelGroup.clone());
 
     /*
      * main group
      */
     this.group = new Kinetic.Group({
-        x: opts.x,
-        y: opts.y
+        x: this.x,
+        y: this.y,
+        scale: this.scale
     });
 
     // combine
-    this.group.add(this.sunGroup);
+    this.group.add(this.minimalGroup);
     this.group.add(this.imageGroup);
     this.group.add(this.infoGroup);
+
+    this.group.on('click', function() {
+        self.click();
+    });
 }
 
 // show the movie's image instead of the sun
@@ -141,7 +209,7 @@ Movie.prototype.showImage = function() {
 // show the minimal movie view (sun instead of image)
 Movie.prototype.showSun = function() {
     // show the sun group
-    this.sunGroup.show();
+    this.minimalGroup.show();
 
     // stop existing animation
     if (this.imageAnim)
@@ -191,12 +259,12 @@ Movie.prototype.flipToInfo = function() {
 
         // stop flipping at 180 degrees
         if (self.theta >= Math.PI) {
-            self.theta = Math.PI
-            self.group.attrs.scale.x = -1;
+            self.theta = Math.PI;
+            self.group.attrs.scale.x = -self.scale;
             self.flipAnim.stop();
         }
 
-        self.group.attrs.scale.x = Math.cos(self.theta);
+        self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
         stage.draw();
     });
     this.flipAnim.start();
@@ -230,11 +298,11 @@ Movie.prototype.flipToImage = function() {
         // stop flipping at 180 degrees
         if (self.theta <= 0) {
             self.theta = 0;
-            self.group.attrs.scale.x = 1;
+            self.group.attrs.scale.x = self.scale;;
             self.flipAnim.stop();
         }
 
-        self.group.attrs.scale.x = Math.cos(self.theta);
+        self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
         stage.draw();
     });
     this.flipAnim.start();

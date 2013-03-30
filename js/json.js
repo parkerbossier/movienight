@@ -1,106 +1,506 @@
 var imageBase = 'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500';
 
 var movieLocs = {
-    "1271": { "x": 96, "y": 138, "scale": 0.276911204339498 },
-    "12155": { "x": 137, "y": 113, "scale": 0.439424900305862 },
-    "818": { "x": 1, "y": 116, "scale": 0.280180834691203 },
-    "19995": { "x": 14, "y": 43, "scale": 1 },
-    "272": { "x": 87, "y": 42, "scale": 0.270009461215885 },
-    "310": { "x": 6, "y": 125, "scale": 0.318984503481405 },
-    "1771": { "x": 101, "y": 28, "scale": 0.232262272140033 },
-    "8358": { "x": 132, "y": 40, "scale": 0.307204052304939 },
-    "118": { "x": 108, "y": 78, "scale": 0.271472509796496 },
-    "10719": { "x": 42, "y": 40, "scale": 0.227981685721346 },
-    "51497": { "x": 95, "y": 80, "scale": 0.275875597574465 },
-    "16219": { "x": 56, "y": 81, "scale": 0.246771102076747 },
-    "8960": { "x": 70, "y": 35, "scale": 0.29972981128178 },
-    "672": { "x": 70, "y": 65, "scale": 0.34446890320884 },
-    "12444": { "x": 74, "y": 58, "scale": 0.387873985668384 },
-    "12445": { "x": 86, "y": 72, "scale": 0.500923984349064 },
-    "674": { "x": 84, "y": 60, "scale": 0.381317774404961 },
-    "767": { "x": 78, "y": 72, "scale": 0.397047545644971 },
-    "675": { "x": 69, "y": 76, "scale": 0.383956109150072 },
-    "673": { "x": 78, "y": 80, "scale": 0.327885351550755 },
-    "671": { "x": 90, "y": 66, "scale": 0.417561406335907 },
-    "8488": { "x": 14, "y": 49, "scale": 0.233496090398895 },
-    "8871": { "x": 88, "y": 62, "scale": 0.341918521765159 },
-    "6479": { "x": 28, "y": 117, "scale": 0.337125897205627 },
-    "27205": { "x": 78, "y": 41, "scale": 0.384702960738709 },
-    "217": { "x": 54, "y": 87, "scale": 0.416842441449369 },
-    "1726": { "x": 87, "y": 20, "scale": 0.418534822915043 },
-    "10138": { "x": 82, "y": 28, "scale": 0.410328775552465 },
-    "331": { "x": 51, "y": 33, "scale": 0.238217912083982 },
-    "254": { "x": 30, "y": 75, "scale": 0.28671871604953 },
-    "72976": { "x": 43, "y": 82, "scale": 0.238536584190128 },
-    "693": { "x": 65, "y": 58, "scale": 0.367081431525141 },
-    "41154": { "x": 69, "y": 88, "scale": 0.235397077755801 },
-    "608": { "x": 50, "y": 125, "scale": 0.250384403684933 },
-    "56292": { "x": 93, "y": 35, "scale": 0.27529692483745 },
-    "955": { "x": 78, "y": 80, "scale": 0.283228995345252 },
-    "24197": { "x": 119, "y": 122, "scale": 0.245016003144549 },
-    "8346": { "x": 91, "y": 131, "scale": 0.317469521046299 },
-    "2059": { "x": 96, "y": 123, "scale": 0.227486748040742 },
-    "6637": { "x": 120, "y": 55, "scale": 0.289230519223082 },
-    "1593": { "x": 58, "y": 16, "scale": 0.329863693999975 },
-    "18360": { "x": 35, "y": 30, "scale": 0.233060300192538 },
-    "161": { "x": 116, "y": 43, "scale": 0.241162867745841 },
-    "676": { "x": 20, "y": 10, "scale": 0.261062890947109 },
-    "285": { "x": 51, "y": 54, "scale": 0.406839938470585 },
-    "58": { "x": 60, "y": 50, "scale": 0.55625164444002 },
-    "1865": { "x": 54, "y": 46, "scale": 0.316978332186314 },
-    "22": { "x": 45, "y": 48, "scale": 0.401559943562143 },
-    "869": { "x": 65, "y": 53, "scale": 0.236700007909341 },
-    "61791": { "x": 79, "y": 108, "scale": 0.232398804949622 },
-    "5175": { "x": 105, "y": 76, "scale": 0.297352682943935 },
-    "10528": { "x": 75, "y": 21, "scale": 0.274842711367083 },
-    "58574": { "x": 80, "y": 16, "scale": 0.246642679658451 },
-    "2675": { "x": 30, "y": 119, "scale": 0.299755341657485 },
-    "37724": { "x": 123, "y": 11, "scale": 0.400207675194902 },
-    "557": { "x": 110, "y": 50, "scale": 0.530839278346798 },
-    "558": { "x": 102, "y": 46, "scale": 0.490959924204238 },
-    "559": { "x": 112, "y": 43, "scale": 0.442508501844562 },
-    "13475": { "x": 70, "y": 131, "scale": 0.338858800384739 },
-    "1894": { "x": 24, "y": 34, "scale": 0.408511761251456 },
-    "1895": { "x": 131, "y": 110, "scale": 0.50001266459691 },
-    "1452": { "x": 100, "y": 18, "scale": 0.263074122032358 },
-    "72105": { "x": 96, "y": 140, "scale": 0.287477973854421 },
-    "1930": { "x": 109, "y": 36, "scale": 0.344547861181664 },
-    "24428": { "x": 90, "y": 30, "scale": 0.819559178221545 },
-    "22881": { "x": 73, "y": 122, "scale": 0.336552803649911 },
-    "2502": { "x": 30, "y": 20, "scale": 0.231489515425119 },
-    "2503": { "x": 129, "y": 11, "scale": 0.298781456968864 },
-    "411": { "x": 85, "y": 90, "scale": 0.38357344148072 },
-    "591": { "x": 65, "y": 58, "scale": 0.286041374774598 },
-    "155": { "x": 92, "y": 50, "scale": 0.701264905593816 },
-    "49026": { "x": 84, "y": 48, "scale": 0.589253381506217 },
-    "435": { "x": 74, "y": 66, "scale": 0.245546986570374 },
-    "177862": { "x": 130, "y": 17, "scale": 0.364643312203226 },
-    "45243": { "x": 9, "y": 40, "scale": 0.334587810210485 },
-    "49051": { "x": 30, "y": 52, "scale": 0.397620902183544 },
-    "70160": { "x": 19, "y": 24, "scale": 0.536484047571037 },
-    "38575": { "x": 75, "y": 9, "scale": 0.232202840644301 },
-    "120": { "x": 25, "y": 60, "scale": 0.412669512322632 },
-    "122": { "x": 40, "y": 64, "scale": 0.495747999160354 },
-    "121": { "x": 36, "y": 56, "scale": 0.447700565805117 },
-    "604": { "x": 122, "y": 137, "scale": 0.370138480999739 },
-    "1734": { "x": 55, "y": 68, "scale": 0.265622730971587 },
-    "615": { "x": 64, "y": 73, "scale": 0.486874551274817 },
-    "2133": { "x": 115, "y": 65, "scale": 0.240127587079551 },
-    "50619": { "x": 120, "y": 20, "scale": 0.369853817836591 },
-    "50620": { "x": 129, "y": 15, "scale": 0.384348028556314 },
-    "24021": { "x": 122, "y": 10, "scale": 0.395162133447739 },
-    "18239": { "x": 132, "y": 25, "scale": 0.390034652817074 },
-    "10195": { "x": 98, "y": 36, "scale": 0.238019394215124 },
-    "1858": { "x": 10, "y": 30, "scale": 0.419141963546271 },
-    "38356": { "x": 20, "y": 28, "scale": 0.463321591004152 },
-    "8373": { "x": 14, "y": 18, "scale": 0.528696380949718 },
-    "8966": { "x": 122, "y": 30, "scale": 0.251739649018109 },
-    "74": { "x": 50, "y": 80, "scale": 0.308054246951766 },
-    "9522": { "x": 43, "y": 113, "scale": 0.275104220204634 },
-    "3981": { "x": 105, "y": 22, "scale": 0.240373067112001 },
-    "36658": { "x": 50, "y": 30, "scale": 0.282639220786951 },
-    "2080": { "x": 54, "y": 20, "scale": 0.236530746883265 },
-    "36668": { "x": 44, "y": 21, "scale": 0.308163329610798 }
+    "1271": {
+        "x": 96,
+        "y": 138,
+        "scale": 0.276911204339498
+    },
+    "12155": {
+        "x": 137,
+        "y": 113,
+        "scale": 0.439424900305862
+    },
+    "818": {
+        "x": 1,
+        "y": 116,
+        "scale": 0.280180834691203
+    },
+    "19995": {
+        "x": 14,
+        "y": 43,
+        "scale": 1
+    },
+    "272": {
+        "x": 87,
+        "y": 42,
+        "scale": 0.270009461215885
+    },
+    "310": {
+        "x": 6,
+        "y": 125,
+        "scale": 0.318984503481405
+    },
+    "1771": {
+        "x": 101,
+        "y": 28,
+        "scale": 0.232262272140033
+    },
+    "8358": {
+        "x": 132,
+        "y": 40,
+        "scale": 0.307204052304939
+    },
+    "118": {
+        "x": 108,
+        "y": 78,
+        "scale": 0.271472509796496
+    },
+    "10719": {
+        "x": 42,
+        "y": 40,
+        "scale": 0.227981685721346
+    },
+    "51497": {
+        "x": 95,
+        "y": 80,
+        "scale": 0.275875597574465
+    },
+    "16219": {
+        "x": 56,
+        "y": 81,
+        "scale": 0.246771102076747
+    },
+    "8960": {
+        "x": 70,
+        "y": 35,
+        "scale": 0.29972981128178
+    },
+    "672": {
+        "x": 70,
+        "y": 65,
+        "scale": 0.34446890320884
+    },
+    "12444": {
+        "x": 74,
+        "y": 58,
+        "scale": 0.387873985668384
+    },
+    "12445": {
+        "x": 86,
+        "y": 72,
+        "scale": 0.500923984349064
+    },
+    "674": {
+        "x": 84,
+        "y": 60,
+        "scale": 0.381317774404961
+    },
+    "767": {
+        "x": 78,
+        "y": 72,
+        "scale": 0.397047545644971
+    },
+    "675": {
+        "x": 69,
+        "y": 76,
+        "scale": 0.383956109150072
+    },
+    "673": {
+        "x": 78,
+        "y": 80,
+        "scale": 0.327885351550755
+    },
+    "671": {
+        "x": 90,
+        "y": 66,
+        "scale": 0.417561406335907
+    },
+    "8488": {
+        "x": 14,
+        "y": 49,
+        "scale": 0.233496090398895
+    },
+    "8871": {
+        "x": 88,
+        "y": 62,
+        "scale": 0.341918521765159
+    },
+    "6479": {
+        "x": 28,
+        "y": 117,
+        "scale": 0.337125897205627
+    },
+    "27205": {
+        "x": 78,
+        "y": 41,
+        "scale": 0.384702960738709
+    },
+    "217": {
+        "x": 54,
+        "y": 87,
+        "scale": 0.416842441449369
+    },
+    "1726": {
+        "x": 87,
+        "y": 20,
+        "scale": 0.418534822915043
+    },
+    "10138": {
+        "x": 82,
+        "y": 28,
+        "scale": 0.410328775552465
+    },
+    "331": {
+        "x": 51,
+        "y": 33,
+        "scale": 0.238217912083982
+    },
+    "254": {
+        "x": 30,
+        "y": 75,
+        "scale": 0.28671871604953
+    },
+    "72976": {
+        "x": 43,
+        "y": 82,
+        "scale": 0.238536584190128
+    },
+    "693": {
+        "x": 65,
+        "y": 58,
+        "scale": 0.367081431525141
+    },
+    "41154": {
+        "x": 69,
+        "y": 88,
+        "scale": 0.235397077755801
+    },
+    "608": {
+        "x": 50,
+        "y": 125,
+        "scale": 0.250384403684933
+    },
+    "56292": {
+        "x": 93,
+        "y": 35,
+        "scale": 0.27529692483745
+    },
+    "955": {
+        "x": 78,
+        "y": 80,
+        "scale": 0.283228995345252
+    },
+    "24197": {
+        "x": 119,
+        "y": 122,
+        "scale": 0.245016003144549
+    },
+    "8346": {
+        "x": 91,
+        "y": 131,
+        "scale": 0.317469521046299
+    },
+    "2059": {
+        "x": 96,
+        "y": 123,
+        "scale": 0.227486748040742
+    },
+    "6637": {
+        "x": 120,
+        "y": 55,
+        "scale": 0.289230519223082
+    },
+    "1593": {
+        "x": 58,
+        "y": 16,
+        "scale": 0.329863693999975
+    },
+    "18360": {
+        "x": 35,
+        "y": 30,
+        "scale": 0.233060300192538
+    },
+    "161": {
+        "x": 116,
+        "y": 43,
+        "scale": 0.241162867745841
+    },
+    "676": {
+        "x": 20,
+        "y": 10,
+        "scale": 0.261062890947109
+    },
+    "285": {
+        "x": 51,
+        "y": 54,
+        "scale": 0.406839938470585
+    },
+    "58": {
+        "x": 60,
+        "y": 50,
+        "scale": 0.55625164444002
+    },
+    "1865": {
+        "x": 54,
+        "y": 46,
+        "scale": 0.316978332186314
+    },
+    "22": {
+        "x": 45,
+        "y": 48,
+        "scale": 0.401559943562143
+    },
+    "869": {
+        "x": 65,
+        "y": 53,
+        "scale": 0.236700007909341
+    },
+    "61791": {
+        "x": 79,
+        "y": 108,
+        "scale": 0.232398804949622
+    },
+    "5175": {
+        "x": 105,
+        "y": 76,
+        "scale": 0.297352682943935
+    },
+    "10528": {
+        "x": 75,
+        "y": 21,
+        "scale": 0.274842711367083
+    },
+    "58574": {
+        "x": 80,
+        "y": 16,
+        "scale": 0.246642679658451
+    },
+    "2675": {
+        "x": 30,
+        "y": 119,
+        "scale": 0.299755341657485
+    },
+    "37724": {
+        "x": 123,
+        "y": 11,
+        "scale": 0.400207675194902
+    },
+    "557": {
+        "x": 110,
+        "y": 50,
+        "scale": 0.530839278346798
+    },
+    "558": {
+        "x": 102,
+        "y": 46,
+        "scale": 0.490959924204238
+    },
+    "559": {
+        "x": 112,
+        "y": 43,
+        "scale": 0.442508501844562
+    },
+    "13475": {
+        "x": 70,
+        "y": 131,
+        "scale": 0.338858800384739
+    },
+    "1894": {
+        "x": 24,
+        "y": 34,
+        "scale": 0.408511761251456
+    },
+    "1895": {
+        "x": 131,
+        "y": 110,
+        "scale": 0.50001266459691
+    },
+    "1452": {
+        "x": 100,
+        "y": 18,
+        "scale": 0.263074122032358
+    },
+    "72105": {
+        "x": 96,
+        "y": 140,
+        "scale": 0.287477973854421
+    },
+    "1930": {
+        "x": 109,
+        "y": 36,
+        "scale": 0.344547861181664
+    },
+    "24428": {
+        "x": 90,
+        "y": 30,
+        "scale": 0.819559178221545
+    },
+    "22881": {
+        "x": 73,
+        "y": 122,
+        "scale": 0.336552803649911
+    },
+    "2502": {
+        "x": 30,
+        "y": 20,
+        "scale": 0.231489515425119
+    },
+    "2503": {
+        "x": 129,
+        "y": 11,
+        "scale": 0.298781456968864
+    },
+    "411": {
+        "x": 85,
+        "y": 90,
+        "scale": 0.38357344148072
+    },
+    "591": {
+        "x": 65,
+        "y": 58,
+        "scale": 0.286041374774598
+    },
+    "155": {
+        "x": 92,
+        "y": 50,
+        "scale": 0.701264905593816
+    },
+    "49026": {
+        "x": 84,
+        "y": 48,
+        "scale": 0.589253381506217
+    },
+    "435": {
+        "x": 74,
+        "y": 66,
+        "scale": 0.245546986570374
+    },
+    "177862": {
+        "x": 130,
+        "y": 17,
+        "scale": 0.364643312203226
+    },
+    "45243": {
+        "x": 9,
+        "y": 40,
+        "scale": 0.334587810210485
+    },
+    "49051": {
+        "x": 30,
+        "y": 52,
+        "scale": 0.397620902183544
+    },
+    "70160": {
+        "x": 19,
+        "y": 24,
+        "scale": 0.536484047571037
+    },
+    "38575": {
+        "x": 75,
+        "y": 9,
+        "scale": 0.232202840644301
+    },
+    "120": {
+        "x": 25,
+        "y": 60,
+        "scale": 0.412669512322632
+    },
+    "122": {
+        "x": 40,
+        "y": 64,
+        "scale": 0.495747999160354
+    },
+    "121": {
+        "x": 36,
+        "y": 56,
+        "scale": 0.447700565805117
+    },
+    "604": {
+        "x": 122,
+        "y": 137,
+        "scale": 0.370138480999739
+    },
+    "1734": {
+        "x": 55,
+        "y": 68,
+        "scale": 0.265622730971587
+    },
+    "615": {
+        "x": 64,
+        "y": 73,
+        "scale": 0.486874551274817
+    },
+    "2133": {
+        "x": 115,
+        "y": 65,
+        "scale": 0.240127587079551
+    },
+    "50619": {
+        "x": 120,
+        "y": 20,
+        "scale": 0.369853817836591
+    },
+    "50620": {
+        "x": 129,
+        "y": 15,
+        "scale": 0.384348028556314
+    },
+    "24021": {
+        "x": 122,
+        "y": 10,
+        "scale": 0.395162133447739
+    },
+    "18239": {
+        "x": 132,
+        "y": 25,
+        "scale": 0.390034652817074
+    },
+    "10195": {
+        "x": 98,
+        "y": 36,
+        "scale": 0.238019394215124
+    },
+    "1858": {
+        "x": 10,
+        "y": 30,
+        "scale": 0.419141963546271
+    },
+    "38356": {
+        "x": 20,
+        "y": 28,
+        "scale": 0.463321591004152
+    },
+    "8373": {
+        "x": 14,
+        "y": 18,
+        "scale": 0.528696380949718
+    },
+    "8966": {
+        "x": 122,
+        "y": 30,
+        "scale": 0.251739649018109
+    },
+    "74": {
+        "x": 50,
+        "y": 80,
+        "scale": 0.308054246951766
+    },
+    "9522": {
+        "x": 43,
+        "y": 113,
+        "scale": 0.275104220204634
+    },
+    "3981": {
+        "x": 105,
+        "y": 22,
+        "scale": 0.240373067112001
+    },
+    "36658": {
+        "x": 50,
+        "y": 30,
+        "scale": 0.282639220786951
+    },
+    "2080": {
+        "x": 54,
+        "y": 20,
+        "scale": 0.236530746883265
+    },
+    "36668": {
+        "x": 44,
+        "y": 21,
+        "scale": 0.308163329610798
+    }
 };
 
 var moviesJSON = {
@@ -110,7 +510,7 @@ var moviesJSON = {
         "title":"Pirates of the Caribbean: The Curse of the Black Pearl",
         "revenue":655011224,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tkt9xR1kNX5R9rCebASKck44si2.jpg",
-        "releaseDate":"2003-07-09",
+        "releaseDate":"Jul 8, 2003",
         "directorId":1704
     },
     "58":{
@@ -119,7 +519,7 @@ var moviesJSON = {
         "title":"Pirates of the Caribbean: Dead Man's Chest",
         "revenue":1065659812,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qCoHWE8tipW1fWW4dBUXZ9Nikw.jpg",
-        "releaseDate":"2006-07-07",
+        "releaseDate":"Jul 6, 2006",
         "directorId":1704
     },
     "74":{
@@ -128,7 +528,7 @@ var moviesJSON = {
         "title":"War of the Worlds",
         "revenue":591739379,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bWKSVhlSjZT6OMaRYBiBUjzhD11.jpg",
-        "releaseDate":"2005-06-29",
+        "releaseDate":"Jun 28, 2005",
         "directorId":488
     },
     "118":{
@@ -137,7 +537,7 @@ var moviesJSON = {
         "title":"Charlie and the Chocolate Factory",
         "revenue":474968763,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fdXNl6bSEn3H4ulfrA07v4nSNmt.jpg",
-        "releaseDate":"2005-07-10",
+        "releaseDate":"Jul 9, 2005",
         "directorId":510
     },
     "120":{
@@ -146,7 +546,7 @@ var moviesJSON = {
         "title":"The Lord of the Rings: The Fellowship of the Ring",
         "revenue":871368364,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9HG6pINW1KoFTAKY3LdybkoOKAm.jpg",
-        "releaseDate":"2001-12-19",
+        "releaseDate":"Dec 18, 2001",
         "directorId":108
     },
     "121":{
@@ -155,7 +555,7 @@ var moviesJSON = {
         "title":"The Lord of the Rings: The Two Towers",
         "revenue":926287400,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9mBjBuUmBBgnGjV1JZ2uCIYbaph.jpg",
-        "releaseDate":"2002-12-18",
+        "releaseDate":"Dec 17, 2002",
         "directorId":108
     },
     "122":{
@@ -164,7 +564,7 @@ var moviesJSON = {
         "title":"The Lord of the Rings: The Return of the King",
         "revenue":1118888979,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/j6NCjU6Zh7SkfIeN5zDaoTmBn4m.jpg",
-        "releaseDate":"2003-12-17",
+        "releaseDate":"Dec 16, 2003",
         "directorId":108
     },
     "155":{
@@ -173,7 +573,7 @@ var moviesJSON = {
         "title":"The Dark Knight",
         "revenue":1001921825,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg",
-        "releaseDate":"2008-07-18",
+        "releaseDate":"Jul 17, 2008",
         "directorId":525
     },
     "161":{
@@ -182,7 +582,7 @@ var moviesJSON = {
         "title":"Ocean's Eleven",
         "revenue":450717150,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/o0h76DVXvk5OKjmNez5YY0GODC2.jpg",
-        "releaseDate":"2001-12-06",
+        "releaseDate":"Dec 5, 2001",
         "directorId":1884
     },
     "217":{
@@ -191,7 +591,7 @@ var moviesJSON = {
         "title":"Indiana Jones and the Kingdom of the Crystal Skull",
         "revenue":786636033,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6Lv49E0aEusW9vKEMgQgLdetlmO.jpg",
-        "releaseDate":"2008-05-22",
+        "releaseDate":"May 21, 2008",
         "directorId":488
     },
     "254":{
@@ -200,7 +600,7 @@ var moviesJSON = {
         "title":"King Kong",
         "revenue":550000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mcf9YOsc0uyIFx9qvZUn8t6Cap8.jpg",
-        "releaseDate":"2005-12-14",
+        "releaseDate":"Dec 13, 2005",
         "directorId":108
     },
     "272":{
@@ -209,7 +609,7 @@ var moviesJSON = {
         "title":"Batman Begins",
         "revenue":371853783,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1ZPuyD8wIrjipmoPya3DWtAs1xg.jpg",
-        "releaseDate":"2005-06-14",
+        "releaseDate":"Jun 13, 2005",
         "directorId":525
     },
     "285":{
@@ -218,7 +618,7 @@ var moviesJSON = {
         "title":"Pirates of the Caribbean: At World's End",
         "revenue":961000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jWxHVpomgHY5M70PRbExDG3XQkL.jpg",
-        "releaseDate":"2007-05-19",
+        "releaseDate":"May 18, 2007",
         "directorId":1704
     },
     "310":{
@@ -227,7 +627,7 @@ var moviesJSON = {
         "title":"Bruce Almighty",
         "revenue":484572835,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oHA5eAeJh7ChPsHnSsppNx4ta6L.jpg",
-        "releaseDate":"2003-05-22",
+        "releaseDate":"May 21, 2003",
         "directorId":4499
     },
     "331":{
@@ -236,7 +636,7 @@ var moviesJSON = {
         "title":"Jurassic Park III",
         "revenue":368780809,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2Cntu42uyBVJsadHnIUfGlxJaYL.jpg",
-        "releaseDate":"2001-07-15",
+        "releaseDate":"Jul 14, 2001",
         "directorId":4945
     },
     "411":{
@@ -245,7 +645,7 @@ var moviesJSON = {
         "title":"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
         "revenue":748806957,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l1NNAvgIj5QVpbJNp8GN7KCyl3f.jpg",
-        "releaseDate":"2005-12-09",
+        "releaseDate":"Dec 8, 2005",
         "directorId":5524
     },
     "435":{
@@ -254,7 +654,7 @@ var moviesJSON = {
         "title":"The Day After Tomorrow",
         "revenue":542772771,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pRmpaFjtegy8PnUvSBDyT9dm7c.jpg",
-        "releaseDate":"2004-05-24",
+        "releaseDate":"May 23, 2004",
         "directorId":6046
     },
     "557":{
@@ -263,7 +663,7 @@ var moviesJSON = {
         "title":"Spider-Man",
         "revenue":806000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uZLl4hhrAXtydamH6H04pj9SmbM.jpg",
-        "releaseDate":"2002-05-02",
+        "releaseDate":"May 1, 2002",
         "directorId":7623
     },
     "558":{
@@ -272,7 +672,7 @@ var moviesJSON = {
         "title":"Spider-Man 2",
         "revenue":783766341,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/s20Bib8hkJ7CRna93iiCMyykBRp.jpg",
-        "releaseDate":"2004-06-29",
+        "releaseDate":"Jun 28, 2004",
         "directorId":7623
     },
     "559":{
@@ -281,7 +681,7 @@ var moviesJSON = {
         "title":"Spider-Man 3",
         "revenue":806742000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uAB4yoWsYApbKZ6qBO4grsk6j7k.jpg",
-        "releaseDate":"2007-05-03",
+        "releaseDate":"May 2, 2007",
         "directorId":7623
     },
     "591":{
@@ -290,7 +690,7 @@ var moviesJSON = {
         "title":"The Da Vinci Code",
         "revenue":755724413,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/e5Tlc0mNhb9TvgCZknmnd3XaaKU.jpg",
-        "releaseDate":"2006-05-19",
+        "releaseDate":"May 18, 2006",
         "directorId":6159
     },
     "604":{
@@ -299,7 +699,7 @@ var moviesJSON = {
         "title":"The Matrix Reloaded",
         "revenue":738599701,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ezIurBz2fdUc68d98Fp9dRf5ihv.jpg",
-        "releaseDate":"2003-05-06",
+        "releaseDate":"May 5, 2003",
         "directorId":9340
     },
     "608":{
@@ -308,8 +708,11 @@ var moviesJSON = {
         "title":"Men in Black II",
         "revenue":441818803,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gnUTg5odGkvmKogtrqjcFs89kRa.jpg",
-        "releaseDate":"2002-07-02",
-        "directorId":5174
+        "releaseDate":"Jul 1, 2002",
+        "directorId":5174,
+        "x":420,
+        "y":256,
+        "scale":1
     },
     "615":{
         "genres":["Drama","History"],
@@ -317,7 +720,7 @@ var moviesJSON = {
         "title":"The Passion of the Christ",
         "revenue":611899420,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6KyvP5bDmwTYdLLnhEn10NFPDIZ.jpg",
-        "releaseDate":"2004-02-25",
+        "releaseDate":"Feb 24, 2004",
         "directorId":2461
     },
     "671":{
@@ -326,7 +729,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Sorcerer's Stone",
         "revenue":976475550,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uLGaJ9FgPWf7EUgwjp9RTmHemw8.jpg",
-        "releaseDate":"2001-07-15",
+        "releaseDate":"Jul 14, 2001",
         "directorId":10965
     },
     "672":{
@@ -335,7 +738,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Chamber of Secrets",
         "revenue":876688482,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lryNn7sNkvQIg45KwgeKnMxSSRX.jpg",
-        "releaseDate":"2002-11-03",
+        "releaseDate":"Nov 2, 2002",
         "directorId":10965
     },
     "673":{
@@ -344,7 +747,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Prisoner of Azkaban",
         "revenue":789804554,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7VTALkqjG40vby3uVIsp03d7yXy.jpg",
-        "releaseDate":"2004-05-31",
+        "releaseDate":"May 30, 2004",
         "directorId":11218
     },
     "674":{
@@ -353,7 +756,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Goblet of Fire",
         "revenue":895921036,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6sASqcdrEHXxUhA3nFpjrRecPD2.jpg",
-        "releaseDate":"2005-11-05",
+        "releaseDate":"Nov 4, 2005",
         "directorId":10723
     },
     "675":{
@@ -362,7 +765,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Order of the Phoenix",
         "revenue":938212738,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lmYmoXVzVrTadfXHZ3v1ySqA1fn.jpg",
-        "releaseDate":"2007-07-03",
+        "releaseDate":"Jul 2, 2007",
         "directorId":11343
     },
     "676":{
@@ -371,7 +774,7 @@ var moviesJSON = {
         "title":"Pearl Harbor",
         "revenue":449220945,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hH8SQp9seW0jlL95m0xZz17iNMd.jpg",
-        "releaseDate":"2001-05-21",
+        "releaseDate":"May 20, 2001",
         "directorId":865
     },
     "693":{
@@ -380,7 +783,7 @@ var moviesJSON = {
         "title":"Meet the Fockers",
         "revenue":516533043,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xHAqB06iL5D6HyOS6QpgyKkRQHD.jpg",
-        "releaseDate":"2004-12-15",
+        "releaseDate":"Dec 14, 2004",
         "directorId":6737
     },
     "767":{
@@ -389,7 +792,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Half-Blood Prince",
         "revenue":933959197,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bFXys2nhALwDvpkF3dP3Vvdfn8b.jpg",
-        "releaseDate":"2009-07-07",
+        "releaseDate":"Jul 6, 2009",
         "directorId":11343
     },
     "818":{
@@ -398,7 +801,7 @@ var moviesJSON = {
         "title":"Austin Powers in Goldmember",
         "revenue":296633907,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wdH7LaF3RQ2NFjKrrzndntBdNC7.jpg",
-        "releaseDate":"2002-07-22",
+        "releaseDate":"Jul 21, 2002",
         "directorId":6737
     },
     "869":{
@@ -407,7 +810,7 @@ var moviesJSON = {
         "title":"Planet of the Apes",
         "revenue":362211740,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gYQKMOwLolMRyofpRzXPAawiLPC.jpg",
-        "releaseDate":"2001-07-26",
+        "releaseDate":"Jul 25, 2001",
         "directorId":510
     },
     "955":{
@@ -416,7 +819,7 @@ var moviesJSON = {
         "title":"Mission: Impossible II",
         "revenue":565400000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/3XcpeZeSHlDjdPFTWyCvDM1bL6z.jpg",
-        "releaseDate":"2000-05-23",
+        "releaseDate":"May 22, 2000",
         "directorId":11401
     },
     "1271":{
@@ -425,7 +828,7 @@ var moviesJSON = {
         "title":"300",
         "revenue":422610419,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4AmPMxTs1zSdCK0eCacj0kBgOMV.jpg",
-        "releaseDate":"2006-12-08",
+        "releaseDate":"Dec 7, 2006",
         "directorId":15217
     },
     "1452":{
@@ -434,7 +837,7 @@ var moviesJSON = {
         "title":"Superman Returns",
         "revenue":391081192,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7fIHiDhCDSJA3qTEKhfX7g6YKTw.jpg",
-        "releaseDate":"2006-06-21",
+        "releaseDate":"Jun 20, 2006",
         "directorId":9032
     },
     "1593":{
@@ -443,7 +846,7 @@ var moviesJSON = {
         "title":"Night at the Museum",
         "revenue":549736156,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/NUbCSwy2EQ9Z6psUjPqr3WdVI2.jpg",
-        "releaseDate":"2006-12-21",
+        "releaseDate":"Dec 20, 2006",
         "directorId":17825
     },
     "1726":{
@@ -452,7 +855,7 @@ var moviesJSON = {
         "title":"Iron Man",
         "revenue":585174222,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/s2IG9qXfhJYxIttKyroYFBsHwzQ.jpg",
-        "releaseDate":"2008-05-01",
+        "releaseDate":"Apr 30, 2008",
         "directorId":15277
     },
     "1734":{
@@ -461,7 +864,7 @@ var moviesJSON = {
         "title":"The Mummy Returns",
         "revenue":433013274,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hioiYUZVIuYIhagDGhIAjyNEUu0.jpg",
-        "releaseDate":"2001-04-28",
+        "releaseDate":"Apr 27, 2001",
         "directorId":7775
     },
     "1771":{
@@ -470,7 +873,7 @@ var moviesJSON = {
         "title":"Captain America: The First Avenger",
         "revenue":365762652,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fF7vPzCF6kIsLuWEHCGPGl2xTw1.jpg",
-        "releaseDate":"2011-07-22",
+        "releaseDate":"Jul 21, 2011",
         "directorId":4945
     },
     "1858":{
@@ -479,7 +882,7 @@ var moviesJSON = {
         "title":"Transformers",
         "revenue":708226810,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bgSHbGEA1OM6qDs3Qba4VlSZsNG.jpg",
-        "releaseDate":"2007-07-02",
+        "releaseDate":"Jul 1, 2007",
         "directorId":865
     },
     "1865":{
@@ -488,7 +891,7 @@ var moviesJSON = {
         "title":"Pirates of the Caribbean: On Stranger Tides",
         "revenue":1021683000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jUkGuSC9Kt29rW3x6UiB9zyZr1M.jpg",
-        "releaseDate":"2011-05-11",
+        "releaseDate":"May 10, 2011",
         "directorId":17633
     },
     "1894":{
@@ -497,7 +900,7 @@ var moviesJSON = {
         "title":"Star Wars: Episode II - Attack of the Clones",
         "revenue":649398328,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2vcNFtrZXNwIcBgH5e2xXCmVR8t.jpg",
-        "releaseDate":"2002-05-16",
+        "releaseDate":"May 15, 2002",
         "directorId":1
     },
     "1895":{
@@ -506,7 +909,7 @@ var moviesJSON = {
         "title":"Star Wars: Episode III - Revenge of the Sith",
         "revenue":850000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tgr5Pdy7ehZYBqBkN2K7Q02xgOb.jpg",
-        "releaseDate":"2005-05-19",
+        "releaseDate":"May 18, 2005",
         "directorId":1
     },
     "1930":{
@@ -515,7 +918,7 @@ var moviesJSON = {
         "title":"The Amazing Spider-Man",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/AtFhFTNbNo49qn7fkbo9lDtRkeR.jpg",
-        "releaseDate":"2012-07-04",
+        "releaseDate":"Jul 3, 2012",
         "directorId":87742
     },
     "2059":{
@@ -524,7 +927,7 @@ var moviesJSON = {
         "title":"National Treasure",
         "revenue":347451894,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/luMoc56LLMWUt60vUNNpwxrbTNt.jpg",
-        "releaseDate":"2004-11-08",
+        "releaseDate":"Nov 7, 2004",
         "directorId":12962
     },
     "2080":{
@@ -533,7 +936,7 @@ var moviesJSON = {
         "title":"X-Men Origins: Wolverine",
         "revenue":341131793,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vbaV7DalSF6Uy4qLyVK7uNdtmFy.jpg",
-        "releaseDate":"2009-04-30",
+        "releaseDate":"Apr 29, 2009",
         "directorId":13079
     },
     "2133":{
@@ -542,7 +945,7 @@ var moviesJSON = {
         "title":"The Perfect Storm",
         "revenue":325756637,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uARMPDyjiENKyUz7JRmQmLCH8L5.jpg",
-        "releaseDate":"2000-06-26",
+        "releaseDate":"Jun 25, 2000",
         "directorId":5231
     },
     "2502":{
@@ -551,7 +954,7 @@ var moviesJSON = {
         "title":"The Bourne Supremacy",
         "revenue":176000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jXwZgmqOtsqsXuB9oGhocOAegCM.jpg",
-        "releaseDate":"2004-07-23",
+        "releaseDate":"Jul 22, 2004",
         "directorId":25598
     },
     "2503":{
@@ -560,7 +963,7 @@ var moviesJSON = {
         "title":"The Bourne Ultimatum",
         "revenue":227471070,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fHho6JYYY0nRcETWSoeI19iZsNF.jpg",
-        "releaseDate":"2007-08-03",
+        "releaseDate":"Aug 2, 2007",
         "directorId":25598
     },
     "2675":{
@@ -569,7 +972,7 @@ var moviesJSON = {
         "title":"Signs",
         "revenue":408247917,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uyZXsW00i9e4PtRF0z5LFUqk4W8.jpg",
-        "releaseDate":"2002-08-02",
+        "releaseDate":"Aug 1, 2002",
         "directorId":11614
     },
     "3981":{
@@ -578,7 +981,7 @@ var moviesJSON = {
         "title":"What Women Want",
         "revenue":374111707,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xiL4PMdL2b5RRdsfEkGmaol2ScW.jpg",
-        "releaseDate":"2000-12-15",
+        "releaseDate":"Dec 14, 2000",
         "directorId":17698
     },
     "5175":{
@@ -587,7 +990,7 @@ var moviesJSON = {
         "title":"Rush Hour 2",
         "revenue":347325802,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xG43wsvHpOp2QIj2JGQEvmK8dgC.jpg",
-        "releaseDate":"2001-08-03",
+        "releaseDate":"Aug 2, 2001",
         "directorId":11091
     },
     "6479":{
@@ -596,7 +999,7 @@ var moviesJSON = {
         "title":"I Am Legend",
         "revenue":583184161,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/j7tbOFiVF5F9pfaGaMJx1YjJ4KF.jpg",
-        "releaseDate":"2007-12-13",
+        "releaseDate":"Dec 12, 2007",
         "directorId":10943
     },
     "6637":{
@@ -605,7 +1008,7 @@ var moviesJSON = {
         "title":"National Treasure 2: Book of Secrets",
         "revenue":457363168,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4jTdPL5h1TxiJPNIig14E5L64DE.jpg",
-        "releaseDate":"2007-12-13",
+        "releaseDate":"Dec 12, 2007",
         "directorId":12962
     },
     "8346":{
@@ -614,7 +1017,7 @@ var moviesJSON = {
         "title":"My Big Fat Greek Wedding",
         "revenue":368744044,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vqGs8K6MdMHVPMTgMhzKHBVgu0t.jpg",
-        "releaseDate":"2002-02-22",
+        "releaseDate":"Feb 21, 2002",
         "directorId":54644
     },
     "8358":{
@@ -623,7 +1026,7 @@ var moviesJSON = {
         "title":"Cast Away",
         "revenue":429632142,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w515BrZvczKIxbHurG6HIiYYrba.jpg",
-        "releaseDate":"2000-12-07",
+        "releaseDate":"Dec 6, 2000",
         "directorId":24
     },
     "8373":{
@@ -632,7 +1035,7 @@ var moviesJSON = {
         "title":"Transformers: Revenge of the Fallen",
         "revenue":836297228,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kVISXAXDYhjQCfu50QZeCCzzbPv.jpg",
-        "releaseDate":"2009-06-23",
+        "releaseDate":"Jun 22, 2009",
         "directorId":865
     },
     "8488":{
@@ -641,7 +1044,7 @@ var moviesJSON = {
         "title":"Hitch",
         "revenue":368100420,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wY1AsrhhymgxVruhkPtfBoLnUA3.jpg",
-        "releaseDate":"2005-02-10",
+        "releaseDate":"Feb 9, 2005",
         "directorId":17167
     },
     "8871":{
@@ -650,7 +1053,7 @@ var moviesJSON = {
         "title":"How the Grinch Stole Christmas",
         "revenue":345141403,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uOWOw8ZTkGQqx6qkNPhG9AovFJW.jpg",
-        "releaseDate":"2000-11-08",
+        "releaseDate":"Nov 7, 2000",
         "directorId":6159
     },
     "8960":{
@@ -659,7 +1062,7 @@ var moviesJSON = {
         "title":"Hancock",
         "revenue":624029371,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dsCxSr4w3g2ylhlZg3v5CB5Pid7.jpg",
-        "releaseDate":"2008-07-02",
+        "releaseDate":"Jul 1, 2008",
         "directorId":36602
     },
     "8966":{
@@ -668,7 +1071,7 @@ var moviesJSON = {
         "title":"Twilight",
         "revenue":408773703,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nlvPMLCdum7bkHKmDSMnNLGztmW.jpg",
-        "releaseDate":"2008-11-20",
+        "releaseDate":"Nov 19, 2008",
         "directorId":19850
     },
     "9522":{
@@ -677,7 +1080,7 @@ var moviesJSON = {
         "title":"Wedding Crashers",
         "revenue":285176741,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vlnDz1Y3IcBhPyQAqAVtNghx4Eq.jpg",
-        "releaseDate":"2005-07-15",
+        "releaseDate":"Jul 14, 2005",
         "directorId":42994
     },
     "10138":{
@@ -686,7 +1089,7 @@ var moviesJSON = {
         "title":"Iron Man 2",
         "revenue":621752099,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zJ2eK7fehqFSQ2w5JlQIF0OJP9q.jpg",
-        "releaseDate":"2010-05-07",
+        "releaseDate":"May 6, 2010",
         "directorId":15277
     },
     "10195":{
@@ -695,7 +1098,7 @@ var moviesJSON = {
         "title":"Thor",
         "revenue":444115007,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bIuOWTtyFPjsFDevqvF3QrD1aun.jpg",
-        "releaseDate":"2011-05-06",
+        "releaseDate":"May 5, 2011",
         "directorId":11181
     },
     "10528":{
@@ -704,7 +1107,7 @@ var moviesJSON = {
         "title":"Sherlock Holmes",
         "revenue":524028679,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/22ngurXbLqab7Sko6aTSdwOCe5W.jpg",
-        "releaseDate":"2009-12-25",
+        "releaseDate":"Dec 24, 2009",
         "directorId":956
     },
     "10719":{
@@ -713,7 +1116,7 @@ var moviesJSON = {
         "title":"Elf",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2BCvh9w8YXP30Jst8PkMngEo619.jpg",
-        "releaseDate":"2003-10-09",
+        "releaseDate":"Oct 8, 2003",
         "directorId":15277
     },
     "12155":{
@@ -722,7 +1125,7 @@ var moviesJSON = {
         "title":"Alice in Wonderland",
         "revenue":1024299904,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/pvEE5EN5N1yjmHmldfL4aJWm56l.jpg",
-        "releaseDate":"2010-03-05",
+        "releaseDate":"Mar 4, 2010",
         "directorId":510
     },
     "12444":{
@@ -731,7 +1134,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Deathly Hallows: Part 1",
         "revenue":954305868,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/maP4MTfPCeVD2FZbKTLUgriOW4R.jpg",
-        "releaseDate":"2010-11-19",
+        "releaseDate":"Nov 18, 2010",
         "directorId":11343
     },
     "12445":{
@@ -740,7 +1143,7 @@ var moviesJSON = {
         "title":"Harry Potter and the Deathly Hallows: Part 2",
         "revenue":1327817822,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/aMKUvXjgCrUGVDVo48v2YFxARNy.jpg",
-        "releaseDate":"2011-07-07",
+        "releaseDate":"Jul 6, 2011",
         "directorId":11343
     },
     "13475":{
@@ -749,7 +1152,7 @@ var moviesJSON = {
         "title":"Star Trek",
         "revenue":385680446,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lkQgAaI9s2j2Lhlkie8I9RcWYEX.jpg",
-        "releaseDate":"2009-05-07",
+        "releaseDate":"May 6, 2009",
         "directorId":15344
     },
     "16219":{
@@ -758,7 +1161,7 @@ var moviesJSON = {
         "title":"Gladiator",
         "revenue":9,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uMXZfNyWKaY3qPb48sHCY5Dg9uD.jpg",
-        "releaseDate":"1992-03-06",
+        "releaseDate":"Mar 5, 1992",
         "directorId":63943
     },
     "18239":{
@@ -767,7 +1170,7 @@ var moviesJSON = {
         "title":"The Twilight Saga: New Moon",
         "revenue":709710948,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6Q5Eob5giTtwzKfkYDzJXW3cFKf.jpg",
-        "releaseDate":"2009-11-20",
+        "releaseDate":"Nov 19, 2009",
         "directorId":3288
     },
     "18360":{
@@ -776,7 +1179,7 @@ var moviesJSON = {
         "title":"Night at the Museum: Battle of the Smithsonian",
         "revenue":177243721,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qbU6AxmO69bBwu6Tw8HtcRoltAA.jpg",
-        "releaseDate":"2009-05-21",
+        "releaseDate":"May 20, 2009",
         "directorId":17825
     },
     "19995":{
@@ -785,7 +1188,7 @@ var moviesJSON = {
         "title":"Avatar",
         "revenue":2781505847,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8Ic8rRVoVrDJJlXzVzGxAesufUV.jpg",
-        "releaseDate":"2009-12-15",
+        "releaseDate":"Dec 14, 2009",
         "directorId":2710
     },
     "22881":{
@@ -794,7 +1197,7 @@ var moviesJSON = {
         "title":"The Blind Side",
         "revenue":460638228,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wEGFSgPebLk6g1ngKsJ6a46PYLV.jpg",
-        "releaseDate":"2009-11-20",
+        "releaseDate":"Nov 19, 2009",
         "directorId":54040
     },
     "24021":{
@@ -803,7 +1206,7 @@ var moviesJSON = {
         "title":"The Twilight Saga: Eclipse",
         "revenue":300476779,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fBXJGA6WNran1RL4CPKisaPI6UY.jpg",
-        "releaseDate":"2010-06-23",
+        "releaseDate":"Jun 22, 2010",
         "directorId":27571
     },
     "24197":{
@@ -812,7 +1215,7 @@ var moviesJSON = {
         "title":"Mr. & Mrs. Smith",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lY3Jd8O8Oz6aMpasPFBzHASzLQd.jpg",
-        "releaseDate":"1941-01-31",
+        "releaseDate":"Jan 30, 1941",
         "directorId":2636
     },
     "24428":{
@@ -821,7 +1224,7 @@ var moviesJSON = {
         "title":"The Avengers",
         "revenue":1511757910,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cezWGskPY5x7GaglTTRN4Fugfb8.jpg",
-        "releaseDate":"2012-04-11",
+        "releaseDate":"Apr 10, 2012",
         "directorId":12891
     },
     "27205":{
@@ -830,7 +1233,7 @@ var moviesJSON = {
         "title":"Inception",
         "revenue":825532764,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tAXARVreJnWfoANIHASmgYk4SB0.jpg",
-        "releaseDate":"2010-07-16",
+        "releaseDate":"Jul 15, 2010",
         "directorId":525
     },
     "36658":{
@@ -839,7 +1242,7 @@ var moviesJSON = {
         "title":"X2: X-Men United",
         "revenue":214948780,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fdmZ0uHWDQzb6atNTaOQdfdQd9X.jpg",
-        "releaseDate":"2003-04-27",
+        "releaseDate":"Apr 26, 2003",
         "directorId":9032
     },
     "36668":{
@@ -848,7 +1251,7 @@ var moviesJSON = {
         "title":"X-Men: The Last Stand",
         "revenue":234360014,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5QpaN7ZBAR6D3FotvEIMX0qZxHg.jpg",
-        "releaseDate":"2006-05-26",
+        "releaseDate":"May 25, 2006",
         "directorId":11091
     },
     "37724":{
@@ -857,7 +1260,7 @@ var moviesJSON = {
         "title":"Skyfall",
         "revenue":1094960116,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/47UC1BvAKJbpvGXu78bnwlvhFis.jpg",
-        "releaseDate":"2012-10-25",
+        "releaseDate":"Oct 24, 2012",
         "directorId":39
     },
     "38356":{
@@ -866,7 +1269,7 @@ var moviesJSON = {
         "title":"Transformers: Dark of the Moon",
         "revenue":1123746996,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/x3srPojlinkAYxnPXAjZunsPCIL.jpg",
-        "releaseDate":"2011-06-28",
+        "releaseDate":"Jun 27, 2011",
         "directorId":865
     },
     "38575":{
@@ -875,7 +1278,7 @@ var moviesJSON = {
         "title":"The Karate Kid",
         "revenue":357852395,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/l13emtM0cz0HyJeWSxb6ml5RvzT.jpg",
-        "releaseDate":"2010-06-10",
+        "releaseDate":"Jun 9, 2010",
         "directorId":21981
     },
     "41154":{
@@ -884,7 +1287,7 @@ var moviesJSON = {
         "title":"Men in Black 3",
         "revenue":624000000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vQ1E2A5qt0PbRG2SIsIfXWcUHrw.jpg",
-        "releaseDate":"2012-05-25",
+        "releaseDate":"May 24, 2012",
         "directorId":5174
     },
     "45243":{
@@ -893,7 +1296,7 @@ var moviesJSON = {
         "title":"The Hangover Part II",
         "revenue":254455986,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/hFUsdnUoQDQ02EVlKTyhDTdehEr.jpg",
-        "releaseDate":"2011-05-25",
+        "releaseDate":"May 24, 2011",
         "directorId":57130
     },
     "49026":{
@@ -902,7 +1305,7 @@ var moviesJSON = {
         "title":"The Dark Knight Rises",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/48JGI8RNHnPBjKmv0TOI5uSNGKI.jpg",
-        "releaseDate":"2012-07-20",
+        "releaseDate":"Jul 19, 2012",
         "directorId":525
     },
     "49051":{
@@ -911,7 +1314,7 @@ var moviesJSON = {
         "title":"The Hobbit: An Unexpected Journey",
         "revenue":702001325,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/2ofYFSn6P7XmlVP7p4TLAncp7gz.jpg",
-        "releaseDate":"2012-11-27",
+        "releaseDate":"Nov 26, 2012",
         "directorId":108
     },
     "50619":{
@@ -920,7 +1323,7 @@ var moviesJSON = {
         "title":"The Twilight Saga: Breaking Dawn - Part 1",
         "revenue":701315261,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/eZQfeokiFBdvKHNrtQoM3tt2FWL.jpg",
-        "releaseDate":"2011-11-17",
+        "releaseDate":"Nov 16, 2011",
         "directorId":15557
     },
     "50620":{
@@ -929,7 +1332,7 @@ var moviesJSON = {
         "title":"The Twilight Saga: Breaking Dawn - Part 2",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/kJQPygYB8aNEevZZHRifyYrAdU9.jpg",
-        "releaseDate":"2012-11-16",
+        "releaseDate":"Nov 15, 2012",
         "directorId":15557
     },
     "51497":{
@@ -938,7 +1341,7 @@ var moviesJSON = {
         "title":"Fast Five",
         "revenue":601948170,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dHwHenvdFTgpRqIAozieJQOwRP5.jpg",
-        "releaseDate":"2011-04-28",
+        "releaseDate":"Apr 27, 2011",
         "directorId":58189
     },
     "56292":{
@@ -947,7 +1350,7 @@ var moviesJSON = {
         "title":"Mission: Impossible - Ghost Protocol",
         "revenue":694713380,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/96k0SkL6bXqKyOj50hYu3fRRbmV.jpg",
-        "releaseDate":"2011-12-21",
+        "releaseDate":"Dec 20, 2011",
         "directorId":7087
     },
     "58574":{
@@ -956,7 +1359,7 @@ var moviesJSON = {
         "title":"Sherlock Holmes: A Game of Shadows",
         "revenue":334615000,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7OFqsVuS6DlVM10GUD72vCGpQm9.jpg",
-        "releaseDate":"2011-12-16",
+        "releaseDate":"Dec 15, 2011",
         "directorId":956
     },
     "61791":{
@@ -965,7 +1368,7 @@ var moviesJSON = {
         "title":"Rise of the Planet of the Apes",
         "revenue":100775919,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/ddWSWgAjAhksNhMeeBTSqY6otIA.jpg",
-        "releaseDate":"2011-08-04",
+        "releaseDate":"Aug 3, 2011",
         "directorId":77357
     },
     "70160":{
@@ -974,7 +1377,7 @@ var moviesJSON = {
         "title":"The Hunger Games",
         "revenue":658010692,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/rwUrxznyaRa06sPhdwnpOyZudWR.jpg",
-        "releaseDate":"2012-03-23",
+        "releaseDate":"Mar 22, 2012",
         "directorId":23964
     },
     "72105":{
@@ -983,7 +1386,7 @@ var moviesJSON = {
         "title":"Ted",
         "revenue":119849740,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/carghLovNNSEphT9UZXTJ74I7lE.jpg",
-        "releaseDate":"2012-06-28",
+        "releaseDate":"Jun 27, 2012",
         "directorId":52139
     },
     "72976":{
@@ -992,7 +1395,7 @@ var moviesJSON = {
         "title":"Lincoln",
         "revenue":0,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gkkiDu9srCCbCMxGKwNwKCxK7KF.jpg",
-        "releaseDate":"2012-11-09",
+        "releaseDate":"Nov 8, 2012",
         "directorId":488
     },
     "177862":{
@@ -1001,7 +1404,7 @@ var moviesJSON = {
         "title":"The Hangover",
         "revenue":467483912,
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/m3Ci65C4yJBUsj5S25SmkBv3ytg.jpg",
-        "releaseDate":"2009-06-01",
+        "releaseDate":"May 31, 2009",
         "directorId":57130
     }
 };

@@ -1,9 +1,13 @@
 body {
     margin: 0px;
     -webkit-user-select: none;
-}
-.kineticjs-content {
     background-color: black;
+}
+#container {
+    width: 1280px;
+    height: 820px;
+    background-image: url('../img/background.png');
+    margin: 0px auto;
 }
 canvas {
     background-color: transparent;

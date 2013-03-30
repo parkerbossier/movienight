@@ -4,67 +4,194 @@ var apiKey = '742fa948b5cbc1a2c82dbd37f14e2f7e';
 var actors, movies, directors;
 var movieNames = ["How the Grinch Stole Christmas","Cast Away","Mission: Impossible II","Gladiator","What Women Want","The Perfect Storm","Harry Potter and the Sorcerer's Stone","The Lord of the Rings: The Fellowship of the Ring","Rush Hour 2","The Mummy Returns","Pearl Harbor","Ocean's Eleven","Jurassic Park III","Planet of the Apes","Spider-Man","The Lord of the Rings: The Two Towers","Star Wars: Episode II - Attack of the Clones","Harry Potter and the Chamber of Secrets","My Big Fat Greek Wedding","Signs","Austin Powers in Goldmember","Men in Black II","The Lord of the Rings: The Return of the King","Pirates of the Caribbean: The Curse of the Black Pearl","The Matrix Reloaded","Bruce Almighty","X2","Elf","Spider-Man 2","The Passion of the Christ","Meet the Fockers","Harry Potter and the Prisoner of Azkaban","The Day After Tomorrow","The Bourne Supremacy","National Treasure","Star Wars: Episode III - Revenge of the Sith","The Chronicles of Narnia: The Lion","the Witch and the Wardrobe","Harry Potter and the Goblet of Fire","War of the Worlds","King Kong","Wedding Crashers","Charlie and the Chocolate Factory","Batman Begins","Mr. & Mrs. Smith","Hitch","Pirates of the Caribbean: Dead Man's Chest","Night at the Museum","X-Men: The Last Stand","The Da Vinci Code","300","Superman Returns","Spider-Man 3","Transformers","Pirates of the Caribbean: At World's End","Harry Potter and the Order of the Phoenix","I Am Legend","The Bourne Ultimatum","National Treasure: Book of Secrets","The Dark Knight","Iron Man","Indiana Jones and the Kingdom of the Crystal Skull","Hancock","Twilight","Avatar","Transformers: Revenge of the Fallen","Harry Potter and the Half-Blood Prince","The Twilight Saga: New Moon","The Hangover","Star Trek","The Blind Side","Sherlock Holmes","X-Men Origins: Wolverine","Night at the Museum: Battle of the Smithsonian","Alice in Wonderland","Iron Man 2","The Twilight Saga: Eclipse","Harry Potter and the Deathly Hallows: Part 1","Inception","The Karate Kid","Harry Potter and the Deathly Hallows: Part 2","Transformers: Dark of the Moon","The Twilight Saga: Breaking Dawn - Part 1","The Hangover Part II","Pirates of the Caribbean: On Stranger Tides","Fast Five","Mission: Impossible - Ghost Protocol","Sherlock Holmes: A Game of Shadows","Thor","Rise of the Planet of the Apes","Captain America: The First Avenger","The Avengers","The Dark Knight Rises","The Hunger Games","Skyfall","The Hobbit: An Unexpected Journey","The Twilight Saga: Breaking Dawn - Part 2","The Amazing Spider-Man","Ted","Lincoln","Men in Black 3"];
 
-var stage, actorLayer, movieLayer, tailLayer;
+var stage, backgroundStarsLayer, actorLayer, movieLayer, tailLayer;
+
+// far to near
+var currentZoom = 0;
+var zoomLevels = [.4, .9, 1.6, 25];
+
+// zoom to the appropriate zoom level
+function setZoomLevel(level) {
+    var step = (zoomLevels[level] - zoomLevels[currentZoom])/30;
+    var cur = zoomLevels[currentZoom];
+    var anim = new Kinetic.Animation(function() {
+        cur += step;
+        movieLayer.setScale(cur);
+
+        // base case
+        if (Math.abs(cur - zoomLevels[level]) < .001) {
+            anim.stop();
+            currentZoom = level;
+        }
+    }, movieLayer);
+    anim.start();
+}
+
 $(function () {
+    var containerHeight = $('#container').height();
+    var containerWidth = $('#container').width();
+
+    // vertically center the container
+    if (window.innerHeight > containerHeight)
+        $('#container').css('margin-top', (window.innerHeight - containerHeight)/2);
+
     // stage init
     stage = new Kinetic.Stage({
         container: 'container',
-        width: window.innerWidth,
-        height: window.innerHeight,
-        draggable: true
+        width: containerWidth,
+        height: containerHeight
     });
-    actorLayer = new Kinetic.Layer();
-    movieLayer = new Kinetic.Layer();
-    tailLayer = new Kinetic.Layer();
 
-    // create all the actors
-    actors = {};
-    var counter = 0;
-    $.each(actorsJSON, function(i, elem) {
-        var opts = elem;
-        opts.x = window.innerWidth/3;
-        opts.y = window.innerHeight/2;
-        actors[i] = new Actor(opts);
-        if (counter < 500) {
-        actorLayer.add(actors[i].group);
-        counter++;
-        }
+    /*
+     * background stars layer init
+     */
+    backgroundStarsLayer = new Kinetic.Layer();
+    $('#background-stars').one('load', function() {
+        // get the image from the DOM (centered)
+        var image = new Kinetic.Image({
+            x: containerWidth/2,
+            y: containerHeight/2,
+            image: this
+        });
+        image.setOffset([image.getWidth()/2, image.getHeight()/2]);
+
+        // add the image
+        backgroundStarsLayer.add(image);
+        backgroundStarsLayer.draw();
+    });
+
+    /*
+     * movie layer init
+     */
+
+    // spread out the movies
+    for (var i in movieLocs) {
+        movieLocs[i].x *= 10;
+        movieLocs[i].y *= 10;
+    }
+
+    // find the bounding box
+    var bounds = {
+        top: 1000000,
+        left: 1000000,
+        bottom: -1000000,
+        right: -1000000
+    }
+    for (var i in movieLocs) {
+        if (movieLocs[i].x < bounds.left)
+            bounds.left = movieLocs[i].x;
+        if (movieLocs[i].x > bounds.right)
+            bounds.right = movieLocs[i].x;
+        if (movieLocs[i].y < bounds.top)
+            bounds.top = movieLocs[i].y;
+        if (movieLocs[i].y > bounds.bottom)
+            bounds.bottom = movieLocs[i].y;
+    }
+
+    // normalize the bounding box to find the width and height
+    bounds.bottom -= bounds.top;
+    bounds.top = 0;
+    bounds.right -= bounds.left;
+    bounds.left = 0;
+
+    // layer init
+    movieLayer = new Kinetic.Layer({
+        scale: zoomLevels[0],
+        x: containerWidth/2,
+        y: containerHeight/2,
+        offset: [bounds.right/2, bounds.bottom/2]
     });
 
     // create all the movies
     movies = {};
     $.each(moviesJSON, function(i, elem) {
         var opts = elem;
-        opts.x = window.innerWidth/3*2;
-        opts.y = window.innerHeight/2;
+        opts.x = movieLocs[i].x;
+        opts.y = movieLocs[i].y;
+        opts.scale = movieLocs[i].scale;
+
         movies[i] = new Movie(opts);
         movieLayer.add(movies[i].group);
     });
+    
+    actorLayer = new Kinetic.Layer();
+    //    // create all the actors
+    //    actors = {};
+    //    var counter = 0;
+    //    $.each(actorsJSON, function(i, elem) {
+    //        var opts = elem;
+    //        opts.x = window.innerWidth/3;
+    //        opts.y = window.innerHeight/2;
+    //        actors[i] = new Actor(opts);
+    //        if (counter < 500) {
+    //        actorLayer.add(actors[i].group);
+    //        counter++;
+    //        }
+    //    });
 
-    console.log(movies);
-    console.log(actors);
-
+    // add all the layers
+    tailLayer = new Kinetic.Layer();
+    stage.add(backgroundStarsLayer);
     stage.add(movieLayer);
     stage.add(tailLayer);
     stage.add(actorLayer);
-    //return;
+
+    /*
+     * handle dragging
+     */
+    var dragging = false;
+    var lastMouse;
+
+    // start drag
+    $('.kineticjs-content').on('mousedown', function(e) {
+        dragging = true;
+        lastMouse = {
+            x: e.clientX,
+            y: e.clientY
+        }
+    })
+
+    // end drag
+    .on('mouseup', function(e) {
+        dragging = false;
+    })
+
+    // handle drag
+    .on('mousemove', function(e) {
+        if (dragging) {
+            var dX = e.clientX - lastMouse.x;
+            var dY = e.clientY - lastMouse.y;
+            lastMouse.x = e.clientX;
+            lastMouse.y = e.clientY;
+
+            // 1:1 layers
+            movieLayer.setX(movieLayer.getX()+dX);
+            movieLayer.setY(movieLayer.getY()+dY);
+            movieLayer.draw();
+
+            actorLayer.setX(actorLayer.getX()+dX);
+            actorLayer.setY(actorLayer.getY()+dY);
+            actorLayer.draw();
+
+            // parallax layers
+            backgroundStarsLayer.setX(backgroundStarsLayer.getX()+dX/2);
+            backgroundStarsLayer.setY(backgroundStarsLayer.getY()+dY/2);
+            backgroundStarsLayer.draw();
+        }
+    });
+
+
+
+    return;
 
     var counter = 0,
-        scale = 5 + (1/7),
-        offset = 0;
+    offset = 0;
 
     for (var i in actors) {
         if (actors[i].path.length > 1) {
             actors[i].time += Math.floor(Math.random() * 5000);
         }
     }
-
-    for (var i in movies) {
-        movies[i].group.setX((movieLocs[i].x * scale) + offset);
-        movies[i].group.setY(window.innerHeight - (movieLocs[i].y * scale));
-        movies[i].group.attrs.scale.x = movies[i].group.attrs.scale.y = movieLocs[i].scale / 3;
-    }
-    movieLayer.draw();
 
     var anim = new Kinetic.Animation( function (frame) {
         var orbitX,
@@ -280,20 +407,3 @@ $(function () {
 
     anim.start();
 });
-
-function foo() {
-    var theta = 0;
-    setInterval(function() {
-        var actor = actors[3];
-
-        actor.group.setPosition({
-            x: window.innerWidth/2 + Math.cos(theta)*200,
-            y: window.innerHeight/2 + Math.sin(theta)*200
-        });
-
-        theta += Math.PI*2/360*3/2;
-        stage.draw();
-
-    }, 50);
-    actors[3].startTail()
-}
