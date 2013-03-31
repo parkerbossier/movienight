@@ -152,15 +152,6 @@ function Movie(opts) {
         align: 'center'
     }));
 
-//    // genre 1
-//    this.infoGroup.add(new Kinetic.Text({
-//        x: -89,
-//        y: 54,
-//        text: this.genres[0],
-//        fontSize: 15,
-//        fill: 'black'
-//    }));
-
     // title label
     this.infoGroup.add(labelGroup.clone());
 
@@ -178,7 +169,9 @@ function Movie(opts) {
     this.group.add(this.imageGroup);
     this.group.add(this.infoGroup);
 
-    this.group.on('click', function() {
+    this.group.on('click', function(e) {
+        console.log(e)
+        e.stopPropagation();
         self.click();
     });
 }

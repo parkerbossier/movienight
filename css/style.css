@@ -12,3 +12,7 @@ body {
 canvas {
     background-color: transparent;
 }
+@font-face {
+    font-family: advent;
+    src: url('../fonts/advent_regular.ttf');
+}
