@@ -27,6 +27,14 @@ function setZoomLevel(level) {
     anim.start();
 }
 
+var genres = [];
+$.each(moviesJSON, function(i, elem) {
+    $.each(elem.genres, function(i, elem) {
+        if (genres.indexOf(elem) < 0)
+            genres.push(elem);
+    });
+})
+
 $(function () {
     var containerHeight = $('#container').height();
     var containerWidth = $('#container').width();
@@ -76,25 +84,97 @@ $(function () {
         // add the image
         staticOverlayer.add(image);
 
+        // year group init
+        var yearGroup = new Kinetic.Group({
+            x: containerWidth/2 - 2,
+            y: containerHeight/2 + 86
+        });
+        staticOverlayer.add(yearGroup);
+
         // add the years
         var overshoot = 0;
         var thetaInit = Math.PI + Math.PI/180*overshoot;
         var thetaFinal = -Math.PI/180*overshoot;
-        var step = -(thetaFinal-thetaInit)/12;
+        var step = -(thetaFinal-thetaInit)/13;
         var theta;
-        for (var i = 0; i < 13; ++i) {
+        for (var i = 0; i < 14; ++i) {
+            // add the year
             theta = thetaInit+step*i;
             var text = new Kinetic.Text({
                 fontSize: 25,
                 fontFamily: 'advent',
                 text: 2000+i,
-                fill: 'white',
-                x: Math.cos(theta)*386 + containerWidth/2 - 2,
-                y: Math.sin(theta)*386 + containerHeight/2 + 86,
+                fill: '#ffffff',
+                x: Math.cos(theta)*386,
+                y: Math.sin(theta)*386,
                 rotation: theta+Math.PI/2
             });
             text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
-            staticOverlayer.add(text);
+            yearGroup.add(text);
+
+            // click handler
+            text.on('click', function() {
+                // turning year on
+                if (this.getFill() != '#ffffff') {
+                    unDimByYear(this.textArr[0].text);
+                    this.setFill('#ffffff');
+                }
+
+                // turning year off
+                else {
+                    dimByYear(this.textArr[0].text);
+                    this.setFill('#777777');
+                }
+
+                // update
+                yearGroup.draw();
+            });
+        }
+
+        // genre group init
+        var genreGroup = new Kinetic.Group({
+            x: containerWidth/2 - 2,
+            y: containerHeight/2 + 86
+        });
+        staticOverlayer.add(genreGroup);
+
+        // add the genres
+        overshoot = 0;
+        thetaInit = Math.PI + Math.PI/180*overshoot;
+        thetaFinal = -Math.PI/180*overshoot;
+        step = -(thetaFinal-thetaInit)/13;
+        for (i = 0; i < 14; ++i) {
+            // add the year
+            theta = thetaInit+step*i;
+            text = new Kinetic.Text({
+                fontSize: 25,
+                fontFamily: 'advent',
+                text: genres[i],
+                fill: '#ffffff',
+                x: Math.cos(theta)*450,
+                y: Math.sin(theta)*450,
+                rotation: theta+Math.PI/2
+            });
+            text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
+            genreGroup.add(text);
+
+            // click handler
+            text.on('click', function() {
+                // turning year on
+                if (this.getFill() != '#ffffff') {
+                    unDimByGenre(this.textArr[0].text);
+                    this.setFill('#ffffff');
+                }
+
+                // turning year off
+                else {
+                    dimByGenre(this.textArr[0].text);
+                    this.setFill('#777777');
+                }
+
+                // update
+                genreGroup.draw();
+            });
         }
 
         staticOverlayer.draw();
@@ -448,3 +528,35 @@ $(function () {
 
     anim.start();
 });
+
+// dim movies by year
+function dimByYear(year) {
+    for (var i in movies) {
+        if (movies[i].releaseDate.indexOf(year) > 0)
+            movies[i].dim();
+    }
+}
+
+// undim movies by year
+function unDimByYear(year) {
+    for (var i in movies) {
+        if (movies[i].releaseDate.indexOf(year) > 0)
+            movies[i].unDim();
+    }
+}
+
+// dim movies by genre
+function dimByGenre(genre) {
+    for (var i in movies) {
+        if (movies[i].hasGenre(genre))
+            movies[i].dim();
+    }
+}
+
+// undim movies by genre
+function unDimByGenre(genre) {
+    for (var i in movies) {
+        if (movies[i].hasGenre(genre))
+            movies[i].unDim();
+    }
+}

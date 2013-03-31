@@ -514,7 +514,7 @@ var moviesJSON = {
         "directorId":1704
     },
     "58":{
-        "genres":["Action","Adventure","Comedy","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Comedy","Fantasy","Sci-Fi"],
         "actorIds":[85,116,2440,378,114,2441,1715,118,1640,1709,2452,2451,2038,2450,1711,2449,82636,1710],
         "title":"Pirates of the Caribbean: Dead Man's Chest",
         "revenue":1065659812,
@@ -523,7 +523,7 @@ var moviesJSON = {
         "directorId":1704
     },
     "74":{
-        "genres":["Action","Adventure","Drama","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Drama","Sci-Fi","Thriller"],
         "actorIds":[192,501,500,504,502,505,503,506],
         "title":"War of the Worlds",
         "revenue":591739379,
@@ -532,7 +532,7 @@ var moviesJSON = {
         "directorId":488
     },
     "118":{
-        "genres":["Adventure","Comedy","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Comedy","Fantasy","Sci-Fi","Family"],
         "actorIds":[1283,85,1284,113,1281,1292,1294,1286,1285,1290,1295,1282,184997,1293,1291],
         "title":"Charlie and the Chocolate Factory",
         "revenue":474968763,
@@ -541,7 +541,7 @@ var moviesJSON = {
         "directorId":510
     },
     "120":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[1331,1327,1333,112,65,655,113,110,48,882,114,1328,109,1329,1366,1330,1367,965278,1332,1365],
         "title":"The Lord of the Rings: The Fellowship of the Ring",
         "revenue":871368364,
@@ -550,7 +550,7 @@ var moviesJSON = {
         "directorId":108
     },
     "121":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[1331,1327,1333,112,655,113,1372,110,48,882,114,1328,109,1329,941439,1371,502,1330,1332,1370,1369],
         "title":"The Lord of the Rings: The Two Towers",
         "revenue":926287400,
@@ -559,7 +559,7 @@ var moviesJSON = {
         "directorId":108
     },
     "122":{
-        "genres":["Action","Adventure","Drama","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Drama","Fantasy","Sci-Fi"],
         "actorIds":[1331,1327,1333,112,65,655,1372,110,48,882,114,1328,109,1383,1329,1371,502,1330,108,965278,1365,1369,1382,1381],
         "title":"The Lord of the Rings: The Return of the King",
         "revenue":1118888979,
@@ -613,7 +613,7 @@ var moviesJSON = {
         "directorId":525
     },
     "285":{
-        "genres":["Action","Adventure","Comedy","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Comedy","Fantasy","Sci-Fi"],
         "actorIds":[85,116,2440,1619,378,114,2441,118,1640,1709,4030,2038,1430,4031,1711,2449,1710],
         "title":"Pirates of the Caribbean: At World's End",
         "revenue":961000000,
@@ -631,7 +631,7 @@ var moviesJSON = {
         "directorId":4499
     },
     "331":{
-        "genres":["Action","Adventure","Horror","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Horror","Sci-Fi","Thriller"],
         "actorIds":[4783,4784,2169,3905,4940,4941,4939,4943,4942,4944,88949,17413,1076559,181677,105646],
         "title":"Jurassic Park III",
         "revenue":368780809,
@@ -640,7 +640,7 @@ var moviesJSON = {
         "directorId":4945
     },
     "411":{
-        "genres":["Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[3896,147,5530,4757,5538,5526,5529,2467,5539,388,5533,3063,5528,5536,5534,5535,5537,5531,2050,5527,5532,5540,5541,5542],
         "title":"The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
         "revenue":748806957,
@@ -649,7 +649,7 @@ var moviesJSON = {
         "directorId":5524
     },
     "435":{
-        "genres":["Action","Disaster","Science Fiction","Thriller"],
+        "genres":["Action","Disaster","Sci-Fi","Thriller"],
         "actorIds":[6065,65,4730,6070,131,6068,6066,6071,3134,6073,6075,6069,6067,6072,6074],
         "title":"The Day After Tomorrow",
         "revenue":542772771,
@@ -658,7 +658,7 @@ var moviesJSON = {
         "directorId":6046
     },
     "557":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[17051,205,9281,5293,2219,11769,18998,6944,20582,5502,20583,11357,55648,18999,19468,19326,125024,19153,20584,154644,125055,15253,89023,20580,21130,6945,20581],
         "title":"Spider-Man",
         "revenue":806000000,
@@ -667,7 +667,7 @@ var moviesJSON = {
         "directorId":7623
     },
     "558":{
-        "genres":["Action","Adventure","Crime","Drama","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Crime","Drama","Fantasy","Sci-Fi"],
         "actorIds":[17051,205,658,9281,5293,2219,2368,11769,18998,2517,5502,11357,25933,18999,19153,19152,20644,20491,20645,17179,19154,74949],
         "title":"Spider-Man 2",
         "revenue":783766341,
@@ -676,7 +676,7 @@ var moviesJSON = {
         "directorId":7623
     },
     "559":{
-        "genres":["Action","Drama","Fantasy","Science Fiction","Thriller"],
+        "genres":["Action","Drama","Fantasy","Sci-Fi","Thriller"],
         "actorIds":[17051,205,9281,18997,5293,59206,2505,2219,2368,11769,7624,19159,17052,18998,20582,5502,6585,11357,9207,18999,19326,116627,19153,19152,19153,20645,113608,19154,78311,20580],
         "title":"Spider-Man 3",
         "revenue":806742000,
@@ -694,7 +694,7 @@ var moviesJSON = {
         "directorId":6159
     },
     "604":{
-        "genres":["Action","Adventure","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Sci-Fi","Thriller"],
         "actorIds":[1331,530,6384,2975,9575,2192,9452,9448,18286,52908,9462,28782,537506,9464,9466,9443,9459,9450,9457,9364],
         "title":"The Matrix Reloaded",
         "revenue":738599701,
@@ -703,7 +703,7 @@ var moviesJSON = {
         "directorId":9340
     },
     "608":{
-        "genres":["Action","Adventure","Comedy","Science Fiction"],
+        "genres":["Action","Adventure","Comedy","Sci-Fi"],
         "actorIds":[2888,2176,5916,120724,4252,9626,9656,9659,9657,212,6684,1240,9658],
         "title":"Men in Black II",
         "revenue":441818803,
@@ -724,7 +724,7 @@ var moviesJSON = {
         "directorId":2461
     },
     "671":{
-        "genres":["Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[10980,477,10990,4566,10978,10993,5049,10981,1923,10655,10989,14469,20240,10982,96841,10983,194,10988,10984,10991,10985,10979,10986,10992,10987],
         "title":"Harry Potter and the Sorcerer's Stone",
         "revenue":976475550,
@@ -733,7 +733,7 @@ var moviesJSON = {
         "directorId":10965
     },
     "672":{
-        "genres":["Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[10980,477,11355,10990,4566,10978,10993,8930,1923,10655,10989,11184,96841,10983,194,11181,11178,11179,11177,11180,14950,11182,11183,11186,11185,8444],
         "title":"Harry Potter and the Chamber of Secrets",
         "revenue":876688482,
@@ -742,7 +742,7 @@ var moviesJSON = {
         "directorId":10965
     },
     "673":{
-        "genres":["Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[10980,477,64,10990,4566,10978,10993,7056,1923,5658,10989,11207,96841,10983,10988,10991,11212,11213,96851],
         "title":"Harry Potter and the Prisoner of Azkaban",
         "revenue":789804554,
@@ -751,7 +751,7 @@ var moviesJSON = {
         "directorId":11218
     },
     "674":{
-        "genres":["Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[5469,10980,11288,11355,64,10990,4566,8436,10978,10993,2039,140368,1923,11291,5658,10989,1834,213222,1090785,1090776,117654,11184,20999,96841,23076,10988,10991,568374,234922,47468,9191,20049,107170,11212,1090783,1090781,1090782,513677,11180,1090770,956224,234926,203935,96851,20002,234925,1090780,12044,20053,234923,193409,75065,1643,72313,174713,81022,234933,74333,74335,1090784,81024,1090786,11290,575867,1090771],
         "title":"Harry Potter and the Goblet of Fire",
         "revenue":895921036,
@@ -760,7 +760,7 @@ var moviesJSON = {
         "directorId":10723
     },
     "675":{
-        "genres":["Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[5469,10980,1283,477,11355,64,10990,4566,10978,10993,11356,2039,140368,7056,10981,1923,5658,234921,10989,11207,186070,140367,10982,16792,11184,20999,96841,47730,10983,23076,10988,3300,568374,10991,234922,1093975,10992,144867,11212,559759,189689,2247,1093972,11180,1093976,221857,1093977,1093973,3548,956224,1093974,192865,234926,234923,234925,234933,17069,209458,133031,96851,1643,72309,79856],
         "title":"Harry Potter and the Order of the Phoenix",
         "revenue":938212738,
@@ -787,7 +787,7 @@ var moviesJSON = {
         "directorId":6737
     },
     "767":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[10980,1283,477,10990,4566,10978,10993,140368,1923,5658,15737,10989,11207,60348,9138,388,140367,234924,11184,20999,96841,1114487,10988,3300,234922,234927,234928,10991,174398,9191,11212,234929,11180,956224,89387,234926,234934,964834,234925,234933,234923,96851],
         "title":"Harry Potter and the Half-Blood Prince",
         "revenue":933959197,
@@ -796,7 +796,7 @@ var moviesJSON = {
         "directorId":11343
     },
     "818":{
-        "genres":["Comedy","Crime","Science Fiction"],
+        "genres":["Comedy","Crime","Sci-Fi"],
         "actorIds":[3895,13922,12073,9208,59090,8396,7425,43373,10987,14386,14391,13924,162829,2223,62816,180084,14390,13919],
         "title":"Austin Powers in Goldmember",
         "revenue":296633907,
@@ -805,7 +805,7 @@ var moviesJSON = {
         "directorId":6737
     },
     "869":{
-        "genres":["Action","Adventure","Science Fiction"],
+        "genres":["Action","Adventure","Sci-Fi"],
         "actorIds":[1283,3129,13240,10017,61981,13241,13260,13243,10823,11398,13242,44824],
         "title":"Planet of the Apes",
         "revenue":362211740,
@@ -832,7 +832,7 @@ var moviesJSON = {
         "directorId":15217
     },
     "1452":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[3084,1979,53493,8924,11006,7517,53492,2639,17271,7489,13101,53494,41318],
         "title":"Superman Returns",
         "revenue":391081192,
@@ -850,7 +850,7 @@ var moviesJSON = {
         "directorId":17825
     },
     "1726":{
-        "genres":["Action","Adventure","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Sci-Fi","Thriller"],
         "actorIds":[12052,2231,1229,9048,57451,3223,6162,15277,18288,57452,40275,173810,12708,1029808,17857],
         "title":"Iron Man",
         "revenue":585174222,
@@ -868,7 +868,7 @@ var moviesJSON = {
         "directorId":7775
     },
     "1771":{
-        "genres":["Action","Adventure","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Sci-Fi","Thriller"],
         "actorIds":[2231,1331,30315,55470,2176,2283,16828,30710,2203,15543,60898,13014,74289,39459,41561,1133458,1080542,58502,62892],
         "title":"Captain America: The First Avenger",
         "revenue":365762652,
@@ -877,7 +877,7 @@ var moviesJSON = {
         "directorId":4945
     },
     "1858":{
-        "genres":["Action","Adventure","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Sci-Fi","Thriller"],
         "actorIds":[1331,10959,19537,1897,65827,19540,1241,19536,17341,10127,8169,14721,19538,19541,21710,18471,24305],
         "title":"Transformers",
         "revenue":708226810,
@@ -895,7 +895,7 @@ var moviesJSON = {
         "directorId":17633
     },
     "1894":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction","Family"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[2231,3061,33192,113,130,33187,131634,524,9827,33186,33181,33188,17244,33190,20806,6,20806,27762,31923,33189,33198,33182,33191,7242,9374,7908,12536],
         "title":"Star Wars: Episode II - Attack of the Clones",
         "revenue":649398328,
@@ -904,7 +904,7 @@ var moviesJSON = {
         "directorId":1
     },
     "1895":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[2231,3061,113,130,524,33181,17244,6,20806,27762,33183,33182,33184,33185,7908,7242],
         "title":"Star Wars: Episode III - Revenge of the Sith",
         "revenue":850000000,
@@ -931,7 +931,7 @@ var moviesJSON = {
         "directorId":12962
     },
     "2080":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi","Thriller"],
         "actorIds":[6968,10859,23626,6413,79072,82093,1330,78110,60900,82092,82094,21044],
         "title":"X-Men Origins: Wolverine",
         "revenue":341131793,
@@ -967,7 +967,7 @@ var moviesJSON = {
         "directorId":25598
     },
     "2675":{
-        "genres":["Drama","Mystery","Science Fiction","Thriller"],
+        "genres":["Drama","Mystery","Sci-Fi","Thriller"],
         "actorIds":[17140,73421,1956,11614,28042,2461,28044,28043,28046,22215,3204,23627,28047,28048,28049],
         "title":"Signs",
         "revenue":408247917,
@@ -994,7 +994,7 @@ var moviesJSON = {
         "directorId":11091
     },
     "6479":{
-        "genres":["Action","Drama","Horror","Science Fiction","Thriller"],
+        "genres":["Action","Drama","Horror","Sci-Fi","Thriller"],
         "actorIds":[2888,8602,281638,49921,49920,10691,6066,49922,964035,1075145,164094,53918,49918],
         "title":"I Am Legend",
         "revenue":583184161,
@@ -1030,7 +1030,7 @@ var moviesJSON = {
         "directorId":24
     },
     "8373":{
-        "genres":["Action","Adventure","Science Fiction"],
+        "genres":["Action","Adventure","Sci-Fi"],
         "actorIds":[1331,10959,103554,19537,12797,1241,19536,8169,14721,11678,72985,24305],
         "title":"Transformers: Revenge of the Fallen",
         "revenue":836297228,
@@ -1066,7 +1066,7 @@ var moviesJSON = {
         "directorId":36602
     },
     "8966":{
-        "genres":["Adventure","Drama","Fantasy","Science Fiction","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Romance","Family"],
         "actorIds":[37917,11288,84223,45827,554683,21029,25836,53755,59252,84214,23897,56857,58168],
         "title":"Twilight",
         "revenue":408773703,
@@ -1084,7 +1084,7 @@ var moviesJSON = {
         "directorId":42994
     },
     "10138":{
-        "genres":["Action","Adventure","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Sci-Fi","Thriller"],
         "actorIds":[1245,12052,2231,9048,57451,3223,6807,15277,51072,1896,113676,21134,2295,81364,52865],
         "title":"Iron Man 2",
         "revenue":621752099,
@@ -1093,7 +1093,7 @@ var moviesJSON = {
         "directorId":15277
     },
     "10195":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction","Thriller"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi","Thriller"],
         "actorIds":[2231,17604,14343,9048,52852,13275,74568,10132,4173,17605,1640,524,59817,79079,1018947,56614,91606,33045,456700],
         "title":"Thor",
         "revenue":444115007,
@@ -1138,7 +1138,7 @@ var moviesJSON = {
         "directorId":11343
     },
     "12445":{
-        "genres":["Adventure","Drama","Fantasy","Science Fiction","Family"],
+        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Family"],
         "actorIds":[5469,10980,1283,83356,477,11355,64,10990,4566,10978,10993,93210,5049,140368,7056,142747,1923,11291,5658,10655,234921,15737,10989,40638,11207,6199,60348,8785,3064,9138,388,9015,975,568385,561247,140367,234924,568371,11184,20999,96841,10988,3300,568374,234928,214019,234927,174398,10991,234922,568376,11179,234918,182439,9191,11212,10992,180730,209884,568398,568388,69476,24273,2247,234929,27822,11180,568379,202032,234934,234926,234919,568380,568382,234932,568383,568384,1643,568386,568387,234933,568390,568391,568392,568393,568394,568370,568395,96851,568396,252527,568397,208467,568399,561028,568402,234923,568403,166242,234925,568378,234930],
         "title":"Harry Potter and the Deathly Hallows: Part 2",
         "revenue":1327817822,
@@ -1147,7 +1147,7 @@ var moviesJSON = {
         "directorId":11343
     },
     "13475":{
-        "genres":["Science Fiction"],
+        "genres":["Sci-Fi"],
         "actorIds":[8691,21089,11108,74568,1372,1920,29068,17306,62064,5365,128628,59263,21028,6860,26069,50347,57452,68842,17305,3033,4031,1749,92774,80602,8783,451,46801,13024,41421],
         "title":"Star Trek",
         "revenue":385680446,
@@ -1165,7 +1165,7 @@ var moviesJSON = {
         "directorId":63943
     },
     "18239":{
-        "genres":["Adventure","Drama","Fantasy","Science Fiction","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Romance","Family"],
         "actorIds":[501,37917,11288,83356,84223,34502,3968,45827,65225,84225,21029,53755,84224,59252,84214,39391,56857,6804,84219,84221,54203,84222,56676,58168,84228,84216,84217,84227,52414,84218,84226,84215,32887],
         "title":"The Twilight Saga: New Moon",
         "revenue":709710948,
@@ -1183,7 +1183,7 @@ var moviesJSON = {
         "directorId":17825
     },
     "19995":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[17647,8691,1771,32747,10205,65731,15853,30485,59231,10964,95697,98215,98216],
         "title":"Avatar",
         "revenue":2781505847,
@@ -1228,7 +1228,7 @@ var moviesJSON = {
         "directorId":12891
     },
     "27205":{
-        "genres":["Action","Science Fiction","Thriller"],
+        "genres":["Action","Sci-Fi","Thriller"],
         "actorIds":[2524,3895,27578,6193,2037,24045,4935,8293,13022,526,3899,95697,56120],
         "title":"Inception",
         "revenue":825532764,
@@ -1237,7 +1237,7 @@ var moviesJSON = {
         "directorId":525
     },
     "36658":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[6968,1327,4587,10696,2387,11023,1248,11008,11006,11024,10697,11022,10690,33053,52374,115858,64470,115857],
         "title":"X2: X-Men United",
         "revenue":214948780,
@@ -1246,7 +1246,7 @@ var moviesJSON = {
         "directorId":9032
     },
     "36668":{
-        "genres":["Action","Adventure","Fantasy","Science Fiction"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[6968,1327,4587,10696,27578,2387,11023,7090,980,11107,11008,11006,14792,37046,1103,84222,11022,10690,21041,4776,58115],
         "title":"X-Men: The Last Stand",
         "revenue":234360014,
@@ -1264,7 +1264,7 @@ var moviesJSON = {
         "directorId":39
     },
     "38356":{
-        "genres":["Action","Adventure","Science Fiction"],
+        "genres":["Action","Adventure","Sci-Fi"],
         "actorIds":[1331,10959,6949,3910,1736,21088,19540,15831,12797,1241,19536,8169,14721,31531,14102,2962,81178,1749,117187,24305,83586,60602,84495,78798,18352,206334,236048,87957],
         "title":"Transformers: Dark of the Moon",
         "revenue":1123746996,
@@ -1282,7 +1282,7 @@ var moviesJSON = {
         "directorId":21981
     },
     "41154":{
-        "genres":["Action","Comedy","Science Fiction"],
+        "genres":["Action","Comedy","Sci-Fi"],
         "actorIds":[2888,19278,55936,2176,7056,450,16851,59860,151246,1068400,72873,33533,87070,91387],
         "title":"Men in Black 3",
         "revenue":624000000,
@@ -1318,7 +1318,7 @@ var moviesJSON = {
         "directorId":108
     },
     "50619":{
-        "genres":["Adventure","Drama","Fantasy","Science Fiction","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Romance","Family"],
         "actorIds":[37917,11288,34502,45827,851784,53755,59252,84214,56857,84215],
         "title":"The Twilight Saga: Breaking Dawn - Part 1",
         "revenue":701315261,
@@ -1363,7 +1363,7 @@ var moviesJSON = {
         "directorId":956
     },
     "61791":{
-        "genres":["Action","Drama","Science Fiction"],
+        "genres":["Action","Drama","Sci-Fi"],
         "actorIds":[17051,1333,12074,1248,10993,111195,35013,51383,58395,5892,76792,70175,103285],
         "title":"Rise of the Planet of the Apes",
         "revenue":100775919,
@@ -1372,7 +1372,7 @@ var moviesJSON = {
         "directorId":77357
     },
     "70160":{
-        "genres":["Adventure","Science Fiction","Thriller","Family"],
+        "genres":["Adventure","Sci-Fi","Thriller","Family"],
         "actorIds":[72129,27972,57755,9281,2283,55636,13014,207401,77517,8210,96066,23498,47533,561869,427,155862,51456,1030508,530025,1030513,179829,77069,197350,1030512,570548,142374,1090027],
         "title":"The Hunger Games",
         "revenue":658010692,

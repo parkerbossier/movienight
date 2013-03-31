@@ -1,8 +1,9 @@
 // movie object
 function Movie(opts) {
-    // local vars
+    // instance vars
     this.imageAnim;
     this.flipAnim;
+    this.dimAnim;
     this.theta = 0;
     this.isFlipped;
 
@@ -17,6 +18,16 @@ function Movie(opts) {
     this.x = opts.x;
     this.y = opts.y;
     this.scale = opts.scale/8;
+
+    /*
+     * dim circle
+     */
+    this.dimCircle = new Kinetic.Circle({
+        opacity: 0,
+        fill: '#333333',
+        stroke: null
+    });
+    this.dimCircle.hide();
 
     /*
      * minimal group
@@ -35,6 +46,9 @@ function Movie(opts) {
         self.minimalGroup.add(image);
         self.minimalGroup.setOffset([image.getWidth()/2, image.getHeight()/2]);
         self.minimalGroup.draw();
+
+        // set the dim circle's dimensions
+        self.dimCircle.setRadius(image.getWidth()/2 - 26);
     });
 
     /*
@@ -168,10 +182,10 @@ function Movie(opts) {
     this.group.add(this.minimalGroup);
     this.group.add(this.imageGroup);
     this.group.add(this.infoGroup);
+    this.group.add(this.dimCircle);
 
     this.group.on('click', function(e) {
         console.log(e)
-        e.stopPropagation();
         self.click();
     });
 }
@@ -291,7 +305,8 @@ Movie.prototype.flipToImage = function() {
         // stop flipping at 180 degrees
         if (self.theta <= 0) {
             self.theta = 0;
-            self.group.attrs.scale.x = self.scale;;
+            self.group.attrs.scale.x = self.scale;
+            ;
             self.flipAnim.stop();
         }
 
@@ -309,4 +324,62 @@ Movie.prototype.click = function() {
     // info to image
     else if (this.theta == Math.PI)
         this.flipToImage();
+}
+
+// dim the movie
+Movie.prototype.dim = function() {
+    // show the image group
+    this.dimCircle.show();
+
+    // stop existing animation
+    if (this.dimAnim)
+        this.dimAnim.stop();
+
+    // start the animation
+    this.dimAnim = new Kinetic.Animation((function(self) {
+        return function() {
+            var newOpacity = self.dimCircle.getOpacity() + .05;
+            if (newOpacity >= .9) {
+                self.dimCircle.setOpacity(.9);
+                self.dimAnim.stop();
+                movieLayer.draw();
+            }
+            self.dimCircle.setOpacity(newOpacity);
+            self.group.draw();
+        }
+    })(this));
+    this.dimAnim.start();
+}
+
+// undim the movie
+Movie.prototype.unDim = function() {
+    // stop existing animation
+    if (this.dimAnim)
+        this.dimAnim.stop();
+
+    // start the animation
+    this.dimAnim = new Kinetic.Animation((function(self) {
+        return function() {
+            var newOpacity = self.dimCircle.getOpacity() - .05;
+            if (newOpacity <= 0) {
+                self.dimCircle.setOpacity(0);
+                self.dimCircle.hide();
+                self.dimAnim.stop();
+            }
+            self.dimCircle.setOpacity(newOpacity);
+            self.group.draw();
+        }
+    })(this));
+    this.dimAnim.start();
+}
+
+Movie.prototype.hasGenre = function(genre) {
+    var found = false;
+    $.each(this.genres, function(i, elem) {
+        if (elem == genre) {
+            found = true;
+            return false;
+        }
+    });
+    return found;
 }
