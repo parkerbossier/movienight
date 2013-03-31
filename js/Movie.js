@@ -200,16 +200,15 @@ Movie.prototype.showImage = function() {
         this.imageAnim.stop();
 
     // start the animation
-    var self = this;
-    this.imageAnim = new Kinetic.Animation(function() {
+    this.imageAnim = new Kinetic.Animation((function(self) {
         var newOpacity = self.imageGroup.getOpacity() + .05;
         if (newOpacity >= 1) {
             self.imageGroup.setOpacity(1);
             self.imageAnim.stop();
         }
         self.imageGroup.setOpacity(newOpacity);
-        stage.draw();
-    });
+        self.group.draw();
+    })(this));
     this.imageAnim.start();
 }
 
@@ -223,8 +222,7 @@ Movie.prototype.showSun = function() {
         this.imageAnim.stop();
 
     // start the animation
-    var self = this;
-    this.imageAnim = new Kinetic.Animation(function() {
+    this.imageAnim = new Kinetic.Animation((function(self) {
         var newOpacity = self.imageGroup.getOpacity() - .05;
         if (newOpacity <= 0) {
             self.imageGroup.setOpacity(0);
@@ -234,8 +232,8 @@ Movie.prototype.showSun = function() {
             self.imageGroup.hide();
         }
         self.imageGroup.setOpacity(newOpacity);
-        stage.draw();
-    });
+        self.group.draw();
+    })(this));
     this.imageAnim.start();
 }
 
@@ -251,8 +249,7 @@ Movie.prototype.flipToInfo = function() {
 
     // start the animation
     this.isFlipped = false;
-    var self = this;
-    this.flipAnim = new Kinetic.Animation(function() {
+    this.flipAnim = new Kinetic.Animation((function(self) {
         self.theta += Math.PI/90*3;
 
         // handle flipping over
@@ -272,8 +269,8 @@ Movie.prototype.flipToInfo = function() {
         }
 
         self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
-        stage.draw();
-    });
+        self.group.draw();
+    })(this));
     this.flipAnim.start();
 }
 
@@ -289,8 +286,7 @@ Movie.prototype.flipToImage = function() {
 
     // start the animation
     this.isFlipped = false;
-    var self = this;
-    this.flipAnim = new Kinetic.Animation(function() {
+    this.flipAnim = new Kinetic.Animation((function(self) {
         self.theta -= Math.PI/90*3;
 
         // handle flipping over
@@ -311,8 +307,8 @@ Movie.prototype.flipToImage = function() {
         }
 
         self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
-        stage.draw();
-    });
+        self.group.draw();
+    })(this));
     this.flipAnim.start();
 }
 
@@ -338,11 +334,10 @@ Movie.prototype.dim = function() {
     // start the animation
     this.dimAnim = new Kinetic.Animation((function(self) {
         return function() {
-            var newOpacity = self.dimCircle.getOpacity() + .05;
+            var newOpacity = self.dimCircle.getOpacity() + .2;
             if (newOpacity >= .9) {
                 self.dimCircle.setOpacity(.9);
                 self.dimAnim.stop();
-                movieLayer.draw();
             }
             self.dimCircle.setOpacity(newOpacity);
             self.group.draw();
@@ -360,7 +355,7 @@ Movie.prototype.unDim = function() {
     // start the animation
     this.dimAnim = new Kinetic.Animation((function(self) {
         return function() {
-            var newOpacity = self.dimCircle.getOpacity() - .05;
+            var newOpacity = self.dimCircle.getOpacity() - .2;
             if (newOpacity <= 0) {
                 self.dimCircle.setOpacity(0);
                 self.dimCircle.hide();
