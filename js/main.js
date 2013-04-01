@@ -493,7 +493,7 @@ $(function () {
     // create all the actors
     actors = {};
     $.each(actorsJSON, function(i, elem) {
-        if (i > 4000) // || movies[19995].actorIds.indexOf(i) !== -1) {
+        if (i > 10000) // || movies[19995].actorIds.indexOf(i) !== -1) {
             return;
         var opts = elem;
         actors[i] = new Actor(opts);
@@ -851,10 +851,7 @@ function setZoomLevel(level, destOffset) {
     if (zooming)
         return;
 
-    if (level === 3) {
-        console.log("called!");
-        orbitCurrent(120);
-    }
+    
 
     // zoom to center at lowest zoom level
     if (level == 0)
@@ -905,6 +902,39 @@ function setZoomLevel(level, destOffset) {
             // update state
             currentZoom = level;
             zooming = false;
+
+            if (level === 0) {
+                for (i in actors) {
+                    actors[i].period = 5000;
+                    actors[i].rad = 25;
+                    actors[i].group.setScale(0.085);
+                }
+                
+            }
+            if (level === 1) {
+                for (i in actors) {
+                    actors[i].period = 5000;
+                    actors[i].rad = 25;
+                    actors[i].group.setScale(0.085);
+                }
+                
+            }
+            if (level === 2) {
+                for (i in actors) {
+                    actors[i].period = 5000;
+                    actors[i].rad = 25;
+                    actors[i].group.setScale(0.085);
+                }
+                
+            }
+            if (level === 3) {
+                for (i in actors) {
+                    actors[i].period = 30000;
+                    actors[i].rad = 35;
+                    actors[i].group.setScale(0.1);
+                }
+                orbitCurrent(120);
+            }
         }
 
         movieLayer.draw();
@@ -924,6 +954,7 @@ function orbitCurrent(currentMovie) {
             actors[n].state = "orbit";
             //console.log(i / movies[currentMovie].actorIds.length);
             actors[n].time = (i / movies[currentMovie].actorIds.length) * actors[n].period;
+            actors[n].showImage();
         }
     }
 }
