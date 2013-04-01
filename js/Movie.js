@@ -1,7 +1,6 @@
 // movie object
 function Movie(opts) {
     // instance vars
-    this.imageAnim;
     this.flipAnim;
     this.dimAnim;
     this.theta = 0;
@@ -54,9 +53,7 @@ function Movie(opts) {
     /*
      * image group
      */
-    this.imageGroup = new Kinetic.Group({
-        opacity: 0
-    });
+    this.imageGroup = new Kinetic.Group();
     this.imageGroup.hide();
 
     // image clipping circle
@@ -184,57 +181,19 @@ function Movie(opts) {
     this.group.add(this.infoGroup);
     this.group.add(this.dimCircle);
 
-    this.group.on('click', function(e) {
-        console.log(e)
-        self.click();
-    });
+    this.group.on('click', this.click);
 }
 
 // show the movie's image instead of the sun
 Movie.prototype.showImage = function() {
-    // show the image group
     this.imageGroup.show();
-
-    // stop existing animation
-    if (this.imageAnim)
-        this.imageAnim.stop();
-
-    // start the animation
-    this.imageAnim = new Kinetic.Animation((function(self) {
-        var newOpacity = self.imageGroup.getOpacity() + .05;
-        if (newOpacity >= 1) {
-            self.imageGroup.setOpacity(1);
-            self.imageAnim.stop();
-        }
-        self.imageGroup.setOpacity(newOpacity);
-        self.group.draw();
-    })(this));
-    this.imageAnim.start();
+    this.group.draw();
 }
 
 // show the minimal movie view (sun instead of image)
 Movie.prototype.showSun = function() {
-    // show the sun group
     this.minimalGroup.show();
-
-    // stop existing animation
-    if (this.imageAnim)
-        this.imageAnim.stop();
-
-    // start the animation
-    this.imageAnim = new Kinetic.Animation((function(self) {
-        var newOpacity = self.imageGroup.getOpacity() - .05;
-        if (newOpacity <= 0) {
-            self.imageGroup.setOpacity(0);
-            self.imageAnim.stop();
-
-            // hide the image group for speed
-            self.imageGroup.hide();
-        }
-        self.imageGroup.setOpacity(newOpacity);
-        self.group.draw();
-    })(this));
-    this.imageAnim.start();
+    this.group.draw();
 }
 
 // flip the movie to the info side
@@ -312,7 +271,9 @@ Movie.prototype.flipToImage = function() {
     this.flipAnim.start();
 }
 
+// click handler
 Movie.prototype.click = function() {
+    console.log(this);
     // image to info
     if (this.theta == 0)
         this.flipToInfo();

@@ -2,7 +2,13 @@
 var actors, movies, directors;
 var stage, backgroundStarsLayer, staticOverlayLayer, actorLayer, movieLayer, tailLayer;
 var currentZoom = 0;
-var zoomLevels = [.5, .9, 1.6, 25];
+var zoomLevels = [.5, .9, 1.6, 5];
+var zoomIndicators, filterToggleGroup, zoomGroup;
+var selectAllButton, selectNoneButton;
+var greyColor = '#777777';
+var goldColor = '#fed400';
+var activeFilterColor = '#ffffff';
+var yearFilters, genreFilters;
 
 $(function () {
     var containerHeight = $('#container').height();
@@ -77,37 +83,43 @@ $(function () {
     var thetaFinal = -Math.PI/180*overshoot;
     var step = -(thetaFinal-thetaInit)/13;
     var theta;
+    yearFilters = [];
     for (var i = 0; i < 14; ++i) {
         // add the year
         theta = thetaInit+step*i;
-        var text = new Kinetic.Text({
+        yearFilters[i] = new Kinetic.Text({
             fontSize: 25,
             fontFamily: 'advent',
             text: 2000+i,
-            fill: '#ffffff',
+            fill: activeFilterColor,
             x: Math.cos(theta)*386,
             y: Math.sin(theta)*386,
             rotation: theta+Math.PI/2
         });
-        text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
-        yearGroup.add(text);
+        yearFilters[i].setOffset([yearFilters[i].getTextWidth()/2, yearFilters[i].getTextHeight()/2]);
+        yearGroup.add(yearFilters[i]);
 
         // click handler
-        text.on('click', function() {
+        yearFilters[i].on('click', function() {
             // turning year on
-            if (this.getFill() != '#ffffff') {
+            if (this.getFill() != activeFilterColor) {
                 unDimByYear(this.textArr[0].text);
-                this.setFill('#ffffff');
+                this.setFill(activeFilterColor);
             }
 
             // turning year off
             else {
                 dimByYear(this.textArr[0].text);
-                this.setFill('#777777');
+                this.setFill(greyColor);
             }
 
             // update
             yearGroup.draw();
+
+            // update filter toggles
+            selectAllButton.setFill(greyColor);
+            selectNoneButton.setFill(greyColor);
+            filterToggleGroup.draw();
         });
     }
 
@@ -125,49 +137,224 @@ $(function () {
     thetaInit = Math.PI + Math.PI/180*overshoot;
     thetaFinal = -Math.PI/180*overshoot;
     step = -(thetaFinal-thetaInit)/(genres.length-1);
+    genreFilters = [];
     for (i = 0; i < genres.length; ++i) {
         // add the year
         theta = thetaInit+step*i;
-        text = new Kinetic.Text({
+        genreFilters[i] = new Kinetic.Text({
             fontSize: 25,
             fontFamily: 'advent',
             text: genres[i],
-            fill: '#ffffff',
+            fill: activeFilterColor,
             x: Math.cos(theta)*446,
             y: Math.sin(theta)*446,
             rotation: theta+Math.PI/2
         });
-        text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
-        genreGroup.add(text);
+        genreFilters[i].setOffset([genreFilters[i].getTextWidth()/2, genreFilters[i].getTextHeight()/2]);
+        genreGroup.add(genreFilters[i]);
 
         // click handler
-        text.on('click', function() {
+        genreFilters[i].on('click', function() {
             // turning year on
-            if (this.getFill() != '#ffffff') {
+            if (this.getFill() != activeFilterColor) {
                 unDimByGenre(this.textArr[0].text);
-                this.setFill('#ffffff');
+                this.setFill(activeFilterColor);
             }
 
             // turning year off
             else {
                 dimByGenre(this.textArr[0].text);
-                this.setFill('#777777');
+                this.setFill(greyColor);
             }
 
             // update
             genreGroup.draw();
+
+            // update filter toggles
+            selectAllButton.setFill(greyColor);
+            selectNoneButton.setFill(greyColor);
+            filterToggleGroup.draw();
         });
+
+        genreFilters[i].on('mouseover', (function(i) {
+            return function() {
+                genreFilters[i].setFill(goldColor);
+                genreGroup.draw();
+            }
+        })(i));
+        genreFilters[i].on('mouseout', function() {
+            //genreFilters[i].setFill(goldColor);
+            });
     }
+
+    /*
+     * filter toggle group init
+     */
+    var signWidth = 20;
+    var lineWidth = 5;
+    filterToggleGroup = new Kinetic.Group({
+        x: 131,
+        y: 89
+    });
+    staticOverlayLayer.add(filterToggleGroup);
+
+    // select all
+    var selectAllGroup = new Kinetic.Group();
+    selectAllGroup.add(new Kinetic.Rect({
+        fill: 'transparent',
+        opacity: .5,
+        width: 100,
+        height: 30,
+        x: -87,
+        y: -15
+    }));
+    selectAllButton = new Kinetic.Circle({
+        radius: signWidth/2,
+        fill: goldColor
+    });
+    selectAllGroup.add(selectAllButton);
+    filterToggleGroup.add(selectAllGroup);
+
+    // select none
+    var selectNoneGroup = new Kinetic.Group({
+        y: 35
+    });
+    selectNoneGroup.add(new Kinetic.Rect({
+        fill: 'transparent',
+        opacity: .5,
+        width: 122,
+        height: 30,
+        x: -109,
+        y: -15
+    }));
+    selectNoneButton = new Kinetic.Circle({
+        radius: signWidth/2,
+        fill: greyColor
+    });
+    selectNoneGroup.add(selectNoneButton);
+    filterToggleGroup.add(selectNoneGroup);
+
+    // click handlers
+    selectAllGroup.on('click', function() {
+        selectAllButton.setFill(goldColor);
+        selectNoneButton.setFill(greyColor);
+        filterToggleGroup.draw();
+
+        for (var i in genreFilters) {
+            genreFilters[i].setFill(activeFilterColor);
+        }
+        for (var i in yearFilters) {
+            yearFilters[i].setFill(activeFilterColor);
+        }
+        genreGroup.draw();
+        yearGroup.draw();
+
+        // dim all
+        for (var j in movies) {
+            movies[j].unDim();
+        }
+    });
+    selectNoneGroup.on('click', function() {
+        selectNoneButton.setFill(goldColor);
+        selectAllButton.setFill(greyColor);
+        filterToggleGroup.draw();
+
+        for (var i in genreFilters) {
+            genreFilters[i].setFill(greyColor);
+        }
+        for (var i in yearFilters) {
+            yearFilters[i].setFill(greyColor);
+        }
+        genreGroup.draw();
+        yearGroup.draw();
+
+        // dim all
+        for (var j in movies) {
+            movies[j].dim();
+        }
+    });
 
     /*
      * zoom group init
      */
-    var zoomGroup = new Kinetic.Group();
+    zoomGroup = new Kinetic.Group({
+        x: 118,
+        y: 192
+    });
+    staticOverlayLayer.add(zoomGroup);
+    var plusMinusColor = '#bbbbbb';
 
     // + button
-    $('#zoom-in').one('load', function() {
-
+    var plusGroup = new Kinetic.Group({
+        x: 13
     });
+    plusGroup.add(new Kinetic.Rect({
+        width: signWidth,
+        height: signWidth,
+        offset: [signWidth/2, signWidth/2]
+    }));
+    plusGroup.add(new Kinetic.Rect({
+        width: signWidth,
+        height: lineWidth,
+        offset: [signWidth/2, lineWidth/2],
+        fill: plusMinusColor,
+        stroke: null
+    }));
+    plusGroup.add(new Kinetic.Rect({
+        width: lineWidth,
+        height: signWidth,
+        offset: [lineWidth/2, signWidth/2],
+        fill: plusMinusColor,
+        stroke: null
+    }));
+    zoomGroup.add(plusGroup);
+
+    // - button
+    var minusGroup = new Kinetic.Group({
+        x: 13,
+        y: 208
+    });
+    minusGroup.add(new Kinetic.Rect({
+        width: signWidth,
+        height: signWidth,
+        offset: [signWidth/2, signWidth/2]
+    }));
+    minusGroup.add(new Kinetic.Rect({
+        width: signWidth,
+        height: lineWidth,
+        offset: [signWidth/2, lineWidth/2],
+        fill: plusMinusColor,
+        stroke: null
+    }));
+    zoomGroup.add(minusGroup);
+
+    // click handlers
+    plusGroup.on('click', function() {
+        setZoomLevel(Math.min(zoomLevels.length-1, currentZoom+1));
+    });
+    minusGroup.on('click', function() {
+        setZoomLevel(Math.max(0, currentZoom-1));
+    });
+
+    // zoom levels
+    zoomIndicators = [];
+    for (i = 0; i < 4; ++i) {
+        zoomIndicators[3-i] = new Kinetic.Circle({
+            radius: signWidth/2,
+            fill: greyColor,
+            x: 13,
+            y: i*40 + 46
+        })
+        zoomGroup.add(zoomIndicators[3-i]);
+
+        // click handler
+        zoomIndicators[3-i].on('click', (function(newLevel) {
+            return function() {
+                setZoomLevel(newLevel);
+            }
+        })(3-i));
+    }
+    zoomIndicators[0].setFill(goldColor);
 
 
     // draw it all
@@ -177,24 +364,6 @@ $(function () {
      * tail layer init
      */
     tailLayer = new Kinetic.Layer();
-
-    /*
-     * actor layer init
-     */
-    actorLayer = new Kinetic.Layer();
-    // create all the actors
-    actors = {};
-    var counter = 0;
-    $.each({} || actorsJSON, function(i, elem) {
-        var opts = elem;
-        opts.x = window.innerWidth/3;
-        opts.y = window.innerHeight/2;
-        actors[i] = new Actor(opts);
-        if (counter < 500) {
-            actorLayer.add(actors[i].group);
-            counter++;
-        }
-    });
 
     /*
      * movie layer init
@@ -245,6 +414,27 @@ $(function () {
     });
 
     /*
+     * actor layer init
+     */
+    actorLayer = new Kinetic.Layer({
+        scale: zoomLevels[0],
+        x: containerWidth/2,
+        y: containerHeight/2 - 30,
+        offset: [bounds.right/2, bounds.bottom/2]
+    });
+
+    // create all the actors
+    actors = {};
+    $.each(actorsJSON, function(i, elem) {
+        if (i > 4000)
+            return;
+
+        var opts = elem;
+        actors[i] = new Actor(opts);
+        actorLayer.add(actors[i].group);
+    });
+
+    /*
      * combine all the layers
      */
     stage.add(backgroundStarsLayer);
@@ -275,7 +465,7 @@ $(function () {
 
     // handle drag
     .on('mousemove', function(e) {
-        if (dragging) {
+        if (dragging && currentZoom != 0) {
             var dX = e.clientX - lastMouse.x;
             var dY = e.clientY - lastMouse.y;
             lastMouse.x = e.clientX;
@@ -309,9 +499,6 @@ $(function () {
 
 
 
-
-    return;
-
     var counter = 0,
     offset = 0;
 
@@ -339,7 +526,7 @@ $(function () {
         counter = 0;
 
         for (i in actors) {
-            if (counter < 500) {
+            if (counter < 1000000) {
                 counter++;
                 //console.log(counter);
                 orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
@@ -570,20 +757,36 @@ function unDimByGenre(genre) {
 }
 
 // zoom to the appropriate zoom level
+var zooming = false;
 function setZoomLevel(level) {
+    // disallow changing the zoom if a change is in progress
+    if (zooming)
+        return;
+
     var step = (zoomLevels[level] - zoomLevels[currentZoom])/30;
     var anim = new Kinetic.Animation(function() {
         movieLayer.setScale(movieLayer.getScale().x + step);
+        actorLayer.setScale(actorLayer.getScale().x + step);
+        tailLayer.setScale(tailLayer.getScale().x + step);
         backgroundStarsLayer.setScale(backgroundStarsLayer.getScale().x + step/2);
 
         // base case
         if (Math.abs(movieLayer.getScale().x - zoomLevels[level]) < .001) {
             anim.stop();
+
+            // change the indicator
+            zoomIndicators[currentZoom].setFill(greyColor);
+            zoomIndicators[level].setFill(goldColor);
+            zoomGroup.draw();
+
+            // update state
             currentZoom = level;
+            zooming = false;
         }
 
         movieLayer.draw();
         backgroundStarsLayer.draw();
     });
+    zooming = true;
     anim.start();
 }
