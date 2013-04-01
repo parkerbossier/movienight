@@ -451,7 +451,8 @@ $(function () {
         opts.scale = movieLocs[i].scale;
 
         movies[i] = new Movie(opts);
-        if (movies[i].title == "The Lord of the Rings: The Fellowship of the Ring") console.log("LotR 1: " + i);
+        if (movies[i].title == "The Lord of the Rings: The Fellowship of the Ring")
+            console.log("LotR 1: " + i);
         movieLayer.add(movies[i].group);
     });
 
@@ -477,10 +478,32 @@ $(function () {
     //}
     });
 
+//    /*
+//     * background zoom hit layer
+//     */
+//    var backgroundZoomHitLayer = new Kinetic.Layer();
+//    var hitRect = new Kinetic.Rect({
+//        width: containerWidth,
+//        height: containerHeight,
+//        fill: 'red',
+//        opacity: .5,
+//        offset: [0, 0]
+//    });
+//    backgroundZoomHitLayer.add(hitRect);
+//
+//    // click handler
+//    hitRect.on('click', function(e) {
+//        setZoomLevel(currentZoom+1, {
+//            x: e.layerX,
+//            y: e.layerY
+//        });
+//    });
+
     /*
      * combine all the layers
      */
     stage.add(backgroundStarsLayer);
+//    stage.add(backgroundZoomHitLayer);
     stage.add(tailLayer);
     stage.add(actorLayer);
     stage.add(movieLayer);

@@ -134,7 +134,7 @@ Actor.prototype.showImage = function() {
 }
 
 // show the minimal actor view (star instead of image)
-Actor.prototype.showStar = function() {
+Actor.prototype.hideImage = function() {
     // show the star group
     this.starGroup.show();
 

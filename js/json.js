@@ -2,6 +2,85 @@ var imageBase = 'http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500';
 
 var genres = ['Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Horror', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller'];
 
+var constellations =
+
+[
+{
+    title: "Superheroes",
+    order: [ 24428, 557, 558, 1452, 1930, 559, 8960, 10138, 10195, 49026, 2080, 155, 36668, 36658, 1726, 1771 ]
+},
+,
+{
+    title: "Harry Potter Galaxy",
+    order:[671,672,673,674,675,767,12444,12445]
+}
+,
+{
+    title: "National Treasure Galaxy",
+    order:[2059,6637]
+}
+,
+{
+    title: "M.I.B Galaxy",
+    order:[608, 41154]
+}
+,
+{
+    title: "Mission Impossible Galaxy",
+    order:[955,56292]
+}
+,
+{
+    title: "Museum Nights Galaxy",
+    order:[1593,18360]
+}
+,
+{
+    title: "Sherlock Galaxy",
+    order:[10528,58574]
+}
+,
+{
+    title: "Apes Galaxy",
+    order:[869,61791]
+}
+,
+{
+    title: "Pirates Galaxy",
+    order:[285,1865,22,58]
+}
+,
+{
+    title: "Star Wars Galaxy",
+    order:[1894,1895]
+}
+,
+{
+    title: "Bourne Galaxy",
+    order:[2502,2503]
+}
+,
+{
+    title: "Transformers Galaxy",
+    order:[1858,38356,8373]
+}
+,
+{
+    title: "Transformers Galaxy",
+    order:[1858,38356,8373]
+}
+,
+{
+    title: "LOTR Galaxy",
+    order:[120,122,121]
+}
+,
+{
+    title: "Vampires Galaxy", 
+    order:[8966,18239,24021,50620,50619]
+}
+];
+
 var movieLocs = {
     "22":{
         "x":650,

@@ -191,7 +191,7 @@ Movie.prototype.showImage = function() {
 }
 
 // show the minimal movie view (sun instead of image)
-Movie.prototype.showSun = function() {
+Movie.prototype.hideImage = function() {
     this.minimalGroup.show();
     this.group.draw();
 }
