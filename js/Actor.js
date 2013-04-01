@@ -10,7 +10,7 @@ function Actor(opts) {
     this.name = opts.name;
     this.path = opts.movieIds;
     this.currentMovie = 0;
-    this.rad = 250;
+    this.rad = 25;
     this.period = 5000;
     this.state = "orbit";
     this.time = 0;

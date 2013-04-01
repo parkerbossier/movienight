@@ -2,7 +2,7 @@
 var actors, movies, directors;
 var stage, backgroundStarsLayer, staticOverlayLayer, actorLayer, movieLayer, tailLayer;
 var currentZoom = 0;
-var zoomLevels = [0.5, 0.9, 1.6, 5];
+var zoomLevels = [0.5, 0.9, 2, 5];
 var zoomIndicators, filterToggleGroup, zoomGroup;
 var selectAllButton, selectNoneButton;
 var greyColor = '#777777';
@@ -465,7 +465,7 @@ $(function () {
         y: containerHeight/2 + movieLayerYOffset,
         offset: [movieBounds.right/2, movieBounds.bottom/2]
     });
-    actorLayer.hide()
+    //actorLayer.hide()
 
     // create all the actors
     actors = {};
@@ -474,6 +474,7 @@ $(function () {
             return;
         var opts = elem;
         actors[i] = new Actor(opts);
+        actors[i].group.setScale(0.085);
         actorLayer.add(actors[i].group);
     //}
     });
@@ -597,12 +598,12 @@ $(function () {
                 //console.log(counter);
                 orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
                 orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
-                radius = 25;   //actors[i].rad;
+                radius = actors[i].rad;
                 period = actors[i].period;
                 time = actors[i].time + frame.timeDiff;
                 actors[i].time += frame.timeDiff;
                 angle = actors[i].angle;
-                actors[i].group.attrs.scale.x = actors[i].group.attrs.scale.y = 0.2 / 3;
+                //actors[i].group.attrs.scale.x = actors[i].group.attrs.scale.y = 0.2 / 3;
 
 
                 switch (actors[i].state)
