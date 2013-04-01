@@ -181,7 +181,9 @@ function Movie(opts) {
     this.group.add(this.infoGroup);
     this.group.add(this.dimCircle);
 
-    this.group.on('click', this.click);
+    this.group.on('click', function() {
+        self.click(self);
+    });
 }
 
 // show the movie's image instead of the sun
@@ -272,8 +274,8 @@ Movie.prototype.flipToImage = function() {
 }
 
 // click handler
-Movie.prototype.click = function() {
-    console.log(this);
+Movie.prototype.click = function(self) {
+    console.log(self);
     // image to info
     if (this.theta == 0)
         this.flipToInfo();

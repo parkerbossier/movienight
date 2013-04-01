@@ -108,55 +108,17 @@ function Actor(opts) {
 }
 
 // show the actor's image instead of the star
-Actor.prototype.showImage = function() {
-    // show the image group
+Movie.prototype.showImage = function() {
     this.imageGroup.show();
-
-    // stop existing animation
-    if (this.imageAnim)
-        this.imageAnim.stop();
-
-    // start the animation
-    var self = this;
-    this.imageAnim = new Kinetic.Animation(function() {
-        var newOpacity = self.imageGroup.getOpacity() + .05;
-        if (newOpacity >= 1) {
-            self.imageGroup.setOpacity(1);
-            self.imageAnim.stop();
-
-            // hide the star group for speed
-            self.starGroup.hide();
-        }
-        self.imageGroup.setOpacity(newOpacity);
-        stage.draw();
-    });
-    this.imageAnim.start();
+    this.starGroup.hide();
+    this.group.draw();
 }
 
 // show the minimal actor view (star instead of image)
-Actor.prototype.hideImage = function() {
-    // show the star group
+Movie.prototype.hideImage = function() {
     this.starGroup.show();
-
-    // stop existing animation
-    if (this.imageAnim)
-        this.imageAnim.stop();
-
-    // start the animation
-    var self = this;
-    this.imageAnim = new Kinetic.Animation(function() {
-        var newOpacity = self.imageGroup.getOpacity() - .05;
-        if (newOpacity <= 0) {
-            self.imageGroup.setOpacity(0);
-            self.imageAnim.stop();
-
-            // hide the image group for speed
-            self.imageGroup.hide();
-        }
-        self.imageGroup.setOpacity(newOpacity);
-        stage.draw();
-    });
-    this.imageAnim.start();
+    this.imageGroup.hide();
+    this.group.draw();
 }
 
 // start dropping a tail
