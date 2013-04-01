@@ -9,10 +9,13 @@ var greyColor = '#777777';
 var goldColor = '#fed400';
 var activeFilterColor = '#ffffff';
 var yearFilters, genreFilters;
+var containerWidth, containerHeight;
+var movieLayerYOffset = -30;
+var movieBounds;
 
 $(function () {
-    var containerHeight = $('#container').height();
-    var containerWidth = $('#container').width();
+    containerHeight = $('#container').height();
+    containerWidth = $('#container').width();
 
     // vertically center the container
     if (window.innerHeight > containerHeight)
@@ -101,16 +104,24 @@ $(function () {
 
         // click handler
         yearFilters[i].on('click', function() {
+            var currentFill;
+            if (this.getFill() == goldColor)
+                currentFill = this.attrs.lastColor;
+            else
+                currentFill = this.getFill();
+
             // turning year on
-            if (this.getFill() != activeFilterColor) {
+            if (currentFill != activeFilterColor) {
                 unDimByYear(this.textArr[0].text);
                 this.setFill(activeFilterColor);
+                this.attrs.lastColor = activeFilterColor;
             }
 
             // turning year off
             else {
                 dimByYear(this.textArr[0].text);
                 this.setFill(greyColor);
+                this.attrs.lastColor = greyColor;
             }
 
             // update
@@ -121,6 +132,20 @@ $(function () {
             selectNoneButton.setFill(greyColor);
             filterToggleGroup.draw();
         });
+
+        yearFilters[i].on('mouseover', (function(i) {
+            return function() {
+                yearFilters[i].attrs.lastColor = yearFilters[i].getFill();
+                yearFilters[i].setFill(goldColor);
+                yearGroup.draw();
+            }
+        })(i));
+        yearFilters[i].on('mouseout', (function(i) {
+            return function() {
+                yearFilters[i].setFill(yearFilters[i].attrs.lastColor);
+                yearGroup.draw();
+            }
+        })(i));
     }
 
     /*
@@ -155,16 +180,24 @@ $(function () {
 
         // click handler
         genreFilters[i].on('click', function() {
+            var currentFill;
+            if (this.getFill() == goldColor)
+                currentFill = this.attrs.lastColor;
+            else
+                currentFill = this.getFill();
+
             // turning year on
-            if (this.getFill() != activeFilterColor) {
+            if (currentFill != activeFilterColor) {
                 unDimByGenre(this.textArr[0].text);
                 this.setFill(activeFilterColor);
+                this.attrs.lastColor = activeFilterColor;
             }
 
             // turning year off
             else {
                 dimByGenre(this.textArr[0].text);
                 this.setFill(greyColor);
+                this.attrs.lastColor = greyColor;
             }
 
             // update
@@ -178,13 +211,17 @@ $(function () {
 
         genreFilters[i].on('mouseover', (function(i) {
             return function() {
+                genreFilters[i].attrs.lastColor = genreFilters[i].getFill();
                 genreFilters[i].setFill(goldColor);
                 genreGroup.draw();
             }
         })(i));
-        genreFilters[i].on('mouseout', function() {
-            //genreFilters[i].setFill(goldColor);
-            });
+        genreFilters[i].on('mouseout', (function(i) {
+            return function() {
+                genreFilters[i].setFill(genreFilters[i].attrs.lastColor);
+                genreGroup.draw();
+            }
+        })(i));
     }
 
     /*
@@ -330,6 +367,10 @@ $(function () {
 
     // click handlers
     plusGroup.on('click', function() {
+        console.log({
+            x: -movieLayer.getX(),
+            y: -movieLayer.getY()
+        })
         setZoomLevel(Math.min(zoomLevels.length-1, currentZoom+1));
     });
     minusGroup.on('click', function() {
@@ -370,35 +411,35 @@ $(function () {
      */
 
     // find the bounding box
-    var bounds = {
+    movieBounds = {
         top: 1000000,
         left: 1000000,
         bottom: -1000000,
         right: -1000000
     }
     for (var i in movieLocs) {
-        if (movieLocs[i].x < bounds.left)
-            bounds.left = movieLocs[i].x;
-        if (movieLocs[i].x > bounds.right)
-            bounds.right = movieLocs[i].x;
-        if (movieLocs[i].y < bounds.top)
-            bounds.top = movieLocs[i].y;
-        if (movieLocs[i].y > bounds.bottom)
-            bounds.bottom = movieLocs[i].y;
+        if (movieLocs[i].x < movieBounds.left)
+            movieBounds.left = movieLocs[i].x;
+        if (movieLocs[i].x > movieBounds.right)
+            movieBounds.right = movieLocs[i].x;
+        if (movieLocs[i].y < movieBounds.top)
+            movieBounds.top = movieLocs[i].y;
+        if (movieLocs[i].y > movieBounds.bottom)
+            movieBounds.bottom = movieLocs[i].y;
     }
 
     // normalize the bounding box to find the width and height
-    bounds.bottom -= bounds.top;
-    bounds.top = 0;
-    bounds.right -= bounds.left;
-    bounds.left = 0;
+    movieBounds.bottom -= movieBounds.top;
+    movieBounds.top = 0;
+    movieBounds.right -= movieBounds.left;
+    movieBounds.left = 0;
 
     // layer init
     movieLayer = new Kinetic.Layer({
         scale: zoomLevels[0],
         x: containerWidth/2,
-        y: containerHeight/2 - 30,
-        offset: [bounds.right/2, bounds.bottom/2]
+        y: containerHeight/2 + movieLayerYOffset,
+        offset: [movieBounds.right/2, movieBounds.bottom/2]
     });
 
     // create all the movies
@@ -419,9 +460,10 @@ $(function () {
     actorLayer = new Kinetic.Layer({
         scale: zoomLevels[0],
         x: containerWidth/2,
-        y: containerHeight/2 - 30,
-        offset: [bounds.right/2, bounds.bottom/2]
+        y: containerHeight/2 + movieLayerYOffset,
+        offset: [movieBounds.right/2, movieBounds.bottom/2]
     });
+    actorLayer.hide()
 
     // create all the actors
     actors = {};
@@ -466,27 +508,27 @@ $(function () {
     // handle drag
     .on('mousemove', function(e) {
         if (dragging && currentZoom != 0) {
-            var dX = e.clientX - lastMouse.x;
-            var dY = e.clientY - lastMouse.y;
+            var dX = -(e.clientX - lastMouse.x)/zoomLevels[currentZoom];
+            var dY = -(e.clientY - lastMouse.y)/zoomLevels[currentZoom];
             lastMouse.x = e.clientX;
             lastMouse.y = e.clientY;
 
             // 1:1 layers
-            movieLayer.setX(movieLayer.getX()+dX);
-            movieLayer.setY(movieLayer.getY()+dY);
+            var offset = movieLayer.getOffset();
+            movieLayer.setOffset([offset.x + dX, offset.y + dY]);
             movieLayer.draw();
 
-            actorLayer.setX(actorLayer.getX()+dX);
-            actorLayer.setY(actorLayer.getY()+dY);
+            offset = actorLayer.getOffset();
+            actorLayer.setOffset([offset.x + dX, offset.y + dY]);
             actorLayer.draw();
 
-            tailLayer.setX(tailLayer.getX()+dX);
-            tailLayer.setY(tailLayer.getY()+dY);
+            offset = tailLayer.getOffset();
+            tailLayer.setOffset([offset.x + dX, offset.y + dY]);
             tailLayer.draw();
 
             // parallax layers
-            backgroundStarsLayer.setX(backgroundStarsLayer.getX()+dX/2);
-            backgroundStarsLayer.setY(backgroundStarsLayer.getY()+dY/2);
+            offset = backgroundStarsLayer.getOffset();
+            backgroundStarsLayer.setOffset([offset.x + dX/2, offset.y + dY/2]);
             backgroundStarsLayer.draw();
         }
     });
@@ -758,20 +800,50 @@ function unDimByGenre(genre) {
 
 // zoom to the appropriate zoom level
 var zooming = false;
-function setZoomLevel(level) {
+function setZoomLevel(level, destOffset) {
     // disallow changing the zoom if a change is in progress
     if (zooming)
         return;
 
-    var step = (zoomLevels[level] - zoomLevels[currentZoom])/30;
-    var anim = new Kinetic.Animation(function() {
-        movieLayer.setScale(movieLayer.getScale().x + step);
-        actorLayer.setScale(actorLayer.getScale().x + step);
-        tailLayer.setScale(tailLayer.getScale().x + step);
-        backgroundStarsLayer.setScale(backgroundStarsLayer.getScale().x + step/2);
+    // zoom to center at lowest zoom level
+    if (level == 0)
+        destOffset = {
+            x: movieBounds.right/2,
+            y: movieBounds.bottom/2
+        }
 
-        // base case
-        if (Math.abs(movieLayer.getScale().x - zoomLevels[level]) < .001) {
+    // default zoom in to the view
+    else if (!destOffset) {
+        destOffset = movieLayer.getOffset();
+    }
+
+    // calculate the steps
+    var steps = 30;
+    var xStep = -(movieLayer.getOffset().x - destOffset.x)/steps;
+    var yStep = -(movieLayer.getOffset().y - destOffset.y)/steps;
+    var zoomStep = (zoomLevels[level] - zoomLevels[currentZoom])/steps;
+
+    var anim = new Kinetic.Animation(function() {
+        movieLayer.setScale(movieLayer.getScale().x + zoomStep);
+        movieLayer.setOffset([movieLayer.getOffset().x + xStep, movieLayer.getOffset().y + yStep]);
+
+        actorLayer.setScale(actorLayer.getScale().x + zoomStep);
+        actorLayer.setOffset([actorLayer.getOffset().x + xStep, actorLayer.getOffset().y + yStep]);
+
+        tailLayer.setScale(tailLayer.getScale().x + zoomStep);
+        tailLayer.setOffset([tailLayer.getOffset().x + xStep, tailLayer.getOffset().y + yStep]);
+
+        backgroundStarsLayer.setScale(backgroundStarsLayer.getScale().x + zoomStep/2);
+        backgroundStarsLayer.setOffset([backgroundStarsLayer.getOffset().x + xStep/2, backgroundStarsLayer.getOffset().y + yStep/2]);
+
+        // base cases
+        if (Math.abs(movieLayer.getScale().x - zoomLevels[level]) < .001)
+            zoomStep = 0;
+        if (Math.abs(movieLayer.getOffset().x - destOffset.x) < .001)
+            xStep = 0;
+        if (Math.abs(movieLayer.getOffset().y - destOffset.y) < .001)
+            yStep = 0;
+        if (zoomStep == 0 && xStep == 0 && yStep == 0) {
             anim.stop();
 
             // change the indicator
@@ -785,6 +857,8 @@ function setZoomLevel(level) {
         }
 
         movieLayer.draw();
+        actorLayer.draw();
+        tailLayer.draw();
         backgroundStarsLayer.draw();
     });
     zooming = true;

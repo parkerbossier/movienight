@@ -516,7 +516,7 @@ var moviesJSON = {
         "directorId":1704
     },
     "58":{
-        "genres":["Action","Adventure","Comedy","Fantasy","Sci-Fi"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[85,116,2440,378,114,2441,1715,118,1640,1709,2452,2451,2038,2450,1711,2449,82636,1710],
         "title":"Pirates of the Caribbean: Dead Man's Chest",
         "revenue":1065659812,
@@ -525,7 +525,7 @@ var moviesJSON = {
         "directorId":1704
     },
     "74":{
-        "genres":["Action","Adventure","Drama","Sci-Fi","Thriller"],
+        "genres":["Action","Adventure","Drama","Thriller"],
         "actorIds":[192,501,500,504,502,505,503,506],
         "title":"War of the Worlds",
         "revenue":591739379,
@@ -534,7 +534,7 @@ var moviesJSON = {
         "directorId":488
     },
     "118":{
-        "genres":["Adventure","Comedy","Fantasy","Sci-Fi","Family"],
+        "genres":["Adventure","Comedy","Fantasy","Family"],
         "actorIds":[1283,85,1284,113,1281,1292,1294,1286,1285,1290,1295,1282,184997,1293,1291],
         "title":"Charlie and the Chocolate Factory",
         "revenue":474968763,
@@ -561,7 +561,7 @@ var moviesJSON = {
         "directorId":108
     },
     "122":{
-        "genres":["Action","Adventure","Drama","Fantasy","Sci-Fi"],
+        "genres":["Action","Adventure","Drama","Fantasy"],
         "actorIds":[1331,1327,1333,112,65,655,1372,110,48,882,114,1328,109,1383,1329,1371,502,1330,108,965278,1365,1369,1382,1381],
         "title":"The Lord of the Rings: The Return of the King",
         "revenue":1118888979,
@@ -597,7 +597,7 @@ var moviesJSON = {
         "directorId":488
     },
     "254":{
-        "genres":["Action","Adventure","Drama","Horror","Thriller","Foreign"],
+        "genres":["Action","Adventure","Drama","Horror"],
         "actorIds":[1333,70851,3489,3497,3490,3495,3491,478,3498,3492,3494,3541,3496,3493],
         "title":"King Kong",
         "revenue":550000000,
@@ -606,7 +606,7 @@ var moviesJSON = {
         "directorId":108
     },
     "272":{
-        "genres":["Action","Adventure","Crime","Drama","Fantasy"],
+        "genres":["Action","Adventure","Crime","Drama"],
         "actorIds":[3894,3896,192,585,3895,534,64,207,3900,2037,3897,3901,489467,34248,3903,3899,3902,105159],
         "title":"Batman Begins",
         "revenue":371853783,
@@ -615,7 +615,7 @@ var moviesJSON = {
         "directorId":525
     },
     "285":{
-        "genres":["Action","Adventure","Comedy","Fantasy","Sci-Fi"],
+        "genres":["Action","Adventure","Comedy","Fantasy"],
         "actorIds":[85,116,2440,1619,378,114,2441,118,1640,1709,4030,2038,1430,4031,1711,2449,1710],
         "title":"Pirates of the Caribbean: At World's End",
         "revenue":961000000,
@@ -633,7 +633,7 @@ var moviesJSON = {
         "directorId":4499
     },
     "331":{
-        "genres":["Action","Adventure","Horror","Sci-Fi","Thriller"],
+        "genres":["Action","Adventure","Horror","Sci-Fi"],
         "actorIds":[4783,4784,2169,3905,4940,4941,4939,4943,4942,4944,88949,17413,1076559,181677,105646],
         "title":"Jurassic Park III",
         "revenue":368780809,
@@ -669,7 +669,7 @@ var moviesJSON = {
         "directorId":7623
     },
     "558":{
-        "genres":["Action","Adventure","Crime","Drama","Fantasy","Sci-Fi"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[17051,205,658,9281,5293,2219,2368,11769,18998,2517,5502,11357,25933,18999,19153,19152,20644,20491,20645,17179,19154,74949],
         "title":"Spider-Man 2",
         "revenue":783766341,
@@ -678,7 +678,7 @@ var moviesJSON = {
         "directorId":7623
     },
     "559":{
-        "genres":["Action","Drama","Fantasy","Sci-Fi","Thriller"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[17051,205,9281,18997,5293,59206,2505,2219,2368,11769,7624,19159,17052,18998,20582,5502,6585,11357,9207,18999,19326,116627,19153,19152,19153,20645,113608,19154,78311,20580],
         "title":"Spider-Man 3",
         "revenue":806742000,
@@ -789,7 +789,7 @@ var moviesJSON = {
         "directorId":6737
     },
     "767":{
-        "genres":["Action","Adventure","Fantasy","Sci-Fi","Family"],
+        "genres":["Adventure","Fantasy","Sci-Fi","Family"],
         "actorIds":[10980,1283,477,10990,4566,10978,10993,140368,1923,5658,15737,10989,11207,60348,9138,388,140367,234924,11184,20999,96841,1114487,10988,3300,234922,234927,234928,10991,174398,9191,11212,234929,11180,956224,89387,234926,234934,964834,234925,234933,234923,96851],
         "title":"Harry Potter and the Half-Blood Prince",
         "revenue":933959197,
@@ -861,7 +861,7 @@ var moviesJSON = {
         "directorId":15277
     },
     "1734":{
-        "genres":["Action","Adventure","Drama","Fantasy","Horror","Thriller"],
+        "genres":["Action","Adventure","Fantasy","Thriller"],
         "actorIds":[3293,10727,18269,18918,2629,16743,31164,18041,30316,25808,18920,25675,18919,208211,1077874,178631,120886,1010264],
         "title":"The Mummy Returns",
         "revenue":433013274,
@@ -897,7 +897,7 @@ var moviesJSON = {
         "directorId":17633
     },
     "1894":{
-        "genres":["Action","Adventure","Fantasy","Sci-Fi","Family"],
+        "genres":["Action","Adventure","Fantasy","Sci-Fi"],
         "actorIds":[2231,3061,33192,113,130,33187,131634,524,9827,33186,33181,33188,17244,33190,20806,6,20806,27762,31923,33189,33198,33182,33191,7242,9374,7908,12536],
         "title":"Star Wars: Episode II - Attack of the Clones",
         "revenue":649398328,
@@ -924,7 +924,7 @@ var moviesJSON = {
         "directorId":87742
     },
     "2059":{
-        "genres":["Action","Adventure","Crime","Drama","Mystery","Thriller","Family"],
+        "genres":["Action","Adventure","Mystery"],
         "actorIds":[2963,1037,48,9824,290,10127,19497,21182,1236,54594,21180,176558,24291,77351,60461,154759],
         "title":"National Treasure",
         "revenue":347451894,
@@ -933,7 +933,7 @@ var moviesJSON = {
         "directorId":12962
     },
     "2080":{
-        "genres":["Action","Adventure","Fantasy","Sci-Fi","Thriller"],
+        "genres":["Action","Fantasy","Sci-Fi","Thriller"],
         "actorIds":[6968,10859,23626,6413,79072,82093,1330,78110,60900,82092,82094,21044],
         "title":"X-Men Origins: Wolverine",
         "revenue":341131793,
@@ -987,7 +987,7 @@ var moviesJSON = {
         "directorId":17698
     },
     "5175":{
-        "genres":["Action","Adventure","Comedy","Crime","Thriller"],
+        "genres":["Action","Adventure","Comedy","Crime"],
         "actorIds":[21045,18897,10885,11389,1896,41901,1339,12799,58210,1166,66,73590,101012,167160,154544,7169],
         "title":"Rush Hour 2",
         "revenue":347325802,
@@ -996,7 +996,7 @@ var moviesJSON = {
         "directorId":11091
     },
     "6479":{
-        "genres":["Action","Drama","Horror","Sci-Fi","Thriller"],
+        "genres":["Action","Drama","Horror","Sci-Fi"],
         "actorIds":[2888,8602,281638,49921,49920,10691,6066,49922,964035,1075145,164094,53918,49918],
         "title":"I Am Legend",
         "revenue":583184161,
@@ -1005,7 +1005,7 @@ var moviesJSON = {
         "directorId":10943
     },
     "6637":{
-        "genres":["Action","Adventure","Mystery","Thriller"],
+        "genres":["Action","Adventure","Mystery"],
         "actorIds":[2963,21089,1037,9824,15735,228,10127,15232,8354,25376,21180],
         "title":"National Treasure 2: Book of Secrets",
         "revenue":457363168,
@@ -1059,7 +1059,7 @@ var moviesJSON = {
         "directorId":6159
     },
     "8960":{
-        "genres":["Action","Adventure","Comedy","Fantasy","Thriller"],
+        "genres":["Action","Comedy","Fantasy","Thriller"],
         "actorIds":[2888,6885,16478,55205,1665,49921,66657,18300,4030,66659,23532,21317,66646,66630,66678,66636,66640,66683,61835,66660,66661,66684,66666,66669,66643,66663,66635,66667,66649,66634,66637,66650,66651,66664,66652,66653,66668,66655,66671,66656,66679,66680,66681,66682,66647,66623,66648,66685,66686,66687,66658],
         "title":"Hancock",
         "revenue":624029371,
@@ -1068,7 +1068,7 @@ var moviesJSON = {
         "directorId":36602
     },
     "8966":{
-        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Romance"],
         "actorIds":[37917,11288,84223,45827,554683,21029,25836,53755,59252,84214,23897,56857,58168],
         "title":"Twilight",
         "revenue":408773703,
@@ -1095,7 +1095,7 @@ var moviesJSON = {
         "directorId":15277
     },
     "10195":{
-        "genres":["Action","Adventure","Fantasy","Sci-Fi","Thriller"],
+        "genres":["Action","Adventure","Fantasy"],
         "actorIds":[2231,17604,14343,9048,52852,13275,74568,10132,4173,17605,1640,524,59817,79079,1018947,56614,91606,33045,456700],
         "title":"Thor",
         "revenue":444115007,
@@ -1104,7 +1104,7 @@ var moviesJSON = {
         "directorId":11181
     },
     "10528":{
-        "genres":["Action","Adventure","Comedy","Crime","Drama","Mystery","Thriller"],
+        "genres":["Action","Comedy","Crime","Mystery"],
         "actorIds":[2983,9642,53714,3223,17521,1665,1292,84865,11855,10207,67992,112692,222999],
         "title":"Sherlock Holmes",
         "revenue":524028679,
@@ -1140,7 +1140,7 @@ var moviesJSON = {
         "directorId":11343
     },
     "12445":{
-        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Family"],
+        "genres":["Adventure","Drama","Fantasy","Family"],
         "actorIds":[5469,10980,1283,83356,477,11355,64,10990,4566,10978,10993,93210,5049,140368,7056,142747,1923,11291,5658,10655,234921,15737,10989,40638,11207,6199,60348,8785,3064,9138,388,9015,975,568385,561247,140367,234924,568371,11184,20999,96841,10988,3300,568374,234928,214019,234927,174398,10991,234922,568376,11179,234918,182439,9191,11212,10992,180730,209884,568398,568388,69476,24273,2247,234929,27822,11180,568379,202032,234934,234926,234919,568380,568382,234932,568383,568384,1643,568386,568387,234933,568390,568391,568392,568393,568394,568370,568395,96851,568396,252527,568397,208467,568399,561028,568402,234923,568403,166242,234925,568378,234930],
         "title":"Harry Potter and the Deathly Hallows: Part 2",
         "revenue":1327817822,
@@ -1167,7 +1167,7 @@ var moviesJSON = {
         "directorId":63943
     },
     "18239":{
-        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Romance"],
         "actorIds":[501,37917,11288,83356,84223,34502,3968,45827,65225,84225,21029,53755,84224,59252,84214,39391,56857,6804,84219,84221,54203,84222,56676,58168,84228,84216,84217,84227,52414,84218,84226,84215,32887],
         "title":"The Twilight Saga: New Moon",
         "revenue":709710948,
@@ -1176,7 +1176,7 @@ var moviesJSON = {
         "directorId":3288
     },
     "18360":{
-        "genres":["Action","Adventure","Comedy","Fantasy","Family"],
+        "genres":["Action","Adventure","Comedy","Fantasy"],
         "actorIds":[7399,19278,887,2157,9273,5587,4581,17841,17835,13524,19498,1030313,17838],
         "title":"Night at the Museum: Battle of the Smithsonian",
         "revenue":177243721,
@@ -1203,7 +1203,7 @@ var moviesJSON = {
         "directorId":54040
     },
     "24021":{
-        "genres":["Adventure","Drama","Fantasy","Thriller","Romance","Foreign"],
+        "genres":["Adventure","Drama","Fantasy","Romance"],
         "actorIds":[37917,11288,84223,34502,18997,45827,65225,84225,21029,25836,53755,60715,84224,59252,84214,56857,56676,109438,102744,84215,58402],
         "title":"The Twilight Saga: Eclipse",
         "revenue":300476779,
@@ -1329,7 +1329,7 @@ var moviesJSON = {
         "directorId":15557
     },
     "50620":{
-        "genres":["Adventure","Drama","Fantasy","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Romance"],
         "actorIds":[501,37917,11288,83356,11825,34502,3968,45827,851784,53755,59252,84214,56857,84215],
         "title":"The Twilight Saga: Breaking Dawn - Part 2",
         "revenue":0,
@@ -1356,7 +1356,7 @@ var moviesJSON = {
         "directorId":7087
     },
     "58574":{
-        "genres":["Action","Adventure","Comedy","Crime","Mystery","Thriller"],
+        "genres":["Action","Comedy","Crime","Mystery"],
         "actorIds":[9642,53714,11275,87722,15440,3223,17521,1665,1665,71584,659,84865,11855,1086530,1097456,54807,1053673,1097457,105510,1075103,220448,1097455],
         "title":"Sherlock Holmes: A Game of Shadows",
         "revenue":334615000,
@@ -1401,7 +1401,7 @@ var moviesJSON = {
         "directorId":488
     },
     "177862":{
-        "genres":[],
+        "genres":["Comedy"],
         "actorIds":[51329,58225,27105,21180],
         "title":"The Hangover",
         "revenue":467483912,
