@@ -200,6 +200,7 @@ Movie.prototype.hideImage = function() {
 
 // flip the movie to the info side
 Movie.prototype.flipToInfo = function() {
+    console.log(this)
     // no-op if already on info
     if (this.theta == Math.PI)
         return;
@@ -211,26 +212,29 @@ Movie.prototype.flipToInfo = function() {
     // start the animation
     this.isFlipped = false;
     this.flipAnim = new Kinetic.Animation((function(self) {
-        self.theta += Math.PI/90*3;
+        return function() {
+            console.log(self.theta);
+            self.theta += Math.PI/180*10;
 
-        // handle flipping over
-        if (!self.isFlipped && self.theta >= Math.PI/2) {
-            self.flipped = true;
+            // handle flipping over
+            if (!self.isFlipped && self.theta >= Math.PI/2) {
+                self.flipped = true;
 
-            // hide and show
-            self.infoGroup.show();
-            self.imageGroup.hide();
+                // hide and show
+                self.infoGroup.show();
+                self.imageGroup.hide();
+            }
+
+            // stop flipping at 180 degrees
+            if (self.theta >= Math.PI) {
+                self.theta = Math.PI;
+                self.group.attrs.scale.x = -self.scale;
+                self.flipAnim.stop();
+            }
+
+            self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
+            movieLayer.draw();
         }
-
-        // stop flipping at 180 degrees
-        if (self.theta >= Math.PI) {
-            self.theta = Math.PI;
-            self.group.attrs.scale.x = -self.scale;
-            self.flipAnim.stop();
-        }
-
-        self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
-        self.group.draw();
     })(this));
     this.flipAnim.start();
 }
@@ -275,14 +279,13 @@ Movie.prototype.flipToImage = function() {
 
 // click handler
 Movie.prototype.click = function(self) {
-    console.log(self);
     // image to info
-    if (this.theta == 0)
-        this.flipToInfo();
+    if (self.theta == 0)
+        self.flipToInfo();
 
     // info to image
-    else if (this.theta == Math.PI)
-        this.flipToImage();
+    else if (self.theta == Math.PI)
+        self.flipToImage();
 }
 
 // dim the movie
