@@ -17,7 +17,6 @@ function Movie(opts) {
     this.x = opts.x;
     this.y = opts.y;
     this.scale = opts.scale/8;
-    this.origScale = opts.scale/8;
 
     /*
      * dim circle
@@ -36,7 +35,7 @@ function Movie(opts) {
 
     // add the sun image
     var self = this;
-    $('#movie-front').one('load', function() {
+    $('#movie-minimal').one('load', function() {
         // get the image from the DOM
         var image = new Kinetic.Image({
             image: this
@@ -58,51 +57,51 @@ function Movie(opts) {
     this.imageGroup.hide();
 
     // image clipping circle
-    this.imageCircle = new Kinetic.Circle({
+    var imageCircle = new Kinetic.Circle({
         radius: 155,
         fillPatternOffset: [250, 320],
         fillPatternScale: .6,
         fillPatternRepeat: false
     });
-    this.imageGroup.add(this.imageCircle);
+    this.imageGroup.add(imageCircle);
 
     // start getting the poster image
     var imageObj = new Image();
     imageObj.onload = function() {
-        self.imageCircle.setFillPatternImage(imageObj);
+        imageCircle.setFillPatternImage(imageObj);
     }
     imageObj.src = opts.poster;
 
-    // label group
-    var labelGroup = new Kinetic.Group();
-    var labelWidth = 280;
-    var labelHeight = 90;
+    // title group
+    var titleGroup = new Kinetic.Group({
+        y: 60
+    });
+    this.imageGroup.add(titleGroup);
 
-    // label text
-    var label = new Kinetic.Text({
-        fontSize: 20,
+    // title box
+    var titleBoxImage = new Kinetic.Image();
+    titleGroup.add(titleBoxImage);
+    $('#movie-title-box').one('load', function() {
+        titleBoxImage.setImage(this);
+        titleBoxImage.setOffset([titleBoxImage.getWidth()/2, 0]);
+    });
+
+    // title text
+    var labelWidth = 300;
+    var title = new Kinetic.Text({
+        x: 5,
+        y: 77,
+        fontSize: 26,
         fill: 'black',
         text: this.title,
         align: 'center',
         width: labelWidth,
-        offset: [labelWidth/2, 0],
-        padding: 22
+        padding: 22,
+        fontFamily: 'advent',
+        fontStyle: 'bold'
     });
-
-    // label background
-    var labelBackground = new Kinetic.Rect({
-        width: labelWidth,
-        height: labelHeight,
-        offset: [labelWidth/2, 0],
-        fill: '#fede3d',
-        stroke: null,
-        cornerRadius: 5
-    });
-
-    labelGroup.add(labelBackground);
-    labelGroup.add(label);
-    labelGroup.setY(90);
-    this.imageGroup.add(labelGroup);
+    title.setOffset([title.getWidth()/2, title.getHeight()/2]);
+    titleGroup.add(title);
 
     /*
      * info group
@@ -115,57 +114,59 @@ function Movie(opts) {
     this.infoGroup.hide();
 
     // background
-    this.infoGroup.add(this.minimalGroup.clone());
+    var background = new Kinetic.Image();
+    this.infoGroup.add(background);
 
-    // info label image
-    $('#movie-info-labels').one('load', function() {
-        // get the image from the DOM
-        var image = new Kinetic.Image({
-            image: this
-        });
-
-        // add the info label image to the group and center the group (offset)
-        self.infoGroup.add(image);
-        image.setOffset([image.getWidth()/2, image.getHeight()/2 + 35]);
+    // background image
+    $('#movie-back').one('load', function() {
+        background.setImage(this);
+        background.setOffset([background.getWidth()/2, background.getHeight()/2]);
         self.infoGroup.draw();
     });
 
     // director text
-    this.infoGroup.add(new Kinetic.Text({
-        offset: [115, 0],
-        y: -115,
-        width: 230,
+    var directorText = new Kinetic.Text({
+        y: -94,
         text: directorsJSON[self.directorId].name,
         fontSize: 25,
         fill: 'black',
-        align: 'center'
-    }));
+        align: 'center',
+        fontFamily: 'advent',
+        fontStyle: 'bold'
+    })
+    directorText.setOffset([directorText.getTextWidth()/2, directorText.getTextHeight()/2]);
+    this.infoGroup.add(directorText);
 
     // release date text
-    var date = new Date(this.releaseDate)
-    this.infoGroup.add(new Kinetic.Text({
-        offset: [148, 0],
-        y: -36,
-        width: 162,
+    var releaseDateText = new Kinetic.Text({
+        x: 70,
+        y: -14,
         text: this.releaseDate,
         fontSize: 25,
+        fontFamily: 'advent',
+        fontStyle: 'bold',
         fill: 'black',
         align: 'center'
-    }));
+    })
+    releaseDateText.setOffset([releaseDateText.getTextWidth()/2, releaseDateText.getTextHeight()/2]);
+    this.infoGroup.add(releaseDateText);
 
     // revenue
-    this.infoGroup.add(new Kinetic.Text({
-        offset: [-9, 0],
-        y: -36,
-        width: 162,
+    var revenueText = new Kinetic.Text({
+        x: -85,
+        y: -14,
         text: Math.round(this.revenue*100/1000000)/100,
         fontSize: 25,
         fill: 'black',
-        align: 'center'
-    }));
+        align: 'center',
+        fontFamily: 'advent',
+        fontStyle: 'bold'
+    });
+    revenueText.setOffset([revenueText.getTextWidth()/2, revenueText.getTextHeight()/2]);
+    this.infoGroup.add(revenueText);
 
-    // title label
-    this.infoGroup.add(labelGroup.clone());
+    // genres
+    
 
     /*
      * main group
@@ -182,10 +183,39 @@ function Movie(opts) {
     this.group.add(this.infoGroup);
     this.group.add(this.dimCircle);
 
+    // click handler
     this.group.on('click', function() {
         self.click(self);
     });
+
+    // hover handlers. zoom the movie on hover for visibility
+    this.group.on('mouseover', function() {
+        // only scale at the maximum zoom
+        if (currentZoom == zoomLevels.length-1) {
+            // account for flipping
+            if (self.group.getScale().x < 0)
+                self.group.setScale([-self.fullSizeRatio, self.fullSizeRatio]);
+            else
+                self.group.setScale([self.fullSizeRatio, self.fullSizeRatio]);
+
+            movieLayer.draw();
+        }
+    });
+    this.group.on('mouseout', function() {
+        // only scale at the maximum zoom
+        if (currentZoom == zoomLevels.length-1) {
+            // account for flipping
+            if (self.group.getScale().x < 0)
+                self.group.setScale([-self.scale, self.scale]);
+            else
+                self.group.setScale([self.scale, self.scale]);
+
+            movieLayer.draw();
+        }
+    });
 }
+
+Movie.prototype.fullSizeRatio = 1/6;
 
 // show the movie's image instead of the sun
 Movie.prototype.showImage = function() {
@@ -225,7 +255,7 @@ Movie.prototype.flipToInfo = function() {
                 self.imageGroup.hide();
 
                 // change the scale
-                self.group.setScale(1/6);
+                self.group.setScale(self.fullSizeRatio);
             }
 
             // stop flipping at 180 degrees
@@ -286,13 +316,21 @@ Movie.prototype.flipToImage = function() {
 
 // click handler
 Movie.prototype.click = function(self) {
-    // image to info
-    if (self.theta == 0)
-        self.flipToInfo();
+    // closest zoom. toggleflip
+    if (currentZoom == zoomLevels.length-1) {
+        // image to info
+        if (self.theta == 0)
+            self.flipToInfo();
 
-    // info to image
-    else if (self.theta == Math.PI)
-        self.flipToImage();
+        // info to image
+        else if (self.theta == Math.PI)
+            self.flipToImage();
+    }
+
+    // zoomed out. zoom in
+    else {
+        setZoomLevel(currentZoom+1, self.group.getPosition());
+    }
 }
 
 // dim the movie

@@ -864,6 +864,16 @@ function setZoomLevel(level, destOffset) {
     if (zooming)
         return;
 
+    // normalize level
+    if (level < 0)
+        level = 0;
+    if (level > zoomLevels.length-1)
+        level = zoomLevels.length-1;
+
+    // no-op
+    if (level == currentZoom)
+        return;
+
     if (level === 3) {
         console.log("called!");
         orbitCurrent(120);

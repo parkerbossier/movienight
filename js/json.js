@@ -818,7 +818,7 @@ var moviesJSON = {
         "directorId":11343
     },
     "676":{
-        "genres":["Action","Drama","History","Romance","War"],
+        "genres":["Drama","History","Romance","War"],
         "actorIds":[3967,880,335,7447,10132,10135,2299,3197,10127,9278,5915,10131,6110,10138,9777,707,10133,10130,10137,10134,1125,10129,10136,886,10128],
         "title":"Pearl Harbor",
         "revenue":449220945,
@@ -1367,7 +1367,7 @@ var moviesJSON = {
         "directorId":108
     },
     "50619":{
-        "genres":["Adventure","Drama","Fantasy","Sci-Fi","Romance","Family"],
+        "genres":["Adventure","Drama","Fantasy","Romance"],
         "actorIds":[37917,11288,34502,45827,851784,53755,59252,84214,56857,84215],
         "title":"The Twilight Saga: Breaking Dawn - Part 1",
         "revenue":701315261,
