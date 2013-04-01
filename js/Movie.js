@@ -17,6 +17,7 @@ function Movie(opts) {
     this.x = opts.x;
     this.y = opts.y;
     this.scale = opts.scale/8;
+    this.origScale = opts.scale/8;
 
     /*
      * dim circle
@@ -213,7 +214,6 @@ Movie.prototype.flipToInfo = function() {
     this.isFlipped = false;
     this.flipAnim = new Kinetic.Animation((function(self) {
         return function() {
-            console.log(self.theta);
             self.theta += Math.PI/180*10;
 
             // handle flipping over
@@ -223,6 +223,9 @@ Movie.prototype.flipToInfo = function() {
                 // hide and show
                 self.infoGroup.show();
                 self.imageGroup.hide();
+
+                // change the scale
+                self.group.setScale(1/6);
             }
 
             // stop flipping at 180 degrees
@@ -232,7 +235,7 @@ Movie.prototype.flipToInfo = function() {
                 self.flipAnim.stop();
             }
 
-            self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
+            self.group.attrs.scale.x = Math.cos(self.theta) * self.group.getScale().y;
             movieLayer.draw();
         }
     })(this));
@@ -252,27 +255,31 @@ Movie.prototype.flipToImage = function() {
     // start the animation
     this.isFlipped = false;
     this.flipAnim = new Kinetic.Animation((function(self) {
-        self.theta -= Math.PI/90*3;
+        return function() {
+            self.theta -= Math.PI/90*3;
 
-        // handle flipping over
-        if (!self.isFlipped && self.theta <= Math.PI/2) {
-            self.flipped = true;
+            // handle flipping over
+            if (!self.isFlipped && self.theta <= Math.PI/2) {
+                self.flipped = true;
 
-            // hide and show
-            self.imageGroup.show();
-            self.infoGroup.hide();
+                // hide and show
+                self.imageGroup.show();
+                self.infoGroup.hide();
+
+                // change the scale
+                self.group.setScale(self.scale);
+            }
+
+            // stop flipping at 0 degrees
+            if (self.theta <= 0) {
+                self.theta = 0;
+                self.group.attrs.scale.x = self.scale;
+                self.flipAnim.stop();
+            }
+
+            self.group.attrs.scale.x = Math.cos(self.theta) * self.group.getScale().y;
+            movieLayer.draw();
         }
-
-        // stop flipping at 180 degrees
-        if (self.theta <= 0) {
-            self.theta = 0;
-            self.group.attrs.scale.x = self.scale;
-            ;
-            self.flipAnim.stop();
-        }
-
-        self.group.attrs.scale.x = Math.cos(self.theta) * self.scale;
-        self.group.draw();
     })(this));
     this.flipAnim.start();
 }
