@@ -48,7 +48,7 @@ function Movie(opts) {
         self.minimalGroup.draw();
 
         // set the dim circle's dimensions
-        self.dimCircle.setRadius(image.getWidth()/2 - 26);
+        self.dimCircle.setRadius(image.getWidth()/2 - 20);
     });
 
     /*
@@ -368,6 +368,7 @@ Movie.prototype.unDim = function() {
     this.dimAnim.start();
 }
 
+// returns true if the movie has the specified genre
 Movie.prototype.hasGenre = function(genre) {
     var found = false;
     $.each(this.genres, function(i, elem) {

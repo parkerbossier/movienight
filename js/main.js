@@ -1,34 +1,8 @@
-var imageBase, moviesJSON, actorsJSON, directorsJSON;
-var endpoint = 'http://api.themoviedb.org/3/';
-var apiKey = '742fa948b5cbc1a2c82dbd37f14e2f7e';
+// globals
 var actors, movies, directors;
-
-var stage, backgroundStarsLayer, staticOverlayer, actorLayer, movieLayer, tailLayer;
-
-// far to near
+var stage, backgroundStarsLayer, staticOverlayLayer, actorLayer, movieLayer, tailLayer;
 var currentZoom = 0;
-var zoomLevels = [.4, .9, 1.6, 25];
-
-// zoom to the appropriate zoom level
-function setZoomLevel(level) {
-    var step = (zoomLevels[level] - zoomLevels[currentZoom])/30;
-    var anim = new Kinetic.Animation(function() {
-        movieLayer.setScale(movieLayer.getScale().x + step);
-        backgroundStarsLayer.setScale(backgroundStarsLayer.getScale().x + step/2);
-
-        // base case
-        if (Math.abs(movieLayer.getScale().x - zoomLevels[level]) < .001) {
-            anim.stop();
-            currentZoom = level;
-        }
-
-        movieLayer.draw();
-        backgroundStarsLayer.draw();
-    });
-    anim.start();
-}
-
-var genres = ['Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Family', 'Fantasy', 'Horror', 'Mystery', 'Romance', 'Sci-Fi', 'Thriller'];
+var zoomLevels = [.5, .9, 1.6, 25];
 
 $(function () {
     var containerHeight = $('#container').height();
@@ -52,6 +26,8 @@ $(function () {
         x: containerWidth/2,
         y: containerHeight/2
     });
+
+    // load the image
     $('#background-stars').one('load', function() {
         // get the image from the DOM (centered)
         var image = new Kinetic.Image({
@@ -67,124 +43,162 @@ $(function () {
     /*
      * static overlay layer init
      */
-    staticOverlayer = new Kinetic.Layer();
+    staticOverlayLayer = new Kinetic.Layer();
+
+    // add the overlay image
+    var overlayImage = new Kinetic.Image({
+        x: containerWidth/2,
+        y: containerHeight/2,
+        listening: false
+    });
+    staticOverlayLayer.add(overlayImage);
+
+    // load the overlay image
     $('#main-overlay').one('load', function() {
         // get the image from the DOM (centered)
-        var image = new Kinetic.Image({
-            x: containerWidth/2,
-            y: containerHeight/2,
-            image: this
+        overlayImage.setImage(this);
+        overlayImage.setOffset([overlayImage.getWidth()/2, overlayImage.getHeight()/2]);
+
+        staticOverlayLayer.draw();
+    });
+
+    /*
+     * year group init
+     */
+    var yearGroup = new Kinetic.Group({
+        x: containerWidth/2 + 2,
+        y: containerHeight/2 + 86
+    });
+    staticOverlayLayer.add(yearGroup);
+
+    // add the years
+    var overshoot = 0;
+    var thetaInit = Math.PI + Math.PI/180*overshoot;
+    var thetaFinal = -Math.PI/180*overshoot;
+    var step = -(thetaFinal-thetaInit)/13;
+    var theta;
+    for (var i = 0; i < 14; ++i) {
+        // add the year
+        theta = thetaInit+step*i;
+        var text = new Kinetic.Text({
+            fontSize: 25,
+            fontFamily: 'advent',
+            text: 2000+i,
+            fill: '#ffffff',
+            x: Math.cos(theta)*386,
+            y: Math.sin(theta)*386,
+            rotation: theta+Math.PI/2
         });
-        image.setOffset([image.getWidth()/2, image.getHeight()/2]);
+        text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
+        yearGroup.add(text);
 
-        // add the image
-        staticOverlayer.add(image);
+        // click handler
+        text.on('click', function() {
+            // turning year on
+            if (this.getFill() != '#ffffff') {
+                unDimByYear(this.textArr[0].text);
+                this.setFill('#ffffff');
+            }
 
-        // year group init
-        var yearGroup = new Kinetic.Group({
-            x: containerWidth/2 - 2,
-            y: containerHeight/2 + 86
+            // turning year off
+            else {
+                dimByYear(this.textArr[0].text);
+                this.setFill('#777777');
+            }
+
+            // update
+            yearGroup.draw();
         });
-        staticOverlayer.add(yearGroup);
+    }
 
-        // add the years
-        var overshoot = 0;
-        var thetaInit = Math.PI + Math.PI/180*overshoot;
-        var thetaFinal = -Math.PI/180*overshoot;
-        var step = -(thetaFinal-thetaInit)/13;
-        var theta;
-        for (var i = 0; i < 14; ++i) {
-            // add the year
-            theta = thetaInit+step*i;
-            var text = new Kinetic.Text({
-                fontSize: 25,
-                fontFamily: 'advent',
-                text: 2000+i,
-                fill: '#ffffff',
-                x: Math.cos(theta)*386,
-                y: Math.sin(theta)*386,
-                rotation: theta+Math.PI/2
-            });
-            text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
-            yearGroup.add(text);
+    /*
+     * genre group init
+     */
+    var genreGroup = new Kinetic.Group({
+        x: containerWidth/2 + 2,
+        y: containerHeight/2 + 86
+    });
+    staticOverlayLayer.add(genreGroup);
 
-            // click handler
-            text.on('click', function() {
-                // turning year on
-                if (this.getFill() != '#ffffff') {
-                    unDimByYear(this.textArr[0].text);
-                    this.setFill('#ffffff');
-                }
+    // add the genres
+    overshoot = 0;
+    thetaInit = Math.PI + Math.PI/180*overshoot;
+    thetaFinal = -Math.PI/180*overshoot;
+    step = -(thetaFinal-thetaInit)/(genres.length-1);
+    for (i = 0; i < genres.length; ++i) {
+        // add the year
+        theta = thetaInit+step*i;
+        text = new Kinetic.Text({
+            fontSize: 25,
+            fontFamily: 'advent',
+            text: genres[i],
+            fill: '#ffffff',
+            x: Math.cos(theta)*446,
+            y: Math.sin(theta)*446,
+            rotation: theta+Math.PI/2
+        });
+        text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
+        genreGroup.add(text);
 
-                // turning year off
-                else {
-                    dimByYear(this.textArr[0].text);
-                    this.setFill('#777777');
-                }
+        // click handler
+        text.on('click', function() {
+            // turning year on
+            if (this.getFill() != '#ffffff') {
+                unDimByGenre(this.textArr[0].text);
+                this.setFill('#ffffff');
+            }
 
-                // update
-                yearGroup.draw();
-            });
+            // turning year off
+            else {
+                dimByGenre(this.textArr[0].text);
+                this.setFill('#777777');
+            }
+
+            // update
+            genreGroup.draw();
+        });
+    }
+
+    /*
+     * zoom group init
+     */
+    var zoomGroup = new Kinetic.Group();
+
+    // + button
+    $('#zoom-in').one('load', function() {
+
+    });
+
+
+    // draw it all
+    staticOverlayLayer.draw();
+
+    /*
+     * tail layer init
+     */
+    tailLayer = new Kinetic.Layer();
+
+    /*
+     * actor layer init
+     */
+    actorLayer = new Kinetic.Layer();
+    // create all the actors
+    actors = {};
+    var counter = 0;
+    $.each({} || actorsJSON, function(i, elem) {
+        var opts = elem;
+        opts.x = window.innerWidth/3;
+        opts.y = window.innerHeight/2;
+        actors[i] = new Actor(opts);
+        if (counter < 500) {
+            actorLayer.add(actors[i].group);
+            counter++;
         }
-
-        // genre group init
-        var genreGroup = new Kinetic.Group({
-            x: containerWidth/2 - 2,
-            y: containerHeight/2 + 86
-        });
-        staticOverlayer.add(genreGroup);
-
-        // add the genres
-        overshoot = 0;
-        thetaInit = Math.PI + Math.PI/180*overshoot;
-        thetaFinal = -Math.PI/180*overshoot;
-        step = -(thetaFinal-thetaInit)/(genres.length-1);
-        for (i = 0; i < genres.length; ++i) {
-            // add the year
-            theta = thetaInit+step*i;
-            text = new Kinetic.Text({
-                fontSize: 25,
-                fontFamily: 'advent',
-                text: genres[i],
-                fill: '#ffffff',
-                x: Math.cos(theta)*450,
-                y: Math.sin(theta)*450,
-                rotation: theta+Math.PI/2
-            });
-            text.setOffset([text.getTextWidth()/2, text.getTextHeight()/2]);
-            genreGroup.add(text);
-
-            // click handler
-            text.on('click', function() {
-                // turning year on
-                if (this.getFill() != '#ffffff') {
-                    unDimByGenre(this.textArr[0].text);
-                    this.setFill('#ffffff');
-                }
-
-                // turning year off
-                else {
-                    dimByGenre(this.textArr[0].text);
-                    this.setFill('#777777');
-                }
-
-                // update
-                genreGroup.draw();
-            });
-        }
-
-        staticOverlayer.draw();
     });
 
     /*
      * movie layer init
      */
-
-    // spread out the movies
-    for (var i in movieLocs) {
-        movieLocs[i].x *= 10;
-        movieLocs[i].y *= 10;
-    }
 
     // find the bounding box
     var bounds = {
@@ -214,7 +228,7 @@ $(function () {
     movieLayer = new Kinetic.Layer({
         scale: zoomLevels[0],
         x: containerWidth/2,
-        y: containerHeight/2,
+        y: containerHeight/2 - 30,
         offset: [bounds.right/2, bounds.bottom/2]
     });
 
@@ -230,28 +244,14 @@ $(function () {
         movieLayer.add(movies[i].group);
     });
 
-    actorLayer = new Kinetic.Layer();
-    //    // create all the actors
-    //    actors = {};
-    //    var counter = 0;
-    //    $.each(actorsJSON, function(i, elem) {
-    //        var opts = elem;
-    //        opts.x = window.innerWidth/3;
-    //        opts.y = window.innerHeight/2;
-    //        actors[i] = new Actor(opts);
-    //        if (counter < 500) {
-    //        actorLayer.add(actors[i].group);
-    //        counter++;
-    //        }
-    //    });
-
-    // add all the layers
-    tailLayer = new Kinetic.Layer();
+    /*
+     * combine all the layers
+     */
     stage.add(backgroundStarsLayer);
-    stage.add(movieLayer);
     stage.add(tailLayer);
     stage.add(actorLayer);
-    stage.add(staticOverlayer);
+    stage.add(movieLayer);
+    stage.add(staticOverlayLayer);
 
     /*
      * handle dragging
@@ -290,12 +290,23 @@ $(function () {
             actorLayer.setY(actorLayer.getY()+dY);
             actorLayer.draw();
 
+            tailLayer.setX(tailLayer.getX()+dX);
+            tailLayer.setY(tailLayer.getY()+dY);
+            tailLayer.draw();
+
             // parallax layers
             backgroundStarsLayer.setX(backgroundStarsLayer.getX()+dX/2);
             backgroundStarsLayer.setY(backgroundStarsLayer.getY()+dY/2);
             backgroundStarsLayer.draw();
         }
     });
+
+
+
+
+
+
+
 
 
 
@@ -556,4 +567,23 @@ function unDimByGenre(genre) {
         if (movies[i].hasGenre(genre))
             movies[i].unDim();
     }
+}
+
+// zoom to the appropriate zoom level
+function setZoomLevel(level) {
+    var step = (zoomLevels[level] - zoomLevels[currentZoom])/30;
+    var anim = new Kinetic.Animation(function() {
+        movieLayer.setScale(movieLayer.getScale().x + step);
+        backgroundStarsLayer.setScale(backgroundStarsLayer.getScale().x + step/2);
+
+        // base case
+        if (Math.abs(movieLayer.getScale().x - zoomLevels[level]) < .001) {
+            anim.stop();
+            currentZoom = level;
+        }
+
+        movieLayer.draw();
+        backgroundStarsLayer.draw();
+    });
+    anim.start();
 }

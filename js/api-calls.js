@@ -1,11 +1,9 @@
+var endpoint = 'http://api.themoviedb.org/3/';
+var apiKey = '742fa948b5cbc1a2c82dbd37f14e2f7e';
 var movieNames = ["How the Grinch Stole Christmas","Cast Away","Mission: Impossible II","Gladiator","What Women Want","The Perfect Storm","Harry Potter and the Sorcerer's Stone","The Lord of the Rings: The Fellowship of the Ring","Rush Hour 2","The Mummy Returns","Pearl Harbor","Ocean's Eleven","Jurassic Park III","Planet of the Apes","Spider-Man","The Lord of the Rings: The Two Towers","Star Wars: Episode II - Attack of the Clones","Harry Potter and the Chamber of Secrets","My Big Fat Greek Wedding","Signs","Austin Powers in Goldmember","Men in Black II","The Lord of the Rings: The Return of the King","Pirates of the Caribbean: The Curse of the Black Pearl","The Matrix Reloaded","Bruce Almighty","X2","Elf","Spider-Man 2","The Passion of the Christ","Meet the Fockers","Harry Potter and the Prisoner of Azkaban","The Day After Tomorrow","The Bourne Supremacy","National Treasure","Star Wars: Episode III - Revenge of the Sith","The Chronicles of Narnia: The Lion","the Witch and the Wardrobe","Harry Potter and the Goblet of Fire","War of the Worlds","King Kong","Wedding Crashers","Charlie and the Chocolate Factory","Batman Begins","Mr. & Mrs. Smith","Hitch","Pirates of the Caribbean: Dead Man's Chest","Night at the Museum","X-Men: The Last Stand","The Da Vinci Code","300","Superman Returns","Spider-Man 3","Transformers","Pirates of the Caribbean: At World's End","Harry Potter and the Order of the Phoenix","I Am Legend","The Bourne Ultimatum","National Treasure: Book of Secrets","The Dark Knight","Iron Man","Indiana Jones and the Kingdom of the Crystal Skull","Hancock","Twilight","Avatar","Transformers: Revenge of the Fallen","Harry Potter and the Half-Blood Prince","The Twilight Saga: New Moon","The Hangover","Star Trek","The Blind Side","Sherlock Holmes","X-Men Origins: Wolverine","Night at the Museum: Battle of the Smithsonian","Alice in Wonderland","Iron Man 2","The Twilight Saga: Eclipse","Harry Potter and the Deathly Hallows: Part 1","Inception","The Karate Kid","Harry Potter and the Deathly Hallows: Part 2","Transformers: Dark of the Moon","The Twilight Saga: Breaking Dawn - Part 1","The Hangover Part II","Pirates of the Caribbean: On Stranger Tides","Fast Five","Mission: Impossible - Ghost Protocol","Sherlock Holmes: A Game of Shadows","Thor","Rise of the Planet of the Apes","Captain America: The First Avenger","The Avengers","The Dark Knight Rises","The Hunger Games","Skyfall","The Hobbit: An Unexpected Journey","The Twilight Saga: Breaking Dawn - Part 2","The Amazing Spider-Man","Ted","Lincoln","Men in Black 3"];
 
 // API initialization
 function apiInit() {
-    $.ajaxSetup({
-        async: false
-    });
-
     // get image base
     $.ajax(endpoint + 'configuration', {
         async: false,
@@ -143,6 +141,7 @@ function getTheJSON() {
     });
 }
 
+// order the actors in each movie by popularity
 function orderByPopularity() {
     $.each(moviesJSON, function(i, elem) {
         // sort the actors by popularity
@@ -150,23 +149,4 @@ function orderByPopularity() {
             return actorsJSON[b].popularity - actorsJSON[a].popularity;
         });
     });
-}
-
-function forJohnAndMichelle() {
-    var out = {};
-    $.each(moviesJSON, function(i, elem) {
-        console.log(elem)
-        var entry = {
-            title: elem.title,
-            actors: []
-        };
-
-        $.each(elem.actorIds, function(i, elem) {
-            entry.actors.push(actorsJSON[elem].name + ' - ' + actorsJSON[elem].popularity);
-        });
-
-        out[i] = entry;
-    });
-
-    console.log(JSON.stringify(out));
 }
