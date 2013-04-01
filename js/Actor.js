@@ -48,9 +48,7 @@ function Actor(opts) {
     }));
 
     // image group
-    this.imageGroup = new Kinetic.Group({
-        opacity: 0
-    });
+    this.imageGroup = new Kinetic.Group();
     this.imageGroup.hide();
 
     // background circle
