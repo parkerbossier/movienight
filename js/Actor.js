@@ -108,14 +108,14 @@ function Actor(opts) {
 }
 
 // show the actor's image instead of the star
-Movie.prototype.showImage = function() {
+Actor.prototype.showImage = function() {
     this.imageGroup.show();
     this.starGroup.hide();
     this.group.draw();
 }
 
 // show the minimal actor view (star instead of image)
-Movie.prototype.hideImage = function() {
+Actor.prototype.hideImage = function() {
     this.starGroup.show();
     this.imageGroup.hide();
     this.group.draw();
