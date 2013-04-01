@@ -2,7 +2,7 @@
 var actors, movies, directors;
 var stage, backgroundStarsLayer, staticOverlayLayer, actorLayer, movieLayer, tailLayer;
 var currentZoom = 0;
-var zoomLevels = [.5, .9, 1.6, 5];
+var zoomLevels = [0.5, 0.9, 1.6, 5];
 var zoomIndicators, filterToggleGroup, zoomGroup;
 var selectAllButton, selectNoneButton;
 var greyColor = '#777777';
@@ -451,6 +451,7 @@ $(function () {
         opts.scale = movieLocs[i].scale;
 
         movies[i] = new Movie(opts);
+        if (movies[i].title == "The Lord of the Rings: The Fellowship of the Ring") console.log("LotR 1: " + i);
         movieLayer.add(movies[i].group);
     });
 
@@ -468,12 +469,12 @@ $(function () {
     // create all the actors
     actors = {};
     $.each(actorsJSON, function(i, elem) {
-        if (i > 4000)
+        if (i > 4000) // || movies[19995].actorIds.indexOf(i) !== -1) {
             return;
-
         var opts = elem;
         actors[i] = new Actor(opts);
         actorLayer.add(actors[i].group);
+        //}
     });
 
     /*
@@ -578,9 +579,8 @@ $(function () {
                 time = actors[i].time + frame.timeDiff;
                 actors[i].time += frame.timeDiff;
                 angle = actors[i].angle;
-
-
                 actors[i].group.attrs.scale.x = actors[i].group.attrs.scale.y = 0.2 / 3;
+                
 
                 switch (actors[i].state)
                 {
@@ -589,7 +589,7 @@ $(function () {
                         if (actors[i].time % period < (period - 20)) {
                             actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
                             actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
-                        } else {
+                        } else if (currentZoom !== 3 && zooming === false) {
                             // after one full orbit, switch to positioning
                             actors[i].state = "positioning";
                             actors[i].time = 0;
@@ -612,6 +612,9 @@ $(function () {
                             if (actors[i].angle < 0) {
                                 actors[i].angle = (2 * Math.PI) + (actors[i].angle);
                             }
+                        } else {
+                            actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
+                            actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
                         }
                         break;
                     case "positioning":
@@ -656,8 +659,6 @@ $(function () {
                         } else {
                             // new orbit reached, begin orbiting opposite direction
                             actors[i].state = "orbit2";
-                            //actors[i].attrs.fill = "black";
-                            //actors[i].attrs.counter = 100;
 
                             // orbit position is calculated with trig off of "time"
                             // new orbit will be going opposite direction from last orbit,
@@ -742,8 +743,6 @@ $(function () {
                         } else {
                             // new orbit reached, begin orbiting opposite direction
                             actors[i].state = "orbit";
-                            //actors[i].attrs.fill = "red";
-                            //actors[i].attrs.counter = 100;
 
                             // orbit position is calculated with trig off of "time"
                             // new orbit will be going opposite direction from last orbit,
@@ -864,3 +863,20 @@ function setZoomLevel(level, destOffset) {
     zooming = true;
     anim.start();
 }
+
+function orbitCurrent(currentMovie) {
+    for (var i = 0; i < movies[currentMovie].actorIds.length; i++) {
+        if (actors[movies[currentMovie].actorIds[i]] !== undefined) {
+            var n = movies[currentMovie].actorIds[i];
+            actors[n].currentMovie = actors[n].path.indexOf(currentMovie);
+            actors[n].state = "orbit";
+            //console.log(i / movies[currentMovie].actorIds.length);
+            actors[n].time = (i / movies[currentMovie].actorIds.length) * actors[n].period;
+        }
+    }
+}
+
+
+
+
+
