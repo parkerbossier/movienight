@@ -442,6 +442,29 @@ $(function () {
         offset: [movieBounds.right/2, movieBounds.bottom/2]
     });
 
+    // constellations
+    $.each(constellations, function(i, elem) {
+        var posX = moviesJSON[elem.order[0]].x;
+        var posY = moviesJSON[elem.order[0]].y;
+
+        // get the pointnt locations
+        var points = [];
+        $.each(elem.order, function(i, elem) {
+            points.push(movieLocs[elem].x);
+            points.push(movieLocs[elem].y);
+        });
+
+        // draw the line
+        movieLayer.add(new Kinetic.Line({
+            points: points,
+            stroke: '#cccccc',
+            strokeWidth: 5,
+            lineCap: 'round',
+            lineJoin: 'round',
+            opacity: .5
+        }));
+    });
+
     // create all the movies
     movies = {};
     $.each(moviesJSON, function(i, elem) {
@@ -478,32 +501,32 @@ $(function () {
     //}
     });
 
-//    /*
-//     * background zoom hit layer
-//     */
-//    var backgroundZoomHitLayer = new Kinetic.Layer();
-//    var hitRect = new Kinetic.Rect({
-//        width: containerWidth,
-//        height: containerHeight,
-//        fill: 'red',
-//        opacity: .5,
-//        offset: [0, 0]
-//    });
-//    backgroundZoomHitLayer.add(hitRect);
-//
-//    // click handler
-//    hitRect.on('click', function(e) {
-//        setZoomLevel(currentZoom+1, {
-//            x: e.layerX,
-//            y: e.layerY
-//        });
-//    });
+    //    /*
+    //     * background zoom hit layer
+    //     */
+    //    var backgroundZoomHitLayer = new Kinetic.Layer();
+    //    var hitRect = new Kinetic.Rect({
+    //        width: containerWidth,
+    //        height: containerHeight,
+    //        fill: 'red',
+    //        opacity: .5,
+    //        offset: [0, 0]
+    //    });
+    //    backgroundZoomHitLayer.add(hitRect);
+    //
+    //    // click handler
+    //    hitRect.on('click', function(e) {
+    //        setZoomLevel(currentZoom+1, {
+    //            x: e.layerX,
+    //            y: e.layerY
+    //        });
+    //    });
 
     /*
      * combine all the layers
      */
     stage.add(backgroundStarsLayer);
-//    stage.add(backgroundZoomHitLayer);
+    //    stage.add(backgroundZoomHitLayer);
     stage.add(tailLayer);
     stage.add(actorLayer);
     stage.add(movieLayer);
