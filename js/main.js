@@ -474,7 +474,7 @@ $(function () {
         var opts = elem;
         actors[i] = new Actor(opts);
         actorLayer.add(actors[i].group);
-        //}
+    //}
     });
 
     /*
@@ -580,7 +580,7 @@ $(function () {
                 actors[i].time += frame.timeDiff;
                 angle = actors[i].angle;
                 actors[i].group.attrs.scale.x = actors[i].group.attrs.scale.y = 0.2 / 3;
-                
+
 
                 switch (actors[i].state)
                 {
@@ -803,6 +803,11 @@ function setZoomLevel(level, destOffset) {
     // disallow changing the zoom if a change is in progress
     if (zooming)
         return;
+
+    if (level === 3) {
+        console.log("called!");
+        orbitCurrent(120);
+    }
 
     // zoom to center at lowest zoom level
     if (level == 0)
