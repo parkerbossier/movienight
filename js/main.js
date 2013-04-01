@@ -1,6 +1,6 @@
 // globals
 var actors, movies, directors;
-var stage, backgroundStarsLayer, staticOverlayLayer, actorLayer, movieLayer, tailLayer;
+var stage, backgroundStarsLayer, staticOverlayLayer, actorLayer, movieLayer, tailLayer, constellationLayer;
 var currentZoom = 0;
 var zoomLevels = [0.5, 0.9, 2, 5];
 var zoomIndicators, filterToggleGroup, zoomGroup;
@@ -442,29 +442,6 @@ $(function () {
         offset: [movieBounds.right/2, movieBounds.bottom/2]
     });
 
-    // constellations
-    $.each(constellations, function(i, elem) {
-        var posX = moviesJSON[elem.order[0]].x;
-        var posY = moviesJSON[elem.order[0]].y;
-
-        // get the pointnt locations
-        var points = [];
-        $.each(elem.order, function(i, elem) {
-            points.push(movieLocs[elem].x);
-            points.push(movieLocs[elem].y);
-        });
-
-        // draw the line
-        movieLayer.add(new Kinetic.Line({
-            points: points,
-            stroke: '#cccccc',
-            strokeWidth: 5,
-            lineCap: 'round',
-            lineJoin: 'round',
-            opacity: .5
-        }));
-    });
-
     // create all the movies
     movies = {};
     $.each(moviesJSON, function(i, elem) {
@@ -524,10 +501,43 @@ $(function () {
     //    });
 
     /*
+     * constellation layer init
+     */
+    constellationLayer = new Kinetic.Layer({
+        scale: zoomLevels[0],
+        x: containerWidth/2,
+        y: containerHeight/2 + movieLayerYOffset,
+        offset: [movieBounds.right/2, movieBounds.bottom/2]
+    });
+
+    // draw the constellations
+    $.each(constellations, function(i, elem) {
+        var posX = moviesJSON[elem.order[0]].x;
+        var posY = moviesJSON[elem.order[0]].y;
+
+        // get the point locations
+        var points = [];
+        $.each(elem.order, function(i, elem) {
+            points.push(movieLocs[elem].x);
+            points.push(movieLocs[elem].y);
+        });
+
+        // draw the line
+        constellationLayer.add(new Kinetic.Line({
+            points: points,
+            stroke: '#cccccc',
+            strokeWidth: 5,
+            lineCap: 'round',
+            lineJoin: 'round',
+            opacity: .5
+        }));
+    });
+
+    /*
      * combine all the layers
      */
     stage.add(backgroundStarsLayer);
-    //    stage.add(backgroundZoomHitLayer);
+    stage.add(constellationLayer);
     stage.add(tailLayer);
     stage.add(actorLayer);
     stage.add(movieLayer);
@@ -573,6 +583,10 @@ $(function () {
             offset = tailLayer.getOffset();
             tailLayer.setOffset([offset.x + dX, offset.y + dY]);
             tailLayer.draw();
+
+            offset = constellationLayer.getOffset();
+            constellationLayer.setOffset([offset.x + dX, offset.y + dY]);
+            constellationLayer.draw();
 
             // parallax layers
             offset = backgroundStarsLayer.getOffset();
@@ -881,6 +895,9 @@ function setZoomLevel(level, destOffset) {
         tailLayer.setScale(tailLayer.getScale().x + zoomStep);
         tailLayer.setOffset([tailLayer.getOffset().x + xStep, tailLayer.getOffset().y + yStep]);
 
+        constellationLayer.setScale(constellationLayer.getScale().x + zoomStep);
+        constellationLayer.setOffset([constellationLayer.getOffset().x + xStep, constellationLayer.getOffset().y + yStep]);
+
         backgroundStarsLayer.setScale(backgroundStarsLayer.getScale().x + zoomStep/2);
         backgroundStarsLayer.setOffset([backgroundStarsLayer.getOffset().x + xStep/2, backgroundStarsLayer.getOffset().y + yStep/2]);
 
@@ -940,6 +957,7 @@ function setZoomLevel(level, destOffset) {
         movieLayer.draw();
         actorLayer.draw();
         tailLayer.draw();
+        constellationLayer.draw();
         backgroundStarsLayer.draw();
     });
     zooming = true;
