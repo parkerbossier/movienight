@@ -84,10 +84,10 @@ $(function () {
     var overshoot = 0;
     var thetaInit = Math.PI + Math.PI/180*overshoot;
     var thetaFinal = -Math.PI/180*overshoot;
-    var step = -(thetaFinal-thetaInit)/13;
+    var step = -(thetaFinal-thetaInit)/12;
     var theta;
     yearFilters = [];
-    for (var i = 0; i < 14; ++i) {
+    for (var i = 0; i < 13; ++i) {
         // add the year
         theta = thetaInit+step*i;
         yearFilters[i] = new Kinetic.Text({
@@ -104,6 +104,7 @@ $(function () {
 
         // click handler
         yearFilters[i].on('click', function() {
+            // deal with hover color
             var currentFill;
             if (this.getFill() == goldColor)
                 currentFill = this.attrs.lastColor;
@@ -112,25 +113,28 @@ $(function () {
 
             // turning year on
             if (currentFill != activeFilterColor) {
-                unDimByYear(this.textArr[0].text);
+                runFilters();
                 this.setFill(activeFilterColor);
                 this.attrs.lastColor = activeFilterColor;
             }
 
             // turning year off
             else {
-                dimByYear(this.textArr[0].text);
+                runFilters();
                 this.setFill(greyColor);
                 this.attrs.lastColor = greyColor;
             }
 
             // update
-            yearGroup.draw();
+            staticOverlayLayer.draw();
 
             // update filter toggles
             selectAllButton.setFill(greyColor);
             selectNoneButton.setFill(greyColor);
             filterToggleGroup.draw();
+
+            // perform filtering
+            runFilters();
         });
 
         yearFilters[i].on('mouseover', (function(i) {
@@ -180,6 +184,7 @@ $(function () {
 
         // click handler
         genreFilters[i].on('click', function() {
+            // deal with hover color
             var currentFill;
             if (this.getFill() == goldColor)
                 currentFill = this.attrs.lastColor;
@@ -188,38 +193,39 @@ $(function () {
 
             // turning year on
             if (currentFill != activeFilterColor) {
-                unDimByGenre(this.textArr[0].text);
                 this.setFill(activeFilterColor);
                 this.attrs.lastColor = activeFilterColor;
             }
 
             // turning year off
             else {
-                dimByGenre(this.textArr[0].text);
                 this.setFill(greyColor);
                 this.attrs.lastColor = greyColor;
             }
 
             // update
-            genreGroup.draw();
+            staticOverlayLayer.draw();
 
             // update filter toggles
             selectAllButton.setFill(greyColor);
             selectNoneButton.setFill(greyColor);
             filterToggleGroup.draw();
+
+            // perform filtering
+            runFilters();
         });
 
         genreFilters[i].on('mouseover', (function(i) {
             return function() {
                 genreFilters[i].attrs.lastColor = genreFilters[i].getFill();
                 genreFilters[i].setFill(goldColor);
-                genreGroup.draw();
+                staticOverlayLayer.draw();
             }
         })(i));
         genreFilters[i].on('mouseout', (function(i) {
             return function() {
                 genreFilters[i].setFill(genreFilters[i].attrs.lastColor);
-                genreGroup.draw();
+                staticOverlayLayer.draw();
             }
         })(i));
     }
@@ -283,8 +289,7 @@ $(function () {
         for (var i in yearFilters) {
             yearFilters[i].setFill(activeFilterColor);
         }
-        genreGroup.draw();
-        yearGroup.draw();
+        staticOverlayLayer.draw();
 
         // dim all
         for (var j in movies) {
@@ -302,8 +307,7 @@ $(function () {
         for (var i in yearFilters) {
             yearFilters[i].setFill(greyColor);
         }
-        genreGroup.draw();
-        yearGroup.draw();
+        staticOverlayLayer.draw();
 
         // dim all
         for (var j in movies) {
@@ -824,39 +828,6 @@ $(function () {
     anim.start();
 });
 
-// dim movies by year
-function dimByYear(year) {
-    for (var i in movies) {
-        if (movies[i].releaseDate.indexOf(year) > 0)
-            movies[i].dim();
-    }
-    movieLayer.draw();
-}
-
-// undim movies by year
-function unDimByYear(year) {
-    for (var i in movies) {
-        if (movies[i].releaseDate.indexOf(year) > 0)
-            movies[i].unDim();
-    }
-}
-
-// dim movies by genre
-function dimByGenre(genre) {
-    for (var i in movies) {
-        if (movies[i].hasGenre(genre))
-            movies[i].dim();
-    }
-}
-
-// undim movies by genre
-function unDimByGenre(genre) {
-    for (var i in movies) {
-        if (movies[i].hasGenre(genre))
-            movies[i].unDim();
-    }
-}
-
 // zoom to the appropriate zoom level
 var zooming = false;
 function setZoomLevel(level, destOffset) {
@@ -955,7 +926,26 @@ function orbitCurrent(currentMovie) {
     }
 }
 
+// dims the appropriate movies given the selected filters (global)
+function runFilters() {
+    // get the active filters
+    var activeYears = [];
+    var activeGenres = [];
+    for (var i in yearFilters) {
+        if (yearFilters[i].getFill() == activeFilterColor)
+            activeYears.push(yearFilters[i].getText());
+    }
+    for (var i in genreFilters) {
+        if (genreFilters[i].getFill() == activeFilterColor)
+            activeGenres.push(genreFilters[i].getText());
+    }
 
-
-
-
+    // dim the appropriate movies
+    for (var i in movies) {
+        // genre
+        if (movies[i].hasAnyGenres(activeGenres) && movies[i].hasYear(activeYears))
+            movies[i].unDim();
+        else
+            movies[i].dim();
+    }
+}
