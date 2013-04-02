@@ -65,6 +65,11 @@ var movieLocs = {
         "y":630,
         "scale":0.308054246951766
     },
+    "98":{
+        "x":0,
+        "y":400,
+        "scale":0.246771102076747
+    },
     "118":{
         "x":270,
         "y":130,
@@ -209,6 +214,11 @@ var movieLocs = {
         "x":990,
         "y":500,
         "scale":0.397047545644971
+    },
+    "787":{
+        "x":850,
+        "y":30,
+        "scale":0.245016003144549
     },
     "818":{
         "x":470,
@@ -410,11 +420,6 @@ var movieLocs = {
         "y":170,
         "scale":0.338858800384739
     },
-    "16219":{
-        "x":0,
-        "y":400,
-        "scale":0.246771102076747
-    },
     "18239":{
         "x":460,
         "y":180,
@@ -439,11 +444,6 @@ var movieLocs = {
         "x":380,
         "y":170,
         "scale":0.395162133447739
-    },
-    "24197":{
-        "x":850,
-        "y":30,
-        "scale":0.245016003144549
     },
     "24428":{
         "x":210,
@@ -579,6 +579,15 @@ var moviesJSON = {
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bWKSVhlSjZT6OMaRYBiBUjzhD11.jpg",
         "releaseDate":"Jun 28, 2005",
         "directorId":488
+    },
+    "98":{
+        "genres":["Action","Adventure","Drama"],
+        "actorIds":[934,73421,935,936,194,937,938,939,940,941,942,2478,4012,15196,20761,1052482],
+        "title":"Gladiator",
+        "revenue":457640427,
+        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6WBIzCgmDCYrqh64yDREGeDk9d3.jpg",
+        "releaseDate":"May 5, 2000",
+        "directorId":578
     },
     "118":{
         "genres":["Adventure","Comedy","Fantasy","Family"],
@@ -843,6 +852,15 @@ var moviesJSON = {
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bFXys2nhALwDvpkF3dP3Vvdfn8b.jpg",
         "releaseDate":"Jul 6, 2009",
         "directorId":11343
+    },
+    "787":{
+        "genres":["Action","Comedy","Drama","Thriller"],
+        "actorIds":[11701,287,4937,11702,11703,65827,3288,11704,11705],
+        "title":"Mr. & Mrs. Smith",
+        "revenue":478207520,
+        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dqs5BmwSULtB28Kls3IB6khTQwp.jpg",
+        "releaseDate":"2005-06-09",
+        "directorId":11694
     },
     "818":{
         "genres":["Comedy","Crime","Sci-Fi"],
@@ -1204,15 +1222,6 @@ var moviesJSON = {
         "releaseDate":"May 6, 2009",
         "directorId":15344
     },
-    "16219":{
-        "genres":["Action","Adventure","Drama"],
-        "actorIds":[1162,6197,9777,6717,20047],
-        "title":"Gladiator",
-        "revenue":9,
-        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uMXZfNyWKaY3qPb48sHCY5Dg9uD.jpg",
-        "releaseDate":"Mar 5, 1992",
-        "directorId":63943
-    },
     "18239":{
         "genres":["Adventure","Drama","Fantasy","Romance"],
         "actorIds":[501,37917,11288,83356,84223,34502,3968,45827,65225,84225,21029,53755,84224,59252,84214,39391,56857,6804,84219,84221,54203,84222,56676,58168,84228,84216,84217,84227,52414,84218,84226,84215,32887],
@@ -1257,15 +1266,6 @@ var moviesJSON = {
         "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fBXJGA6WNran1RL4CPKisaPI6UY.jpg",
         "releaseDate":"Jun 22, 2010",
         "directorId":27571
-    },
-    "24197":{
-        "genres":["Comedy","Romance"],
-        "actorIds":[2502,2672,95967,2491,13556,83260,19406,83236,34268,14033,105007,140181,117419,140180],
-        "title":"Mr. & Mrs. Smith",
-        "revenue":0,
-        "poster":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lY3Jd8O8Oz6aMpasPFBzHASzLQd.jpg",
-        "releaseDate":"Jan 30, 1941",
-        "directorId":2636
     },
     "24428":{
         "genres":["Action","Thriller"],
@@ -1621,7 +1621,7 @@ var actorsJSON = {
         "popularity":10.024987
     },
     "194":{
-        "movieIds":[671,672],
+        "movieIds":[98,671,672],
         "name":"Richard Harris",
         "dob":"1930-10-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9QT7SNTDVlZMK8daEhGFYuDTZlr.jpg",
@@ -1670,7 +1670,7 @@ var actorsJSON = {
         "popularity":2.9399999999999995
     },
     "287":{
-        "movieIds":[161],
+        "movieIds":[161,787],
         "name":"Brad Pitt",
         "dob":"1963-12-18",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/w8zJQuN7tzlm6FY9mfGKihxp3Cb.jpg",
@@ -1921,12 +1921,68 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6DJCIOuDuotqeDxhSKqUKFGD9IQ.jpg",
         "popularity":1.4
     },
+    "934": {
+        "movieIds":[98],
+        "name":"Russell Crowe",
+        "dob":"1964-04-07",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/dXgOgTeRXmjiL9sV8cZ9zXETl6P.jpg",
+        "popularity":8.673
+    },
+    "935": {
+        "movieIds":[98],
+        "name":"Connie Nielsen",
+        "dob":"1965-07-03",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xVWCON7CPEf3P7VcUmgg7Wa7EsI.jpg",
+        "popularity":1.3089999999999997
+    },
+    "936": {
+        "movieIds":[98],
+        "name":"Oliver Reed",
+        "dob":"1937-02-13",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/we10IusqRV1NHRtA68ftyck2N33.jpg",
+        "popularity":2.0999999999999996
+    },
+    "937": {
+        "movieIds":[98],
+        "name":"Derek Jacobi",
+        "dob":"1938-10-22",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6wJPzrqq4GPO7jBLVEM293LUWU1.jpg",
+        "popularity":2.2399999999999998
+    },
+    "938": {
+        "movieIds":[98],
+        "name":"Djimon Hounsou",
+        "dob":"1964-04-24",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sOv6xpkSPtE77MnO5ft3FUADP0N.jpg",
+        "popularity":4.298
+    },
+    "939": {
+        "movieIds":[98],
+        "name":"David Schofield",
+        "dob":null,
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/6FdYsGTI85M5s5QDbFCogmQWsOR.jpg",
+        "popularity":1.8199999999999998
+    },
+    "940": {
+        "movieIds":[98],
+        "name":"John Shrapnel",
+        "dob":"1942-04-27",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nDIK01IoVNx7cfYOrKqGugItqO9.jpg",
+        "popularity":1.6099999999999999
+    },
     "941":{
-        "movieIds":[2502],
+        "movieIds":[98,2502],
         "name":"Tomas Arana",
         "dob":"1955-04-03",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/adZSdPoWYPOL8fsVznRvXDWS1rb.jpg",
         "popularity":0.7
+    },
+    "942":{
+        "movieIds":[98],
+        "name":"Ralf Moeller",
+        "dob":"1959-01-12",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5FHZB4H20IeaZed8yvizSlg9Fio.jpg",
+        "popularity":3.5
     },
     "955":{
         "movieIds":[1865],
@@ -2004,13 +2060,6 @@ var actorsJSON = {
         "dob":"1958-11-17",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/g0qb8ziTfeIuaz2lDFKxEyDu3RI.jpg",
         "popularity":2.3269819999999997
-    },
-    "1162":{
-        "movieIds":[16219],
-        "name":"Robert Loggia",
-        "dob":"1930-01-03",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/zohf2pn24OHYYlJnw6r9dFF8Asm.jpg",
-        "popularity":2.45
     },
     "1166":{
         "movieIds":[5175],
@@ -2754,26 +2803,19 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nqsZ5RzYgvHOrPZvgc1l3089yHt.jpg",
         "popularity":2.7299999999999995
     },
+    "2478":{
+        "movieIds":[98],
+        "name":"Tommy Flanagan",
+        "dob":"1965-07-03",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/skLt2evRbQXahJnU7KHn8afWs7C.jpg",
+        "popularity":1.6099999999999999
+    },
     "2482":{
         "movieIds":[12444],
         "name":"David O'Hara",
         "dob":"1965-07-09",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/sJ35AHaSTzSrvd80xrlC1CD30iF.jpg",
         "popularity":4.34
-    },
-    "2491":{
-        "movieIds":[24197],
-        "name":"Carole Lombard",
-        "dob":"1908-10-06",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uUjn5WRFxetiG8JLxbzSb1zAnbe.jpg",
-        "popularity":1.4
-    },
-    "2502":{
-        "movieIds":[24197],
-        "name":"Charles Halton",
-        "dob":"1876-03-16",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/fQqMqIJRMSqQCM6HET2O34hD2Ar.jpg",
-        "popularity":2.0999999999999996
     },
     "2505":{
         "movieIds":[559],
@@ -2809,13 +2851,6 @@ var actorsJSON = {
         "dob":"1924-07-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9DpClOXbxSAsZiwsCnwIPA212pQ.jpg",
         "popularity":1.6099999999999999
-    },
-    "2672":{
-        "movieIds":[24197],
-        "name":"Jack Carson",
-        "dob":"1910-10-27",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7Ys9ZSd9vspOkmWrFJkVDnknRCi.jpg",
-        "popularity":2.0999999999999996
     },
     "2878":{
         "movieIds":[1930],
@@ -3167,6 +3202,13 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nG8DT7BfKofR9SDW6nHi21nS5v3.jpg",
         "popularity":4.1578040000000005
     },
+    "4012":{
+        "movieIds":[98],
+        "name":"Spencer Treat Clark",
+        "dob":"1987-09-24",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/y8SNxG3WuPDLZlZXCkuvdrNFvao.jpg",
+        "popularity":1.6099999999999999
+    },
     "4029":{
         "movieIds":[2133],
         "name":"Bob Gunton",
@@ -3371,7 +3413,7 @@ var actorsJSON = {
         "popularity":3.6945999999999994
     },
     "4937":{
-        "movieIds":[9522],
+        "movieIds":[787,9522],
         "name":"Vince Vaughn",
         "dob":"1970-03-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vTIHDiSvIm3HU93JDGCstFwNGxI.jpg",
@@ -3748,13 +3790,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/mNRMgj7K5ztvkSqrcdwEYNZIS1M.jpg",
         "popularity":4.25754
     },
-    "6197":{
-        "movieIds":[16219],
-        "name":"Brian Dennehy",
-        "dob":"1938-07-09",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bFNmm4pmHF92dEd0XSlI9FIPdBY.jpg",
-        "popularity":2.1805
-    },
     "6199":{
         "movieIds":[12445],
         "name":"Miriam Margolyes",
@@ -3817,13 +3852,6 @@ var actorsJSON = {
         "dob":"1970-03-24",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/qJju0OsiXq0tPZdPtdQtnpILXxg.jpg",
         "popularity":1.54
-    },
-    "6717":{
-        "movieIds":[16219],
-        "name":"James Marshall",
-        "dob":"1967-01-02",
-        "profile":null,
-        "popularity":0.9099999999999999
     },
     "6804":{
         "movieIds":[18239],
@@ -4400,7 +4428,7 @@ var actorsJSON = {
         "popularity":2.0999999999999996
     },
     "9777":{
-        "movieIds":[16219,676],
+        "movieIds":[676],
         "name":"Cuba Gooding Jr.",
         "dob":"1968-01-02",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1VMd7ubhFQmR8sH28MiwcZOQ7My.jpg",
@@ -5078,8 +5106,36 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/jaIVkyaIEZv0qYiPUAIrkJltbsk.jpg",
         "popularity":2.093
     },
+    "11701":{
+        "movieIds":[787],
+        "name":"Angelina Jolie",
+        "dob":"1975-06-04",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/f3SSl8esru3Q3dDxDzeQCWqVSKQ.jpg",
+        "popularity":3.92
+    },
+    "11702":{
+        "movieIds":[787],
+        "name":"Adam Brody",
+        "dob":"1979-12-15",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/AvUsfTBgu1zUG3LY9PUlQAJzzpO.jpg",
+        "popularity":0.9099999999999999
+    },
+    "11703":{
+        "movieIds":[787],
+        "name":"Kerry Washington",
+        "dob":"1977-01-31",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/i3x6xkvk47ZPd133v0LMGoXp13s.jpg",
+        "popularity":6.356
+    },
+    "11704":{
+        "movieIds":[787],
+        "name":"Rachael Huntley",
+        "dob":null,
+        "profile":null,
+        "popularity":0.7
+    },
     "11705":{
-        "movieIds":[2502],
+        "movieIds":[787,2502],
         "name":"Michelle Monaghan",
         "dob":"1976-03-23",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/d9QH5GJ9vxJZPur6yMv9GHPqi4O.jpg",
@@ -5302,13 +5358,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1T8QO8FaDjGJkSoi2Xj3TBOYrPz.jpg",
         "popularity":3.0978499999999998
     },
-    "13556":{
-        "movieIds":[24197],
-        "name":"Betty Compson",
-        "dob":"1897-03-19",
-        "profile":null,
-        "popularity":1.4
-    },
     "13919":{
         "movieIds":[818],
         "name":"Michael York",
@@ -5335,13 +5384,6 @@ var actorsJSON = {
         "name":"Ritchie Coster",
         "dob":"1967-07-01",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/tKFkEFho069GFVAkT9ntvR3SONp.jpg",
-        "popularity":0.7
-    },
-    "14033":{
-        "movieIds":[24197],
-        "name":"Emma Dunn",
-        "dob":"1874-02-26",
-        "profile":null,
         "popularity":0.7
     },
     "14102":{
@@ -5448,6 +5490,13 @@ var actorsJSON = {
         "dob":"1981-06-12",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/4GyPGjrvqs3zes8I1SWrQWukrA9.jpg",
         "popularity":0.7
+    },
+    "15196":{
+        "movieIds":[98],
+        "name":"David Hemmings",
+        "dob":"1941-11-18",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/uzJRMPZq9Hv8APMqYsOTSZqcBg6.jpg",
+        "popularity":1.036
     },
     "15232":{
         "movieIds":[6637],
@@ -6058,13 +6107,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/bizhhVVs4y8CfHzPfqPYNEvs2eZ.jpg",
         "popularity":1.4
     },
-    "19406":{
-        "movieIds":[24197],
-        "name":"Robert Montgomery",
-        "dob":"1904-05-21",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/g1onNiRYaWx37zSsnzL4GPR1atC.jpg",
-        "popularity":0.9099999999999999
-    },
     "19439":{
         "movieIds":[9522],
         "name":"Henry Gibson",
@@ -6133,13 +6175,6 @@ var actorsJSON = {
         "name":"Flip Webster",
         "dob":null,
         "profile":null,
-        "popularity":0.7
-    },
-    "20047":{
-        "movieIds":[16219],
-        "name":"Cara Buono",
-        "dob":"1971-03-01",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5Q82uAgmgpCjjUbibpu68xa0NDZ.jpg",
         "popularity":0.7
     },
     "20049":{
@@ -6253,6 +6288,13 @@ var actorsJSON = {
         "dob":"1975-07-20",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/oIsayxGQJtcn6WTrS0h8bhkkbyu.jpg",
         "popularity":3.6932909999999994
+    },
+    "20761":{
+        "movieIds":[98],
+        "name":"Sven-Ole Thorsen",
+        "dob":"1944-09-24",
+        "profile":null,
+        "popularity":1.1199999999999999
     },
     "20788":{
         "movieIds":[10719],
@@ -7023,13 +7065,6 @@ var actorsJSON = {
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/xvdDDkbUKSlRgUDIAjHHf6jClGn.jpg",
         "popularity":1.4
-    },
-    "34268":{
-        "movieIds":[24197],
-        "name":"Esther Dale",
-        "dob":"1885-11-10",
-        "profile":null,
-        "popularity":0.7
     },
     "34407":{
         "movieIds":[2133],
@@ -8131,7 +8166,7 @@ var actorsJSON = {
         "popularity":3.9876948999999997
     },
     "65827":{
-        "movieIds":[1858],
+        "movieIds":[787,1858],
         "name":"Keith David",
         "dob":"1956-06-04",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wI6y7A8zLe8FXn32e0uv5xAW9VF.jpg",
@@ -8565,7 +8600,7 @@ var actorsJSON = {
         "popularity":2.135
     },
     "73421":{
-        "movieIds":[2675],
+        "movieIds":[98,2675],
         "name":"Joaquin Phoenix",
         "dob":"1974-10-28",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wruHkyFxaUxFvK25CS3lEjaumpP.jpg",
@@ -8858,20 +8893,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lsJ51EAV14lf0F39nGnlHz7CdM8.jpg",
         "popularity":0.9099999999999999
     },
-    "83236":{
-        "movieIds":[24197],
-        "name":"William Tracy",
-        "dob":"1917-12-01",
-        "profile":null,
-        "popularity":0.7
-    },
-    "83260":{
-        "movieIds":[24197],
-        "name":"Lucile Watson",
-        "dob":"1879-05-27",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/93K9dxHGMcThXyV2nP16GcYaZIE.jpg",
-        "popularity":1.4
-    },
     "83356":{
         "movieIds":[18239,12444,12445,50620],
         "name":"Jamie Campbell Bower",
@@ -9138,13 +9159,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/lsnmeKueImKeToe4oNo4YWie4aM.jpg",
         "popularity":1.4
     },
-    "95967":{
-        "movieIds":[24197],
-        "name":"William Edmunds",
-        "dob":"1886-01-01",
-        "profile":null,
-        "popularity":1.6099999999999999
-    },
     "96066":{
         "movieIds":[70160],
         "name":"Liam Hemsworth",
@@ -9268,13 +9282,6 @@ var actorsJSON = {
         "movieIds":[2133],
         "name":"Merle Kennedy",
         "dob":null,
-        "profile":null,
-        "popularity":0.7
-    },
-    "105007":{
-        "movieIds":[24197],
-        "name":"Philip Merivale",
-        "dob":"1886-11-02",
         "profile":null,
         "popularity":0.7
     },
@@ -9439,13 +9446,6 @@ var actorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/f7UTciMj6F3KdAga4CeDs0lKRb5.jpg",
         "popularity":1.3299999999999998
     },
-    "117419":{
-        "movieIds":[24197],
-        "name":"Gene Raymond",
-        "dob":"1908-08-13",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/vSf2bZJpmSWay0byG6MMfPfHmFK.jpg",
-        "popularity":0.7
-    },
     "117654":{
         "movieIds":[674],
         "name":"David Sterne",
@@ -9585,20 +9585,6 @@ var actorsJSON = {
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/wfBmg2FVEDQCCFnjiTC3lhg1THP.jpg",
         "popularity":1.3845999999999998
-    },
-    "140180":{
-        "movieIds":[24197],
-        "name":"Pamela Blake",
-        "dob":"1915-08-06",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/5qR0UOILIv99rlhO8nDHVBj0Qqz.jpg",
-        "popularity":0.7
-    },
-    "140181":{
-        "movieIds":[24197],
-        "name":"Patricia Farr",
-        "dob":null,
-        "profile":null,
-        "popularity":0.7
     },
     "140367":{
         "movieIds":[675,767,12444,12445],
@@ -10839,6 +10825,13 @@ var actorsJSON = {
         "profile":null,
         "popularity":0.7
     },
+    "1052482":{
+        "movieIds":[98],
+        "name":"Alun Raglan",
+        "dob":null,
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/7HOO5qPFBRAKCEgsqXZltaEyB4Z.jpg",
+        "popularity":0.7
+    },
     "1053673":{
         "movieIds":[58574],
         "name":"Jack Laskey",
@@ -11220,6 +11213,12 @@ var directorsJSON = {
         "dob":"1970-07-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/9DWztOvcz7FraWOZb9dcQLmwCqP.jpg"
     },
+    "578":{
+        "movieIds":[98],
+        "name":"Ridley Scott",
+        "dob":"1937-11-30",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/46XCMVEYedwsqagc3kjrPmvAKmP.jpg"
+    },
     "865":{
         "movieIds":[676,1858,8373,38356],
         "name":"Michael Bay",
@@ -11250,12 +11249,6 @@ var directorsJSON = {
         "dob":"1956-01-03",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/8s48F6yFPOOcUfGKH1dNvztiHZz.jpg"
     },
-    "2636":{
-        "movieIds":[24197],
-        "name":"Alfred Hitchcock",
-        "dob":"1899-08-13",
-        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/nR0f94VwdGVVGPEbSbaGCMqICrP.jpg"
-    },
     "2710":{
         "movieIds":[19995],
         "name":"James Cameron",
@@ -11263,7 +11256,7 @@ var directorsJSON = {
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/40Wk8b37ubbdTYRUCdjqBItN9hm.jpg"
     },
     "3288":{
-        "movieIds":[18239],
+        "movieIds":[787,18239],
         "name":"Chris Weitz",
         "dob":"1969-11-30",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/gankahRpXzCdziX2WsnosAqmUqP.jpg"
@@ -11406,6 +11399,12 @@ var directorsJSON = {
         "dob":"1970-08-06",
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/1svjYDUtS8300HhHMZXiUfMR00i.jpg"
     },
+    "11694":{
+        "movieIds":[787],
+        "name":"Doug Liman",
+        "dob":"1965-07-24",
+        "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cWpE3dSbskWOea4kAGzQpNIkfxM.jpg"
+    },
     "12891":{
         "movieIds":[24428],
         "name":"Joss Whedon",
@@ -11543,12 +11542,6 @@ var directorsJSON = {
         "name":"Justin Lin",
         "dob":null,
         "profile":"http://d3gtl9l2a4fn1j.cloudfront.net/t/p/w500/cN8R58FD7MWf7gI71uaT9CdSu8P.jpg"
-    },
-    "63943":{
-        "movieIds":[16219],
-        "name":"Rowdy Herrington",
-        "dob":null,
-        "profile":null
     },
     "77357":{
         "movieIds":[61791],

@@ -166,7 +166,34 @@ function Movie(opts) {
     this.infoGroup.add(revenueText);
 
     // genres
-    
+    var genreGroup = new Kinetic.Group({
+        x: -10,
+        y: 36
+    });
+    this.infoGroup.add(genreGroup);
+
+    var genreBullet, genreText;
+    for (var i in this.genres) {
+        // bullet
+        genreBullet = new Kinetic.Circle({
+            radius: 4,
+            fill: 'black',
+            y: i*37
+        });
+        genreGroup.add(genreBullet);
+
+        // genre
+        genreText = new Kinetic.Text({
+            x: 20,
+            y: i*37 - 9,
+            text: this.genres[i],
+            fill: 'black',
+            fontSize: 25,
+            fontFamily: 'advent',
+            fontStyle: 'bold'
+        });
+        genreGroup.add(genreText);
+    }
 
     /*
      * main group
@@ -219,21 +246,18 @@ Movie.prototype.fullSizeRatio = 1/6;
 
 // show the movie's image instead of the sun
 Movie.prototype.showImage = function() {
-    //this.minimalGroup.hide();
     this.imageGroup.show();
-    this.group.draw();
+    movieLayer.draw();
 }
 
 // show the minimal movie view (sun instead of image)
 Movie.prototype.hideImage = function() {
-    //this.minimalGroup.show();
     this.imageGroup.hide();
-    this.group.draw();
+    movieLayer.draw();
 }
 
 // flip the movie to the info side
 Movie.prototype.flipToInfo = function() {
-    console.log(this)
     // no-op if already on info
     if (this.theta == Math.PI)
         return;
@@ -381,11 +405,25 @@ Movie.prototype.unDim = function() {
     this.dimAnim.start();
 }
 
-// returns true if the movie has the specified genre
-Movie.prototype.hasGenre = function(genre) {
+// returns true if the movie has any of the specified genres
+Movie.prototype.hasAnyGenres = function(genres) {
     var found = false;
-    $.each(this.genres, function(i, elem) {
-        if (elem == genre) {
+    var self = this;
+    $.each(genres, function(i, elem) {
+        if (self.genres.indexOf(elem) > -1) {
+            found = true;
+            return false;
+        }
+    });
+    return found;
+}
+
+// returns true if the movie has any of the specified years
+Movie.prototype.hasYear = function(years) {
+    var found = false;
+    var self = this;
+    $.each(years, function(i, elem) {
+        if (self.releaseDate.indexOf(elem) > -1) {
             found = true;
             return false;
         }
