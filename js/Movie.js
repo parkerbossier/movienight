@@ -47,7 +47,7 @@ function Movie(opts) {
         self.minimalGroup.draw();
 
         // set the dim circle's dimensions
-        self.dimCircle.setRadius(image.getWidth()/2 - 20);
+        self.dimCircle.setRadius(image.getWidth()/2);
     });
 
     /*

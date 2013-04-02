@@ -75,7 +75,7 @@ $(function () {
      * year group init
      */
     var yearGroup = new Kinetic.Group({
-        x: containerWidth/2 + 2,
+        x: containerWidth/2 - 2,
         y: containerHeight/2 + 86
     });
     staticOverlayLayer.add(yearGroup);
@@ -156,7 +156,7 @@ $(function () {
      * genre group init
      */
     var genreGroup = new Kinetic.Group({
-        x: containerWidth/2 + 2,
+        x: containerWidth/2 - 2,
         y: containerHeight/2 + 86
     });
     staticOverlayLayer.add(genreGroup);
@@ -482,27 +482,6 @@ $(function () {
     //}
     });
 
-    //    /*
-    //     * background zoom hit layer
-    //     */
-    //    var backgroundZoomHitLayer = new Kinetic.Layer();
-    //    var hitRect = new Kinetic.Rect({
-    //        width: containerWidth,
-    //        height: containerHeight,
-    //        fill: 'red',
-    //        opacity: .5,
-    //        offset: [0, 0]
-    //    });
-    //    backgroundZoomHitLayer.add(hitRect);
-    //
-    //    // click handler
-    //    hitRect.on('click', function(e) {
-    //        setZoomLevel(currentZoom+1, {
-    //            x: e.layerX,
-    //            y: e.layerY
-    //        });
-    //    });
-
     /*
      * constellation layer init
      */
@@ -533,6 +512,19 @@ $(function () {
             lineCap: 'round',
             lineJoin: 'round',
             opacity: .5
+        }));
+
+        // draw the label
+        console.log(elem)
+        constellationLayer.add(new Kinetic.Text({
+            fontFamily: 'advent',
+            fontSize: 30,
+            fontStyle: 'bold',
+            fill: 'white',
+            x: elem.x || 0,
+            y: elem.y || 0,
+            rotation: elem.rotation || 0,
+            text: elem.title
         }));
     });
 

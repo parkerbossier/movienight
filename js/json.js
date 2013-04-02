@@ -4,49 +4,58 @@ var genres = ['Action', 'Adventure', 'Comedy', 'Crime', 'Drama', 'Family', 'Fant
 
 var constellations = [{
     "title":"Superheroes",
-    "order":[24428,557,558,1452,1930,559,8960,10138,10195,49026,155,2080,36668,36658,1726,1771]
+    "order":[24428,557,558,1452,1930,559,8960,10138,10195,49026,155,2080,36668,36658,1726,1771],
+    "x":145,
+    "y":672
 },{
-    "title":"Harry Potter Galaxy",
-    "order":[671,672,673,674,675,767,12444,12445]
+    "title":"Harry Potter",
+    "order":[671,672,673,674,675,767,12444,12445],
+    "x":855,
+    "y":415,
+    "rotation":-Math.PI/180*34
 },{
-    "title":"National Treasure Galaxy",
-    "order":[2059,6637]
+    "title":"National Treasure",
+    "order":[2059,6637],
+    "x":1100,
+    "y":405,
+    "rotation":-Math.PI/180*64
 },{
-    "title":"M.I.B Galaxy",
+    "title":"M.I.B.",
     "order":[608,41154]
 },{
-    "title":"Mission Impossible Galaxy",
+    "title":"Mission Impossible",
     "order":[955,56292]
 },{
-    "title":"Museum Nights Galaxy",
+    "title":"Museum Nights",
     "order":[1593,18360]
 },{
-    "title":"Sherlock Galaxy",
+    "title":"Sherlock",
     "order":[10528,58574]
 },{
-    "title":"Apes Galaxy",
+    "title":"Apes",
     "order":[869,61791]
 },{
-    "title":"Pirates Galaxy",
+    "title":"Pirates",
     "order":[285,1865,22,58]
 },{
-    "title":"Star Wars Galaxy",
+    "title":"Star Wars",
     "order":[1894,1895]
 },{
-    "title":"Bourne Galaxy",
+    "title":"Bourne",
     "order":[2502,2503]
 },{
-    "title":"Transformers Galaxy",
-    "order":[1858,38356,8373]
+    "title":"Transformers",
+    "order":[1858,38356,8373],
+    "x":270,
+    "y":195
 },{
-    "title":"Transformers Galaxy",
-    "order":[1858,38356,8373]
-},{
-    "title":"LOTR Galaxy",
+    "title":"LOTR",
     "order":[120,122,121]
 },{
-    "title":"Vampires Galaxy",
-    "order":[8966,18239,24021,50620,50619]
+    "title":"Vampires",
+    "order":[8966,18239,24021,50620,50619],
+    "x":380,
+    "y":90
 }];
 
 var movieLocs = {
