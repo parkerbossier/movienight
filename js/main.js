@@ -470,11 +470,12 @@ $(function () {
     // create all the actors
     actors = {};
     $.each(actorsJSON, function(i, elem) {
-        if (i > 10000) // || movies[19995].actorIds.indexOf(i) !== -1) {
+        if (i > 4000) // || movies[19995].actorIds.indexOf(i) !== -1) {
             return;
         var opts = elem;
         actors[i] = new Actor(opts);
         actors[i].group.setScale(0.085);
+        actors[i].time = Math.random() * actors[i].period;
         actorLayer.add(actors[i].group);
     //}
     });
@@ -630,9 +631,10 @@ $(function () {
         counter = 0;
 
         for (i in actors) {
-            if (counter < 1000000) {
+            if (i < 4000) {
+                //if (counter < 1) console.log(frame.timeDiff);
                 counter++;
-                //console.log(counter);
+                //console.log(i);
                 orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
                 orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
                 radius = actors[i].rad;
@@ -646,10 +648,12 @@ $(function () {
                 switch (actors[i].state)
                 {
                     case "orbit":
+                        actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
+                        actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
                         // if home/initial position not reached, orbit
-                        if (actors[i].time % period < (period - 20)) {
-                            actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
-                            actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
+                        if (actors[i].time % period < (period - 100)) {
+                            // actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
+                            // actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
                         } else if (currentZoom !== 3 && zooming === false) {
                             // after one full orbit, switch to positioning
                             actors[i].state = "positioning";
@@ -674,13 +678,13 @@ $(function () {
                                 actors[i].angle = (2 * Math.PI) + (actors[i].angle);
                             }
                         } else {
-                            actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
-                            actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
+                            // actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
+                            // actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
                         }
                         break;
                     case "positioning":
                         // orbit until target angle reached
-                        if (actors[i].time < (actors[i].angle / (2 * Math.PI)) * period) {
+                        if (actors[i].time < ((actors[i].angle / (2 * Math.PI)) * period)) {// < 100) {
                             actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
                             actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
                         } else {
@@ -696,6 +700,7 @@ $(function () {
                         // while transition in progress, move toward destination each frame at normalized speed
                         // calculate distance to be moved
                         distance = (2 * Math.PI * radius) * (frame.timeDiff / period);
+                        //if (counter < 3) console.log(distance);
 
                         // calculate target position
                         actors[i].targX = radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX;
@@ -705,7 +710,7 @@ $(function () {
                         xDiff = actors[i].targX - actors[i].group.attrs.x;
                         yDiff = actors[i].targY - actors[i].group.attrs.y;
 
-                        if (Math.pow(xDiff, 2) + Math.pow(yDiff, 2) > 2.5) {
+                        if (Math.pow(xDiff, 2) + Math.pow(yDiff, 2) > 3) {
                             actors[i].time -= frame.timeDiff;
 
                             // deltas to be moved this frame
@@ -865,7 +870,15 @@ function setZoomLevel(level, destOffset) {
     if (zooming)
         return;
 
-    
+    // normalize level
+    if (level < 0)
+        level = 0;
+    if (level > zoomLevels.length-1)
+        level = zoomLevels.length-1;
+
+    // no-op
+    if (level == currentZoom)
+        return;
 
     // zoom to center at lowest zoom level
     if (level == 0)
@@ -921,36 +934,53 @@ function setZoomLevel(level, destOffset) {
             zooming = false;
 
             if (level === 0) {
-                for (i in actors) {
-                    actors[i].period = 5000;
-                    actors[i].rad = 25;
-                    actors[i].group.setScale(0.085);
-                }
-                
+                // for (var i in actors) {
+                //     actors[i].period = 5000;
+                //     actors[i].rad = 25;
+                //     actors[i].group.setScale(0.085);
+                // }
             }
             if (level === 1) {
-                for (i in actors) {
-                    actors[i].period = 5000;
-                    actors[i].rad = 25;
-                    actors[i].group.setScale(0.085);
-                }
-                
+                // for (var i in actors) {
+                //     actors[i].period = 5000;
+                //     actors[i].rad = 25;
+                //     actors[i].group.setScale(0.085);
+                // }
             }
             if (level === 2) {
-                for (i in actors) {
-                    actors[i].period = 5000;
-                    actors[i].rad = 25;
-                    actors[i].group.setScale(0.085);
+                // for (var i in actors) {
+                //     actors[i].period = 5000;
+                //     actors[i].rad = 25;
+                //     actors[i].group.setScale(0.085);
+                // }
+                for (var j in movies) {
+                    if ((movies[j].group.getX() > (destOffset.x - 155)) &&
+                        (movies[j].group.getX() < (destOffset.x + 155)) &&
+                        (movies[j].group.getY() > (destOffset.y - 88)) &&
+                        (movies[j].group.getY() < (destOffset.y + 88))) {
+                        movies[j].showImage();
+                    }
                 }
-                
             }
             if (level === 3) {
-                for (i in actors) {
+                for (var i in actors) {
                     actors[i].period = 30000;
-                    actors[i].rad = 35;
+                    actors[i].rad = 40;
                     actors[i].group.setScale(0.1);
                 }
-                orbitCurrent(120);
+                var centerMovie = 19995;
+                var currDistance = Math.sqrt(Math.pow(movies[centerMovie].group.getX() - destOffset.x, 2) +
+                    Math.pow(movies[centerMovie].group.getY() - destOffset.y, 2));
+                
+                for (var j in movies) {
+                    if (Math.sqrt(Math.pow(movies[j].group.getX() - destOffset.x, 2) +
+                    Math.pow(movies[j].group.getY() - destOffset.y, 2)) < currDistance) {
+                        centerMovie = j;
+                        currDistance = Math.sqrt(Math.pow(movies[j].group.getX() - destOffset.x, 2) +
+                            Math.pow(movies[j].group.getY() - destOffset.y, 2));
+                    }
+                }
+                orbitCurrent(centerMovie);
             }
         }
 
@@ -961,19 +991,36 @@ function setZoomLevel(level, destOffset) {
         backgroundStarsLayer.draw();
     });
     zooming = true;
+    if (currentZoom === 2) {
+        for (var i in movies) {
+            movies[i].flipToImage();
+            movies[i].hideImage();
+        }
+    } else if (currentZoom === 3) {
+        for (var i in movies) {
+            movies[i].flipToImage();
+            movies[i].hideImage();
+        }
+        for (var j in actors) {
+            actors[j].hideImage();
+            actors[j].period = 5000;
+            actors[j].rad = 25;
+            actors[j].group.setScale(0.085);
+        }
+    }
     anim.start();
 }
 
-function orbitCurrent(currentMovie) {
-    for (var i = 0; i < movies[currentMovie].actorIds.length; i++) {
-        if (actors[movies[currentMovie].actorIds[i]] !== undefined) {
-            var n = movies[currentMovie].actorIds[i];
-            actors[n].currentMovie = actors[n].path.indexOf(currentMovie);
+function orbitCurrent(centerMovie) {
+    for (var i = 0; i < movies[centerMovie].actorIds.length; i++) {
+        if (actors[movies[centerMovie].actorIds[i]] !== undefined) {
+            var n = movies[centerMovie].actorIds[i];
+            actors[n].currentMovie = actors[n].path.indexOf(parseInt(centerMovie));
             actors[n].state = "orbit";
-            //console.log(i / movies[currentMovie].actorIds.length);
-            actors[n].time = (i / movies[currentMovie].actorIds.length) * actors[n].period;
+            actors[n].time = (i / movies[centerMovie].actorIds.length) * actors[n].period;
             actors[n].showImage();
         }
+        movies[parseInt(centerMovie)].showImage();
     }
 }
 
