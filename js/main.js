@@ -638,7 +638,7 @@ $(function () {
             if (i < 4000) {
                 //if (counter < 1) console.log(frame.timeDiff);
                 counter++;
-                //console.log(i);
+                if (i == 3968) console.log(counter);
                 orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
                 orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
                 radius = actors[i].rad;
@@ -925,10 +925,10 @@ function setZoomLevel(level, destOffset) {
                 //     actors[i].group.setScale(0.085);
                 // }
                 for (var j in movies) {
-                    if ((movies[j].group.getX() > (destOffset.x - 155)) &&
-                        (movies[j].group.getX() < (destOffset.x + 155)) &&
-                        (movies[j].group.getY() > (destOffset.y - 88)) &&
-                        (movies[j].group.getY() < (destOffset.y + 88))) {
+                    if ((movies[j].group.getX() > (destOffset.x - 180)) &&
+                        (movies[j].group.getX() < (destOffset.x + 180)) &&
+                        (movies[j].group.getY() > (destOffset.y - 120)) &&
+                        (movies[j].group.getY() < (destOffset.y + 120))) {
                         movies[j].showImage();
                     }
                 }
