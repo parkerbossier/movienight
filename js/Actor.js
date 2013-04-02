@@ -16,13 +16,33 @@ function Actor(opts) {
     this.time = 0;
     this.angle = 0;
 
-    // start getting the image
-    var imageObj = new Image();
     var self = this;
-    imageObj.onload = function() {
-        self.imageCircle.setFillPatternImage(imageObj);
+
+    // image circle
+    this.imageCircle = new Kinetic.Circle({
+        radius: 50,
+        fillPatternRepeat: false
+    });
+
+    // start getting the image
+    if (opts.profile) {
+        var imageObj = new Image();
+        imageObj.onload = function() {
+            self.imageCircle.setFillPatternImage(imageObj);
+            self.imageCircle.setFillPatternOffset([250, 250]);
+            self.imageCircle.setFillPatternScale(.2);
+        }
+        imageObj.src = opts.profile;
     }
-    imageObj.src = opts.profile;
+
+    // missing image
+    else {
+        $('#missing-actor-image').one('load', function() {
+            self.imageCircle.setFillPatternImage(this);
+            self.imageCircle.setFillPatternOffset([170, 160]);
+            self.imageCircle.setFillPatternScale(.4);
+        });
+    }
 
     // star group
     this.starGroup = new Kinetic.Group();
@@ -58,15 +78,6 @@ function Actor(opts) {
         opacity: .9
     }));
 
-    // image circle
-    this.imageCircle = new Kinetic.Circle({
-        radius: 50,
-        fillPatternOffset: [250, 320],
-        fillPatternScale: .2,
-        fillPatternRepeat: false
-    });
-    this.imageGroup.add(this.imageCircle);
-
     // label (don't add yet)
     var label = new Kinetic.Text({
         fontSize: 20,
@@ -75,6 +86,9 @@ function Actor(opts) {
         y: 40
     });
     label.setX(-label.textWidth/2);
+
+    // image circle
+    this.imageGroup.add(this.imageCircle);
 
     // label background
     this.imageGroup.add(new Kinetic.Rect({

@@ -371,10 +371,6 @@ $(function () {
 
     // click handlers
     plusGroup.on('click', function() {
-        console.log({
-            x: -movieLayer.getX(),
-            y: -movieLayer.getY()
-        })
         setZoomLevel(Math.min(zoomLevels.length-1, currentZoom+1));
     });
     minusGroup.on('click', function() {
@@ -455,8 +451,6 @@ $(function () {
         opts.scale = movieLocs[i].scale;
 
         movies[i] = new Movie(opts);
-        if (movies[i].title == "The Lord of the Rings: The Fellowship of the Ring")
-            console.log("LotR 1: " + i);
         movieLayer.add(movies[i].group);
     });
 
@@ -474,14 +468,11 @@ $(function () {
     // create all the actors
     actors = {};
     $.each(actorsJSON, function(i, elem) {
-        if (i > 4000) // || movies[19995].actorIds.indexOf(i) !== -1) {
-            return;
         var opts = elem;
         actors[i] = new Actor(opts);
         actors[i].group.setScale(0.085);
         actors[i].time = Math.random() * actors[i].period;
         actorLayer.add(actors[i].group);
-    //}
     });
 
     /*
@@ -629,198 +620,188 @@ $(function () {
         counter = 0;
 
         for (i in actors) {
-            if (i < 4000) {
-                //if (counter < 1) console.log(frame.timeDiff);
-                counter++;
-                if (i == 3968) console.log(counter);
-                orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
-                orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
-                radius = actors[i].rad;
-                period = actors[i].period;
-                time = actors[i].time + frame.timeDiff;
-                actors[i].time += frame.timeDiff;
-                angle = actors[i].angle;
-                //actors[i].group.attrs.scale.x = actors[i].group.attrs.scale.y = 0.2 / 3;
+            counter++;
+            orbitX = movies[actors[i].path[actors[i].currentMovie]].group.attrs.x;
+            orbitY = movies[actors[i].path[actors[i].currentMovie]].group.attrs.y;
+            radius = actors[i].rad;
+            period = actors[i].period;
+            time = actors[i].time + frame.timeDiff;
+            actors[i].time += frame.timeDiff;
+            angle = actors[i].angle;
 
+            switch (actors[i].state)
+            {
+                case "orbit":
+                    actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
+                    actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
+                    // if home/initial position not reached, orbit
+                    if (actors[i].time % period < (period - 100)) {
+                    // actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
+                    // actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
+                    } else if (currentZoom !== 3 && zooming === false) {
+                        // after one full orbit, switch to positioning
+                        actors[i].state = "positioning";
+                        actors[i].time = 0;
+                        //actors[i].attrs.fill = "green";
 
-                switch (actors[i].state)
-                {
-                    case "orbit":
+                        // calculate target angle to begin transition
+                        currentMovie = movies[actors[i].path[actors[i].currentMovie]];
+                        next = (actors[i].currentMovie+1 >= actors[i].path.length) ?
+                        movies[actors[i].path[0]] : movies[actors[i].path[actors[i].currentMovie + 1]];
+
+                        if (currentMovie === next) {
+                            actors[i].state = "orbit";
+                        }
+
+                        // calculate angle and adjust to guarantee range between 0 and 2pi
+                        actors[i].angle = Math.atan(-1 * (next.group.attrs.y - currentMovie.group.attrs.y)/(next.group.attrs.x - currentMovie.group.attrs.x));
+                        if (next.group.attrs.x < currentMovie.group.attrs.x) {
+                            actors[i].angle += Math.PI;
+                        }
+                        if (actors[i].angle < 0) {
+                            actors[i].angle = (2 * Math.PI) + (actors[i].angle);
+                        }
+                    }
+                    break;
+                case "positioning":
+                    // orbit until target angle reached
+                    if (actors[i].time < ((actors[i].angle / (2 * Math.PI)) * period)) {
                         actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
                         actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
-                        // if home/initial position not reached, orbit
-                        if (actors[i].time % period < (period - 100)) {
-                        // actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
-                        // actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
-                        } else if (currentZoom !== 3 && zooming === false) {
-                            // after one full orbit, switch to positioning
-                            actors[i].state = "positioning";
-                            actors[i].time = 0;
-                            //actors[i].attrs.fill = "green";
+                    } else {
+                        // target angle reached, begin transition to new orbit
+                        actors[i].state = "transitioning";
+                        //actors[i].attrs.fill = "yellow";
+                        actors[i].currentMovie = (actors[i].currentMovie+1 >= actors[i].path.length) ? 0 : actors[i].currentMovie + 1;
+                        actors[i].time += 0.5 * period;
+                        actors[i].angle += Math.PI;
+                    }
+                    break;
+                case "transitioning":
+                    // while transition in progress, move toward destination each frame at normalized speed
+                    // calculate distance to be moved
+                    distance = (2 * Math.PI * radius) * (frame.timeDiff / period);
 
-                            // calculate target angle to begin transition
-                            currentMovie = movies[actors[i].path[actors[i].currentMovie]];
-                            next = (actors[i].currentMovie+1 >= actors[i].path.length) ?
-                            movies[actors[i].path[0]] : movies[actors[i].path[actors[i].currentMovie + 1]];
+                    // calculate target position
+                    actors[i].targX = radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX;
+                    actors[i].targY = radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY;
 
-                            if (currentMovie === next) {
-                                actors[i].state = "orbit";
-                            }
+                    // diff between here and there
+                    xDiff = actors[i].targX - actors[i].group.attrs.x;
+                    yDiff = actors[i].targY - actors[i].group.attrs.y;
 
-                            // calculate angle and adjust to guarantee range between 0 and 2pi
-                            actors[i].angle = Math.atan(-1 * (next.group.attrs.y - currentMovie.group.attrs.y)/(next.group.attrs.x - currentMovie.group.attrs.x));
-                            if (next.group.attrs.x < currentMovie.group.attrs.x) {
-                                actors[i].angle += Math.PI;
-                            }
-                            if (actors[i].angle < 0) {
-                                actors[i].angle = (2 * Math.PI) + (actors[i].angle);
-                            }
+                    if (Math.pow(xDiff, 2) + Math.pow(yDiff, 2) > 3) {
+                        actors[i].time -= frame.timeDiff;
+
+                        // deltas to be moved this frame
+                        xDelt = Math.sqrt(Math.pow(distance, 2) / (Math.pow(yDiff / xDiff, 2) + 1));
+                        yDelt = (yDiff / xDiff) * xDelt;
+                        if (xDiff < 0) xDelt = xDelt * -1;
+                        if (yDelt < 0 && yDiff >=0) yDelt = yDelt * -1;
+                        if (yDelt > 0 && yDiff <=0) yDelt = yDelt * -1;
+
+                        actors[i].group.setX(actors[i].group.attrs.x + xDelt);
+                        actors[i].group.setY(actors[i].group.attrs.y + yDelt);
+                    } else {
+                        // new orbit reached, begin orbiting opposite direction
+                        actors[i].state = "orbit2";
+
+                        // orbit position is calculated with trig off of "time"
+                        // new orbit will be going opposite direction from last orbit,
+                        //  so have to update "time" to avoid jumping forward or back when beginning new orbit
+                        if (actors[i].angle >= 0 && actors[i].angle <= Math.PI / 2) {
+                            actors[i].angle = (Math.PI / 2) - actors[i].angle;
                         } else {
-                        // actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
-                        // actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
+                            actors[i].angle = (5 * Math.PI / 2) - actors[i].angle;
                         }
-                        break;
-                    case "positioning":
-                        // orbit until target angle reached
-                        if (actors[i].time < ((actors[i].angle / (2 * Math.PI)) * period)) {// < 100) {
-                            actors[i].group.setX(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX);
-                            actors[i].group.setY(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY);
-                        } else {
-                            // target angle reached, begin transition to new orbit
-                            actors[i].state = "transitioning";
-                            //actors[i].attrs.fill = "yellow";
-                            actors[i].currentMovie = (actors[i].currentMovie+1 >= actors[i].path.length) ? 0 : actors[i].currentMovie + 1;
-                            actors[i].time += 0.5 * period;
-                            actors[i].angle += Math.PI;
-                        }
-                        break;
-                    case "transitioning":
-                        // while transition in progress, move toward destination each frame at normalized speed
-                        // calculate distance to be moved
-                        distance = (2 * Math.PI * radius) * (frame.timeDiff / period);
-                        //if (counter < 3) console.log(distance);
+                        actors[i].time = period * (actors[i].angle / (2 * Math.PI));
+                    }
+                    break;
+                case "orbit2":
+                    // if home/initial position not reached, orbit
+                    if (actors[i].time % period < (period - 20)) {
+                        actors[i].group.setX(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitX);
+                        actors[i].group.setY(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitY);
+                    } else {
+                        // after one full orbit, switch to positioning
+                        actors[i].state = "pos2";
+                        //actors[i].attrs.fill = "blue";
+                        actors[i].time = 0;
 
-                        // calculate target position
-                        actors[i].targX = radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitX;
-                        actors[i].targY = radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitY;
+                        // calculate target angle to begin transition
+                        currentMovie = movies[actors[i].path[actors[i].currentMovie]];
+                        next = (actors[i].currentMovie+1 >= actors[i].path.length) ?
+                        movies[actors[i].path[0]] : movies[actors[i].path[actors[i].currentMovie + 1]];
 
-                        // diff between here and there
-                        xDiff = actors[i].targX - actors[i].group.attrs.x;
-                        yDiff = actors[i].targY - actors[i].group.attrs.y;
-
-                        if (Math.pow(xDiff, 2) + Math.pow(yDiff, 2) > 3) {
-                            actors[i].time -= frame.timeDiff;
-
-                            // deltas to be moved this frame
-                            xDelt = Math.sqrt(Math.pow(distance, 2) / (Math.pow(yDiff / xDiff, 2) + 1));
-                            yDelt = (yDiff / xDiff) * xDelt;
-                            if (xDiff < 0) xDelt = xDelt * -1;
-                            if (yDelt < 0 && yDiff >=0) yDelt = yDelt * -1;
-                            if (yDelt > 0 && yDiff <=0) yDelt = yDelt * -1;
-
-                            actors[i].group.setX(actors[i].group.attrs.x + xDelt);
-                            actors[i].group.setY(actors[i].group.attrs.y + yDelt);
-                        } else {
-                            // new orbit reached, begin orbiting opposite direction
-                            actors[i].state = "orbit2";
-
-                            // orbit position is calculated with trig off of "time"
-                            // new orbit will be going opposite direction from last orbit,
-                            //  so have to update "time" to avoid jumping forward or back when beginning new orbit
-                            if (actors[i].angle >= 0 && actors[i].angle <= Math.PI / 2) {
-                                actors[i].angle = (Math.PI / 2) - actors[i].angle;
-                            } else {
-                                actors[i].angle = (5 * Math.PI / 2) - actors[i].angle;
-                            }
-                            actors[i].time = period * (actors[i].angle / (2 * Math.PI));
-                        }
-                        break;
-                    case "orbit2":
-                        // if home/initial position not reached, orbit
-                        if (actors[i].time % period < (period - 20)) {
-                            actors[i].group.setX(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitX);
-                            actors[i].group.setY(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitY);
-                        } else {
-                            // after one full orbit, switch to positioning
-                            actors[i].state = "pos2";
-                            //actors[i].attrs.fill = "blue";
-                            actors[i].time = 0;
-
-                            // calculate target angle to begin transition
-                            currentMovie = movies[actors[i].path[actors[i].currentMovie]];
-                            next = (actors[i].currentMovie+1 >= actors[i].path.length) ?
-                            movies[actors[i].path[0]] : movies[actors[i].path[actors[i].currentMovie + 1]];
-
-                            if (currentMovie === next) {
-                                actors[i].state = "orbit";
-                            }
-
-                            // calculate angle and adjust to guarantee range between 0 and 2pi
-                            actors[i].angle = Math.atan(-1 * (next.group.attrs.y - currentMovie.group.attrs.y)/(next.group.attrs.x - currentMovie.group.attrs.x));
-                            if (next.group.attrs.x < currentMovie.group.attrs.x) {
-                                actors[i].angle += Math.PI;
-                            }
-                            if (actors[i].angle >= 0) {
-                                actors[i].angle = (2 * Math.PI) - actors[i].angle - 0.5 * Math.PI;
-                            } else if (actors[i].angle > -1 * Math.PI / 2) {
-                                actors[i].angle = (-1 * actors[i].angle) + 1.5 * Math.PI;
-                            } else if (actors[i].angle < -1 * Math.PI / 2) {
-                                actors[i].angle = (-1 * actors[i].angle) - 0.5 * Math.PI;
-                            }
-                        }
-                        break;
-                    case "pos2":
-                        // orbit until target angle reached
-                        if (actors[i].time < (actors[i].angle / (2 * Math.PI)) * period) {
-                            actors[i].group.setX(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitX);
-                            actors[i].group.setY(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitY);
-                        } else {
-                            // target angle reached, begin transition
-                            actors[i].state = "trans2";
-                            //actors[i].attrs.fill = "white";
-                            actors[i].currentMovie = (actors[i].currentMovie+1 >= actors[i].path.length) ? 0 : actors[i].currentMovie + 1;
-                            actors[i].time += 0.5 * period;
-                            actors[i].angle += Math.PI;
-                        }
-                        break;
-                    case "trans2":
-                        // while transition in progress, move toward destination each frame at normalized speed
-                        distance = (2 * Math.PI * radius) * (frame.timeDiff / period);
-
-                        actors[i].targX = radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitX;
-                        actors[i].targY = radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitY;
-
-                        xDiff = actors[i].targX - actors[i].group.attrs.x;
-                        yDiff = actors[i].targY - actors[i].group.attrs.y;
-
-                        if (Math.pow(xDiff, 2) + Math.pow(yDiff, 2) > 2.5) {
-                            actors[i].time -= frame.timeDiff;
-
-                            xDelt = Math.sqrt(Math.pow(distance, 2) / (Math.pow(yDiff / xDiff, 2) + 1));
-                            yDelt = (yDiff / xDiff) * xDelt;
-                            if (xDiff < 0) xDelt = xDelt * -1;
-                            if (yDelt < 0 && yDiff >=0) yDelt = yDelt * -1;
-                            if (yDelt > 0 && yDiff <=0) yDelt = yDelt * -1;
-
-                            actors[i].group.setX(actors[i].group.attrs.x + xDelt);
-                            actors[i].group.setY(actors[i].group.attrs.y + yDelt);
-                        } else {
-                            // new orbit reached, begin orbiting opposite direction
+                        if (currentMovie === next) {
                             actors[i].state = "orbit";
-
-                            // orbit position is calculated with trig off of "time"
-                            // new orbit will be going opposite direction from last orbit,
-                            //  so have to update "time" to avoid jumping forward or back when beginning new orbit
-                            if (actors[i].angle >= 0 && actors[i].angle <= Math.PI / 2) {
-                                actors[i].angle = (Math.PI / 2) - actors[i].angle;
-                            } else {
-                                actors[i].angle = (5 * Math.PI / 2) - actors[i].angle;
-                            }
-                            actors[i].time = period * (actors[i].angle / (2 * Math.PI));
-
                         }
-                        break;
-                }
+
+                        // calculate angle and adjust to guarantee range between 0 and 2pi
+                        actors[i].angle = Math.atan(-1 * (next.group.attrs.y - currentMovie.group.attrs.y)/(next.group.attrs.x - currentMovie.group.attrs.x));
+                        if (next.group.attrs.x < currentMovie.group.attrs.x) {
+                            actors[i].angle += Math.PI;
+                        }
+                        if (actors[i].angle >= 0) {
+                            actors[i].angle = (2 * Math.PI) - actors[i].angle - 0.5 * Math.PI;
+                        } else if (actors[i].angle > -1 * Math.PI / 2) {
+                            actors[i].angle = (-1 * actors[i].angle) + 1.5 * Math.PI;
+                        } else if (actors[i].angle < -1 * Math.PI / 2) {
+                            actors[i].angle = (-1 * actors[i].angle) - 0.5 * Math.PI;
+                        }
+                    }
+                    break;
+                case "pos2":
+                    // orbit until target angle reached
+                    if (actors[i].time < (actors[i].angle / (2 * Math.PI)) * period) {
+                        actors[i].group.setX(radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitX);
+                        actors[i].group.setY(radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitY);
+                    } else {
+                        // target angle reached, begin transition
+                        actors[i].state = "trans2";
+                        //actors[i].attrs.fill = "white";
+                        actors[i].currentMovie = (actors[i].currentMovie+1 >= actors[i].path.length) ? 0 : actors[i].currentMovie + 1;
+                        actors[i].time += 0.5 * period;
+                        actors[i].angle += Math.PI;
+                    }
+                    break;
+                case "trans2":
+                    // while transition in progress, move toward destination each frame at normalized speed
+                    distance = (2 * Math.PI * radius) * (frame.timeDiff / period);
+
+                    actors[i].targX = radius * Math.cos(2 * Math.PI * actors[i].time / period) + orbitX;
+                    actors[i].targY = radius * Math.sin(2 * Math.PI * actors[i].time / period) + orbitY;
+
+                    xDiff = actors[i].targX - actors[i].group.attrs.x;
+                    yDiff = actors[i].targY - actors[i].group.attrs.y;
+
+                    if (Math.pow(xDiff, 2) + Math.pow(yDiff, 2) > 2.5) {
+                        actors[i].time -= frame.timeDiff;
+
+                        xDelt = Math.sqrt(Math.pow(distance, 2) / (Math.pow(yDiff / xDiff, 2) + 1));
+                        yDelt = (yDiff / xDiff) * xDelt;
+                        if (xDiff < 0) xDelt = xDelt * -1;
+                        if (yDelt < 0 && yDiff >=0) yDelt = yDelt * -1;
+                        if (yDelt > 0 && yDiff <=0) yDelt = yDelt * -1;
+
+                        actors[i].group.setX(actors[i].group.attrs.x + xDelt);
+                        actors[i].group.setY(actors[i].group.attrs.y + yDelt);
+                    } else {
+                        // new orbit reached, begin orbiting opposite direction
+                        actors[i].state = "orbit";
+
+                        // orbit position is calculated with trig off of "time"
+                        // new orbit will be going opposite direction from last orbit,
+                        //  so have to update "time" to avoid jumping forward or back when beginning new orbit
+                        if (actors[i].angle >= 0 && actors[i].angle <= Math.PI / 2) {
+                            actors[i].angle = (Math.PI / 2) - actors[i].angle;
+                        } else {
+                            actors[i].angle = (5 * Math.PI / 2) - actors[i].angle;
+                        }
+                        actors[i].time = period * (actors[i].angle / (2 * Math.PI));
+
+                    }
+                    break;
             }
         }
     }, actorLayer);
