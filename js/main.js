@@ -11,7 +11,7 @@ var activeFilterColor = '#ffffff';
 var yearFilters, genreFilters;
 var containerWidth, containerHeight;
 var movieLayerYOffset = -30;
-var movieBounds;
+var movieBounds, constellationLabelGroup;
 
 $(function () {
     containerHeight = $('#container').height();
@@ -491,6 +491,9 @@ $(function () {
         y: containerHeight/2 + movieLayerYOffset,
         offset: [movieBounds.right/2, movieBounds.bottom/2]
     });
+    constellationLabelGroup = new Kinetic.Group();
+    constellationLayer.add(constellationLabelGroup);
+    constellationLabelGroup.hide();
 
     // draw the constellations
     $.each(constellations, function(i, elem) {
@@ -515,8 +518,7 @@ $(function () {
         }));
 
         // draw the label
-        console.log(elem)
-        constellationLayer.add(new Kinetic.Text({
+        constellationLabelGroup.add(new Kinetic.Text({
             fontFamily: 'advent',
             fontSize: 30,
             fontStyle: 'bold',
@@ -841,6 +843,13 @@ function setZoomLevel(level, destOffset) {
         console.log("called!");
         orbitCurrent(120);
     }
+
+    // show the constellation labels when not fully zoomed out
+    if (level > 0)
+        constellationLabelGroup.show();
+    else
+        constellationLabelGroup.hide();
+    constellationLayer.draw();
 
     // zoom to center at lowest zoom level
     if (level == 0)

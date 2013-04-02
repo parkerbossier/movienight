@@ -21,28 +21,51 @@ var constellations = [{
     "rotation":-Math.PI/180*64
 },{
     "title":"M.I.B.",
-    "order":[608,41154]
+    "order":[608,41154],
+    "x":846,
+    "y":72,
+    "rotation":-Math.PI/180*45
 },{
-    "title":"Mission Impossible",
-    "order":[955,56292]
+    "title":"M:I",
+    "order":[955,56292],
+    "x":543,
+    "y":142,
+    "rotation":-Math.PI/180*61
 },{
     "title":"Museum Nights",
-    "order":[1593,18360]
+    "order":[1593,18360],
+    "x":940,
+    "y":185,
+    "rotation":Math.PI/180*25
 },{
     "title":"Sherlock",
-    "order":[10528,58574]
+    "order":[10528,58574],
+    "x":785,
+    "y":690,
+    "rotation":Math.PI/180*22
 },{
     "title":"Apes",
-    "order":[869,61791]
+    "order":[869,61791],
+    "x":705,
+    "y":648,
+    "rotation":-Math.PI/180*73
 },{
     "title":"Pirates",
-    "order":[285,1865,22,58]
+    "order":[285,1865,22,58],
+    "x":565,
+    "y":610
 },{
     "title":"Star Wars",
-    "order":[1894,1895]
+    "order":[1894,1895],
+    "x":700,
+    "y":230,
+    "rotation":-Math.PI/180*20
 },{
     "title":"Bourne",
-    "order":[2502,2503]
+    "order":[2502,2503],
+    "x":1065,
+    "y":125,
+    "rotation":Math.PI/180*46
 },{
     "title":"Transformers",
     "order":[1858,38356,8373],
@@ -50,7 +73,9 @@ var constellations = [{
     "y":195
 },{
     "title":"LOTR",
-    "order":[120,122,121]
+    "order":[120,122,121],
+    "x":600,
+    "y":465
 },{
     "title":"Vampires",
     "order":[8966,18239,24021,50620,50619],
@@ -130,8 +155,8 @@ var movieLocs = {
         "scale":0.406839938470585
     },
     "310":{
-        "x":580,
-        "y":470,
+        "x":620,
+        "y":400,
         "scale":0.318984503481405
     },
     "331":{
@@ -551,7 +576,7 @@ var movieLocs = {
     },
     "72976":{
         "x":940,
-        "y":220,
+        "y":300,
         "scale":0.238536584190128
     },
     "177862":{
